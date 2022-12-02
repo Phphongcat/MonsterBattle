@@ -12,7 +12,6 @@ namespace Game.Scripts
 {
     public class ContainerLauncher : MonoBehaviour
     {
-        [SerializeField] private string firstScreen;
         [SerializeField] private ContainerLayerSettings containerLayerSettings;
         [SerializeField] private GameObject pooled;
 
@@ -54,7 +53,7 @@ namespace Game.Scripts
                 }
             }
 
-            var options = new WindowOptions(firstScreen, false, loadAsync: false);
+            var options = new WindowOptions(EventNameKeeper.LoadingScreen, false, loadAsync: false);
             await manager.Find<ScreenContainer>(EventNameKeeper.ScreenContainer).Push(options);
         }
     }

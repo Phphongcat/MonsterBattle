@@ -8,6 +8,7 @@ namespace Game.Scripts
         public const string ScreenContainer = "ScreenContainer";
         public const string ModalContainer = "ModalContainer";
         public const string TeamSelectScreen = "TeamSelectScreen";
+        public const string LoadingScreen = "LoadingScreen";
         public const string BattleScreen = "BattleScreen";
         public const string DamageText = "DamageText";
         public const string EndGameModal = "EndGameModal";

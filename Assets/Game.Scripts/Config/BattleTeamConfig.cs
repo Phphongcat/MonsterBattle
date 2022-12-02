@@ -20,14 +20,6 @@ namespace Game.Scripts.Config
 
         public bool PickMonster(string nameMonster)
         {
-            if (teams.Count < teamMaxCount)
-            {
-                for (int i = 1; i <= teamMaxCount - teams.Count; i++)
-                {
-                    teams.Add(string.Empty);
-                }
-            }
-
             var contains = teams.Contains(nameMonster);
             if(contains)
                 return false;
@@ -73,9 +65,14 @@ namespace Game.Scripts.Config
         {
             isBattle = false;
             currentIndexPick = 0;
-            teams.Clear();
             enemies.Clear();
             monsterNameGetTurn = string.Empty;
+            
+            teams.Clear();
+            for (int i = 0; i < teamMaxCount; i++)
+            {
+                teams.Add(string.Empty);
+            }
         }
 
         public List<string> GetEnemyTeam(AttributeConfig config)

@@ -24,7 +24,7 @@ namespace Game.Scripts.Config
             {
                 for (int i = 1; i <= teamMaxCount - teams.Count; i++)
                 {
-                    teams.Add("");
+                    teams.Add(string.Empty);
                 }
             }
 
@@ -55,7 +55,7 @@ namespace Game.Scripts.Config
             {
                 if (teams[i].Contains(nameMonster))
                 {
-                    teams[i] = "";
+                    teams[i] = string.Empty;
                     currentIndexPick = i;
                     return true;
                 }
@@ -133,7 +133,16 @@ namespace Game.Scripts.Config
         
         public bool IsFullTeam()
         {
-            return teams.Any() && teams.All(monster => string.IsNullOrEmpty(monster) is false);
+            if (teams.Any())
+            {
+                foreach (var value in teams)
+                {
+                    if (string.IsNullOrEmpty(value))
+                        return false;
+                }
+                return true;
+            }
+            return false;
         }
 
         public int CurrentIndexPick() => currentIndexPick;

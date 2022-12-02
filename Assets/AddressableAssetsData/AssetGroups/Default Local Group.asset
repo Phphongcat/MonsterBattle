@@ -57,6 +57,30 @@ MonoBehaviour:
     m_Address: EndGameModal
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 973eb0a45c837fd46993e1f277f5dacf
+    m_Address: Assets/ParticlePack/Effect/FireBall2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a590c04abd57be544b50a1b51a6674ac
+    m_Address: Assets/ParticlePack/Effect/FireBall.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7a52d3ff698a7dc4dbc5f0152df3371a
+    m_Address: Assets/ParticlePack/Effect/DarkBall2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 176790904455b214b92ac1cfd30fddc9
+    m_Address: Assets/ParticlePack/Effect/DarkBall.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 10a7ec2a2783770419a38059c45ea8b3
+    m_Address: Assets/ParticlePack/Effect/Ball2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f1fca55934f274a4b9c8fd316d61e964
+    m_Address: Assets/ParticlePack/Effect/Ball.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d1d33bfc0c6918b4a8f670d18e713d8f, type: 2}
   m_SchemaSet:

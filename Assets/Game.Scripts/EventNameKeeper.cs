@@ -21,5 +21,6 @@ namespace Game.Scripts
         public const string DoneTurn = "DoneTurn"; 
         public const string CanTouchAll = "CanTouchAll"; 
         public const string RemoveAllMonster = "RemoveAllMonster"; 
+        public const string DoneSelectMonsterTeam = "DoneSelectMonsterTeam";
     }
 }

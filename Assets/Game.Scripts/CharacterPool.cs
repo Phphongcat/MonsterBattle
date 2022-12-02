@@ -61,6 +61,8 @@ namespace Game.Scripts
                 var removePosition = positions.GetTempPosition(removeIndex);
                 var reMonster = transform.Find(monsterName);
                 reMonster.position = removePosition;
+                
+                EventManager.EmitEvent(EventNameKeeper.DoneSelectMonsterTeam);
                 return;
             }
 
@@ -70,6 +72,8 @@ namespace Game.Scripts
             
             positions.SetTempPosition(currentIndex, monster.position);
             monster.position = new Vector3(position.x, position.y, default);
+            
+            EventManager.EmitEvent(EventNameKeeper.DoneSelectMonsterTeam);
         }
 
         private void CreateMonsters()

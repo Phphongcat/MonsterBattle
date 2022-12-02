@@ -1,4 +1,6 @@
+using System;
 using Game.Scripts.Config;
+using TigerForge;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,7 +21,13 @@ namespace Game.Scripts
             button.onClick.AddListener(ChangeToBattle);
         }
 
-        private void Update()
+        private void Start()
+        {
+            EventManager.StartListening(EventNameKeeper.DoneSelectMonsterTeam, UpdateView);
+            UpdateView();
+        }
+
+        private void UpdateView()
         {
             button.interactable = config.IsFullTeam();
         }

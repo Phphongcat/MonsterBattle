@@ -196,11 +196,22 @@ struct InterfaceFuncInvoker6
 		return ((Func)invokeData.methodPtr)(obj, p1, p2, p3, p4, p5, p6, invokeData.method);
 	}
 };
+template <typename T1>
+struct InvokerActionInvoker1;
+template <typename T1>
+struct InvokerActionInvoker1<T1*>
+{
+	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1)
+	{
+		void* params[1] = { p1 };
+		method->invoker_method(methodPtr, method, obj, params, params[0]);
+	}
+};
 
 // System.Action`1<System.Action>
 struct Action_1_t3137749576010DD307B29662A2E47C43C7F7D04C;
-// System.Action`1<System.Object>
-struct Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87;
+// System.Action`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99;
 // System.Threading.AsyncLocal`1<System.Globalization.CultureInfo>
 struct AsyncLocal_1_t1D3339EA4C8650D2DEDDF9553E5C932B3DC2CCFD;
 // System.Dynamic.Utils.CacheDict`2<System.Type,System.Func`5<System.Linq.Expressions.Expression,System.String,System.Boolean,System.Collections.ObjectModel.ReadOnlyCollection`1<System.Linq.Expressions.ParameterExpression>,System.Linq.Expressions.LambdaExpression>>
@@ -213,8 +224,6 @@ struct ConditionalWeakTable_2_t0F3FDA57EE333DF8B8C1F3FB944E4E19C5DDCFC7;
 struct Dictionary_2_tFC6B69B086D054B5EE49F48AD91892D54005A012;
 // System.Collections.Generic.Dictionary`2<System.Reflection.MethodInfo,Unity.VisualScripting.IOptimizedInvoker>
 struct Dictionary_2_t6B68DAC8F709194A911B6D615BEBEFCD212772B4;
-// System.Collections.Generic.Dictionary`2<System.Object,System.Object>
-struct Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA;
 // System.Collections.Generic.Dictionary`2<System.Reflection.PropertyInfo,Unity.VisualScripting.IOptimizedAccessor>
 struct Dictionary_2_t65CAA2946105B4268932C79B7596C2B2CF5E624E;
 // System.Collections.Generic.Dictionary`2<System.String,System.Object>
@@ -243,6 +252,8 @@ struct Dictionary_2_t8BF76F08F2E28AE3B97CD39EBC7A0FE57398B1B0;
 struct Dictionary_2_t2D6F98B40EECAA8060D2BCF6EA2281CEF7255AE9;
 // System.Collections.Generic.Dictionary`2<System.Type,Unity.VisualScripting.FullSerializer.fsDirectConverter>
 struct Dictionary_2_tE2FB86855847810E74AE4F09A6480D6AE3251A51;
+// System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E;
 // System.Collections.Generic.Dictionary`2<Unity.VisualScripting.BinaryOperatorHandler/OperatorQuery,System.Func`3<System.Object,System.Object,System.Object>>
 struct Dictionary_2_t5EBF5D901B03BAA73BBA380BA0BAE56606A6F0E3;
 // System.Collections.Generic.Dictionary`2<Unity.VisualScripting.BinaryOperatorHandler/OperatorQuery,Unity.VisualScripting.IOptimizedInvoker>
@@ -253,16 +264,16 @@ struct Dictionary_2_t27B3EBF02A6B2C57A2BFCEE775E32208D70EF902;
 struct EventHandler_1_tF46A0252BA462E35F6B72C69AB6C0F751E7443D7;
 // System.Linq.Expressions.Expression`1<System.Action>
 struct Expression_1_tFA626D2A587EDA121C2ADC9C9719815551231292;
-// System.Linq.Expressions.Expression`1<System.Object>
-struct Expression_1_t63D438A2F366BA0B43CCDBBFCE66D131C313A7D7;
+// System.Linq.Expressions.Expression`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct Expression_1_t0FC093B0DDEA1EB4F5EF3152CC33F1B785E80EA4;
 // System.Func`1<System.Object>
 struct Func_1_tD5C081AE11746B200C711DD48DBEB00E3A9276D4;
+// System.Func`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct Func_1_tBB8824FA8746333BFFF3AB3CE4A41B58450AF431;
 // System.Func`2<System.Object[],System.Object>
 struct Func_2_tDF54C067A76CC031380FDC1CAD2344D51038CC7A;
 // System.Func`2<System.Reflection.Assembly,System.Boolean>
 struct Func_2_t3FF9FC9038AAF42274EC51B73C22E875D6CEE5E9;
-// System.Func`2<System.Object,System.Boolean>
-struct Func_2_tE1F0D41563EE092E5E5540B061449FDE88F1DC00;
 // System.Func`2<System.Object,System.Object>
 struct Func_2_tACBF5A1656250800CE861707354491F0611F6624;
 // System.Func`2<System.Object,System.Type>
@@ -277,6 +288,10 @@ struct Func_2_t85D1F7C2022B349817C22FC72C474CD33FFABE93;
 struct Func_2_t7AF8146EC94DFCBB0F1B3E70111C1FB21D39F00E;
 // System.Func`2<System.Type,System.String>
 struct Func_2_t9D09D397B043BC5218B2565C13BA5AA81CABC121;
+// System.Func`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,System.Boolean>
+struct Func_2_t19E50C11C3E1F20B5A8FDB85D7DD353B6DFF868B;
+// System.Func`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0;
 // System.Func`3<System.Byte,System.Byte,System.Object>
 struct Func_3_tB2B320F463B8DA8228C92F1A7B68693FB0BFEF7D;
 // System.Func`3<System.Byte,System.Decimal,System.Object>
@@ -495,6 +510,10 @@ struct Func_3_t49C1586DECA35B5F39BFA5E6494607C7A9683FBD;
 struct Func_3_tF414E7583BB912F566F79F6BA83505A7F2C3C41A;
 // System.Func`3<System.UInt64,System.UInt64,System.Object>
 struct Func_3_tAD065C32138D70F99F7E8D8BBF25867D55236464;
+// System.Func`3<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,System.Object>
+struct Func_3_t25B447CF436DB953972081F955DB9276B2A069AA;
+// System.Func`3<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4;
 // System.Collections.Generic.HashSet`1<System.Char>
 struct HashSet_1_t699860DBA06D8F002CD3C64E462BF860ACAD5E9A;
 // System.Collections.Generic.HashSet`1<Unity.VisualScripting.ISerializationDepender>
@@ -509,6 +528,8 @@ struct HashSet_1_t83F52FF626C7119CC0C4E4E295AF69086EB653DE;
 struct HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178;
 // System.Collections.Generic.HashSet`1<System.Type>
 struct HashSet_1_tAE2F12E55878645F5BE7C4D5603228A6FAB429C7;
+// System.Collections.Generic.HashSet`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87;
 // System.Collections.Generic.ICollection`1<System.Object>
 struct ICollection_1_tD7413105CA5DBF6629BE5E9EE453204D7C0D90FB;
 // System.Collections.Generic.ICollection`1<System.String>
@@ -537,6 +558,8 @@ struct IEnumerable_1_t43E68DF42E0B8964A7E5CD56527CF59777D49705;
 struct IEnumerable_1_t349E66EC5F09B881A8E52EE40A1AB9EC60E08E44;
 // System.Collections.Generic.IEnumerable`1<System.Type>
 struct IEnumerable_1_t6686595E4CB7AC210F0EF075F7B1DD4A21D3902B;
+// System.Collections.Generic.IEnumerable`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct IEnumerable_1_t29E7244AE33B71FA0981E50D5BC73B7938F35C66;
 // System.Collections.Generic.IEnumerator`1<System.Collections.Generic.KeyValuePair`2<System.String,System.Object>>
 struct IEnumerator_1_t913F242211877D391217C9D75152235266FDAF10;
 // System.Collections.Generic.IEnumerator`1<System.Reflection.Assembly>
@@ -563,12 +586,12 @@ struct IEqualityComparer_1_tFD26CF6B79BBFA395759BD352C7A0DEC8937DACC;
 struct IEqualityComparer_1_tAE94C8F24AD5B94D4EE85CA9FC59E3409D41CAF7;
 // System.Collections.Generic.IEqualityComparer`1<System.Type>
 struct IEqualityComparer_1_t0C79004BFE79D9DBCE6C2250109D31D468A9A68E;
+// System.Collections.Generic.IEqualityComparer`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct IEqualityComparer_1_t47CC0B235E693652D181B679FF6D61A469ECC122;
 // System.Collections.Generic.Dictionary`2/KeyCollection<System.Reflection.FieldInfo,Unity.VisualScripting.IOptimizedAccessor>
 struct KeyCollection_tCD4CE648CA66864E1D5A93E45D5AFECA0CB33B8A;
 // System.Collections.Generic.Dictionary`2/KeyCollection<System.Reflection.MethodInfo,Unity.VisualScripting.IOptimizedInvoker>
 struct KeyCollection_t47D3B5E71C23D230414CD252145F46062400DEE3;
-// System.Collections.Generic.Dictionary`2/KeyCollection<System.Object,System.Object>
-struct KeyCollection_tB45A861D090B15129521119AE48ED3813820A974;
 // System.Collections.Generic.Dictionary`2/KeyCollection<System.Reflection.PropertyInfo,Unity.VisualScripting.IOptimizedAccessor>
 struct KeyCollection_tD5658E3E70FA602D41E5BF794C7D844EA702B0CC;
 // System.Collections.Generic.Dictionary`2/KeyCollection<System.String,System.Object>
@@ -591,6 +614,8 @@ struct KeyCollection_t06BF4E8028DD7CCA572FE96F996862FCB21C8ED4;
 struct KeyCollection_t555B8656568D51D28955442D71A19D8860BFF88C;
 // System.Collections.Generic.Dictionary`2/KeyCollection<System.Type,System.Type>
 struct KeyCollection_t56C9CA539771D68F44D87D0E711E4CFF69326192;
+// System.Collections.Generic.Dictionary`2/KeyCollection<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct KeyCollection_tB792ACBAE0B99278B0B7B0F7440B4788E98F0D55;
 // System.Collections.Generic.List`1<System.Reflection.Assembly>
 struct List_1_t1BED237EBA2788604B1D39FC183B07E28F912A89;
 // System.Collections.Generic.List`1<System.Int32>
@@ -605,20 +630,20 @@ struct List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD;
 struct List_1_t4B77DB8D00EC6CC4705EB5F2FCC506472734EA72;
 // System.Collections.Generic.List`1<Unity.VisualScripting.TypeName>
 struct List_1_t109F34922AD6589B82B033B6DD689038AD7324E9;
+// System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A;
 // System.Collections.Generic.List`1<Unity.VisualScripting.FullSerializer.fsConverter>
 struct List_1_t2914BC22C8C5E8C02F2AB4FA0C6EBD117DA2A753;
 // System.Collections.Generic.List`1<Unity.VisualScripting.FullSerializer.fsObjectProcessor>
 struct List_1_t0966830171D2398ACB9E46D5533F6E16E0E17371;
-// Unity.VisualScripting.UnexpectedEnumValueException`1<System.Int32Enum>
-struct UnexpectedEnumValueException_1_t9F5986D23EC39566589DD5FAED80D4A5A70F64D7;
 // Unity.VisualScripting.UnexpectedEnumValueException`1<Unity.VisualScripting.TypesMatching>
 struct UnexpectedEnumValueException_1_tC9CE22260532425FC251A16B00D152B97D1E83C6;
+// Unity.VisualScripting.UnexpectedEnumValueException`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct UnexpectedEnumValueException_1_tD66B1540AD1D72D4F9F16E6203551ECE90CBC9ED;
 // System.Collections.Generic.Dictionary`2/ValueCollection<System.Reflection.FieldInfo,Unity.VisualScripting.IOptimizedAccessor>
 struct ValueCollection_tFBFFE7A2A9DC00A7EB44E929A0544FEDE40D07CA;
 // System.Collections.Generic.Dictionary`2/ValueCollection<System.Reflection.MethodInfo,Unity.VisualScripting.IOptimizedInvoker>
 struct ValueCollection_t84B7CD57AC8413F161715128CAF467BA30214653;
-// System.Collections.Generic.Dictionary`2/ValueCollection<System.Object,System.Object>
-struct ValueCollection_t038245E04B5D2A80048D9F8021A23E69A0C9DBAA;
 // System.Collections.Generic.Dictionary`2/ValueCollection<System.Reflection.PropertyInfo,Unity.VisualScripting.IOptimizedAccessor>
 struct ValueCollection_t07BD5F5C809AA6A4B5C27AD3C579F6126C0F61E5;
 // System.Collections.Generic.Dictionary`2/ValueCollection<System.String,System.Object>
@@ -641,10 +666,14 @@ struct ValueCollection_t9EB9C5634AB88E4E9CA993FE202AEE842111C914;
 struct ValueCollection_t6E6C24D8CE99E9A850AB95B69939CBBA2CB9E7D9;
 // System.Collections.Generic.Dictionary`2/ValueCollection<System.Type,System.Type>
 struct ValueCollection_tC72ADD3C4A1BECE1A0E419F63C5C423DD518C857;
+// System.Collections.Generic.Dictionary`2/ValueCollection<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct ValueCollection_tC492596681BD51AB34FC76FA76C15C9B3FFB7B40;
 // Unity.VisualScripting.FullSerializer.fsDirectConverter`1<UnityEngine.Ray>
 struct fsDirectConverter_1_tF307DFA6F21486A34320546F09381BBF84FF0539;
 // Unity.VisualScripting.FullSerializer.fsDirectConverter`1<UnityEngine.Ray2D>
 struct fsDirectConverter_1_t8EC81BCA98876AF5AF3271B6086EC66E2CCDC388;
+// Unity.VisualScripting.FullSerializer.fsDirectConverter`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct fsDirectConverter_1_tCBA7B5D48312C1775A21082D3D453731C902A8BD;
 // System.Collections.Generic.Dictionary`2/Entry<System.Reflection.FieldInfo,Unity.VisualScripting.IOptimizedAccessor>[]
 struct EntryU5BU5D_tBDA37BBAD7616B05A3EED02A5830081B4204F49C;
 // System.Collections.Generic.Dictionary`2/Entry<System.Reflection.MethodInfo,Unity.VisualScripting.IOptimizedInvoker>[]
@@ -685,6 +714,8 @@ struct SlotU5BU5D_tDFE749662676BA0A2ABE9EADEBE423A2E11508F8;
 struct SlotU5BU5D_t8B8EE191EEC1575F1F0CAC91A208DBFDF2821D01;
 // System.Collections.Generic.HashSet`1/Slot<System.Type>[]
 struct SlotU5BU5D_t0FD57ECF60D6ADD2A7050D7198C4DF420FEE1D88;
+// System.Collections.Generic.HashSet`1/Slot<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>[]
+struct SlotU5BU5D_t2B9148416634BCB8743E1F61254B305F1882FF1D;
 // System.Reflection.Assembly[]
 struct AssemblyU5BU5D_t97B7B4E3FD4DA4944A4BFAA4DC484EA7D990B339;
 // System.Attribute[]
@@ -723,6 +754,8 @@ struct StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248;
 struct TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB;
 // Unity.VisualScripting.TypeName[]
 struct TypeNameU5BU5D_tE47D48C878BDF486CCAC6E377899B7C475FD1F43;
+// Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType[]
+struct __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC;
 // System.Action
 struct Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07;
 // System.AppDomain
@@ -2024,7 +2057,6 @@ struct ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031;
 struct ComponentU5BU5D_t40ECDBC5CC15EA282AF49771C20EBFDADC532D0E;
 struct ExpressionU5BU5D_tA9F782C3F01235FA1BEE94C80141F0CE1CB1BF6F;
 struct ISerializationDependerU5BU5D_t88BBB896AF1A37A4F9BD59269F0479F904F44A92;
-struct Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C;
 struct MemberInfoU5BU5D_t4CB6970BB166E8E1CFB06152B2A2284971873053;
 struct ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918;
 struct ObjectU5BU5D_tD4BF1BEC72A31DF6611C0B8FA3112AF128FC3F8A;
@@ -2032,6 +2064,7 @@ struct ParameterExpressionU5BU5D_tA217A6969CA4383EF6D3C43B8EB0989358ABE72C;
 struct ParameterInfoU5BU5D_t86995AB4A1693393FE29B058CC3FD727DF0B984C;
 struct StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248;
 struct TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB;
+struct __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC;
 
 IL2CPP_EXTERN_C_BEGIN
 IL2CPP_EXTERN_C_END
@@ -2367,26 +2400,26 @@ struct Dictionary_2_t8BF76F08F2E28AE3B97CD39EBC7A0FE57398B1B0  : public RuntimeO
 	RuntimeObject* ____syncRoot_9;
 };
 
-// System.EmptyArray`1<System.Object>
-struct EmptyArray_1_tDF0DD7256B115243AA6BD5558417387A734240EE  : public RuntimeObject
+// System.EmptyArray`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct EmptyArray_1_tF69A5F6BAD1150A16C4C98B346D6122FE3751C80  : public RuntimeObject
 {
 };
 
-struct EmptyArray_1_tDF0DD7256B115243AA6BD5558417387A734240EE_StaticFields
+struct EmptyArray_1_tF69A5F6BAD1150A16C4C98B346D6122FE3751C80_StaticFields
 {
 	// T[] System.EmptyArray`1::Value
-	ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___Value_0;
+	__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* ___Value_0;
 };
 
-// System.Linq.EmptyEnumerable`1<System.Object>
-struct EmptyEnumerable_1_t8C8873EF4F89FB0F86D91BA5B4D640E3A23AD28E  : public RuntimeObject
+// System.Linq.EmptyEnumerable`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct EmptyEnumerable_1_t36102943B460DED9F019D124B41D2A00656CC354  : public RuntimeObject
 {
 };
 
-struct EmptyEnumerable_1_t8C8873EF4F89FB0F86D91BA5B4D640E3A23AD28E_StaticFields
+struct EmptyEnumerable_1_t36102943B460DED9F019D124B41D2A00656CC354_StaticFields
 {
 	// TElement[] System.Linq.EmptyEnumerable`1::Instance
-	ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___Instance_0;
+	__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* ___Instance_0;
 };
 
 // Unity.VisualScripting.Empty`1<System.Object>
@@ -2560,6 +2593,27 @@ struct HashSet_1_tAE2F12E55878645F5BE7C4D5603228A6FAB429C7  : public RuntimeObje
 	SerializationInfo_t3C47F63E24BEB9FCE2DC6309E027F238DC5C5E37* ____siInfo_14;
 };
 
+// System.Collections.Generic.HashSet`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87  : public RuntimeObject
+{
+	// System.Int32[] System.Collections.Generic.HashSet`1::_buckets
+	Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* ____buckets_7;
+	// System.Collections.Generic.HashSet`1/Slot<T>[] System.Collections.Generic.HashSet`1::_slots
+	SlotU5BU5D_t2B9148416634BCB8743E1F61254B305F1882FF1D* ____slots_8;
+	// System.Int32 System.Collections.Generic.HashSet`1::_count
+	int32_t ____count_9;
+	// System.Int32 System.Collections.Generic.HashSet`1::_lastIndex
+	int32_t ____lastIndex_10;
+	// System.Int32 System.Collections.Generic.HashSet`1::_freeList
+	int32_t ____freeList_11;
+	// System.Collections.Generic.IEqualityComparer`1<T> System.Collections.Generic.HashSet`1::_comparer
+	RuntimeObject* ____comparer_12;
+	// System.Int32 System.Collections.Generic.HashSet`1::_version
+	int32_t ____version_13;
+	// System.Runtime.Serialization.SerializationInfo System.Collections.Generic.HashSet`1::_siInfo
+	SerializationInfo_t3C47F63E24BEB9FCE2DC6309E027F238DC5C5E37* ____siInfo_14;
+};
+
 // System.Collections.Generic.Dictionary`2/KeyCollection<System.String,System.Object>
 struct KeyCollection_tE66790F09E854C19C7F612BEAD203AE626E90A36  : public RuntimeObject
 {
@@ -2603,25 +2657,6 @@ struct List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73_StaticFields
 {
 	// T[] System.Collections.Generic.List`1::s_emptyArray
 	Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* ___s_emptyArray_5;
-};
-
-// System.Collections.Generic.List`1<System.Object>
-struct List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D  : public RuntimeObject
-{
-	// T[] System.Collections.Generic.List`1::_items
-	ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ____items_1;
-	// System.Int32 System.Collections.Generic.List`1::_size
-	int32_t ____size_2;
-	// System.Int32 System.Collections.Generic.List`1::_version
-	int32_t ____version_3;
-	// System.Object System.Collections.Generic.List`1::_syncRoot
-	RuntimeObject* ____syncRoot_4;
-};
-
-struct List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D_StaticFields
-{
-	// T[] System.Collections.Generic.List`1::s_emptyArray
-	ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___s_emptyArray_5;
 };
 
 // System.Collections.Generic.List`1<UnityEngine.Object>
@@ -2698,6 +2733,25 @@ struct List_1_t109F34922AD6589B82B033B6DD689038AD7324E9_StaticFields
 {
 	// T[] System.Collections.Generic.List`1::s_emptyArray
 	TypeNameU5BU5D_tE47D48C878BDF486CCAC6E377899B7C475FD1F43* ___s_emptyArray_5;
+};
+
+// System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A  : public RuntimeObject
+{
+	// T[] System.Collections.Generic.List`1::_items
+	__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* ____items_1;
+	// System.Int32 System.Collections.Generic.List`1::_size
+	int32_t ____size_2;
+	// System.Int32 System.Collections.Generic.List`1::_version
+	int32_t ____version_3;
+	// System.Object System.Collections.Generic.List`1::_syncRoot
+	RuntimeObject* ____syncRoot_4;
+};
+
+struct List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A_StaticFields
+{
+	// T[] System.Collections.Generic.List`1::s_emptyArray
+	__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* ___s_emptyArray_5;
 };
 
 // System.Collections.Generic.Dictionary`2/ValueCollection<System.String,System.Object>
@@ -3679,32 +3733,6 @@ struct Enumerator_tE6B72E1C4658BFCAA421BAF87C454C2B43D855A4
 	RuntimeObject* ____current_3;
 };
 
-// System.Collections.Generic.HashSet`1/Enumerator<System.Object>
-struct Enumerator_t72556E98D7DDBE118A973D782D523D15A96461C8 
-{
-	// System.Collections.Generic.HashSet`1<T> System.Collections.Generic.HashSet`1/Enumerator::_set
-	HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* ____set_0;
-	// System.Int32 System.Collections.Generic.HashSet`1/Enumerator::_index
-	int32_t ____index_1;
-	// System.Int32 System.Collections.Generic.HashSet`1/Enumerator::_version
-	int32_t ____version_2;
-	// T System.Collections.Generic.HashSet`1/Enumerator::_current
-	RuntimeObject* ____current_3;
-};
-
-// System.Collections.Generic.List`1/Enumerator<System.Object>
-struct Enumerator_t9473BAB568A27E2339D48C1F91319E0F6D244D7A 
-{
-	// System.Collections.Generic.List`1<T> System.Collections.Generic.List`1/Enumerator::_list
-	List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* ____list_0;
-	// System.Int32 System.Collections.Generic.List`1/Enumerator::_index
-	int32_t ____index_1;
-	// System.Int32 System.Collections.Generic.List`1/Enumerator::_version
-	int32_t ____version_2;
-	// T System.Collections.Generic.List`1/Enumerator::_current
-	RuntimeObject* ____current_3;
-};
-
 // System.Collections.Generic.HashSet`1/Enumerator<System.String>
 struct Enumerator_tF6C1B465074968C3538509E911717559FDDBD72C 
 {
@@ -3744,14 +3772,11 @@ struct Enumerator_tC24946BA559616564C0B2AA651512D1A9EDAEC66
 	TypeName_t6C31C8853CF16254A3932AA55D6F3B657ED07F54* ____current_3;
 };
 
-// System.Collections.Generic.KeyValuePair`2<System.Object,System.Object>
-struct KeyValuePair_2_tFC32D2507216293851350D29B64D79F950B55230 
-{
-	// TKey System.Collections.Generic.KeyValuePair`2::key
-	RuntimeObject* ___key_0;
-	// TValue System.Collections.Generic.KeyValuePair`2::value
-	RuntimeObject* ___value_1;
-};
+// System.Collections.Generic.HashSet`1/Enumerator<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+typedef Il2CppFullySharedGenericStruct Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB;
+
+// System.Collections.Generic.List`1/Enumerator<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+typedef Il2CppFullySharedGenericStruct Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF;
 
 // System.Collections.Generic.KeyValuePair`2<System.String,System.Object>
 struct KeyValuePair_2_tBEE55F2A4574C64393155C322376FD98C7BFC7B9 
@@ -3779,6 +3804,9 @@ struct KeyValuePair_2_tD2A1455EBCC891ED643FBDE22008B08DF24D014E
 	// TValue System.Collections.Generic.KeyValuePair`2::value
 	Type_t* ___value_1;
 };
+
+// System.Collections.Generic.KeyValuePair`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+typedef Il2CppFullySharedGenericStruct KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669;
 
 // System.Nullable`1<System.Char>
 struct Nullable_1_tD52F1D0FC7EBB336F119BE953E59F426766032C1 
@@ -4542,21 +4570,6 @@ struct fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974_marshaled_com
 	List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* ____messages_2;
 };
 
-// System.Collections.Generic.Dictionary`2/Enumerator<System.Object,System.Object>
-struct Enumerator_tEA93FE2B778D098F590CA168BEFC4CD85D73A6B9 
-{
-	// System.Collections.Generic.Dictionary`2<TKey,TValue> System.Collections.Generic.Dictionary`2/Enumerator::_dictionary
-	Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* ____dictionary_0;
-	// System.Int32 System.Collections.Generic.Dictionary`2/Enumerator::_version
-	int32_t ____version_1;
-	// System.Int32 System.Collections.Generic.Dictionary`2/Enumerator::_index
-	int32_t ____index_2;
-	// System.Collections.Generic.KeyValuePair`2<TKey,TValue> System.Collections.Generic.Dictionary`2/Enumerator::_current
-	KeyValuePair_2_tFC32D2507216293851350D29B64D79F950B55230 ____current_3;
-	// System.Int32 System.Collections.Generic.Dictionary`2/Enumerator::_getEnumeratorRetType
-	int32_t ____getEnumeratorRetType_4;
-};
-
 // System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.Object>
 struct Enumerator_t06A9DDA7FA9EA8BC40458E628EBAF7B3AA14EB62 
 {
@@ -4602,10 +4615,16 @@ struct Enumerator_tF11F7909312943F4E741743DF40DA07F67019306
 	int32_t ____getEnumeratorRetType_4;
 };
 
+// System.Collections.Generic.Dictionary`2/Enumerator<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+typedef Il2CppFullySharedGenericStruct Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1;
+
 // System.Linq.Expressions.Expression`1<System.Action>
 struct Expression_1_tFA626D2A587EDA121C2ADC9C9719815551231292  : public LambdaExpression_tD26FB6AEAD01B2EBB668CDEAFAAFA4948697300E
 {
 };
+
+// System.Nullable`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericStructType>
+typedef Il2CppFullySharedGenericStruct Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339;
 
 // Unity.VisualScripting.FullSerializer.fsDirectConverter`1<UnityEngine.Ray>
 struct fsDirectConverter_1_tF307DFA6F21486A34320546F09381BBF84FF0539  : public fsDirectConverter_t9EE506A371C95C62E21CA6586396D7B3BD55F668
@@ -5152,8 +5171,8 @@ struct Action_1_t3137749576010DD307B29662A2E47C43C7F7D04C  : public MulticastDel
 {
 };
 
-// System.Action`1<System.Object>
-struct Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87  : public MulticastDelegate_t
+// System.Action`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99  : public MulticastDelegate_t
 {
 };
 
@@ -5204,6 +5223,11 @@ struct Func_2_t7AF8146EC94DFCBB0F1B3E70111C1FB21D39F00E  : public MulticastDeleg
 
 // System.Func`2<System.Type,System.String>
 struct Func_2_t9D09D397B043BC5218B2565C13BA5AA81CABC121  : public MulticastDelegate_t
+{
+};
+
+// System.Func`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0  : public MulticastDelegate_t
 {
 };
 
@@ -6378,37 +6402,19 @@ struct ComponentU5BU5D_t40ECDBC5CC15EA282AF49771C20EBFDADC532D0E  : public Runti
 		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
 	}
 };
-// System.Int32[]
-struct Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C  : public RuntimeArray
+// Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType[]
+struct __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC  : public RuntimeArray
 {
-	ALIGN_FIELD (8) int32_t m_Items[1];
+	ALIGN_FIELD (8) uint8_t m_Items[1];
 
-	inline int32_t GetAt(il2cpp_array_size_t index) const
+	inline uint8_t* GetAddressAt(il2cpp_array_size_t index)
 	{
 		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items[index];
+		return m_Items + il2cpp_array_calc_byte_offset(this, index);
 	}
-	inline int32_t* GetAddressAt(il2cpp_array_size_t index)
+	inline uint8_t* GetAddressAtUnchecked(il2cpp_array_size_t index)
 	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items + index;
-	}
-	inline void SetAt(il2cpp_array_size_t index, int32_t value)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		m_Items[index] = value;
-	}
-	inline int32_t GetAtUnchecked(il2cpp_array_size_t index) const
-	{
-		return m_Items[index];
-	}
-	inline int32_t* GetAddressAtUnchecked(il2cpp_array_size_t index)
-	{
-		return m_Items + index;
-	}
-	inline void SetAtUnchecked(il2cpp_array_size_t index, int32_t value)
-	{
-		m_Items[index] = value;
+		return m_Items + il2cpp_array_calc_byte_offset(this, index);
 	}
 };
 
@@ -6419,1722 +6425,1266 @@ IL2CPP_EXTERN_C void Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshal_co
 IL2CPP_EXTERN_C void Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshal_com_back(const Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_com& marshaled, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C& unmarshaled);
 IL2CPP_EXTERN_C void Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshal_com_cleanup(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_com& marshaled);
 
-// System.Void System.Func`3<System.Byte,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m0022F947C32D53103782D92867141D53D85D3580_gshared (Func_3_tB2B320F463B8DA8228C92F1A7B68693FB0BFEF7D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m5B5D4D38E327B1DF7E23154C951D92152AEB6A86_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tB2B320F463B8DA8228C92F1A7B68693FB0BFEF7D* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Byte,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m828A69C9A8C243440A7DA30F74FEF5D669DC3D42_gshared (Func_3_tF49AF153D046FA981F4F083A8E2C7C6547935D96* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m0C52F1C85FCABB8E275037292A474018F248D5FA_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF49AF153D046FA981F4F083A8E2C7C6547935D96* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Byte,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m729002D40FD8F29363F6741359D6AA3299EA2B56_gshared (Func_3_t2E9A583D173A57E5B63B70A14CE40D89E837A8B4* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m84A47C7FB630DF09B6FA6A28F7E66DE655622B56_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t2E9A583D173A57E5B63B70A14CE40D89E837A8B4* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Byte,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m7F7145224E89970ABC81E7F46B7B424E3B846E81_gshared (Func_3_t6F801D3E19190ECCD536C1881A3033F41754C068* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m84AE892673B320F327C8B71A88187C003A48BBCC_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t6F801D3E19190ECCD536C1881A3033F41754C068* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Byte,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mBB76D3DCC2FC5FF0EFDF22DF507856798CE64B53_gshared (Func_3_t47C050995DF9BD235A841BC0DBBBD05F2E5EDF2E* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_mDAC902006B7A54CFE3F06E7AD86DFD8F9BDEB296_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t47C050995DF9BD235A841BC0DBBBD05F2E5EDF2E* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Byte,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mF4E080C91E546F8E714D147900671AC1BCD34170_gshared (Func_3_t0285FB291B179589BB03FA5E2007D8DEE8B08EC4* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m96ED6DF317F21FC22DF159F9B2033AC19817B300_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t0285FB291B179589BB03FA5E2007D8DEE8B08EC4* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Byte,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m182C2BAB912DC42A91A6C57054BFBD5302C458B2_gshared (Func_3_t445A9020E29441295F660A9521A3DE8BE24D409C* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_m47F1E5AD9500F46C825A4642AEFC0D4768C1AB6F_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t445A9020E29441295F660A9521A3DE8BE24D409C* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Byte,System.UInt64,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mC17883D2399DAA19862FE43DD60C7C2B8DEC3F75_gshared (Func_3_t9F6F905176137C8F2D1DFD5D940886D340D2767E* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.UInt64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_mFB91A8225578E4BAF2BA7A864BF92A14C6A7B1B6_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t9F6F905176137C8F2D1DFD5D940886D340D2767E* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Byte,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m2DD09558CFFE4C6FEBEF54BB20489B7761D1DB0E_gshared (Func_3_t2A7AFCD1F8ADBD65B4AB2F068ED428F5C4D3FB07* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mE0F47D2F43E3D04656609AEF2FF5078879ED3DB4_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t2A7AFCD1F8ADBD65B4AB2F068ED428F5C4D3FB07* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Byte,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m584228D514F93552469D84730F3DA7CF83DA41FF_gshared (Func_3_t8B548A39009DEA86846AC5404F9A3ED7281AC7BD* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_m7DE1A22A9D06D3B6D63A3DBE3FE3A9BB24F4957C_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t8B548A39009DEA86846AC5404F9A3ED7281AC7BD* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Byte,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m489635E8E9F2E81B1EC92F42EFD038DCAE0AE448_gshared (Func_3_t5BD83439ADA1B5015D0FE96335E1A82B9F032867* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_mF208901E0D23C9D69112D1BB4FADBBD0AA9EDD19_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t5BD83439ADA1B5015D0FE96335E1A82B9F032867* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.SByte,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m4C63A8E7225299F20371DA014B02BDDC1941AE66_gshared (Func_3_tBBB4861738233A40F78754FF4BDCEE5D79FEB8A9* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m180075D8DC81B9746FA12DED0590ADEA0CB6C95C_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tBBB4861738233A40F78754FF4BDCEE5D79FEB8A9* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.SByte,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m0242298A50EF3CE0DF1C3DF486784B54F7921B76_gshared (Func_3_tC35341B6BBE8DC47547F6500B747077D44457F96* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m7B71F1F266C4601E16084C625432219B8937CBE7_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tC35341B6BBE8DC47547F6500B747077D44457F96* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.SByte,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m61EA1440E765E80DEC9A05523E8D2CEFF2280545_gshared (Func_3_tB10EA92F09DD54A1A9D478FA1BAEE8220004D13A* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m6C27FE25136BD6E5F8528AD19ACDF89ADC6FD125_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tB10EA92F09DD54A1A9D478FA1BAEE8220004D13A* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.SByte,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m2135D4F82607AAC41398E71D7A763595E19F7322_gshared (Func_3_tB7EFE609A5227E9BA11FF21E67369953F6599827* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m1162CDBA74641729CB48BFDCF948B46FD6C1CF05_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tB7EFE609A5227E9BA11FF21E67369953F6599827* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.SByte,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m28B50460F5F866C634560C223C5CCA5FC290317F_gshared (Func_3_t69C1691F8FABFD57FFB336449458679687FE96AF* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m1001AD411E44C98781CA60D34DA57D9A558B25B1_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t69C1691F8FABFD57FFB336449458679687FE96AF* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.SByte,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m0E1C16684165AC23641F81E8C29EF216E2407ECA_gshared (Func_3_t2A9B27EAC5C5CF7BB70BE4D7395FCD1A67E34849* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_mBD30848D173643E9B035F3D314010305A3D0BFCC_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t2A9B27EAC5C5CF7BB70BE4D7395FCD1A67E34849* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.SByte,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m796E56F91A897B22E30FAEA351E10B47555A5B50_gshared (Func_3_t4C51005F4A339807C3E44809D208BB31C0D3D87B* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mC26A494595420FE8014AD47006BC28C2A09110FE_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t4C51005F4A339807C3E44809D208BB31C0D3D87B* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.SByte,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m0C933254EC9ED169777A3169FB9DF44CEAE8043E_gshared (Func_3_tBDC14292973FF04FE9291FF3A7B33B753F3E14DE* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m944E8177B5E22E9DD637BC0830FE1DAC7A820C40_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tBDC14292973FF04FE9291FF3A7B33B753F3E14DE* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.SByte,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m6528C314DE5019E6D25720E06ECD5B103D9FB2CA_gshared (Func_3_tECFEEF0C51F06E7AC42D9B1EA76D4C58E3A07DED* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_mB9768CB9045025389A2CB41F1E42F4C61325916D_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tECFEEF0C51F06E7AC42D9B1EA76D4C58E3A07DED* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.SByte,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m51C24405DF685B46BE09AF904F6872CB19FB5B62_gshared (Func_3_tF67B5C94BFB4CB127EC4141B2A69EF38EF8A6E15* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m3999950C83D5BAABFDB2D4ABF08EBEA5AF9B29A8_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF67B5C94BFB4CB127EC4141B2A69EF38EF8A6E15* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int16,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m2FB0B80E852CF222C0AA9A658CD95A1F2B1DAECA_gshared (Func_3_t10ACDCF19375846BF4B5E996F3B94E37BAAE7B5F* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_mFA7D99C36710E6BE78C821190814064C5D405282_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t10ACDCF19375846BF4B5E996F3B94E37BAAE7B5F* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int16,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m7206A8A2F7F8A01A94A3BAC1D06CC21BD37C7E5C_gshared (Func_3_t27F5744940086745B289072AFD2247E0719FF074* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m6F1EE2C8E661A1A1141BFA652B817C75DB19C591_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t27F5744940086745B289072AFD2247E0719FF074* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int16,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m3C4CEA55C8E0A82B282721E6825C7ABC2145FD73_gshared (Func_3_tE86FAA8B340BAA210B158DBB111C2A9991B9CCF6* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m9DB181336265E2F2E13770BE11EBAF57976E5E75_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tE86FAA8B340BAA210B158DBB111C2A9991B9CCF6* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int16,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m752D01CCA927DECB978CF441331E4E7C40E87F53_gshared (Func_3_tBF2C6C77D0C4EF305E09C87806D5F1FD5C4A8713* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m8618FD5346265B5BE3F042F18984561EDB1BFEEA_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tBF2C6C77D0C4EF305E09C87806D5F1FD5C4A8713* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int16,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m8E55F853D00C3D1CBC6C3DCB72B3C04F82E54743_gshared (Func_3_tB0944C6B42AAB6552D7CB9B529C2D1F92DBECF1A* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_mBF6C0D565F7592021CD49E291AC4A3779AE786B2_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tB0944C6B42AAB6552D7CB9B529C2D1F92DBECF1A* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int16,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m58353E28D4B0D8E4D6842DC3FE2D528A94E8CB09_gshared (Func_3_t85DDB1683212D4974DA874A5A65E768B4A770E69* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m56D642869FD970035844BC260521E2B923A72416_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t85DDB1683212D4974DA874A5A65E768B4A770E69* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int16,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mC379EBC1307BE3CB2560BE7A90678DFE04206551_gshared (Func_3_tDE1ED0572AA4AFD3C405704F64F2922EBCDD789D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_m9FA31BEBE3AC3FB89B795BAB063B02F8F8927610_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tDE1ED0572AA4AFD3C405704F64F2922EBCDD789D* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int16,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mDD546D827F6693CD006F056B0DD6D4424B360540_gshared (Func_3_tF86AD7AB9BF6B192A784831E5250EBB2DBA5E7E0* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mA9512E4461467CD99D7BDF0B8B7BDD3844EE7655_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF86AD7AB9BF6B192A784831E5250EBB2DBA5E7E0* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int16,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m56EBAD35588E7031816357CF1D9218F5E0990A75_gshared (Func_3_t1A301DC61D2B3AA369C53C867CC4CF7DA6A4E877* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_m087BDE7284EB277E5A1AF545397642B285064A94_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t1A301DC61D2B3AA369C53C867CC4CF7DA6A4E877* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int16,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mB2542D421AD15E46EC352DD6D60DF0D23375B8BE_gshared (Func_3_tD539462DA5BCAE4756AEDCB3E0468AF49ACE433D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m010C5D64708EE1F9B416A41791E962DD68C0D0CA_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tD539462DA5BCAE4756AEDCB3E0468AF49ACE433D* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt16,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m2E925999C656BFAFBE3A61B62894A079822BD8A1_gshared (Func_3_t156CEA6C0FCBCD5CA848CAA7F803A11EDFE5AB7E* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m1D704EB98B1D0D8C8C61452742A7EADAF733077E_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t156CEA6C0FCBCD5CA848CAA7F803A11EDFE5AB7E* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt16,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m1420578385EB6B69A19013A5AE5DCC24BD8D1625_gshared (Func_3_t9351711C3A08536B6FCE177BF1D5C9A161F9649D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_mFA4BCFBA152428061E369AA18FA313EF450F2757_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t9351711C3A08536B6FCE177BF1D5C9A161F9649D* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt16,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mAFBDEB5CDC0D4E0F2EAA7A589323D12AFFE5703D_gshared (Func_3_t37800E4AC49C93B69C48CF3936DE6E62B0E1277A* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m31C27C37B6A52EC7E47787EDAF579578DD57D26F_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t37800E4AC49C93B69C48CF3936DE6E62B0E1277A* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt16,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m505441D5503C2C757CC20CA1FF0B830B51B35203_gshared (Func_3_t8CF8951D835E9F04043D759CEC80EA4019AB4E38* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m51FE6E18569F4527B9060819F8377F35EB0DC94E_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t8CF8951D835E9F04043D759CEC80EA4019AB4E38* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt16,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mB387AC0F7EB8830BC980B8BC7DB5929F41239540_gshared (Func_3_tEBE7E706B2E71B5C832C01D69FEA0D54E7F4D3A8* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_mEC5B1F40CF0D458040A0D74AF33ADAED7CC62F18_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tEBE7E706B2E71B5C832C01D69FEA0D54E7F4D3A8* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt16,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mDD7715542E511A226BC3013BC72386A454F28FBD_gshared (Func_3_t9BF08FA52536763238F025113D4B3028272814DC* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_mF6DD8B306382A5439302AA5038FA634D3CE48474_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t9BF08FA52536763238F025113D4B3028272814DC* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt16,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m0507A19A255A0F5B988102E2D0B2459456CF1675_gshared (Func_3_t7898FC8A2688F594C66B6C7F13978DFD2D188047* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mD4E5E2CB66BB2E12051A5D01FF9D2D3B9249F600_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t7898FC8A2688F594C66B6C7F13978DFD2D188047* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt16,System.UInt64,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mF9C6FBE97FC2A92E9EEAA7C6A45A4D29553428C7_gshared (Func_3_tF66BEBDE8DAAC1224126237C5DE4A783EA7B5478* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.UInt64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_m14D17F67B10ECC9D0BDC7552356404496D7A8B04_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF66BEBDE8DAAC1224126237C5DE4A783EA7B5478* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt16,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m7F75851672EA4D872ADF4E36536337865E1DFA87_gshared (Func_3_tCF60C787D40192074B0B8F784F994AF897A64088* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m2244CC5CF480FA34837A75C9D5EA251E290954FE_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tCF60C787D40192074B0B8F784F994AF897A64088* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt16,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m54948994726D1DD9555144C2E5D8A46885424767_gshared (Func_3_t0594EE4734B94D02BD957F6101F8E066AEB325F2* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_m5CCA4CF500E685998A75F0A96D810C810E15A4CF_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t0594EE4734B94D02BD957F6101F8E066AEB325F2* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt16,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mBD49E63360B966336D99EEE0A2D539F9C7860F72_gshared (Func_3_t174ACADDBDE08A1D62A78C6E1C0EA3DF9FDED7F6* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m1865929B8CFEE6F8F83074DA68CC6EA2D24CBC88_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t174ACADDBDE08A1D62A78C6E1C0EA3DF9FDED7F6* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int32,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mB1B53FDFF0E141317E08B599BBB5A2B61611A8B2_gshared (Func_3_tCE1BB17028DAE477D702D0280D421FBADFB9AB45* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_mF6C81DC58CDFCBE91ED789B8CADF42B04F2E8A3E_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tCE1BB17028DAE477D702D0280D421FBADFB9AB45* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int32,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m3210B68A2CCE741D58546D643EBE7EBD27D9927A_gshared (Func_3_t83B3E7DBFC829FC73E46FC19F11E57AD79E11508* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m93B40111245F52530239968D32BB30BA7A3109E6_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t83B3E7DBFC829FC73E46FC19F11E57AD79E11508* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int32,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m8B4D91403F74451DCF1FF2A8DCA144A1E12FA3C5_gshared (Func_3_tB208147146A3CCFC3EBC7D4AAFF754E3DEF6A00D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m4F9205424112CA4CF8200D33945F129C6149BD30_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tB208147146A3CCFC3EBC7D4AAFF754E3DEF6A00D* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int32,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m5EE5F90BBACD1773A06645C3AC00040E252E7C65_gshared (Func_3_t8A0F09B6E976B84DBC965F0E7F0D9BBE522DF17A* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_mFCBA43533189A8CBC26BBFA804A4D22881ED5288_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t8A0F09B6E976B84DBC965F0E7F0D9BBE522DF17A* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int32,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m556F5E753887E2D11F9919681CD0FBA6CACC7CD5_gshared (Func_3_tC3AC172BD343888D60C8D93215EFF954EF08FC0F* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m763778A5CD860E8A9846628ED6A283820E9C9829_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tC3AC172BD343888D60C8D93215EFF954EF08FC0F* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int32,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mCB98ACF87F35674129D5AB5D991F0375D8F5AD87_gshared (Func_3_t18DB92C7D09F84A2CAF74EE6A6FAB41E04D48703* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m0FE116AB54D63ECB49EF6C8134322688AE163710_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t18DB92C7D09F84A2CAF74EE6A6FAB41E04D48703* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int32,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m14CB84B57F4310A2484056DC89E9FD3AF3D03A24_gshared (Func_3_t144D7C0902AD09AED2F34AFAA80DFC73000F3C52* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_m8277AC787BDD9F21BA1F47D634F6E9B29518F8D3_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t144D7C0902AD09AED2F34AFAA80DFC73000F3C52* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int32,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m5A6702FE62B41527EC5D812ADA21B2F7BBEAC3FE_gshared (Func_3_t2D3A009B2F92C078530507CBBAB94631A0518962* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m52AFB6BB9F9218A10B4902C216873980CEE9D5C6_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t2D3A009B2F92C078530507CBBAB94631A0518962* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int32,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m3E81FD83C877076690617225E62CCC0BC2A966D5_gshared (Func_3_t6E0A6B58F49984305F50084F3CE8CB7A2AEF9610* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_mCAD28319FC229DFF6D8F69E78673DD9B5B9D5A2C_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t6E0A6B58F49984305F50084F3CE8CB7A2AEF9610* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int32,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m84F2770C13B6FD860133285382FCD341ADDD5BB5_gshared (Func_3_tC4E17F4898AE9AD5D25F6558E740994E6783FCC5* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_mDC966ABA051A7C45C54B3128567B39C9C5185B8E_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tC4E17F4898AE9AD5D25F6558E740994E6783FCC5* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt32,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mF3EE0AC231B525D71D72B51305DA2B1C3B9C0AFE_gshared (Func_3_tFFCC382CF387F8D415E200FBAF67E716C344DA66* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m012096EE027F9CCCF3AE67496022BB0755232AB5_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tFFCC382CF387F8D415E200FBAF67E716C344DA66* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt32,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mB926B32A76B10DFE7A8AD5FB93906EF8B8A63C76_gshared (Func_3_tB19319DCFF4DB3957E1C497302F7CF8B85E5BAFC* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m494985EAA344C5EDB506C71ED398E7CEABE47796_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tB19319DCFF4DB3957E1C497302F7CF8B85E5BAFC* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt32,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mFA63BF05641C5B2D37A26E5E1CCB726DE488C348_gshared (Func_3_t5E6FDF8CFFD66C762594EB68DDF30617E864BD14* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_mC0E9B7E1ED3354D1C2F6A50ADE30139B82DECD74_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t5E6FDF8CFFD66C762594EB68DDF30617E864BD14* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt32,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mA1F334FDCBCBB6AC5529F89ACF464A6E40F1FF55_gshared (Func_3_t6EB0082E12D1A91C7915CE652B9EDB08DC60386D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_mC84A272FA9FFC2C7C6BF747D78FBD96AB0DE0747_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t6EB0082E12D1A91C7915CE652B9EDB08DC60386D* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt32,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mFBC9697CFB011B639E76CEC40FB7A07BB49DD1BA_gshared (Func_3_t096ACB52552EFB98E8D6E5371228AE1D109CA726* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_mD214322A396376B4BB923D18C734FFD7E6117AEA_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t096ACB52552EFB98E8D6E5371228AE1D109CA726* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt32,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m42010284C5F2D7930BC79DB07E450561DA21D788_gshared (Func_3_tC6D88D3E83DF277BF2AB557506D9D8D443B39B98* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m265CC174A55BE6CFD293B2CE8404976775F73F19_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tC6D88D3E83DF277BF2AB557506D9D8D443B39B98* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt32,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mB05A5A70369E26B2C6AADC0F7195E28FFFE09064_gshared (Func_3_t3F094230F3E74E839DD791CD00A2130F0B1F8115* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_m5C9AADE2BD163A7E32A9B4624A7E73AF0129292B_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t3F094230F3E74E839DD791CD00A2130F0B1F8115* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt32,System.UInt64,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mC92DA1E7357A272E412C970107CCBE49C50C7772_gshared (Func_3_t898ABEFDCA6E322313BB73FA2E12B6990CFB486B* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.UInt64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_m4BEBE3FDD8099F111027A5EC7801665160364645_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t898ABEFDCA6E322313BB73FA2E12B6990CFB486B* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt32,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mC8771A0F6B98E368CC834C23027CBC0451B06B04_gshared (Func_3_t0EA21FFE88CFBD6FDE7C80DB2F32141D861550C7* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mC331CA9471FB03D55B4F92101B84B22BD34A1667_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t0EA21FFE88CFBD6FDE7C80DB2F32141D861550C7* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt32,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mAADC9EFE63413CBFF46B95C14EAAE94463691218_gshared (Func_3_tD412CA8D7E11B56E2A1CE3A6AAA27850DEAB6D07* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_mB15675C2464CBA37704A05EB39BE8D27E24AD58F_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tD412CA8D7E11B56E2A1CE3A6AAA27850DEAB6D07* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt32,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mCD50BB7F01BDDB33BBBAFB52DAEE427E3BED18DA_gshared (Func_3_tB51B9FF79CB58CF833B0C5DD721309062CF249D8* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m8F77A7866AD0C84E024645C9219E3613506B342B_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tB51B9FF79CB58CF833B0C5DD721309062CF249D8* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int64,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m8B6A55EECF9B8E733B5C0E81CEE283946F45CF2E_gshared (Func_3_t38BBED5BB44AD67938CBA1EE9D2642A6F5088900* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m01E6F573144F7DA9DDD23F404FA83A2A1335BFE8_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t38BBED5BB44AD67938CBA1EE9D2642A6F5088900* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int64,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m5ED2CEECA36720956863649327B01A890A3C5363_gshared (Func_3_t5D5A8B21C2BC4A0B5DD25DE4CCDF84CF26ADBCA3* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_mDCE4C120DDCFEC3D7395CE950D6610947BE6CDB4_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t5D5A8B21C2BC4A0B5DD25DE4CCDF84CF26ADBCA3* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int64,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m055661E96BB3B12CF2A3EB5AB3B5422D74A09433_gshared (Func_3_tDDABB8C62DF215DAF8BBADB2B193157329BFD8F0* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m5AEA33E7196CE235EA449F62F2127DE00A8CF1F5_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tDDABB8C62DF215DAF8BBADB2B193157329BFD8F0* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int64,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m3E221998B86C0D672D0FF570F3FD88D95C0EEFEE_gshared (Func_3_t77C29582285B38470B966DD7A6E94E15A1705009* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m1D17C48ABD1157D6147C4F9253417B008F2A09F3_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t77C29582285B38470B966DD7A6E94E15A1705009* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int64,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m8BE162E0135EEC8E4C149623BC98CC835242C743_gshared (Func_3_tA715BF628FA7D3A3DD2985084E46EE8AF96C2D56* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m65D6C9AA0088CD5DD41DD5589B51C7768D57FDC3_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tA715BF628FA7D3A3DD2985084E46EE8AF96C2D56* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int64,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m8A23225F1877733F5A5510336CEBF44AD4C15D5D_gshared (Func_3_t258F77E3809CD0CAB5739F4063EC344BB2D157C3* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m03340750537C5F4D6BA4ECAA0EF8FAC85B9434D3_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t258F77E3809CD0CAB5739F4063EC344BB2D157C3* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int64,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m7E4EC70C21C3CA41B31F58F8C0B5A8F47FC2E0E0_gshared (Func_3_t8BA7DEF7C12D4C785AF84204242578D9C31C3367* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mD6F76C4BA7A73E2A922BF02AD2E647B875FABACA_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t8BA7DEF7C12D4C785AF84204242578D9C31C3367* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int64,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m040530D583E0B40D6F48A47D5C8D609AFE143D1F_gshared (Func_3_tFF83532B6A24356ECDA01ACDEB0A9B03906D23AC* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m15224E69EC1C15DF7C594D2030AE64E5059DDAC2_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tFF83532B6A24356ECDA01ACDEB0A9B03906D23AC* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int64,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mD576C73482294001560600D72375965E9AF3F43E_gshared (Func_3_t780BCA45E905F4A78502AA8F7D95BD8CD6679376* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_mDBDC4830C17D1E09402C0ABF2ABD81ACADC03CCB_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t780BCA45E905F4A78502AA8F7D95BD8CD6679376* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Int64,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m11287E8BDC094B70D6B1CBEF5088F0A68FE44642_gshared (Func_3_t3F4A68B7D620DD2D5792B0FCBA08AB9DF77296A6* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_mBFE1049E717EF76B8970F7927790C0820FF4730B_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t3F4A68B7D620DD2D5792B0FCBA08AB9DF77296A6* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt64,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mCEA186B2502F0B3134DCA2455C051E627F4FA269_gshared (Func_3_tD7872B3AA6B766CCE180AA90881C2CF2663CCA7E* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt64,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m9CA6BB904544DADA78FFEE7EC7CF4652B2F6A143_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tD7872B3AA6B766CCE180AA90881C2CF2663CCA7E* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt64,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mF353252F5DD80D709CBEAF3E0D26DC5E3813D751_gshared (Func_3_t49C1586DECA35B5F39BFA5E6494607C7A9683FBD* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt64,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_mF3FDB95A8566534527140E9EB0AD352A8A873A11_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t49C1586DECA35B5F39BFA5E6494607C7A9683FBD* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt64,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mFDEFE35BBCA7E82A435CADB56F89174E514A687E_gshared (Func_3_tF414E7583BB912F566F79F6BA83505A7F2C3C41A* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt64,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_mE4E63461B5EEDAF92439073CBCC8B1A8B3CB76A1_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF414E7583BB912F566F79F6BA83505A7F2C3C41A* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt64,System.UInt64,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mD5A89E49E051F2DF3A9C9DC29F8A8FCAAE6BA00B_gshared (Func_3_tAD065C32138D70F99F7E8D8BBF25867D55236464* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt64,System.UInt64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_m3C75AE521AA851333C27D6A62469E46160F629A3_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tAD065C32138D70F99F7E8D8BBF25867D55236464* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt64,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m4D23F45F4F87C24102617739DB1DEC17133CC13D_gshared (Func_3_t58E5056C3858798D8903B14FF810EE9F2B38CC38* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt64,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mBE775D0122EF1D6089BB7A75B28E4AD342F2463F_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t58E5056C3858798D8903B14FF810EE9F2B38CC38* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt64,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m5FD571A7F9703F0F27F487AA12253EFCEADAC201_gshared (Func_3_tD4BC08B54D8D8F3BB8F18DF2B70F773589AF02E3* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt64,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_m8BE985823FD8ADA5BD5C2F30948C88C1E9197726_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tD4BC08B54D8D8F3BB8F18DF2B70F773589AF02E3* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.UInt64,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m2945847213CB27120C62AAF0CF3303B79CDED6A3_gshared (Func_3_t74402C59F71D80CCF3A73645CAF4276F7F625E76* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt64,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_mB3FF8FA91915E98DE23E7AE6E00084028EF289D2_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t74402C59F71D80CCF3A73645CAF4276F7F625E76* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Single,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mD0F07C835A0FD39BA2323FF38D33296C6FE8E390_gshared (Func_3_t5B75CB8B6812C4CC776EC04B6FF5EECF4B6A66E5* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m11A9FA5650AF9A20FA7B3CF59B63D0D3CD0C0CA1_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t5B75CB8B6812C4CC776EC04B6FF5EECF4B6A66E5* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Single,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m72C571E1F83D5224126DBFC6FF0AB2223034F41F_gshared (Func_3_tD8E2F4CC8BA4261580852AFA6CD2D916EA5BE7D9* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m2A2BE0D55EAA658787E4DD65B9525485F3ED2DA1_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tD8E2F4CC8BA4261580852AFA6CD2D916EA5BE7D9* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Single,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mC513BF9C52A1324B7B241D0B3CB03E5E48143F97_gshared (Func_3_tF4480D1A73A2BFD9833B9B4ADF026B7EC8A749FD* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m56716F2DE2AF8A843AB963AB6791662E4F264E29_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF4480D1A73A2BFD9833B9B4ADF026B7EC8A749FD* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Single,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mFDB3C1FBBD88FD7FD1C3B9797E6609107B081CE5_gshared (Func_3_tF72584DA85D49A994DFF5AFAEF43A81F6CECDB14* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_mF0A6A87D95711FC388CE0462217440F7FDDF62C6_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF72584DA85D49A994DFF5AFAEF43A81F6CECDB14* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Single,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mE40F72BC4F8BD22933D7202AF86390DEDCA618FB_gshared (Func_3_tC8A20D8E5B48A189FFA01B3E38F23324BE01AB7C* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m820CE8EA5B029A6514F680A027539D1C5F9FECA3_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tC8A20D8E5B48A189FFA01B3E38F23324BE01AB7C* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Single,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mBC5E19E87CC9D095CF14DEEBD090062D74A719A4_gshared (Func_3_t6BD5E133A0EDF15E1E6012D6EA958EFBC85343C9* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m4DA98A5A7F8C8361828CED1323F0E48513627BCA_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t6BD5E133A0EDF15E1E6012D6EA958EFBC85343C9* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Single,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mD999356B46060CCBA323F42101C6232322407AAD_gshared (Func_3_t089EB17CBE0B037869C06152372E0C5D1AAEAB3E* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mE71477EF50DFE455A8967E5D18959F53F6C4CC70_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t089EB17CBE0B037869C06152372E0C5D1AAEAB3E* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Single,System.UInt64,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m2E9EBCA0F1D363AB8601C20C0393E5186D79536D_gshared (Func_3_t977CAC6A305CC91FDE7665685776B7C9982BB972* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.UInt64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_m075FE864F9C4CB1BC7540FA3DA4D410F542A4B06_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t977CAC6A305CC91FDE7665685776B7C9982BB972* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Single,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m19B65D455FB3EFBE5C8B76EC9DEAD66BF1D4FD92_gshared (Func_3_t8171759D65FAF730928654E5BD260A82C54322C2* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m10C2027875599BC9FC69D59C201C72961FE0A557_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t8171759D65FAF730928654E5BD260A82C54322C2* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Single,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m50489F42111A37C4E53E83AF80B9458DEA9976E6_gshared (Func_3_tF2C70782978C9BD0B4D4CE9FADF5AFD369A49450* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m5B795E4FC95A48B3693F3317924B27175E3222AB_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF2C70782978C9BD0B4D4CE9FADF5AFD369A49450* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Decimal,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m3E08B9CE5CADDEAF7DE4F70354F0DD538F4521FB_gshared (Func_3_tEFF388DEF67214BB28AD693A56852F9056847940* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m990BE9AB0777A8837D16005EA548B2D51209268E_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tEFF388DEF67214BB28AD693A56852F9056847940* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Decimal,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mA40DF46FA0E6DB45AE52317FCD7A6F180FB2E85F_gshared (Func_3_tEC0CC2B7AF2026A2D06E841572E2CFECA827C8A3* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_mCB84DD387E6228F9E69ECDBFDE683E6E9C51F2EE_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tEC0CC2B7AF2026A2D06E841572E2CFECA827C8A3* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Decimal,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mBDEE985650C19B589F93ADE4DA554AD3A7AE8615_gshared (Func_3_t957F2F5CB890688B0D32F9409FF2295F991F808B* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_mBA3AC4DF9974B9EEB502F0CB4CB37F6A2F09FB38_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t957F2F5CB890688B0D32F9409FF2295F991F808B* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Decimal,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m5A7903774FE98B443DD45E7AD5EA5DDA9ABA3E47_gshared (Func_3_t4D0AB558CE95FAC6DADBF0C6E1EE528E32F70D8D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m66DD708D80CBF2350B8C68AE4DC10875B547AA0D_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t4D0AB558CE95FAC6DADBF0C6E1EE528E32F70D8D* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Decimal,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mCD1860E4F197224A0F818A01787DAE56F43DD094_gshared (Func_3_t186834EB84081D60C694E7EA4567A9964CCC6DC3* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m81429FC400921B56C50E5411D0F438A8AA23D903_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t186834EB84081D60C694E7EA4567A9964CCC6DC3* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Decimal,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mE9F50D4DAC919B6DF45984F121E0F40FE652818E_gshared (Func_3_tC826DCF0E5445DED17FE9FCBF74B821635A8267D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m8D50F9271593F0DAB152AE2AC41CF53DE5F58901_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tC826DCF0E5445DED17FE9FCBF74B821635A8267D* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Decimal,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m7DC438E9BEDF3F61E18D5AC6F1A4318F3F5A9388_gshared (Func_3_t7FC4A60460BFFCEB606CABFCD0ED9D8BF82232F8* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mC9EF13A7E3F298E9C769A03F178A1D8C6D63A6E9_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t7FC4A60460BFFCEB606CABFCD0ED9D8BF82232F8* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Decimal,System.UInt64,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m9F7B5189BC9469C55691F07A84D3B9C62603C0CB_gshared (Func_3_t616C58908160C9561AF95D0380A14D188EAE66FD* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.UInt64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_mCE7C6EE4ABCD25E622B97A14FD623815109264B6_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t616C58908160C9561AF95D0380A14D188EAE66FD* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Decimal,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mAF86B8AB0DAF388460B465C0AD4115785AB888C2_gshared (Func_3_t5B8CD15E44A920891D1E2CDF1DC64D19A0F3CFE7* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_m120038B2415C2D1B93CE340776AB4C02023AA242_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t5B8CD15E44A920891D1E2CDF1DC64D19A0F3CFE7* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Double,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m04208E71689F79E599425D15B95E70122187472F_gshared (Func_3_tD8BCF13B591BE309F7056E30DAC4D2C04A7F47BA* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m56A3D881CAEB604F15DFD8CCCBE245FAB53D8D9F_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tD8BCF13B591BE309F7056E30DAC4D2C04A7F47BA* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Double,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mCCFEFEBDB59EEBE94FCE51EE6FB1606D65A0A420_gshared (Func_3_t7F3996FF9AC9A475769B37F46C1D723C1BB37A8E* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m8E42A0E8F64052C735F53A1AFCB3778346A2055D_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t7F3996FF9AC9A475769B37F46C1D723C1BB37A8E* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Double,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mBD138818F5C38F24FEA11245F591DD98E12E4E06_gshared (Func_3_t09E51964F7FDD3971103A1A273D278C6710085E1* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_mFEA944F395353BC66F4298481ADC2522D50A3D6C_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t09E51964F7FDD3971103A1A273D278C6710085E1* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Double,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m5A9B3CA69C7358145CDA39152B0CC492C8673FF4_gshared (Func_3_tB6542392B71A290C5BEE7772995E540871575C55* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m1AEB1FB8D0BABB6CAFAC5710821760F2183BD547_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tB6542392B71A290C5BEE7772995E540871575C55* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Double,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mBA7663EBEC2C0E179E90417DDF93447EEA641191_gshared (Func_3_tE21F52179A89F8E4F3D92840DA3C7974CBE5DB37* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m9DD93A8CA069396BB57AEAE0FA427A2FBD925665_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tE21F52179A89F8E4F3D92840DA3C7974CBE5DB37* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Double,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mF133F39F15BF28FAD91570274096C944AE65E710_gshared (Func_3_tF24A1C5D4542A334C5835DB8ED15DFE3055FEE3C* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_mCD65CF1D2D535636A28F12CD52E9ECA6FB4D72ED_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF24A1C5D4542A334C5835DB8ED15DFE3055FEE3C* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Double,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_mEAD40CF1F7CC27BBBC1E5CF85A24AF0528577CDA_gshared (Func_3_tC38FCD22A26B64064F30A6573EEE81B5970994C8* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mBBD3BCE6B9A482C77CD6FA04F4DD398077B2CA60_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tC38FCD22A26B64064F30A6573EEE81B5970994C8* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Double,System.UInt64,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m612B07DC217C712A48A582BD54F1D3C6651885A8_gshared (Func_3_tE65A651883362D3AE0F6F2787646F231F1D923B0* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.UInt64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_mB723D98B8409519B2CB655EE862D2297EC677B5C_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tE65A651883362D3AE0F6F2787646F231F1D923B0* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Double,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m3757EDCFB43FC48798EE01F50A6C5B83FE6FB1C0_gshared (Func_3_tDDF4172D64524B5B49A29AE12782AF05CC74F33B* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m7234C4C937E9FBED537075D6CBF5C5DACC7AD5CD_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tDDF4172D64524B5B49A29AE12782AF05CC74F33B* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Func`3<System.Double,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m979A13563C8D9CBA4F45E43D1A8AF009270F9018_gshared (Func_3_t9493BE35D324BDED985F129D45044D3A5489CBDA* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m5D69E54B83BFC783D1434B24CACBC3BFCBA6A9E5_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t9493BE35D324BDED985F129D45044D3A5489CBDA* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.Dictionary`2<System.Object,System.Object>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2__ctor_m5B32FBC624618211EB461D59CFBB10E987FD1329_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.EnsureThat::IsNotNull<System.Object>(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EnsureThat_IsNotNull_TisRuntimeObject_m609E619BEADC6A63A12D5BFF2B15CCB0A4E28F4B_gshared (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC* __this, RuntimeObject* ___value0, const RuntimeMethod* method) ;
-// System.Boolean System.Collections.Generic.Dictionary`2<System.Object,System.Object>::ContainsKey(TKey)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Dictionary_2_ContainsKey_m703047C213F7AB55C9DC346596287773A1F670CD_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, RuntimeObject* ___key0, const RuntimeMethod* method) ;
-// TValue System.Collections.Generic.Dictionary`2<System.Object,System.Object>::get_Item(TKey)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Dictionary_2_get_Item_m4AAAECBE902A211BF2126E6AFA280AEF73A3E0D6_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, RuntimeObject* ___key0, const RuntimeMethod* method) ;
-// TResult System.Func`2<System.Object,System.Object>::Invoke(T)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Func_2_Invoke_mDBA25DA5DA5B7E056FB9B026AF041F1385FB58A9_gshared_inline (Func_2_tACBF5A1656250800CE861707354491F0611F6624* __this, RuntimeObject* ___arg0, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.Dictionary`2<System.Object,System.Object>::Add(TKey,TValue)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_Add_m93FFFABE8FCE7FA9793F0915E2A8842C7CD0C0C1_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, RuntimeObject* ___key0, RuntimeObject* ___value1, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.Dictionary`2<System.Object,System.Object>::Clear()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_Clear_mCFB5EA7351D5860D2B91592B91A84CA265A41433_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Collections.Generic.Dictionary`2<System.Object,System.Object>::TryGetValue(TKey,TValue&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Dictionary_2_TryGetValue_mD15380A4ED7CDEE99EA45881577D26BA9CE1B849_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, RuntimeObject* ___key0, RuntimeObject** ___value1, const RuntimeMethod* method) ;
-// System.Void System.Func`2<System.Object,System.Boolean>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_2__ctor_m13C0A7F33154D861E2A041B52E88461832DA1697_gshared (Func_2_tE1F0D41563EE092E5E5540B061449FDE88F1DC00* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Boolean System.Linq.Enumerable::Any<System.Object>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerable_Any_TisRuntimeObject_mF6C6AC8DF8971883615734832D09C9210B956F0F_gshared (RuntimeObject* ___source0, Func_2_tE1F0D41563EE092E5E5540B061449FDE88F1DC00* ___predicate1, const RuntimeMethod* method) ;
-// System.Void System.Func`2<System.Object,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_2__ctor_m7F8A01C0B02BC1D4063F4EB1E817F7A48562A398_gshared (Func_2_tACBF5A1656250800CE861707354491F0611F6624* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Select<System.Object,System.Object>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,TResult>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Select_TisRuntimeObject_TisRuntimeObject_m67C538A5EBF57C4844107A8EF25DB2CAAFBAF8FB_gshared (RuntimeObject* ___source0, Func_2_tACBF5A1656250800CE861707354491F0611F6624* ___selector1, const RuntimeMethod* method) ;
-// TSource[] System.Linq.Enumerable::ToArray<System.Object>(System.Collections.Generic.IEnumerable`1<TSource>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* Enumerable_ToArray_TisRuntimeObject_mA54265C2C8A0864929ECD300B75E4952D553D17D_gshared (RuntimeObject* ___source0, const RuntimeMethod* method) ;
-// System.Linq.Expressions.Expression`1<TDelegate> System.Linq.Expressions.Expression::Lambda<System.Object>(System.Linq.Expressions.Expression,System.Linq.Expressions.ParameterExpression[])
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Expression_1_t63D438A2F366BA0B43CCDBBFCE66D131C313A7D7* Expression_Lambda_TisRuntimeObject_m43F07C2527F3E7D93E3099A9627771361B451038_gshared (Expression_t70AA908ECBD33E94249BF235E4EBB0F831AD8785* ___body0, ParameterExpressionU5BU5D_tA217A6969CA4383EF6D3C43B8EB0989358ABE72C* ___parameters1, const RuntimeMethod* method) ;
-// TDelegate System.Linq.Expressions.Expression`1<System.Object>::Compile()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Expression_1_Compile_mAE60BB2984F0B64C621A225AA174F670BBAE11EC_gshared (Expression_1_t63D438A2F366BA0B43CCDBBFCE66D131C313A7D7* __this, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<System.Object>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_m7F078BB342729BDF11327FD89D7872265328F690_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.HashSet`1<System.Object>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HashSet_1__ctor_m9132EE1422BAA45E44B7FFF495F378790D36D90E_gshared (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* __this, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<System.Object>::Add(T)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
-// System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<System.Object>::GetEnumerator()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Enumerator_t9473BAB568A27E2339D48C1F91319E0F6D244D7A List_1_GetEnumerator_mD8294A7FA2BEB1929487127D476F8EC1CDC23BFC_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1/Enumerator<System.Object>::Dispose()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Enumerator_Dispose_mD9DC3E3C3697830A4823047AB29A77DBBB5ED419_gshared (Enumerator_t9473BAB568A27E2339D48C1F91319E0F6D244D7A* __this, const RuntimeMethod* method) ;
-// T System.Collections.Generic.List`1/Enumerator<System.Object>::get_Current()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Enumerator_get_Current_m6330F15D18EE4F547C05DF9BF83C5EB710376027_gshared_inline (Enumerator_t9473BAB568A27E2339D48C1F91319E0F6D244D7A* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Collections.Generic.HashSet`1<System.Object>::Contains(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HashSet_1_Contains_m9BACE52BFA0BD83C601529D3629118453E459BBB_gshared (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
-// System.Collections.Generic.HashSet`1/Enumerator<T> System.Collections.Generic.HashSet`1<System.Object>::GetEnumerator()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Enumerator_t72556E98D7DDBE118A973D782D523D15A96461C8 HashSet_1_GetEnumerator_m143B98FEED7E9CABA2C494AB2F04DAD60A504635_gshared (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* __this, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.HashSet`1/Enumerator<System.Object>::Dispose()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Enumerator_Dispose_mFB582AEAA2E73F3128B5571197BEDE256A83F657_gshared (Enumerator_t72556E98D7DDBE118A973D782D523D15A96461C8* __this, const RuntimeMethod* method) ;
-// T System.Collections.Generic.HashSet`1/Enumerator<System.Object>::get_Current()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Enumerator_get_Current_m139A176CD271A0532D75BE08DA7831C8C45CE28F_gshared_inline (Enumerator_t72556E98D7DDBE118A973D782D523D15A96461C8* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Collections.Generic.HashSet`1/Enumerator<System.Object>::MoveNext()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerator_MoveNext_m27565F5ACCCC75C3DD34CC4CAE3E6AEFEB9144A6_gshared (Enumerator_t72556E98D7DDBE118A973D782D523D15A96461C8* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Collections.Generic.List`1/Enumerator<System.Object>::MoveNext()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerator_MoveNext_mE921CC8F29FBBDE7CC3209A0ED0D921D58D00BCB_gshared (Enumerator_t9473BAB568A27E2339D48C1F91319E0F6D244D7A* __this, const RuntimeMethod* method) ;
-// System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Where<System.Object>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Where_TisRuntimeObject_m5DAF16724887B42DDBBF391C7F375749E8AA4AD7_gshared (RuntimeObject* ___source0, Func_2_tE1F0D41563EE092E5E5540B061449FDE88F1DC00* ___predicate1, const RuntimeMethod* method) ;
-// System.Collections.Generic.Dictionary`2/Enumerator<TKey,TValue> System.Collections.Generic.Dictionary`2<System.Object,System.Object>::GetEnumerator()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Enumerator_tEA93FE2B778D098F590CA168BEFC4CD85D73A6B9 Dictionary_2_GetEnumerator_m52AB12790B0B9B46B1DFB1F861C9DBEAB07C1FDA_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.Dictionary`2/Enumerator<System.Object,System.Object>::Dispose()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Enumerator_Dispose_mEA5E01B81EB943B7003D87CEC1B6040524F0402C_gshared (Enumerator_tEA93FE2B778D098F590CA168BEFC4CD85D73A6B9* __this, const RuntimeMethod* method) ;
-// System.Collections.Generic.KeyValuePair`2<TKey,TValue> System.Collections.Generic.Dictionary`2/Enumerator<System.Object,System.Object>::get_Current()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR KeyValuePair_2_tFC32D2507216293851350D29B64D79F950B55230 Enumerator_get_Current_mE3475384B761E1C7971D3639BD09117FE8363422_gshared_inline (Enumerator_tEA93FE2B778D098F590CA168BEFC4CD85D73A6B9* __this, const RuntimeMethod* method) ;
-// TKey System.Collections.Generic.KeyValuePair`2<System.Object,System.Object>::get_Key()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* KeyValuePair_2_get_Key_mBD8EA7557C27E6956F2AF29DA3F7499B2F51A282_gshared_inline (KeyValuePair_2_tFC32D2507216293851350D29B64D79F950B55230* __this, const RuntimeMethod* method) ;
-// TValue System.Collections.Generic.KeyValuePair`2<System.Object,System.Object>::get_Value()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* KeyValuePair_2_get_Value_mC6BD8075F9C9DDEF7B4D731E5C38EC19103988E7_gshared_inline (KeyValuePair_2_tFC32D2507216293851350D29B64D79F950B55230* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Collections.Generic.Dictionary`2/Enumerator<System.Object,System.Object>::MoveNext()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerator_MoveNext_mCD4950A75FFADD54AF354D48C6C0DB0B5A22A5F4_gshared (Enumerator_tEA93FE2B778D098F590CA168BEFC4CD85D73A6B9* __this, const RuntimeMethod* method) ;
-// System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Cast<System.Object>(System.Collections.IEnumerable)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Cast_TisRuntimeObject_m21250FA47CFF08469ACE158D6FA4E1FE11837D29_gshared (RuntimeObject* ___source0, const RuntimeMethod* method) ;
+// System.Void System.Func`3<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
+// System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA* ___handler0, bool ___reverse1, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2__ctor_m7745B6ED71E47C95E1BFCE647C4F026A404C668F_gshared (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E* __this, const RuntimeMethod* method) ;
+// System.Void Unity.VisualScripting.EnsureThat::IsNotNull<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(T)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EnsureThat_IsNotNull_TisIl2CppFullySharedGenericAny_m644606E147B32EF7D13A08EB4DB26B8FECE5495E_gshared (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___value0, const RuntimeMethod* method) ;
+// System.Boolean System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::ContainsKey(TKey)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Dictionary_2_ContainsKey_mA268E9B914DCE838DD0CD9D879BAAEECD0C677AA_gshared (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___key0, const RuntimeMethod* method) ;
+// TValue System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::get_Item(TKey)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_get_Item_m2E96908E9716367701CD737FA54C884EB2A8C3EA_gshared (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___key0, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) ;
+// TResult System.Func`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Invoke(T)
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Func_2_Invoke_m31CAC166FDC80DC5AE52A5AEFFEE2D9B27A1CA3F_gshared_inline (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___arg0, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Add(TKey,TValue)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_Add_m54D479280472DEA042DB3933AF547E666B017333_gshared (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___key0, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___value1, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Clear()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_Clear_m935B3F117860376DC854C9E0C80CBD99BE77EEA4_gshared (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E* __this, const RuntimeMethod* method) ;
+// System.Boolean System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::TryGetValue(TKey,TValue&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Dictionary_2_TryGetValue_m7519D765EAF1E8A7D3137C2F1B7B3A01D15A1692_gshared (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___key0, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType&*/Il2CppFullySharedGenericAny* ___value1, const RuntimeMethod* method) ;
+// System.Void System.Func`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_2__ctor_m7F5DD19B4170C027D5367001F7BC95A0658A2169_gshared (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
+// System.Boolean System.Linq.Enumerable::Any<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerable_Any_TisIl2CppFullySharedGenericAny_m169BDC8DDA00D7D377C865871CB094FD41BBA8BB_gshared (RuntimeObject* ___source0, Func_2_t19E50C11C3E1F20B5A8FDB85D7DD353B6DFF868B* ___predicate1, const RuntimeMethod* method) ;
+// System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Select<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,TResult>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Select_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m5BBCA2BC02448D0B77D2201BB08B13BAB3BABA53_gshared (RuntimeObject* ___source0, Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0* ___selector1, const RuntimeMethod* method) ;
+// TSource[] System.Linq.Enumerable::ToArray<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.Collections.Generic.IEnumerable`1<TSource>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* Enumerable_ToArray_TisIl2CppFullySharedGenericAny_mE1571336F171A560849F9D7CB38E3A9A4B43B1C6_gshared (RuntimeObject* ___source0, const RuntimeMethod* method) ;
+// System.Linq.Expressions.Expression`1<TDelegate> System.Linq.Expressions.Expression::Lambda<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.Linq.Expressions.Expression,System.Linq.Expressions.ParameterExpression[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Expression_1_t0FC093B0DDEA1EB4F5EF3152CC33F1B785E80EA4* Expression_Lambda_TisIl2CppFullySharedGenericAny_m2EA9FBB48B01DDDC86345242D13219362B5B5E83_gshared (Expression_t70AA908ECBD33E94249BF235E4EBB0F831AD8785* ___body0, ParameterExpressionU5BU5D_tA217A6969CA4383EF6D3C43B8EB0989358ABE72C* ___parameters1, const RuntimeMethod* method) ;
+// TDelegate System.Linq.Expressions.Expression`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Compile()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Expression_1_Compile_m4EDBAEC0C420A5B9EA9E7DF1A3AC967AD5A92CFD_gshared (Expression_1_t0FC093B0DDEA1EB4F5EF3152CC33F1B785E80EA4* __this, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_m0AFBAEA7EC427E32CC9CA267B1930DC5DF67A374_gshared (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.HashSet`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HashSet_1__ctor_m5E12B490550D90B0686D55F8F4E7B0506BD07120_gshared (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87* __this, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Add(T)
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mD4F3498FBD3BDD3F03CBCFB38041CBAC9C28CAFC_gshared_inline (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___item0, const RuntimeMethod* method) ;
+// System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::GetEnumerator()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1_GetEnumerator_m8B2A92ACD4FBA5FBDC3F6F4F5C23A0DDF491DA61_gshared (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF* il2cppRetVal, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1/Enumerator<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Dispose()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Enumerator_Dispose_mFE1EBE6F6425283FEAEAE7C79D02CDE4F9D367E8_gshared (Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF* __this, const RuntimeMethod* method) ;
+// T System.Collections.Generic.List`1/Enumerator<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::get_Current()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Enumerator_get_Current_m8B42D4B2DE853B9D11B997120CD0228D4780E394_gshared_inline (Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF* __this, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) ;
+// System.Boolean System.Collections.Generic.HashSet`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Contains(T)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HashSet_1_Contains_m6D40586EE21316C2647D81169AFFF9B4C7719F74_gshared (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___item0, const RuntimeMethod* method) ;
+// System.Collections.Generic.HashSet`1/Enumerator<T> System.Collections.Generic.HashSet`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::GetEnumerator()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HashSet_1_GetEnumerator_m75DD344FE9A073CA9564DC6A425EC36883FB32A7_gshared (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87* __this, Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB* il2cppRetVal, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.HashSet`1/Enumerator<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Dispose()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Enumerator_Dispose_m915D35B9BB2A77C5396F4FE1A1C53F1C93B8E337_gshared (Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB* __this, const RuntimeMethod* method) ;
+// T System.Collections.Generic.HashSet`1/Enumerator<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::get_Current()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Enumerator_get_Current_m51282E47C90E55BF2D96A0D329869ABC122A85A0_gshared_inline (Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB* __this, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) ;
+// System.Boolean System.Collections.Generic.HashSet`1/Enumerator<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::MoveNext()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerator_MoveNext_m1756F06B6BC460B8EEB4522B562E097F37D54C59_gshared (Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB* __this, const RuntimeMethod* method) ;
+// System.Boolean System.Collections.Generic.List`1/Enumerator<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::MoveNext()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerator_MoveNext_m8D8E5E878AF0A88A535AB1AB5BA4F23E151A678A_gshared (Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF* __this, const RuntimeMethod* method) ;
+// System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Where<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Where_TisIl2CppFullySharedGenericAny_m3F416675DC7A5572025B02ED373C41AD9ED8F6C4_gshared (RuntimeObject* ___source0, Func_2_t19E50C11C3E1F20B5A8FDB85D7DD353B6DFF868B* ___predicate1, const RuntimeMethod* method) ;
+// System.Collections.Generic.Dictionary`2/Enumerator<TKey,TValue> System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::GetEnumerator()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_GetEnumerator_mEC4954B142C43B5CBAA045953EAD4E168FFCD492_gshared (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E* __this, Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1* il2cppRetVal, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.Dictionary`2/Enumerator<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Dispose()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Enumerator_Dispose_m3D89F01AE65EC60062FFB578C0E771C098EF2CB7_gshared (Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1* __this, const RuntimeMethod* method) ;
+// System.Collections.Generic.KeyValuePair`2<TKey,TValue> System.Collections.Generic.Dictionary`2/Enumerator<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::get_Current()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Enumerator_get_Current_m26AF82C275C82180BB7F23C7E408BC1FEB9A38EE_gshared_inline (Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1* __this, KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669* il2cppRetVal, const RuntimeMethod* method) ;
+// TKey System.Collections.Generic.KeyValuePair`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::get_Key()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void KeyValuePair_2_get_Key_mBE75BF8983618BC1ACEC20F94C1BFF85C8AA50F1_gshared_inline (KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669* __this, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) ;
+// TValue System.Collections.Generic.KeyValuePair`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::get_Value()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void KeyValuePair_2_get_Value_mFA1964BF56AA214EE0D491CC197F61BC9E5F1F7A_gshared_inline (KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669* __this, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) ;
+// System.Boolean System.Collections.Generic.Dictionary`2/Enumerator<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::MoveNext()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerator_MoveNext_m97783F73CDB1D0083A2F7D26A51847BF0843ADEA_gshared (Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1* __this, const RuntimeMethod* method) ;
+// System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Cast<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.Collections.IEnumerable)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Cast_TisIl2CppFullySharedGenericAny_m1480F4A804D000C8613E5F669E3AB77411F468A5_gshared (RuntimeObject* ___source0, const RuntimeMethod* method) ;
 // System.Collections.Generic.IEnumerable`1<TAttribute> Unity.VisualScripting.RuntimeCodebase::GetAssemblyAttributes<System.Object>()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RuntimeCodebase_GetAssemblyAttributes_TisRuntimeObject_m7B439EADC87FF5104311C0B372CC0030C53799AB_gshared (const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.HashSet`1<System.Object>::.ctor(System.Collections.Generic.IEnumerable`1<T>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HashSet_1__ctor_mC13D3ADFE27A073EC3C583E9C926C801A7EE1DDD_gshared (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* __this, RuntimeObject* ___collection0, const RuntimeMethod* method) ;
-// System.Int32 System.Collections.Generic.HashSet`1<System.Object>::get_Count()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t HashSet_1_get_Count_m41CC85EEB7855CEFA3BC7A32F115387939318ED3_gshared_inline (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* __this, const RuntimeMethod* method) ;
-// TSource System.Linq.Enumerable::Single<System.Object>(System.Collections.Generic.IEnumerable`1<TSource>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Single_TisRuntimeObject_m4966D6BB67940E1EE80ADA3CC60C81D03436C62F_gshared (RuntimeObject* ___source0, const RuntimeMethod* method) ;
-// System.Boolean System.Collections.Generic.HashSet`1<System.Object>::SetEquals(System.Collections.Generic.IEnumerable`1<T>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HashSet_1_SetEquals_mF732845AD8521332BC169B8AA011217D3A63FB84_gshared (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* __this, RuntimeObject* ___other0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.HashSet`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor(System.Collections.Generic.IEnumerable`1<T>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HashSet_1__ctor_mDEE8470968EF687DF9B40AE07DE41E0B09652532_gshared (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87* __this, RuntimeObject* ___collection0, const RuntimeMethod* method) ;
+// System.Int32 System.Collections.Generic.HashSet`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::get_Count()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t HashSet_1_get_Count_mA764DCA3CB14CB2CBDF742A163492FF4DA515B63_gshared_inline (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87* __this, const RuntimeMethod* method) ;
+// TSource System.Linq.Enumerable::Single<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.Collections.Generic.IEnumerable`1<TSource>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Enumerable_Single_TisIl2CppFullySharedGenericAny_m911CD54E9750E5AFBCF243F342C38A3F556C5D2B_gshared (RuntimeObject* ___source0, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) ;
+// System.Boolean System.Collections.Generic.HashSet`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::SetEquals(System.Collections.Generic.IEnumerable`1<T>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HashSet_1_SetEquals_mEE1A697B324249DAF55E5030E26E7FF1606A2E26_gshared (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87* __this, RuntimeObject* ___other0, const RuntimeMethod* method) ;
 // System.Boolean Unity.VisualScripting.AttributeUtility::HasAttribute<System.Object>(System.Reflection.MemberInfo,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AttributeUtility_HasAttribute_TisRuntimeObject_m5940E2EFFAFEF4ECE295C4B0D001BAA06D924424_gshared (MemberInfo_t* ___element0, bool ___inherit1, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.UnexpectedEnumValueException`1<System.Int32Enum>::.ctor(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnexpectedEnumValueException_1__ctor_m8323477225F696295F492B2FB8E57AA261ECB3E9_gshared (UnexpectedEnumValueException_1_t9F5986D23EC39566589DD5FAED80D4A5A70F64D7* __this, int32_t ___value0, const RuntimeMethod* method) ;
-// T[] System.Array::Empty<System.Object>()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_gshared_inline (const RuntimeMethod* method) ;
-// System.Int32 System.Collections.Generic.List`1<System.Object>::get_Count()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_m4407E4C389F22B8CEC282C15D56516658746C383_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
-// T System.Collections.Generic.List`1<System.Object>::get_Item(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* List_1_get_Item_m33561245D64798C2AB07584C0EC4F240E4839A38_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, int32_t ___index0, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<System.Int32>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_m17F501B5A5C289ECE1B4F3D6EBF05DFA421433F8_gshared (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* __this, const RuntimeMethod* method) ;
-// System.Void System.Nullable`1<System.Char>::.ctor(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Nullable_1__ctor_m925B76A79F5C50FC6CCDB1C29526E908C8257ABE_gshared (Nullable_1_tD52F1D0FC7EBB336F119BE953E59F426766032C1* __this, Il2CppChar ___value0, const RuntimeMethod* method) ;
-// System.Boolean System.Nullable`1<System.Char>::get_HasValue()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_get_HasValue_m9897CE72A58099ADB081E439D3A3EF0AA9CF5ED9_gshared_inline (Nullable_1_tD52F1D0FC7EBB336F119BE953E59F426766032C1* __this, const RuntimeMethod* method) ;
-// T System.Nullable`1<System.Char>::GetValueOrDefault()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Il2CppChar Nullable_1_GetValueOrDefault_m4DC59B3219E9E81FFB2DBE02BF850B54E460DEB6_gshared_inline (Nullable_1_tD52F1D0FC7EBB336F119BE953E59F426766032C1* __this, const RuntimeMethod* method) ;
-// System.Void System.Nullable`1<System.Int32>::.ctor(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Nullable_1__ctor_m141FA88563AC0B5179132FB929EABD02C47FF703_gshared (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, int32_t ___value0, const RuntimeMethod* method) ;
-// T System.Nullable`1<System.Int32>::GetValueOrDefault()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Nullable_1_GetValueOrDefault_m8D130DB7F2A1E694736B449176F9C26DB456597B_gshared_inline (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Nullable`1<System.Int32>::get_HasValue()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_gshared_inline (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, const RuntimeMethod* method) ;
-// T System.Nullable`1<System.Int32>::get_Value()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Nullable_1_get_Value_m0DF3B826A745419D26A168689AEB4BE6F8698ECA_gshared (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<System.Int32>::Add(T)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_gshared_inline (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* __this, int32_t ___item0, const RuntimeMethod* method) ;
-// System.Collections.Generic.List`1<TSource> System.Linq.Enumerable::ToList<System.Object>(System.Collections.Generic.IEnumerable`1<TSource>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* Enumerable_ToList_TisRuntimeObject_m6456D63764F29E6B5B2422C3DE25113577CF51EE_gshared (RuntimeObject* ___source0, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<System.Object>::RemoveAt(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1_RemoveAt_m54F62297ADEE4D4FDA697F49ED807BF901201B54_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, int32_t ___index0, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<System.Object>::set_Item(System.Int32,T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1_set_Item_m3C58DBC69A321AF2826595584FF3E9F43C07EA56_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, int32_t ___index0, RuntimeObject* ___value1, const RuntimeMethod* method) ;
-// T System.Collections.Generic.List`1<System.Int32>::get_Item(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t List_1_get_Item_mD99081BEFA1AB3526715F489192B0F7F596C183D_gshared (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* __this, int32_t ___index0, const RuntimeMethod* method) ;
-// System.Void System.Func`1<System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_1__ctor_m663374A863E492A515BE9626B6F0E444991834E8_gshared (Func_1_tD5C081AE11746B200C711DD48DBEB00E3A9276D4* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
+// System.Void Unity.VisualScripting.UnexpectedEnumValueException`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor(T)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnexpectedEnumValueException_1__ctor_m6FEB118D40397A48EFF952950FC54DCCF2F97CA4_gshared (/*Unity.VisualScripting.UnexpectedEnumValueException`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>*/UnexpectedEnumValueException_1_tD66B1540AD1D72D4F9F16E6203551ECE90CBC9ED* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___value0, const RuntimeMethod* method) ;
+// T[] System.Array::Empty<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* Array_Empty_TisIl2CppFullySharedGenericAny_m244E2A51B33F845A2093F0862FBCE502E4FDD868_gshared_inline (const RuntimeMethod* method) ;
+// System.Int32 System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::get_Count()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_mD2ED26ACAF3BAF386FFEA83893BA51DB9FD8BA30_gshared_inline (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, const RuntimeMethod* method) ;
+// T System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::get_Item(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1_get_Item_m6E4BA37C1FB558E4A62AE4324212E45D09C5C937_gshared (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, int32_t ___index0, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) ;
+// System.Void System.Nullable`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericStructType>::.ctor(T)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Nullable_1__ctor_m4257D7FF23A495D1B204F20330FBDED58248E4CC_gshared (Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericStructType*/Il2CppFullySharedGenericStruct ___value0, const RuntimeMethod* method) ;
+// System.Boolean System.Nullable`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericStructType>::get_HasValue()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_get_HasValue_m14F273FB376DF00D727434CDCD28AB4EDCC14C3C_gshared_inline (Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339* __this, const RuntimeMethod* method) ;
+// T System.Nullable`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericStructType>::GetValueOrDefault()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Nullable_1_GetValueOrDefault_mC057FBD944AF068B90EBDD0B496231A01B2A4228_gshared_inline (Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339* __this, Il2CppFullySharedGenericStruct* il2cppRetVal, const RuntimeMethod* method) ;
+// T System.Nullable`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericStructType>::get_Value()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Nullable_1_get_Value_mA083C4D9192050DC38513BDD9D364C5C68A3A675_gshared (Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339* __this, Il2CppFullySharedGenericStruct* il2cppRetVal, const RuntimeMethod* method) ;
+// System.Collections.Generic.List`1<TSource> System.Linq.Enumerable::ToList<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.Collections.Generic.IEnumerable`1<TSource>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* Enumerable_ToList_TisIl2CppFullySharedGenericAny_m191EA129E511F9B8304FF8826A2DA645E06CCBF0_gshared (RuntimeObject* ___source0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::RemoveAt(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1_RemoveAt_mF6C23E9072D8CBE2872705E7E4D08BDB78770F5C_gshared (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, int32_t ___index0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::set_Item(System.Int32,T)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1_set_Item_m9A958091885CC5363CCFE9F0BC472EAFCB56C813_gshared (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, int32_t ___index0, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___value1, const RuntimeMethod* method) ;
+// System.Void System.Func`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_1__ctor_mC73A4FCEBBAB90CB7B7AB16321F3F98FBBF12596_gshared (Func_1_tBB8824FA8746333BFFF3AB3CE4A41B58450AF431* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
 // TAttribute Unity.VisualScripting.AttributeUtility::GetAttribute<System.Object>(System.Reflection.MemberInfo,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* AttributeUtility_GetAttribute_TisRuntimeObject_m3FD7C404C6E0DF5E949BC87256B48EA8865AF9DD_gshared (MemberInfo_t* ___element0, bool ___inherit1, const RuntimeMethod* method) ;
-// System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Except<System.Object>(System.Collections.Generic.IEnumerable`1<TSource>,System.Collections.Generic.IEnumerable`1<TSource>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Except_TisRuntimeObject_m8B8D61ADB6F12C233EEFF2A66C12135B67ECFE6B_gshared (RuntimeObject* ___first0, RuntimeObject* ___second1, const RuntimeMethod* method) ;
-// System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Empty<System.Object>()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Empty_TisRuntimeObject_mA90CDE158774C34A28C07CEEA9E9EA2A61618238_gshared_inline (const RuntimeMethod* method) ;
-// System.Collections.Generic.IEnumerable`1<T> Unity.VisualScripting.LinqUtility::Yield<System.Object>(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LinqUtility_Yield_TisRuntimeObject_m86070A6145AEDFC821BE377AB1C45C5B94B84AA9_gshared (RuntimeObject* ___t0, const RuntimeMethod* method) ;
-// System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Concat<System.Object>(System.Collections.Generic.IEnumerable`1<TSource>,System.Collections.Generic.IEnumerable`1<TSource>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Concat_TisRuntimeObject_m84DD8C4D7381636C5F798202183E95C359606D33_gshared (RuntimeObject* ___first0, RuntimeObject* ___second1, const RuntimeMethod* method) ;
-// TSource System.Linq.Enumerable::FirstOrDefault<System.Object>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_FirstOrDefault_TisRuntimeObject_mFACC750E4D7AF7B43F5B866C84F613B3ECC41994_gshared (RuntimeObject* ___source0, Func_2_tE1F0D41563EE092E5E5540B061449FDE88F1DC00* ___predicate1, const RuntimeMethod* method) ;
-// System.Boolean System.Collections.Generic.HashSet`1<System.Object>::Add(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HashSet_1_Add_m2CD7657B3459B61DD4BBA47024AC71F7D319658B_gshared (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
-// Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.FullSerializer.fsBaseConverter::SerializeMember<UnityEngine.Vector2>(System.Collections.Generic.Dictionary`2<System.String,Unity.VisualScripting.FullSerializer.fsData>,System.Type,System.String,T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 fsBaseConverter_SerializeMember_TisVector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7_mA477EC6F5D83CF9813DED311B44EB25069A67FD7_gshared (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04* __this, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3* ___data0, Type_t* ___overrideConverterType1, String_t* ___name2, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___value3, const RuntimeMethod* method) ;
-// Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.FullSerializer.fsBaseConverter::DeserializeMember<UnityEngine.Vector2>(System.Collections.Generic.Dictionary`2<System.String,Unity.VisualScripting.FullSerializer.fsData>,System.Type,System.String,T&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 fsBaseConverter_DeserializeMember_TisVector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7_m99FA8D5FB2DA808B5B3DBC7945D5B5592F11C358_gshared (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04* __this, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3* ___data0, Type_t* ___overrideConverterType1, String_t* ___name2, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___value3, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.FullSerializer.fsDirectConverter`1<UnityEngine.Ray2D>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void fsDirectConverter_1__ctor_mBFCA0DE0165FE7459AEBC89AC73731BBCF7F64E6_gshared (fsDirectConverter_1_t8EC81BCA98876AF5AF3271B6086EC66E2CCDC388* __this, const RuntimeMethod* method) ;
-// Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.FullSerializer.fsBaseConverter::SerializeMember<UnityEngine.Vector3>(System.Collections.Generic.Dictionary`2<System.String,Unity.VisualScripting.FullSerializer.fsData>,System.Type,System.String,T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 fsBaseConverter_SerializeMember_TisVector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_mB713137A72F280700A2ECEA7B05D487A15DBBEA4_gshared (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04* __this, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3* ___data0, Type_t* ___overrideConverterType1, String_t* ___name2, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___value3, const RuntimeMethod* method) ;
-// Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.FullSerializer.fsBaseConverter::DeserializeMember<UnityEngine.Vector3>(System.Collections.Generic.Dictionary`2<System.String,Unity.VisualScripting.FullSerializer.fsData>,System.Type,System.String,T&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 fsBaseConverter_DeserializeMember_TisVector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_mE7AC87D2BB880EB5DA39180347AED8A66F8A8EEB_gshared (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04* __this, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3* ___data0, Type_t* ___overrideConverterType1, String_t* ___name2, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___value3, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.FullSerializer.fsDirectConverter`1<UnityEngine.Ray>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void fsDirectConverter_1__ctor_m644F4C264CCF8F165037066D5AC2034B6D176110_gshared (fsDirectConverter_1_tF307DFA6F21486A34320546F09381BBF84FF0539* __this, const RuntimeMethod* method) ;
-// T Unity.VisualScripting.FullSerializer.fsContext::Get<System.Object>()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* fsContext_Get_TisRuntimeObject_m0DA21A2EC755AAE4904ABB16FCF8C8E7062125B1_gshared (fsContext_t3B227C205D84208E2D8934429C07677542C97B5F* __this, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.Dictionary`2<System.Object,System.Object>::set_Item(TKey,TValue)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_set_Item_m1A840355E8EDAECEA9D0C6F5E51B248FAA449CBD_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, RuntimeObject* ___key0, RuntimeObject* ___value1, const RuntimeMethod* method) ;
-// System.Int32 System.Collections.Generic.Dictionary`2<System.Object,System.Object>::get_Count()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Dictionary_2_get_Count_m4DDA9442C238A443489115E22B026AD366851549_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, const RuntimeMethod* method) ;
-// System.Collections.Generic.Dictionary`2/KeyCollection<TKey,TValue> System.Collections.Generic.Dictionary`2<System.Object,System.Object>::get_Keys()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyCollection_tB45A861D090B15129521119AE48ED3813820A974* Dictionary_2_get_Keys_m72D290F90654BFD683FA7AA7C63D9F4F692218B6_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, const RuntimeMethod* method) ;
-// System.Collections.Generic.Dictionary`2/ValueCollection<TKey,TValue> System.Collections.Generic.Dictionary`2<System.Object,System.Object>::get_Values()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ValueCollection_t038245E04B5D2A80048D9F8021A23E69A0C9DBAA* Dictionary_2_get_Values_mA0C01DEA55329E55380E96BBD04D4D228B437EC5_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Collections.Generic.Dictionary`2<System.Object,System.Object>::Remove(TKey)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Dictionary_2_Remove_m5C7C45E75D951A75843F3F7AADD56ECD64F6BC86_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, RuntimeObject* ___key0, const RuntimeMethod* method) ;
-// TSource System.Linq.Enumerable::First<System.Object>(System.Collections.Generic.IEnumerable`1<TSource>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_First_TisRuntimeObject_mEFECF1B8C3201589C5AF34176DCBF8DD926642D6_gshared (RuntimeObject* ___source0, const RuntimeMethod* method) ;
-// System.Boolean System.Collections.Generic.HashSet`1<System.Object>::Remove(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HashSet_1_Remove_mF1D84C0A2829DDA2A0CEE1D82A5B999B5F6627CB_gshared (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
-// T[] System.Collections.Generic.List`1<System.Object>::ToArray()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* List_1_ToArray_mD7E4F8E7C11C3C67CB5739FCC0A6E86106A6291F_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<System.Object>::AddRange(System.Collections.Generic.IEnumerable`1<T>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1_AddRange_m1F76B300133150E6046C5FED00E88B5DE0A02E17_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___collection0, const RuntimeMethod* method) ;
-// Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.FullSerializer.fsSerializer::TrySerialize<System.Object>(T,Unity.VisualScripting.FullSerializer.fsData&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 fsSerializer_TrySerialize_TisRuntimeObject_m535933D428C9B51988896FE7C0658FE75A0C0D29_gshared (fsSerializer_t770DD30E2427CF63ECAEF61D7A1D1D178CECB3DC* __this, RuntimeObject* ___instance0, fsData_t6E144EC58C6E449805AB7BF77BCDAB7230BBFA23** ___data1, const RuntimeMethod* method) ;
-// Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.FullSerializer.fsSerializer::TryDeserialize<System.Object>(Unity.VisualScripting.FullSerializer.fsData,T&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 fsSerializer_TryDeserialize_TisRuntimeObject_m3FB630497C0D561959831E27DEC91D075D944267_gshared (fsSerializer_t770DD30E2427CF63ECAEF61D7A1D1D178CECB3DC* __this, fsData_t6E144EC58C6E449805AB7BF77BCDAB7230BBFA23* ___data0, RuntimeObject** ___instance1, const RuntimeMethod* method) ;
-// System.Boolean System.Linq.Enumerable::Any<System.Object>(System.Collections.Generic.IEnumerable`1<TSource>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerable_Any_TisRuntimeObject_m67CFBD544CF1D1C0C7E7457FDBDB81649DE26847_gshared (RuntimeObject* ___source0, const RuntimeMethod* method) ;
-// System.Void Unity.VisualScripting.FullSerializer.fsContext::Set<System.Object>(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void fsContext_Set_TisRuntimeObject_mB0406DE627FEFA7F615A896B1551F6FCC628D21B_gshared (fsContext_t3B227C205D84208E2D8934429C07677542C97B5F* __this, RuntimeObject* ___obj0, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<System.Object>::Clear()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Clear_m16C1F2C61FED5955F10EB36BC1CB2DF34B128994_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
-// System.Void System.Action`1<System.Object>::Invoke(T)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_mF2422B2DD29F74CE66F791C3F68E288EC7C3DB9E_gshared_inline (Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87* __this, RuntimeObject* ___obj0, const RuntimeMethod* method) ;
+// System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Except<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.Collections.Generic.IEnumerable`1<TSource>,System.Collections.Generic.IEnumerable`1<TSource>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Except_TisIl2CppFullySharedGenericAny_mA95AD18112C9DB0A0706844ECA7E78515E30DBE7_gshared (RuntimeObject* ___first0, RuntimeObject* ___second1, const RuntimeMethod* method) ;
+// System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Empty<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Empty_TisIl2CppFullySharedGenericAny_m886EEFEEA5C6280BA23954EB30ABC7B65133313A_gshared_inline (const RuntimeMethod* method) ;
+// System.Collections.Generic.IEnumerable`1<T> Unity.VisualScripting.LinqUtility::Yield<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(T)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LinqUtility_Yield_TisIl2CppFullySharedGenericAny_mA4EF5493CB31729226BBBF240269C8BC0C6A51E9_gshared (/*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___t0, const RuntimeMethod* method) ;
+// System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Concat<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.Collections.Generic.IEnumerable`1<TSource>,System.Collections.Generic.IEnumerable`1<TSource>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Concat_TisIl2CppFullySharedGenericAny_m75ACEB35DF50D655807F514CF950875385A50A8B_gshared (RuntimeObject* ___first0, RuntimeObject* ___second1, const RuntimeMethod* method) ;
+// TSource System.Linq.Enumerable::FirstOrDefault<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Enumerable_FirstOrDefault_TisIl2CppFullySharedGenericAny_m453402C488FDE63E630C415A9C1C74901B7964F9_gshared (RuntimeObject* ___source0, Func_2_t19E50C11C3E1F20B5A8FDB85D7DD353B6DFF868B* ___predicate1, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) ;
+// System.Boolean System.Collections.Generic.HashSet`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Add(T)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HashSet_1_Add_m73E14DB94D21272EEE1E28E4D74704B0095D8064_gshared (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___item0, const RuntimeMethod* method) ;
+// Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.FullSerializer.fsBaseConverter::SerializeMember<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.Collections.Generic.Dictionary`2<System.String,Unity.VisualScripting.FullSerializer.fsData>,System.Type,System.String,T)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 fsBaseConverter_SerializeMember_TisIl2CppFullySharedGenericAny_m79CBD6541C56F6775C6AFE833F82B8B7DE1AD522_gshared (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04* __this, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3* ___data0, Type_t* ___overrideConverterType1, String_t* ___name2, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___value3, const RuntimeMethod* method) ;
+// Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.FullSerializer.fsBaseConverter::DeserializeMember<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.Collections.Generic.Dictionary`2<System.String,Unity.VisualScripting.FullSerializer.fsData>,System.Type,System.String,T&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 fsBaseConverter_DeserializeMember_TisIl2CppFullySharedGenericAny_mD950968993B7222E483356975AAB178517564D4A_gshared (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04* __this, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3* ___data0, Type_t* ___overrideConverterType1, String_t* ___name2, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType&*/Il2CppFullySharedGenericAny* ___value3, const RuntimeMethod* method) ;
+// System.Void Unity.VisualScripting.FullSerializer.fsDirectConverter`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void fsDirectConverter_1__ctor_mA219A5FF100DBCB35147606E9E4E9C565D2F8D50_gshared (fsDirectConverter_1_tCBA7B5D48312C1775A21082D3D453731C902A8BD* __this, const RuntimeMethod* method) ;
+// T Unity.VisualScripting.FullSerializer.fsContext::Get<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void fsContext_Get_TisIl2CppFullySharedGenericAny_m291C6F4855EE2BB88FED4FA436058E2BDABA90A5_gshared (fsContext_t3B227C205D84208E2D8934429C07677542C97B5F* __this, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::set_Item(TKey,TValue)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_set_Item_m4C6841170DD11AED683D2D71919F362A4CFF4A80_gshared (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___key0, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___value1, const RuntimeMethod* method) ;
+// System.Int32 System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::get_Count()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Dictionary_2_get_Count_mBB454C6743410D3E06D44D494D4D6FF4CBBBDB1E_gshared (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E* __this, const RuntimeMethod* method) ;
+// System.Collections.Generic.Dictionary`2/KeyCollection<TKey,TValue> System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::get_Keys()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyCollection_tB792ACBAE0B99278B0B7B0F7440B4788E98F0D55* Dictionary_2_get_Keys_mD82D6690B1A801E8EED43F1B1D310893C9D334CF_gshared (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E* __this, const RuntimeMethod* method) ;
+// System.Collections.Generic.Dictionary`2/ValueCollection<TKey,TValue> System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::get_Values()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ValueCollection_tC492596681BD51AB34FC76FA76C15C9B3FFB7B40* Dictionary_2_get_Values_mE06FB7381D8152E35F0716DC7FE13788362112A7_gshared (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E* __this, const RuntimeMethod* method) ;
+// System.Boolean System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Remove(TKey)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Dictionary_2_Remove_m583C4F0E2926B584BE6EC6008195360FC631C14C_gshared (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___key0, const RuntimeMethod* method) ;
+// TSource System.Linq.Enumerable::First<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.Collections.Generic.IEnumerable`1<TSource>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Enumerable_First_TisIl2CppFullySharedGenericAny_mCFC88D63540FB5C7B03DD3E47157C18FD4AFE595_gshared (RuntimeObject* ___source0, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) ;
+// System.Boolean System.Collections.Generic.HashSet`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Remove(T)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HashSet_1_Remove_mE12E434B402CFEB49197444DE1D52A3AE4C7F6EE_gshared (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___item0, const RuntimeMethod* method) ;
+// T[] System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::ToArray()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* List_1_ToArray_m5160526E5983BD8ED24DFFE47C33B141C1B3187A_gshared (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::AddRange(System.Collections.Generic.IEnumerable`1<T>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1_AddRange_m44DED39FFEBC8F2ACF6162DB065B649E888B9C57_gshared (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, RuntimeObject* ___collection0, const RuntimeMethod* method) ;
+// Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.FullSerializer.fsSerializer::TrySerialize<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(T,Unity.VisualScripting.FullSerializer.fsData&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 fsSerializer_TrySerialize_TisIl2CppFullySharedGenericAny_mD467C2221EABCCED5F049B2996388895D66CD6A3_gshared (fsSerializer_t770DD30E2427CF63ECAEF61D7A1D1D178CECB3DC* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___instance0, fsData_t6E144EC58C6E449805AB7BF77BCDAB7230BBFA23** ___data1, const RuntimeMethod* method) ;
+// Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.FullSerializer.fsSerializer::TryDeserialize<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(Unity.VisualScripting.FullSerializer.fsData,T&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 fsSerializer_TryDeserialize_TisIl2CppFullySharedGenericAny_m8F46C3E4472E3EACA5D9F7A58E397A6D10546582_gshared (fsSerializer_t770DD30E2427CF63ECAEF61D7A1D1D178CECB3DC* __this, fsData_t6E144EC58C6E449805AB7BF77BCDAB7230BBFA23* ___data0, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType&*/Il2CppFullySharedGenericAny* ___instance1, const RuntimeMethod* method) ;
+// System.Boolean System.Linq.Enumerable::Any<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.Collections.Generic.IEnumerable`1<TSource>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerable_Any_TisIl2CppFullySharedGenericAny_m3499AC108A84D818DD8C221F8E60145246FC8A09_gshared (RuntimeObject* ___source0, const RuntimeMethod* method) ;
+// System.Void Unity.VisualScripting.FullSerializer.fsContext::Set<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(T)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void fsContext_Set_TisIl2CppFullySharedGenericAny_mAB9E5A73CD1BC1599F11B9B5FF1CDAE55086E05C_gshared (fsContext_t3B227C205D84208E2D8934429C07677542C97B5F* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___obj0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Clear()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Clear_mD615D1BCB2C9DD91DAD86A2F9E5CF1DFFCBF7925_gshared_inline (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, const RuntimeMethod* method) ;
+// System.Void System.Action`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Invoke(T)
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_m5A038831CEB84A7E374FE59D43444412629F833F_gshared_inline (Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___obj0, const RuntimeMethod* method) ;
 // System.Void Unity.VisualScripting.Singleton`1<System.Object>::Awake(T)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Singleton_1_Awake_mFC95A78A6B19EC166070DADD80E1B1088404A180_gshared (RuntimeObject* ___instance0, const RuntimeMethod* method) ;
 // System.Void Unity.VisualScripting.Singleton`1<System.Object>::OnDestroy(T)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Singleton_1_OnDestroy_mAFD10E9A42F63DA7593101C8CB9A25F342B4E0CE_gshared (RuntimeObject* ___instance0, const RuntimeMethod* method) ;
 // T Unity.VisualScripting.Singleton`1<System.Object>::get_instance()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Singleton_1_get_instance_m78DF13F765D8CF5801D8064514640BFCFA1A231A_gshared (const RuntimeMethod* method) ;
-// System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Skip<System.Object>(System.Collections.Generic.IEnumerable`1<TSource>,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Skip_TisRuntimeObject_mC63F7758979C7B3D3C94A57B8BCD63C5237EA697_gshared (RuntimeObject* ___source0, int32_t ___count1, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.HashSet`1<System.Char>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HashSet_1__ctor_m0468553BC44FAC4BA6BA8F517CBD7C8D42F42853_gshared (HashSet_1_t699860DBA06D8F002CD3C64E462BF860ACAD5E9A* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Collections.Generic.HashSet`1<System.Char>::Add(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HashSet_1_Add_mC54C49D2322343A65275FF0C6DCCA0948B6AD12A_gshared (HashSet_1_t699860DBA06D8F002CD3C64E462BF860ACAD5E9A* __this, Il2CppChar ___item0, const RuntimeMethod* method) ;
+// System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Skip<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.Collections.Generic.IEnumerable`1<TSource>,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Skip_TisIl2CppFullySharedGenericAny_m7F91D614A7FB740C95BA1C69F309A9AF2D4EB014_gshared (RuntimeObject* ___source0, int32_t ___count1, const RuntimeMethod* method) ;
 
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::.ctor(System.String,System.String,System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BinaryOperatorHandler__ctor_m2638C6EEA2BE5DFB015E169C2B90501C945CEF81 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, String_t* ___name0, String_t* ___verb1, String_t* ___symbol2, String_t* ___customMethodName3, const RuntimeMethod* method) ;
 // System.Void System.Func`3<System.Byte,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m0022F947C32D53103782D92867141D53D85D3580 (Func_3_tB2B320F463B8DA8228C92F1A7B68693FB0BFEF7D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tB2B320F463B8DA8228C92F1A7B68693FB0BFEF7D*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m0022F947C32D53103782D92867141D53D85D3580_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m5B5D4D38E327B1DF7E23154C951D92152AEB6A86 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tB2B320F463B8DA8228C92F1A7B68693FB0BFEF7D* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tB2B320F463B8DA8228C92F1A7B68693FB0BFEF7D*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m5B5D4D38E327B1DF7E23154C951D92152AEB6A86_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Byte,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m828A69C9A8C243440A7DA30F74FEF5D669DC3D42 (Func_3_tF49AF153D046FA981F4F083A8E2C7C6547935D96* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tF49AF153D046FA981F4F083A8E2C7C6547935D96*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m828A69C9A8C243440A7DA30F74FEF5D669DC3D42_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m0C52F1C85FCABB8E275037292A474018F248D5FA (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF49AF153D046FA981F4F083A8E2C7C6547935D96* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tF49AF153D046FA981F4F083A8E2C7C6547935D96*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m0C52F1C85FCABB8E275037292A474018F248D5FA_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Byte,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m729002D40FD8F29363F6741359D6AA3299EA2B56 (Func_3_t2E9A583D173A57E5B63B70A14CE40D89E837A8B4* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t2E9A583D173A57E5B63B70A14CE40D89E837A8B4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m729002D40FD8F29363F6741359D6AA3299EA2B56_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m84A47C7FB630DF09B6FA6A28F7E66DE655622B56 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t2E9A583D173A57E5B63B70A14CE40D89E837A8B4* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t2E9A583D173A57E5B63B70A14CE40D89E837A8B4*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m84A47C7FB630DF09B6FA6A28F7E66DE655622B56_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Byte,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m7F7145224E89970ABC81E7F46B7B424E3B846E81 (Func_3_t6F801D3E19190ECCD536C1881A3033F41754C068* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t6F801D3E19190ECCD536C1881A3033F41754C068*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m7F7145224E89970ABC81E7F46B7B424E3B846E81_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m84AE892673B320F327C8B71A88187C003A48BBCC (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t6F801D3E19190ECCD536C1881A3033F41754C068* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t6F801D3E19190ECCD536C1881A3033F41754C068*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m84AE892673B320F327C8B71A88187C003A48BBCC_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Byte,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mBB76D3DCC2FC5FF0EFDF22DF507856798CE64B53 (Func_3_t47C050995DF9BD235A841BC0DBBBD05F2E5EDF2E* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t47C050995DF9BD235A841BC0DBBBD05F2E5EDF2E*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mBB76D3DCC2FC5FF0EFDF22DF507856798CE64B53_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_mDAC902006B7A54CFE3F06E7AD86DFD8F9BDEB296 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t47C050995DF9BD235A841BC0DBBBD05F2E5EDF2E* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t47C050995DF9BD235A841BC0DBBBD05F2E5EDF2E*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_mDAC902006B7A54CFE3F06E7AD86DFD8F9BDEB296_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Byte,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mF4E080C91E546F8E714D147900671AC1BCD34170 (Func_3_t0285FB291B179589BB03FA5E2007D8DEE8B08EC4* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t0285FB291B179589BB03FA5E2007D8DEE8B08EC4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mF4E080C91E546F8E714D147900671AC1BCD34170_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m96ED6DF317F21FC22DF159F9B2033AC19817B300 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t0285FB291B179589BB03FA5E2007D8DEE8B08EC4* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t0285FB291B179589BB03FA5E2007D8DEE8B08EC4*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m96ED6DF317F21FC22DF159F9B2033AC19817B300_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Byte,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m182C2BAB912DC42A91A6C57054BFBD5302C458B2 (Func_3_t445A9020E29441295F660A9521A3DE8BE24D409C* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t445A9020E29441295F660A9521A3DE8BE24D409C*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m182C2BAB912DC42A91A6C57054BFBD5302C458B2_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_m47F1E5AD9500F46C825A4642AEFC0D4768C1AB6F (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t445A9020E29441295F660A9521A3DE8BE24D409C* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t445A9020E29441295F660A9521A3DE8BE24D409C*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_m47F1E5AD9500F46C825A4642AEFC0D4768C1AB6F_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Byte,System.UInt64,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mC17883D2399DAA19862FE43DD60C7C2B8DEC3F75 (Func_3_t9F6F905176137C8F2D1DFD5D940886D340D2767E* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t9F6F905176137C8F2D1DFD5D940886D340D2767E*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mC17883D2399DAA19862FE43DD60C7C2B8DEC3F75_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.UInt64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_mFB91A8225578E4BAF2BA7A864BF92A14C6A7B1B6 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t9F6F905176137C8F2D1DFD5D940886D340D2767E* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t9F6F905176137C8F2D1DFD5D940886D340D2767E*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_mFB91A8225578E4BAF2BA7A864BF92A14C6A7B1B6_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Byte,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m2DD09558CFFE4C6FEBEF54BB20489B7761D1DB0E (Func_3_t2A7AFCD1F8ADBD65B4AB2F068ED428F5C4D3FB07* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t2A7AFCD1F8ADBD65B4AB2F068ED428F5C4D3FB07*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m2DD09558CFFE4C6FEBEF54BB20489B7761D1DB0E_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mE0F47D2F43E3D04656609AEF2FF5078879ED3DB4 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t2A7AFCD1F8ADBD65B4AB2F068ED428F5C4D3FB07* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t2A7AFCD1F8ADBD65B4AB2F068ED428F5C4D3FB07*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mE0F47D2F43E3D04656609AEF2FF5078879ED3DB4_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Byte,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m584228D514F93552469D84730F3DA7CF83DA41FF (Func_3_t8B548A39009DEA86846AC5404F9A3ED7281AC7BD* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t8B548A39009DEA86846AC5404F9A3ED7281AC7BD*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m584228D514F93552469D84730F3DA7CF83DA41FF_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_m7DE1A22A9D06D3B6D63A3DBE3FE3A9BB24F4957C (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t8B548A39009DEA86846AC5404F9A3ED7281AC7BD* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t8B548A39009DEA86846AC5404F9A3ED7281AC7BD*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_m7DE1A22A9D06D3B6D63A3DBE3FE3A9BB24F4957C_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Byte,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m489635E8E9F2E81B1EC92F42EFD038DCAE0AE448 (Func_3_t5BD83439ADA1B5015D0FE96335E1A82B9F032867* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t5BD83439ADA1B5015D0FE96335E1A82B9F032867*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m489635E8E9F2E81B1EC92F42EFD038DCAE0AE448_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Byte,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_mF208901E0D23C9D69112D1BB4FADBBD0AA9EDD19 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t5BD83439ADA1B5015D0FE96335E1A82B9F032867* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t5BD83439ADA1B5015D0FE96335E1A82B9F032867*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_mF208901E0D23C9D69112D1BB4FADBBD0AA9EDD19_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.SByte,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m4C63A8E7225299F20371DA014B02BDDC1941AE66 (Func_3_tBBB4861738233A40F78754FF4BDCEE5D79FEB8A9* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tBBB4861738233A40F78754FF4BDCEE5D79FEB8A9*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m4C63A8E7225299F20371DA014B02BDDC1941AE66_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m180075D8DC81B9746FA12DED0590ADEA0CB6C95C (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tBBB4861738233A40F78754FF4BDCEE5D79FEB8A9* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tBBB4861738233A40F78754FF4BDCEE5D79FEB8A9*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m180075D8DC81B9746FA12DED0590ADEA0CB6C95C_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.SByte,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m0242298A50EF3CE0DF1C3DF486784B54F7921B76 (Func_3_tC35341B6BBE8DC47547F6500B747077D44457F96* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tC35341B6BBE8DC47547F6500B747077D44457F96*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m0242298A50EF3CE0DF1C3DF486784B54F7921B76_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m7B71F1F266C4601E16084C625432219B8937CBE7 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tC35341B6BBE8DC47547F6500B747077D44457F96* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tC35341B6BBE8DC47547F6500B747077D44457F96*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m7B71F1F266C4601E16084C625432219B8937CBE7_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.SByte,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m61EA1440E765E80DEC9A05523E8D2CEFF2280545 (Func_3_tB10EA92F09DD54A1A9D478FA1BAEE8220004D13A* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tB10EA92F09DD54A1A9D478FA1BAEE8220004D13A*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m61EA1440E765E80DEC9A05523E8D2CEFF2280545_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m6C27FE25136BD6E5F8528AD19ACDF89ADC6FD125 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tB10EA92F09DD54A1A9D478FA1BAEE8220004D13A* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tB10EA92F09DD54A1A9D478FA1BAEE8220004D13A*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m6C27FE25136BD6E5F8528AD19ACDF89ADC6FD125_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.SByte,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m2135D4F82607AAC41398E71D7A763595E19F7322 (Func_3_tB7EFE609A5227E9BA11FF21E67369953F6599827* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tB7EFE609A5227E9BA11FF21E67369953F6599827*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m2135D4F82607AAC41398E71D7A763595E19F7322_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m1162CDBA74641729CB48BFDCF948B46FD6C1CF05 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tB7EFE609A5227E9BA11FF21E67369953F6599827* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tB7EFE609A5227E9BA11FF21E67369953F6599827*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m1162CDBA74641729CB48BFDCF948B46FD6C1CF05_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.SByte,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m28B50460F5F866C634560C223C5CCA5FC290317F (Func_3_t69C1691F8FABFD57FFB336449458679687FE96AF* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t69C1691F8FABFD57FFB336449458679687FE96AF*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m28B50460F5F866C634560C223C5CCA5FC290317F_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m1001AD411E44C98781CA60D34DA57D9A558B25B1 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t69C1691F8FABFD57FFB336449458679687FE96AF* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t69C1691F8FABFD57FFB336449458679687FE96AF*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m1001AD411E44C98781CA60D34DA57D9A558B25B1_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.SByte,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m0E1C16684165AC23641F81E8C29EF216E2407ECA (Func_3_t2A9B27EAC5C5CF7BB70BE4D7395FCD1A67E34849* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t2A9B27EAC5C5CF7BB70BE4D7395FCD1A67E34849*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m0E1C16684165AC23641F81E8C29EF216E2407ECA_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_mBD30848D173643E9B035F3D314010305A3D0BFCC (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t2A9B27EAC5C5CF7BB70BE4D7395FCD1A67E34849* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t2A9B27EAC5C5CF7BB70BE4D7395FCD1A67E34849*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_mBD30848D173643E9B035F3D314010305A3D0BFCC_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.SByte,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m796E56F91A897B22E30FAEA351E10B47555A5B50 (Func_3_t4C51005F4A339807C3E44809D208BB31C0D3D87B* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t4C51005F4A339807C3E44809D208BB31C0D3D87B*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m796E56F91A897B22E30FAEA351E10B47555A5B50_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mC26A494595420FE8014AD47006BC28C2A09110FE (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t4C51005F4A339807C3E44809D208BB31C0D3D87B* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t4C51005F4A339807C3E44809D208BB31C0D3D87B*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mC26A494595420FE8014AD47006BC28C2A09110FE_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.SByte,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m0C933254EC9ED169777A3169FB9DF44CEAE8043E (Func_3_tBDC14292973FF04FE9291FF3A7B33B753F3E14DE* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tBDC14292973FF04FE9291FF3A7B33B753F3E14DE*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m0C933254EC9ED169777A3169FB9DF44CEAE8043E_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m944E8177B5E22E9DD637BC0830FE1DAC7A820C40 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tBDC14292973FF04FE9291FF3A7B33B753F3E14DE* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tBDC14292973FF04FE9291FF3A7B33B753F3E14DE*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m944E8177B5E22E9DD637BC0830FE1DAC7A820C40_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.SByte,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m6528C314DE5019E6D25720E06ECD5B103D9FB2CA (Func_3_tECFEEF0C51F06E7AC42D9B1EA76D4C58E3A07DED* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tECFEEF0C51F06E7AC42D9B1EA76D4C58E3A07DED*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m6528C314DE5019E6D25720E06ECD5B103D9FB2CA_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_mB9768CB9045025389A2CB41F1E42F4C61325916D (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tECFEEF0C51F06E7AC42D9B1EA76D4C58E3A07DED* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tECFEEF0C51F06E7AC42D9B1EA76D4C58E3A07DED*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_mB9768CB9045025389A2CB41F1E42F4C61325916D_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.SByte,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m51C24405DF685B46BE09AF904F6872CB19FB5B62 (Func_3_tF67B5C94BFB4CB127EC4141B2A69EF38EF8A6E15* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tF67B5C94BFB4CB127EC4141B2A69EF38EF8A6E15*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m51C24405DF685B46BE09AF904F6872CB19FB5B62_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.SByte,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m3999950C83D5BAABFDB2D4ABF08EBEA5AF9B29A8 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF67B5C94BFB4CB127EC4141B2A69EF38EF8A6E15* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tF67B5C94BFB4CB127EC4141B2A69EF38EF8A6E15*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m3999950C83D5BAABFDB2D4ABF08EBEA5AF9B29A8_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int16,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m2FB0B80E852CF222C0AA9A658CD95A1F2B1DAECA (Func_3_t10ACDCF19375846BF4B5E996F3B94E37BAAE7B5F* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t10ACDCF19375846BF4B5E996F3B94E37BAAE7B5F*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m2FB0B80E852CF222C0AA9A658CD95A1F2B1DAECA_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_mFA7D99C36710E6BE78C821190814064C5D405282 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t10ACDCF19375846BF4B5E996F3B94E37BAAE7B5F* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t10ACDCF19375846BF4B5E996F3B94E37BAAE7B5F*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_mFA7D99C36710E6BE78C821190814064C5D405282_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int16,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m7206A8A2F7F8A01A94A3BAC1D06CC21BD37C7E5C (Func_3_t27F5744940086745B289072AFD2247E0719FF074* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t27F5744940086745B289072AFD2247E0719FF074*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m7206A8A2F7F8A01A94A3BAC1D06CC21BD37C7E5C_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m6F1EE2C8E661A1A1141BFA652B817C75DB19C591 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t27F5744940086745B289072AFD2247E0719FF074* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t27F5744940086745B289072AFD2247E0719FF074*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m6F1EE2C8E661A1A1141BFA652B817C75DB19C591_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int16,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m3C4CEA55C8E0A82B282721E6825C7ABC2145FD73 (Func_3_tE86FAA8B340BAA210B158DBB111C2A9991B9CCF6* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tE86FAA8B340BAA210B158DBB111C2A9991B9CCF6*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3C4CEA55C8E0A82B282721E6825C7ABC2145FD73_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m9DB181336265E2F2E13770BE11EBAF57976E5E75 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tE86FAA8B340BAA210B158DBB111C2A9991B9CCF6* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tE86FAA8B340BAA210B158DBB111C2A9991B9CCF6*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m9DB181336265E2F2E13770BE11EBAF57976E5E75_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int16,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m752D01CCA927DECB978CF441331E4E7C40E87F53 (Func_3_tBF2C6C77D0C4EF305E09C87806D5F1FD5C4A8713* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tBF2C6C77D0C4EF305E09C87806D5F1FD5C4A8713*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m752D01CCA927DECB978CF441331E4E7C40E87F53_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m8618FD5346265B5BE3F042F18984561EDB1BFEEA (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tBF2C6C77D0C4EF305E09C87806D5F1FD5C4A8713* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tBF2C6C77D0C4EF305E09C87806D5F1FD5C4A8713*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m8618FD5346265B5BE3F042F18984561EDB1BFEEA_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int16,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m8E55F853D00C3D1CBC6C3DCB72B3C04F82E54743 (Func_3_tB0944C6B42AAB6552D7CB9B529C2D1F92DBECF1A* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tB0944C6B42AAB6552D7CB9B529C2D1F92DBECF1A*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m8E55F853D00C3D1CBC6C3DCB72B3C04F82E54743_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_mBF6C0D565F7592021CD49E291AC4A3779AE786B2 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tB0944C6B42AAB6552D7CB9B529C2D1F92DBECF1A* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tB0944C6B42AAB6552D7CB9B529C2D1F92DBECF1A*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_mBF6C0D565F7592021CD49E291AC4A3779AE786B2_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int16,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m58353E28D4B0D8E4D6842DC3FE2D528A94E8CB09 (Func_3_t85DDB1683212D4974DA874A5A65E768B4A770E69* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t85DDB1683212D4974DA874A5A65E768B4A770E69*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m58353E28D4B0D8E4D6842DC3FE2D528A94E8CB09_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m56D642869FD970035844BC260521E2B923A72416 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t85DDB1683212D4974DA874A5A65E768B4A770E69* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t85DDB1683212D4974DA874A5A65E768B4A770E69*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m56D642869FD970035844BC260521E2B923A72416_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int16,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mC379EBC1307BE3CB2560BE7A90678DFE04206551 (Func_3_tDE1ED0572AA4AFD3C405704F64F2922EBCDD789D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tDE1ED0572AA4AFD3C405704F64F2922EBCDD789D*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mC379EBC1307BE3CB2560BE7A90678DFE04206551_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_m9FA31BEBE3AC3FB89B795BAB063B02F8F8927610 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tDE1ED0572AA4AFD3C405704F64F2922EBCDD789D* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tDE1ED0572AA4AFD3C405704F64F2922EBCDD789D*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_m9FA31BEBE3AC3FB89B795BAB063B02F8F8927610_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int16,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mDD546D827F6693CD006F056B0DD6D4424B360540 (Func_3_tF86AD7AB9BF6B192A784831E5250EBB2DBA5E7E0* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tF86AD7AB9BF6B192A784831E5250EBB2DBA5E7E0*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mDD546D827F6693CD006F056B0DD6D4424B360540_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mA9512E4461467CD99D7BDF0B8B7BDD3844EE7655 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF86AD7AB9BF6B192A784831E5250EBB2DBA5E7E0* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tF86AD7AB9BF6B192A784831E5250EBB2DBA5E7E0*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mA9512E4461467CD99D7BDF0B8B7BDD3844EE7655_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int16,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m56EBAD35588E7031816357CF1D9218F5E0990A75 (Func_3_t1A301DC61D2B3AA369C53C867CC4CF7DA6A4E877* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t1A301DC61D2B3AA369C53C867CC4CF7DA6A4E877*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m56EBAD35588E7031816357CF1D9218F5E0990A75_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_m087BDE7284EB277E5A1AF545397642B285064A94 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t1A301DC61D2B3AA369C53C867CC4CF7DA6A4E877* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t1A301DC61D2B3AA369C53C867CC4CF7DA6A4E877*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_m087BDE7284EB277E5A1AF545397642B285064A94_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int16,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mB2542D421AD15E46EC352DD6D60DF0D23375B8BE (Func_3_tD539462DA5BCAE4756AEDCB3E0468AF49ACE433D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tD539462DA5BCAE4756AEDCB3E0468AF49ACE433D*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mB2542D421AD15E46EC352DD6D60DF0D23375B8BE_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int16,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m010C5D64708EE1F9B416A41791E962DD68C0D0CA (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tD539462DA5BCAE4756AEDCB3E0468AF49ACE433D* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tD539462DA5BCAE4756AEDCB3E0468AF49ACE433D*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m010C5D64708EE1F9B416A41791E962DD68C0D0CA_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt16,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m2E925999C656BFAFBE3A61B62894A079822BD8A1 (Func_3_t156CEA6C0FCBCD5CA848CAA7F803A11EDFE5AB7E* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t156CEA6C0FCBCD5CA848CAA7F803A11EDFE5AB7E*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m2E925999C656BFAFBE3A61B62894A079822BD8A1_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m1D704EB98B1D0D8C8C61452742A7EADAF733077E (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t156CEA6C0FCBCD5CA848CAA7F803A11EDFE5AB7E* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t156CEA6C0FCBCD5CA848CAA7F803A11EDFE5AB7E*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m1D704EB98B1D0D8C8C61452742A7EADAF733077E_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt16,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m1420578385EB6B69A19013A5AE5DCC24BD8D1625 (Func_3_t9351711C3A08536B6FCE177BF1D5C9A161F9649D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t9351711C3A08536B6FCE177BF1D5C9A161F9649D*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m1420578385EB6B69A19013A5AE5DCC24BD8D1625_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_mFA4BCFBA152428061E369AA18FA313EF450F2757 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t9351711C3A08536B6FCE177BF1D5C9A161F9649D* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t9351711C3A08536B6FCE177BF1D5C9A161F9649D*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_mFA4BCFBA152428061E369AA18FA313EF450F2757_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt16,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mAFBDEB5CDC0D4E0F2EAA7A589323D12AFFE5703D (Func_3_t37800E4AC49C93B69C48CF3936DE6E62B0E1277A* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t37800E4AC49C93B69C48CF3936DE6E62B0E1277A*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mAFBDEB5CDC0D4E0F2EAA7A589323D12AFFE5703D_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m31C27C37B6A52EC7E47787EDAF579578DD57D26F (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t37800E4AC49C93B69C48CF3936DE6E62B0E1277A* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t37800E4AC49C93B69C48CF3936DE6E62B0E1277A*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m31C27C37B6A52EC7E47787EDAF579578DD57D26F_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt16,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m505441D5503C2C757CC20CA1FF0B830B51B35203 (Func_3_t8CF8951D835E9F04043D759CEC80EA4019AB4E38* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t8CF8951D835E9F04043D759CEC80EA4019AB4E38*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m505441D5503C2C757CC20CA1FF0B830B51B35203_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m51FE6E18569F4527B9060819F8377F35EB0DC94E (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t8CF8951D835E9F04043D759CEC80EA4019AB4E38* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t8CF8951D835E9F04043D759CEC80EA4019AB4E38*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m51FE6E18569F4527B9060819F8377F35EB0DC94E_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt16,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mB387AC0F7EB8830BC980B8BC7DB5929F41239540 (Func_3_tEBE7E706B2E71B5C832C01D69FEA0D54E7F4D3A8* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tEBE7E706B2E71B5C832C01D69FEA0D54E7F4D3A8*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mB387AC0F7EB8830BC980B8BC7DB5929F41239540_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_mEC5B1F40CF0D458040A0D74AF33ADAED7CC62F18 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tEBE7E706B2E71B5C832C01D69FEA0D54E7F4D3A8* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tEBE7E706B2E71B5C832C01D69FEA0D54E7F4D3A8*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_mEC5B1F40CF0D458040A0D74AF33ADAED7CC62F18_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt16,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mDD7715542E511A226BC3013BC72386A454F28FBD (Func_3_t9BF08FA52536763238F025113D4B3028272814DC* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t9BF08FA52536763238F025113D4B3028272814DC*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mDD7715542E511A226BC3013BC72386A454F28FBD_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_mF6DD8B306382A5439302AA5038FA634D3CE48474 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t9BF08FA52536763238F025113D4B3028272814DC* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t9BF08FA52536763238F025113D4B3028272814DC*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_mF6DD8B306382A5439302AA5038FA634D3CE48474_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt16,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m0507A19A255A0F5B988102E2D0B2459456CF1675 (Func_3_t7898FC8A2688F594C66B6C7F13978DFD2D188047* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t7898FC8A2688F594C66B6C7F13978DFD2D188047*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m0507A19A255A0F5B988102E2D0B2459456CF1675_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mD4E5E2CB66BB2E12051A5D01FF9D2D3B9249F600 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t7898FC8A2688F594C66B6C7F13978DFD2D188047* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t7898FC8A2688F594C66B6C7F13978DFD2D188047*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mD4E5E2CB66BB2E12051A5D01FF9D2D3B9249F600_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt16,System.UInt64,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mF9C6FBE97FC2A92E9EEAA7C6A45A4D29553428C7 (Func_3_tF66BEBDE8DAAC1224126237C5DE4A783EA7B5478* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tF66BEBDE8DAAC1224126237C5DE4A783EA7B5478*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mF9C6FBE97FC2A92E9EEAA7C6A45A4D29553428C7_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.UInt64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_m14D17F67B10ECC9D0BDC7552356404496D7A8B04 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF66BEBDE8DAAC1224126237C5DE4A783EA7B5478* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tF66BEBDE8DAAC1224126237C5DE4A783EA7B5478*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_m14D17F67B10ECC9D0BDC7552356404496D7A8B04_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt16,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m7F75851672EA4D872ADF4E36536337865E1DFA87 (Func_3_tCF60C787D40192074B0B8F784F994AF897A64088* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tCF60C787D40192074B0B8F784F994AF897A64088*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m7F75851672EA4D872ADF4E36536337865E1DFA87_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m2244CC5CF480FA34837A75C9D5EA251E290954FE (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tCF60C787D40192074B0B8F784F994AF897A64088* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tCF60C787D40192074B0B8F784F994AF897A64088*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m2244CC5CF480FA34837A75C9D5EA251E290954FE_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt16,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m54948994726D1DD9555144C2E5D8A46885424767 (Func_3_t0594EE4734B94D02BD957F6101F8E066AEB325F2* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t0594EE4734B94D02BD957F6101F8E066AEB325F2*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m54948994726D1DD9555144C2E5D8A46885424767_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_m5CCA4CF500E685998A75F0A96D810C810E15A4CF (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t0594EE4734B94D02BD957F6101F8E066AEB325F2* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t0594EE4734B94D02BD957F6101F8E066AEB325F2*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_m5CCA4CF500E685998A75F0A96D810C810E15A4CF_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt16,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mBD49E63360B966336D99EEE0A2D539F9C7860F72 (Func_3_t174ACADDBDE08A1D62A78C6E1C0EA3DF9FDED7F6* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t174ACADDBDE08A1D62A78C6E1C0EA3DF9FDED7F6*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mBD49E63360B966336D99EEE0A2D539F9C7860F72_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt16,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m1865929B8CFEE6F8F83074DA68CC6EA2D24CBC88 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t174ACADDBDE08A1D62A78C6E1C0EA3DF9FDED7F6* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t174ACADDBDE08A1D62A78C6E1C0EA3DF9FDED7F6*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m1865929B8CFEE6F8F83074DA68CC6EA2D24CBC88_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int32,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mB1B53FDFF0E141317E08B599BBB5A2B61611A8B2 (Func_3_tCE1BB17028DAE477D702D0280D421FBADFB9AB45* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tCE1BB17028DAE477D702D0280D421FBADFB9AB45*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mB1B53FDFF0E141317E08B599BBB5A2B61611A8B2_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_mF6C81DC58CDFCBE91ED789B8CADF42B04F2E8A3E (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tCE1BB17028DAE477D702D0280D421FBADFB9AB45* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tCE1BB17028DAE477D702D0280D421FBADFB9AB45*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_mF6C81DC58CDFCBE91ED789B8CADF42B04F2E8A3E_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int32,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m3210B68A2CCE741D58546D643EBE7EBD27D9927A (Func_3_t83B3E7DBFC829FC73E46FC19F11E57AD79E11508* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t83B3E7DBFC829FC73E46FC19F11E57AD79E11508*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3210B68A2CCE741D58546D643EBE7EBD27D9927A_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m93B40111245F52530239968D32BB30BA7A3109E6 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t83B3E7DBFC829FC73E46FC19F11E57AD79E11508* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t83B3E7DBFC829FC73E46FC19F11E57AD79E11508*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m93B40111245F52530239968D32BB30BA7A3109E6_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int32,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m8B4D91403F74451DCF1FF2A8DCA144A1E12FA3C5 (Func_3_tB208147146A3CCFC3EBC7D4AAFF754E3DEF6A00D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tB208147146A3CCFC3EBC7D4AAFF754E3DEF6A00D*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m8B4D91403F74451DCF1FF2A8DCA144A1E12FA3C5_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m4F9205424112CA4CF8200D33945F129C6149BD30 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tB208147146A3CCFC3EBC7D4AAFF754E3DEF6A00D* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tB208147146A3CCFC3EBC7D4AAFF754E3DEF6A00D*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m4F9205424112CA4CF8200D33945F129C6149BD30_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int32,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m5EE5F90BBACD1773A06645C3AC00040E252E7C65 (Func_3_t8A0F09B6E976B84DBC965F0E7F0D9BBE522DF17A* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t8A0F09B6E976B84DBC965F0E7F0D9BBE522DF17A*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m5EE5F90BBACD1773A06645C3AC00040E252E7C65_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_mFCBA43533189A8CBC26BBFA804A4D22881ED5288 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t8A0F09B6E976B84DBC965F0E7F0D9BBE522DF17A* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t8A0F09B6E976B84DBC965F0E7F0D9BBE522DF17A*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_mFCBA43533189A8CBC26BBFA804A4D22881ED5288_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int32,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m556F5E753887E2D11F9919681CD0FBA6CACC7CD5 (Func_3_tC3AC172BD343888D60C8D93215EFF954EF08FC0F* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tC3AC172BD343888D60C8D93215EFF954EF08FC0F*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m556F5E753887E2D11F9919681CD0FBA6CACC7CD5_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m763778A5CD860E8A9846628ED6A283820E9C9829 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tC3AC172BD343888D60C8D93215EFF954EF08FC0F* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tC3AC172BD343888D60C8D93215EFF954EF08FC0F*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m763778A5CD860E8A9846628ED6A283820E9C9829_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int32,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mCB98ACF87F35674129D5AB5D991F0375D8F5AD87 (Func_3_t18DB92C7D09F84A2CAF74EE6A6FAB41E04D48703* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t18DB92C7D09F84A2CAF74EE6A6FAB41E04D48703*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mCB98ACF87F35674129D5AB5D991F0375D8F5AD87_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m0FE116AB54D63ECB49EF6C8134322688AE163710 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t18DB92C7D09F84A2CAF74EE6A6FAB41E04D48703* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t18DB92C7D09F84A2CAF74EE6A6FAB41E04D48703*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m0FE116AB54D63ECB49EF6C8134322688AE163710_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int32,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m14CB84B57F4310A2484056DC89E9FD3AF3D03A24 (Func_3_t144D7C0902AD09AED2F34AFAA80DFC73000F3C52* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t144D7C0902AD09AED2F34AFAA80DFC73000F3C52*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m14CB84B57F4310A2484056DC89E9FD3AF3D03A24_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_m8277AC787BDD9F21BA1F47D634F6E9B29518F8D3 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t144D7C0902AD09AED2F34AFAA80DFC73000F3C52* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t144D7C0902AD09AED2F34AFAA80DFC73000F3C52*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_m8277AC787BDD9F21BA1F47D634F6E9B29518F8D3_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int32,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m5A6702FE62B41527EC5D812ADA21B2F7BBEAC3FE (Func_3_t2D3A009B2F92C078530507CBBAB94631A0518962* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t2D3A009B2F92C078530507CBBAB94631A0518962*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m5A6702FE62B41527EC5D812ADA21B2F7BBEAC3FE_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m52AFB6BB9F9218A10B4902C216873980CEE9D5C6 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t2D3A009B2F92C078530507CBBAB94631A0518962* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t2D3A009B2F92C078530507CBBAB94631A0518962*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m52AFB6BB9F9218A10B4902C216873980CEE9D5C6_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int32,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m3E81FD83C877076690617225E62CCC0BC2A966D5 (Func_3_t6E0A6B58F49984305F50084F3CE8CB7A2AEF9610* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t6E0A6B58F49984305F50084F3CE8CB7A2AEF9610*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3E81FD83C877076690617225E62CCC0BC2A966D5_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_mCAD28319FC229DFF6D8F69E78673DD9B5B9D5A2C (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t6E0A6B58F49984305F50084F3CE8CB7A2AEF9610* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t6E0A6B58F49984305F50084F3CE8CB7A2AEF9610*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_mCAD28319FC229DFF6D8F69E78673DD9B5B9D5A2C_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int32,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m84F2770C13B6FD860133285382FCD341ADDD5BB5 (Func_3_tC4E17F4898AE9AD5D25F6558E740994E6783FCC5* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tC4E17F4898AE9AD5D25F6558E740994E6783FCC5*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m84F2770C13B6FD860133285382FCD341ADDD5BB5_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int32,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_mDC966ABA051A7C45C54B3128567B39C9C5185B8E (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tC4E17F4898AE9AD5D25F6558E740994E6783FCC5* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tC4E17F4898AE9AD5D25F6558E740994E6783FCC5*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_mDC966ABA051A7C45C54B3128567B39C9C5185B8E_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt32,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mF3EE0AC231B525D71D72B51305DA2B1C3B9C0AFE (Func_3_tFFCC382CF387F8D415E200FBAF67E716C344DA66* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tFFCC382CF387F8D415E200FBAF67E716C344DA66*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mF3EE0AC231B525D71D72B51305DA2B1C3B9C0AFE_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m012096EE027F9CCCF3AE67496022BB0755232AB5 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tFFCC382CF387F8D415E200FBAF67E716C344DA66* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tFFCC382CF387F8D415E200FBAF67E716C344DA66*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m012096EE027F9CCCF3AE67496022BB0755232AB5_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt32,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mB926B32A76B10DFE7A8AD5FB93906EF8B8A63C76 (Func_3_tB19319DCFF4DB3957E1C497302F7CF8B85E5BAFC* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tB19319DCFF4DB3957E1C497302F7CF8B85E5BAFC*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mB926B32A76B10DFE7A8AD5FB93906EF8B8A63C76_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m494985EAA344C5EDB506C71ED398E7CEABE47796 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tB19319DCFF4DB3957E1C497302F7CF8B85E5BAFC* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tB19319DCFF4DB3957E1C497302F7CF8B85E5BAFC*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m494985EAA344C5EDB506C71ED398E7CEABE47796_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt32,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mFA63BF05641C5B2D37A26E5E1CCB726DE488C348 (Func_3_t5E6FDF8CFFD66C762594EB68DDF30617E864BD14* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t5E6FDF8CFFD66C762594EB68DDF30617E864BD14*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mFA63BF05641C5B2D37A26E5E1CCB726DE488C348_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_mC0E9B7E1ED3354D1C2F6A50ADE30139B82DECD74 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t5E6FDF8CFFD66C762594EB68DDF30617E864BD14* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t5E6FDF8CFFD66C762594EB68DDF30617E864BD14*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_mC0E9B7E1ED3354D1C2F6A50ADE30139B82DECD74_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt32,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mA1F334FDCBCBB6AC5529F89ACF464A6E40F1FF55 (Func_3_t6EB0082E12D1A91C7915CE652B9EDB08DC60386D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t6EB0082E12D1A91C7915CE652B9EDB08DC60386D*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mA1F334FDCBCBB6AC5529F89ACF464A6E40F1FF55_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_mC84A272FA9FFC2C7C6BF747D78FBD96AB0DE0747 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t6EB0082E12D1A91C7915CE652B9EDB08DC60386D* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t6EB0082E12D1A91C7915CE652B9EDB08DC60386D*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_mC84A272FA9FFC2C7C6BF747D78FBD96AB0DE0747_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt32,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mFBC9697CFB011B639E76CEC40FB7A07BB49DD1BA (Func_3_t096ACB52552EFB98E8D6E5371228AE1D109CA726* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t096ACB52552EFB98E8D6E5371228AE1D109CA726*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mFBC9697CFB011B639E76CEC40FB7A07BB49DD1BA_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_mD214322A396376B4BB923D18C734FFD7E6117AEA (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t096ACB52552EFB98E8D6E5371228AE1D109CA726* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t096ACB52552EFB98E8D6E5371228AE1D109CA726*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_mD214322A396376B4BB923D18C734FFD7E6117AEA_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt32,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m42010284C5F2D7930BC79DB07E450561DA21D788 (Func_3_tC6D88D3E83DF277BF2AB557506D9D8D443B39B98* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tC6D88D3E83DF277BF2AB557506D9D8D443B39B98*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m42010284C5F2D7930BC79DB07E450561DA21D788_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m265CC174A55BE6CFD293B2CE8404976775F73F19 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tC6D88D3E83DF277BF2AB557506D9D8D443B39B98* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tC6D88D3E83DF277BF2AB557506D9D8D443B39B98*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m265CC174A55BE6CFD293B2CE8404976775F73F19_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt32,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mB05A5A70369E26B2C6AADC0F7195E28FFFE09064 (Func_3_t3F094230F3E74E839DD791CD00A2130F0B1F8115* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t3F094230F3E74E839DD791CD00A2130F0B1F8115*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mB05A5A70369E26B2C6AADC0F7195E28FFFE09064_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_m5C9AADE2BD163A7E32A9B4624A7E73AF0129292B (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t3F094230F3E74E839DD791CD00A2130F0B1F8115* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t3F094230F3E74E839DD791CD00A2130F0B1F8115*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_m5C9AADE2BD163A7E32A9B4624A7E73AF0129292B_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt32,System.UInt64,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mC92DA1E7357A272E412C970107CCBE49C50C7772 (Func_3_t898ABEFDCA6E322313BB73FA2E12B6990CFB486B* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t898ABEFDCA6E322313BB73FA2E12B6990CFB486B*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mC92DA1E7357A272E412C970107CCBE49C50C7772_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.UInt64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_m4BEBE3FDD8099F111027A5EC7801665160364645 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t898ABEFDCA6E322313BB73FA2E12B6990CFB486B* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t898ABEFDCA6E322313BB73FA2E12B6990CFB486B*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_m4BEBE3FDD8099F111027A5EC7801665160364645_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt32,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mC8771A0F6B98E368CC834C23027CBC0451B06B04 (Func_3_t0EA21FFE88CFBD6FDE7C80DB2F32141D861550C7* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t0EA21FFE88CFBD6FDE7C80DB2F32141D861550C7*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mC8771A0F6B98E368CC834C23027CBC0451B06B04_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mC331CA9471FB03D55B4F92101B84B22BD34A1667 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t0EA21FFE88CFBD6FDE7C80DB2F32141D861550C7* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t0EA21FFE88CFBD6FDE7C80DB2F32141D861550C7*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mC331CA9471FB03D55B4F92101B84B22BD34A1667_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt32,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mAADC9EFE63413CBFF46B95C14EAAE94463691218 (Func_3_tD412CA8D7E11B56E2A1CE3A6AAA27850DEAB6D07* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tD412CA8D7E11B56E2A1CE3A6AAA27850DEAB6D07*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mAADC9EFE63413CBFF46B95C14EAAE94463691218_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_mB15675C2464CBA37704A05EB39BE8D27E24AD58F (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tD412CA8D7E11B56E2A1CE3A6AAA27850DEAB6D07* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tD412CA8D7E11B56E2A1CE3A6AAA27850DEAB6D07*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_mB15675C2464CBA37704A05EB39BE8D27E24AD58F_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt32,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mCD50BB7F01BDDB33BBBAFB52DAEE427E3BED18DA (Func_3_tB51B9FF79CB58CF833B0C5DD721309062CF249D8* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tB51B9FF79CB58CF833B0C5DD721309062CF249D8*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mCD50BB7F01BDDB33BBBAFB52DAEE427E3BED18DA_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt32,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m8F77A7866AD0C84E024645C9219E3613506B342B (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tB51B9FF79CB58CF833B0C5DD721309062CF249D8* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tB51B9FF79CB58CF833B0C5DD721309062CF249D8*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m8F77A7866AD0C84E024645C9219E3613506B342B_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int64,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m8B6A55EECF9B8E733B5C0E81CEE283946F45CF2E (Func_3_t38BBED5BB44AD67938CBA1EE9D2642A6F5088900* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t38BBED5BB44AD67938CBA1EE9D2642A6F5088900*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m8B6A55EECF9B8E733B5C0E81CEE283946F45CF2E_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m01E6F573144F7DA9DDD23F404FA83A2A1335BFE8 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t38BBED5BB44AD67938CBA1EE9D2642A6F5088900* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t38BBED5BB44AD67938CBA1EE9D2642A6F5088900*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m01E6F573144F7DA9DDD23F404FA83A2A1335BFE8_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int64,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m5ED2CEECA36720956863649327B01A890A3C5363 (Func_3_t5D5A8B21C2BC4A0B5DD25DE4CCDF84CF26ADBCA3* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t5D5A8B21C2BC4A0B5DD25DE4CCDF84CF26ADBCA3*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m5ED2CEECA36720956863649327B01A890A3C5363_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_mDCE4C120DDCFEC3D7395CE950D6610947BE6CDB4 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t5D5A8B21C2BC4A0B5DD25DE4CCDF84CF26ADBCA3* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t5D5A8B21C2BC4A0B5DD25DE4CCDF84CF26ADBCA3*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_mDCE4C120DDCFEC3D7395CE950D6610947BE6CDB4_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int64,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m055661E96BB3B12CF2A3EB5AB3B5422D74A09433 (Func_3_tDDABB8C62DF215DAF8BBADB2B193157329BFD8F0* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tDDABB8C62DF215DAF8BBADB2B193157329BFD8F0*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m055661E96BB3B12CF2A3EB5AB3B5422D74A09433_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m5AEA33E7196CE235EA449F62F2127DE00A8CF1F5 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tDDABB8C62DF215DAF8BBADB2B193157329BFD8F0* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tDDABB8C62DF215DAF8BBADB2B193157329BFD8F0*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m5AEA33E7196CE235EA449F62F2127DE00A8CF1F5_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int64,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m3E221998B86C0D672D0FF570F3FD88D95C0EEFEE (Func_3_t77C29582285B38470B966DD7A6E94E15A1705009* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t77C29582285B38470B966DD7A6E94E15A1705009*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3E221998B86C0D672D0FF570F3FD88D95C0EEFEE_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m1D17C48ABD1157D6147C4F9253417B008F2A09F3 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t77C29582285B38470B966DD7A6E94E15A1705009* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t77C29582285B38470B966DD7A6E94E15A1705009*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m1D17C48ABD1157D6147C4F9253417B008F2A09F3_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int64,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m8BE162E0135EEC8E4C149623BC98CC835242C743 (Func_3_tA715BF628FA7D3A3DD2985084E46EE8AF96C2D56* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tA715BF628FA7D3A3DD2985084E46EE8AF96C2D56*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m8BE162E0135EEC8E4C149623BC98CC835242C743_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m65D6C9AA0088CD5DD41DD5589B51C7768D57FDC3 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tA715BF628FA7D3A3DD2985084E46EE8AF96C2D56* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tA715BF628FA7D3A3DD2985084E46EE8AF96C2D56*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m65D6C9AA0088CD5DD41DD5589B51C7768D57FDC3_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int64,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m8A23225F1877733F5A5510336CEBF44AD4C15D5D (Func_3_t258F77E3809CD0CAB5739F4063EC344BB2D157C3* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t258F77E3809CD0CAB5739F4063EC344BB2D157C3*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m8A23225F1877733F5A5510336CEBF44AD4C15D5D_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m03340750537C5F4D6BA4ECAA0EF8FAC85B9434D3 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t258F77E3809CD0CAB5739F4063EC344BB2D157C3* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t258F77E3809CD0CAB5739F4063EC344BB2D157C3*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m03340750537C5F4D6BA4ECAA0EF8FAC85B9434D3_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int64,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m7E4EC70C21C3CA41B31F58F8C0B5A8F47FC2E0E0 (Func_3_t8BA7DEF7C12D4C785AF84204242578D9C31C3367* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t8BA7DEF7C12D4C785AF84204242578D9C31C3367*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m7E4EC70C21C3CA41B31F58F8C0B5A8F47FC2E0E0_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mD6F76C4BA7A73E2A922BF02AD2E647B875FABACA (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t8BA7DEF7C12D4C785AF84204242578D9C31C3367* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t8BA7DEF7C12D4C785AF84204242578D9C31C3367*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mD6F76C4BA7A73E2A922BF02AD2E647B875FABACA_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int64,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m040530D583E0B40D6F48A47D5C8D609AFE143D1F (Func_3_tFF83532B6A24356ECDA01ACDEB0A9B03906D23AC* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tFF83532B6A24356ECDA01ACDEB0A9B03906D23AC*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m040530D583E0B40D6F48A47D5C8D609AFE143D1F_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m15224E69EC1C15DF7C594D2030AE64E5059DDAC2 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tFF83532B6A24356ECDA01ACDEB0A9B03906D23AC* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tFF83532B6A24356ECDA01ACDEB0A9B03906D23AC*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m15224E69EC1C15DF7C594D2030AE64E5059DDAC2_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int64,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mD576C73482294001560600D72375965E9AF3F43E (Func_3_t780BCA45E905F4A78502AA8F7D95BD8CD6679376* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t780BCA45E905F4A78502AA8F7D95BD8CD6679376*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mD576C73482294001560600D72375965E9AF3F43E_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_mDBDC4830C17D1E09402C0ABF2ABD81ACADC03CCB (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t780BCA45E905F4A78502AA8F7D95BD8CD6679376* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t780BCA45E905F4A78502AA8F7D95BD8CD6679376*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_mDBDC4830C17D1E09402C0ABF2ABD81ACADC03CCB_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Int64,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m11287E8BDC094B70D6B1CBEF5088F0A68FE44642 (Func_3_t3F4A68B7D620DD2D5792B0FCBA08AB9DF77296A6* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t3F4A68B7D620DD2D5792B0FCBA08AB9DF77296A6*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m11287E8BDC094B70D6B1CBEF5088F0A68FE44642_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Int64,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_mBFE1049E717EF76B8970F7927790C0820FF4730B (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t3F4A68B7D620DD2D5792B0FCBA08AB9DF77296A6* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t3F4A68B7D620DD2D5792B0FCBA08AB9DF77296A6*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_mBFE1049E717EF76B8970F7927790C0820FF4730B_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt64,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mCEA186B2502F0B3134DCA2455C051E627F4FA269 (Func_3_tD7872B3AA6B766CCE180AA90881C2CF2663CCA7E* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tD7872B3AA6B766CCE180AA90881C2CF2663CCA7E*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mCEA186B2502F0B3134DCA2455C051E627F4FA269_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt64,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m9CA6BB904544DADA78FFEE7EC7CF4652B2F6A143 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tD7872B3AA6B766CCE180AA90881C2CF2663CCA7E* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tD7872B3AA6B766CCE180AA90881C2CF2663CCA7E*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m9CA6BB904544DADA78FFEE7EC7CF4652B2F6A143_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt64,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mF353252F5DD80D709CBEAF3E0D26DC5E3813D751 (Func_3_t49C1586DECA35B5F39BFA5E6494607C7A9683FBD* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t49C1586DECA35B5F39BFA5E6494607C7A9683FBD*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mF353252F5DD80D709CBEAF3E0D26DC5E3813D751_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt64,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_mF3FDB95A8566534527140E9EB0AD352A8A873A11 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t49C1586DECA35B5F39BFA5E6494607C7A9683FBD* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t49C1586DECA35B5F39BFA5E6494607C7A9683FBD*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_mF3FDB95A8566534527140E9EB0AD352A8A873A11_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt64,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mFDEFE35BBCA7E82A435CADB56F89174E514A687E (Func_3_tF414E7583BB912F566F79F6BA83505A7F2C3C41A* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tF414E7583BB912F566F79F6BA83505A7F2C3C41A*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mFDEFE35BBCA7E82A435CADB56F89174E514A687E_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt64,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_mE4E63461B5EEDAF92439073CBCC8B1A8B3CB76A1 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF414E7583BB912F566F79F6BA83505A7F2C3C41A* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tF414E7583BB912F566F79F6BA83505A7F2C3C41A*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_mE4E63461B5EEDAF92439073CBCC8B1A8B3CB76A1_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt64,System.UInt64,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mD5A89E49E051F2DF3A9C9DC29F8A8FCAAE6BA00B (Func_3_tAD065C32138D70F99F7E8D8BBF25867D55236464* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tAD065C32138D70F99F7E8D8BBF25867D55236464*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mD5A89E49E051F2DF3A9C9DC29F8A8FCAAE6BA00B_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt64,System.UInt64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_m3C75AE521AA851333C27D6A62469E46160F629A3 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tAD065C32138D70F99F7E8D8BBF25867D55236464* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tAD065C32138D70F99F7E8D8BBF25867D55236464*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_m3C75AE521AA851333C27D6A62469E46160F629A3_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt64,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m4D23F45F4F87C24102617739DB1DEC17133CC13D (Func_3_t58E5056C3858798D8903B14FF810EE9F2B38CC38* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t58E5056C3858798D8903B14FF810EE9F2B38CC38*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m4D23F45F4F87C24102617739DB1DEC17133CC13D_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt64,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mBE775D0122EF1D6089BB7A75B28E4AD342F2463F (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t58E5056C3858798D8903B14FF810EE9F2B38CC38* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t58E5056C3858798D8903B14FF810EE9F2B38CC38*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mBE775D0122EF1D6089BB7A75B28E4AD342F2463F_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt64,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m5FD571A7F9703F0F27F487AA12253EFCEADAC201 (Func_3_tD4BC08B54D8D8F3BB8F18DF2B70F773589AF02E3* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tD4BC08B54D8D8F3BB8F18DF2B70F773589AF02E3*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m5FD571A7F9703F0F27F487AA12253EFCEADAC201_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt64,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_m8BE985823FD8ADA5BD5C2F30948C88C1E9197726 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tD4BC08B54D8D8F3BB8F18DF2B70F773589AF02E3* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tD4BC08B54D8D8F3BB8F18DF2B70F773589AF02E3*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_m8BE985823FD8ADA5BD5C2F30948C88C1E9197726_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.UInt64,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m2945847213CB27120C62AAF0CF3303B79CDED6A3 (Func_3_t74402C59F71D80CCF3A73645CAF4276F7F625E76* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t74402C59F71D80CCF3A73645CAF4276F7F625E76*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m2945847213CB27120C62AAF0CF3303B79CDED6A3_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.UInt64,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_mB3FF8FA91915E98DE23E7AE6E00084028EF289D2 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t74402C59F71D80CCF3A73645CAF4276F7F625E76* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t74402C59F71D80CCF3A73645CAF4276F7F625E76*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_mB3FF8FA91915E98DE23E7AE6E00084028EF289D2_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Single,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mD0F07C835A0FD39BA2323FF38D33296C6FE8E390 (Func_3_t5B75CB8B6812C4CC776EC04B6FF5EECF4B6A66E5* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t5B75CB8B6812C4CC776EC04B6FF5EECF4B6A66E5*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mD0F07C835A0FD39BA2323FF38D33296C6FE8E390_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m11A9FA5650AF9A20FA7B3CF59B63D0D3CD0C0CA1 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t5B75CB8B6812C4CC776EC04B6FF5EECF4B6A66E5* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t5B75CB8B6812C4CC776EC04B6FF5EECF4B6A66E5*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m11A9FA5650AF9A20FA7B3CF59B63D0D3CD0C0CA1_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Single,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m72C571E1F83D5224126DBFC6FF0AB2223034F41F (Func_3_tD8E2F4CC8BA4261580852AFA6CD2D916EA5BE7D9* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tD8E2F4CC8BA4261580852AFA6CD2D916EA5BE7D9*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m72C571E1F83D5224126DBFC6FF0AB2223034F41F_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m2A2BE0D55EAA658787E4DD65B9525485F3ED2DA1 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tD8E2F4CC8BA4261580852AFA6CD2D916EA5BE7D9* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tD8E2F4CC8BA4261580852AFA6CD2D916EA5BE7D9*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m2A2BE0D55EAA658787E4DD65B9525485F3ED2DA1_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Single,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mC513BF9C52A1324B7B241D0B3CB03E5E48143F97 (Func_3_tF4480D1A73A2BFD9833B9B4ADF026B7EC8A749FD* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tF4480D1A73A2BFD9833B9B4ADF026B7EC8A749FD*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mC513BF9C52A1324B7B241D0B3CB03E5E48143F97_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m56716F2DE2AF8A843AB963AB6791662E4F264E29 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF4480D1A73A2BFD9833B9B4ADF026B7EC8A749FD* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tF4480D1A73A2BFD9833B9B4ADF026B7EC8A749FD*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_m56716F2DE2AF8A843AB963AB6791662E4F264E29_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Single,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mFDB3C1FBBD88FD7FD1C3B9797E6609107B081CE5 (Func_3_tF72584DA85D49A994DFF5AFAEF43A81F6CECDB14* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tF72584DA85D49A994DFF5AFAEF43A81F6CECDB14*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mFDB3C1FBBD88FD7FD1C3B9797E6609107B081CE5_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_mF0A6A87D95711FC388CE0462217440F7FDDF62C6 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF72584DA85D49A994DFF5AFAEF43A81F6CECDB14* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tF72584DA85D49A994DFF5AFAEF43A81F6CECDB14*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_mF0A6A87D95711FC388CE0462217440F7FDDF62C6_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Single,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mE40F72BC4F8BD22933D7202AF86390DEDCA618FB (Func_3_tC8A20D8E5B48A189FFA01B3E38F23324BE01AB7C* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tC8A20D8E5B48A189FFA01B3E38F23324BE01AB7C*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mE40F72BC4F8BD22933D7202AF86390DEDCA618FB_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m820CE8EA5B029A6514F680A027539D1C5F9FECA3 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tC8A20D8E5B48A189FFA01B3E38F23324BE01AB7C* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tC8A20D8E5B48A189FFA01B3E38F23324BE01AB7C*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m820CE8EA5B029A6514F680A027539D1C5F9FECA3_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Single,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mBC5E19E87CC9D095CF14DEEBD090062D74A719A4 (Func_3_t6BD5E133A0EDF15E1E6012D6EA958EFBC85343C9* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t6BD5E133A0EDF15E1E6012D6EA958EFBC85343C9*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mBC5E19E87CC9D095CF14DEEBD090062D74A719A4_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m4DA98A5A7F8C8361828CED1323F0E48513627BCA (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t6BD5E133A0EDF15E1E6012D6EA958EFBC85343C9* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t6BD5E133A0EDF15E1E6012D6EA958EFBC85343C9*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m4DA98A5A7F8C8361828CED1323F0E48513627BCA_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Single,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mD999356B46060CCBA323F42101C6232322407AAD (Func_3_t089EB17CBE0B037869C06152372E0C5D1AAEAB3E* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t089EB17CBE0B037869C06152372E0C5D1AAEAB3E*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mD999356B46060CCBA323F42101C6232322407AAD_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mE71477EF50DFE455A8967E5D18959F53F6C4CC70 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t089EB17CBE0B037869C06152372E0C5D1AAEAB3E* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t089EB17CBE0B037869C06152372E0C5D1AAEAB3E*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mE71477EF50DFE455A8967E5D18959F53F6C4CC70_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Single,System.UInt64,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m2E9EBCA0F1D363AB8601C20C0393E5186D79536D (Func_3_t977CAC6A305CC91FDE7665685776B7C9982BB972* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t977CAC6A305CC91FDE7665685776B7C9982BB972*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m2E9EBCA0F1D363AB8601C20C0393E5186D79536D_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.UInt64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_m075FE864F9C4CB1BC7540FA3DA4D410F542A4B06 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t977CAC6A305CC91FDE7665685776B7C9982BB972* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t977CAC6A305CC91FDE7665685776B7C9982BB972*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_m075FE864F9C4CB1BC7540FA3DA4D410F542A4B06_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Single,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m19B65D455FB3EFBE5C8B76EC9DEAD66BF1D4FD92 (Func_3_t8171759D65FAF730928654E5BD260A82C54322C2* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t8171759D65FAF730928654E5BD260A82C54322C2*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m19B65D455FB3EFBE5C8B76EC9DEAD66BF1D4FD92_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m10C2027875599BC9FC69D59C201C72961FE0A557 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t8171759D65FAF730928654E5BD260A82C54322C2* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t8171759D65FAF730928654E5BD260A82C54322C2*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m10C2027875599BC9FC69D59C201C72961FE0A557_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Single,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m50489F42111A37C4E53E83AF80B9458DEA9976E6 (Func_3_tF2C70782978C9BD0B4D4CE9FADF5AFD369A49450* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tF2C70782978C9BD0B4D4CE9FADF5AFD369A49450*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m50489F42111A37C4E53E83AF80B9458DEA9976E6_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Single,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m5B795E4FC95A48B3693F3317924B27175E3222AB (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF2C70782978C9BD0B4D4CE9FADF5AFD369A49450* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tF2C70782978C9BD0B4D4CE9FADF5AFD369A49450*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m5B795E4FC95A48B3693F3317924B27175E3222AB_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Decimal,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m3E08B9CE5CADDEAF7DE4F70354F0DD538F4521FB (Func_3_tEFF388DEF67214BB28AD693A56852F9056847940* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tEFF388DEF67214BB28AD693A56852F9056847940*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3E08B9CE5CADDEAF7DE4F70354F0DD538F4521FB_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m990BE9AB0777A8837D16005EA548B2D51209268E (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tEFF388DEF67214BB28AD693A56852F9056847940* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tEFF388DEF67214BB28AD693A56852F9056847940*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m990BE9AB0777A8837D16005EA548B2D51209268E_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Decimal,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mA40DF46FA0E6DB45AE52317FCD7A6F180FB2E85F (Func_3_tEC0CC2B7AF2026A2D06E841572E2CFECA827C8A3* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tEC0CC2B7AF2026A2D06E841572E2CFECA827C8A3*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mA40DF46FA0E6DB45AE52317FCD7A6F180FB2E85F_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_mCB84DD387E6228F9E69ECDBFDE683E6E9C51F2EE (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tEC0CC2B7AF2026A2D06E841572E2CFECA827C8A3* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tEC0CC2B7AF2026A2D06E841572E2CFECA827C8A3*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_mCB84DD387E6228F9E69ECDBFDE683E6E9C51F2EE_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Decimal,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mBDEE985650C19B589F93ADE4DA554AD3A7AE8615 (Func_3_t957F2F5CB890688B0D32F9409FF2295F991F808B* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t957F2F5CB890688B0D32F9409FF2295F991F808B*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mBDEE985650C19B589F93ADE4DA554AD3A7AE8615_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_mBA3AC4DF9974B9EEB502F0CB4CB37F6A2F09FB38 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t957F2F5CB890688B0D32F9409FF2295F991F808B* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t957F2F5CB890688B0D32F9409FF2295F991F808B*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_mBA3AC4DF9974B9EEB502F0CB4CB37F6A2F09FB38_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Decimal,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m5A7903774FE98B443DD45E7AD5EA5DDA9ABA3E47 (Func_3_t4D0AB558CE95FAC6DADBF0C6E1EE528E32F70D8D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t4D0AB558CE95FAC6DADBF0C6E1EE528E32F70D8D*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m5A7903774FE98B443DD45E7AD5EA5DDA9ABA3E47_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m66DD708D80CBF2350B8C68AE4DC10875B547AA0D (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t4D0AB558CE95FAC6DADBF0C6E1EE528E32F70D8D* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t4D0AB558CE95FAC6DADBF0C6E1EE528E32F70D8D*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m66DD708D80CBF2350B8C68AE4DC10875B547AA0D_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Decimal,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mCD1860E4F197224A0F818A01787DAE56F43DD094 (Func_3_t186834EB84081D60C694E7EA4567A9964CCC6DC3* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t186834EB84081D60C694E7EA4567A9964CCC6DC3*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mCD1860E4F197224A0F818A01787DAE56F43DD094_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m81429FC400921B56C50E5411D0F438A8AA23D903 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t186834EB84081D60C694E7EA4567A9964CCC6DC3* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t186834EB84081D60C694E7EA4567A9964CCC6DC3*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m81429FC400921B56C50E5411D0F438A8AA23D903_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Decimal,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mE9F50D4DAC919B6DF45984F121E0F40FE652818E (Func_3_tC826DCF0E5445DED17FE9FCBF74B821635A8267D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tC826DCF0E5445DED17FE9FCBF74B821635A8267D*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mE9F50D4DAC919B6DF45984F121E0F40FE652818E_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m8D50F9271593F0DAB152AE2AC41CF53DE5F58901 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tC826DCF0E5445DED17FE9FCBF74B821635A8267D* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tC826DCF0E5445DED17FE9FCBF74B821635A8267D*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m8D50F9271593F0DAB152AE2AC41CF53DE5F58901_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Decimal,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m7DC438E9BEDF3F61E18D5AC6F1A4318F3F5A9388 (Func_3_t7FC4A60460BFFCEB606CABFCD0ED9D8BF82232F8* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t7FC4A60460BFFCEB606CABFCD0ED9D8BF82232F8*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m7DC438E9BEDF3F61E18D5AC6F1A4318F3F5A9388_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mC9EF13A7E3F298E9C769A03F178A1D8C6D63A6E9 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t7FC4A60460BFFCEB606CABFCD0ED9D8BF82232F8* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t7FC4A60460BFFCEB606CABFCD0ED9D8BF82232F8*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mC9EF13A7E3F298E9C769A03F178A1D8C6D63A6E9_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Decimal,System.UInt64,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m9F7B5189BC9469C55691F07A84D3B9C62603C0CB (Func_3_t616C58908160C9561AF95D0380A14D188EAE66FD* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t616C58908160C9561AF95D0380A14D188EAE66FD*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m9F7B5189BC9469C55691F07A84D3B9C62603C0CB_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.UInt64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_mCE7C6EE4ABCD25E622B97A14FD623815109264B6 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t616C58908160C9561AF95D0380A14D188EAE66FD* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t616C58908160C9561AF95D0380A14D188EAE66FD*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_mCE7C6EE4ABCD25E622B97A14FD623815109264B6_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Decimal,System.Decimal,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mAF86B8AB0DAF388460B465C0AD4115785AB888C2 (Func_3_t5B8CD15E44A920891D1E2CDF1DC64D19A0F3CFE7* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t5B8CD15E44A920891D1E2CDF1DC64D19A0F3CFE7*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mAF86B8AB0DAF388460B465C0AD4115785AB888C2_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Decimal,System.Decimal>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_m120038B2415C2D1B93CE340776AB4C02023AA242 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t5B8CD15E44A920891D1E2CDF1DC64D19A0F3CFE7* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t5B8CD15E44A920891D1E2CDF1DC64D19A0F3CFE7*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_TisDecimal_tDA6C877282B2D789CF97C0949661CC11D643969F_m120038B2415C2D1B93CE340776AB4C02023AA242_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Double,System.Byte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m04208E71689F79E599425D15B95E70122187472F (Func_3_tD8BCF13B591BE309F7056E30DAC4D2C04A7F47BA* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tD8BCF13B591BE309F7056E30DAC4D2C04A7F47BA*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m04208E71689F79E599425D15B95E70122187472F_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.Byte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m56A3D881CAEB604F15DFD8CCCBE245FAB53D8D9F (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tD8BCF13B591BE309F7056E30DAC4D2C04A7F47BA* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tD8BCF13B591BE309F7056E30DAC4D2C04A7F47BA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m56A3D881CAEB604F15DFD8CCCBE245FAB53D8D9F_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Double,System.SByte,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mCCFEFEBDB59EEBE94FCE51EE6FB1606D65A0A420 (Func_3_t7F3996FF9AC9A475769B37F46C1D723C1BB37A8E* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t7F3996FF9AC9A475769B37F46C1D723C1BB37A8E*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mCCFEFEBDB59EEBE94FCE51EE6FB1606D65A0A420_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.SByte>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m8E42A0E8F64052C735F53A1AFCB3778346A2055D (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t7F3996FF9AC9A475769B37F46C1D723C1BB37A8E* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t7F3996FF9AC9A475769B37F46C1D723C1BB37A8E*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_m8E42A0E8F64052C735F53A1AFCB3778346A2055D_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Double,System.Int16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mBD138818F5C38F24FEA11245F591DD98E12E4E06 (Func_3_t09E51964F7FDD3971103A1A273D278C6710085E1* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t09E51964F7FDD3971103A1A273D278C6710085E1*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mBD138818F5C38F24FEA11245F591DD98E12E4E06_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.Int16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_mFEA944F395353BC66F4298481ADC2522D50A3D6C (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t09E51964F7FDD3971103A1A273D278C6710085E1* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t09E51964F7FDD3971103A1A273D278C6710085E1*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisInt16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_mFEA944F395353BC66F4298481ADC2522D50A3D6C_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Double,System.UInt16,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m5A9B3CA69C7358145CDA39152B0CC492C8673FF4 (Func_3_tB6542392B71A290C5BEE7772995E540871575C55* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tB6542392B71A290C5BEE7772995E540871575C55*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m5A9B3CA69C7358145CDA39152B0CC492C8673FF4_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.UInt16>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m1AEB1FB8D0BABB6CAFAC5710821760F2183BD547 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tB6542392B71A290C5BEE7772995E540871575C55* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tB6542392B71A290C5BEE7772995E540871575C55*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m1AEB1FB8D0BABB6CAFAC5710821760F2183BD547_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Double,System.Int32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mBA7663EBEC2C0E179E90417DDF93447EEA641191 (Func_3_tE21F52179A89F8E4F3D92840DA3C7974CBE5DB37* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tE21F52179A89F8E4F3D92840DA3C7974CBE5DB37*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mBA7663EBEC2C0E179E90417DDF93447EEA641191_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.Int32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m9DD93A8CA069396BB57AEAE0FA427A2FBD925665 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tE21F52179A89F8E4F3D92840DA3C7974CBE5DB37* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tE21F52179A89F8E4F3D92840DA3C7974CBE5DB37*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m9DD93A8CA069396BB57AEAE0FA427A2FBD925665_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Double,System.UInt32,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mF133F39F15BF28FAD91570274096C944AE65E710 (Func_3_tF24A1C5D4542A334C5835DB8ED15DFE3055FEE3C* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tF24A1C5D4542A334C5835DB8ED15DFE3055FEE3C*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mF133F39F15BF28FAD91570274096C944AE65E710_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.UInt32>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_mCD65CF1D2D535636A28F12CD52E9ECA6FB4D72ED (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tF24A1C5D4542A334C5835DB8ED15DFE3055FEE3C* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tF24A1C5D4542A334C5835DB8ED15DFE3055FEE3C*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_mCD65CF1D2D535636A28F12CD52E9ECA6FB4D72ED_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Double,System.Int64,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_mEAD40CF1F7CC27BBBC1E5CF85A24AF0528577CDA (Func_3_tC38FCD22A26B64064F30A6573EEE81B5970994C8* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tC38FCD22A26B64064F30A6573EEE81B5970994C8*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_mEAD40CF1F7CC27BBBC1E5CF85A24AF0528577CDA_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.Int64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mBBD3BCE6B9A482C77CD6FA04F4DD398077B2CA60 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tC38FCD22A26B64064F30A6573EEE81B5970994C8* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tC38FCD22A26B64064F30A6573EEE81B5970994C8*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_mBBD3BCE6B9A482C77CD6FA04F4DD398077B2CA60_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Double,System.UInt64,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m612B07DC217C712A48A582BD54F1D3C6651885A8 (Func_3_tE65A651883362D3AE0F6F2787646F231F1D923B0* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tE65A651883362D3AE0F6F2787646F231F1D923B0*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m612B07DC217C712A48A582BD54F1D3C6651885A8_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.UInt64>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_mB723D98B8409519B2CB655EE862D2297EC677B5C (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tE65A651883362D3AE0F6F2787646F231F1D923B0* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tE65A651883362D3AE0F6F2787646F231F1D923B0*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_mB723D98B8409519B2CB655EE862D2297EC677B5C_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Double,System.Single,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m3757EDCFB43FC48798EE01F50A6C5B83FE6FB1C0 (Func_3_tDDF4172D64524B5B49A29AE12782AF05CC74F33B* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_tDDF4172D64524B5B49A29AE12782AF05CC74F33B*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3757EDCFB43FC48798EE01F50A6C5B83FE6FB1C0_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.Single>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m7234C4C937E9FBED537075D6CBF5C5DACC7AD5CD (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_tDDF4172D64524B5B49A29AE12782AF05CC74F33B* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_tDDF4172D64524B5B49A29AE12782AF05CC74F33B*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m7234C4C937E9FBED537075D6CBF5C5DACC7AD5CD_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void System.Func`3<System.Double,System.Double,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_3__ctor_m979A13563C8D9CBA4F45E43D1A8AF009270F9018 (Func_3_t9493BE35D324BDED985F129D45044D3A5489CBDA* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_3_t9493BE35D324BDED985F129D45044D3A5489CBDA*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m979A13563C8D9CBA4F45E43D1A8AF009270F9018_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_3__ctor_m3D53118DAA71CFFC80A4B21073B54F3C4EFA1C68_gshared)((Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.BinaryOperatorHandler::Handle<System.Double,System.Double>(System.Func`3<TLeft,TRight,System.Object>,System.Boolean)
 inline void BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m5D69E54B83BFC783D1434B24CACBC3BFCBA6A9E5 (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866* __this, Func_3_t9493BE35D324BDED985F129D45044D3A5489CBDA* ___handler0, bool ___reverse1, const RuntimeMethod* method)
 {
-	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t9493BE35D324BDED985F129D45044D3A5489CBDA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_TisDouble_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_m5D69E54B83BFC783D1434B24CACBC3BFCBA6A9E5_gshared)(__this, ___handler0, ___reverse1, method);
+	((  void (*) (BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*, Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*, bool, const RuntimeMethod*))BinaryOperatorHandler_Handle_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m22976615C18AC9E32FF4717AEF1D3C4DFD0B44A6_gshared)((BinaryOperatorHandler_tF07E986ACE1AEE23032593227517AF252D285866*)__this, (Func_3_t25B447CF436DB953972081F955DB9276B2A069AA*)___handler0, ___reverse1, method);
 }
 // System.Void Unity.VisualScripting.SubtractionHandler/<>c::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_mBB0D3A62878B07A1509A0EDFA0C3D58E849AB397 (U3CU3Ec_tD1490FFDF13AB968F5BB3C8C88D64E1E88900D88* __this, const RuntimeMethod* method) ;
@@ -8161,17 +7711,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Decimal_tDA6C877282B2D789CF97C0949661CC11D643
 // System.Void System.Collections.Generic.Dictionary`2<System.Type,System.Func`2<System.Object,System.Object>>::.ctor()
 inline void Dictionary_2__ctor_m0E7D0A0B2A6F003E84551803C03B1273E6D8C624 (Dictionary_2_t42FF66C26CE0723C9CA1042E4A1AE2CF59D1219A* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t42FF66C26CE0723C9CA1042E4A1AE2CF59D1219A*, const RuntimeMethod*))Dictionary_2__ctor_m5B32FBC624618211EB461D59CFBB10E987FD1329_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2__ctor_m7745B6ED71E47C95E1BFCE647C4F026A404C668F_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.Type,Unity.VisualScripting.IOptimizedInvoker>::.ctor()
 inline void Dictionary_2__ctor_mF71C8D9658C94C12DA5BF5AF8BBC083EC63BA8C5 (Dictionary_2_tCFC8162923392871D3BE0D0CFCDE070A12C1B976* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_tCFC8162923392871D3BE0D0CFCDE070A12C1B976*, const RuntimeMethod*))Dictionary_2__ctor_m5B32FBC624618211EB461D59CFBB10E987FD1329_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2__ctor_m7745B6ED71E47C95E1BFCE647C4F026A404C668F_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.Type,System.Type>::.ctor()
 inline void Dictionary_2__ctor_m5D11BD5B331D47EF67914EC367C109B0BA39F729 (Dictionary_2_t8BF76F08F2E28AE3B97CD39EBC7A0FE57398B1B0* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t8BF76F08F2E28AE3B97CD39EBC7A0FE57398B1B0*, const RuntimeMethod*))Dictionary_2__ctor_m5B32FBC624618211EB461D59CFBB10E987FD1329_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2__ctor_m7745B6ED71E47C95E1BFCE647C4F026A404C668F_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Void Unity.VisualScripting.OperatorHandler::.ctor(System.String,System.String,System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OperatorHandler__ctor_m790DF32641BA9F5D9E46A0111ED79D27A9B663A2 (OperatorHandler_tF3D07F68319B7937073E8361BABC759CED880F72* __this, String_t* ___name0, String_t* ___verb1, String_t* ___symbol2, String_t* ___customMethodName3, const RuntimeMethod* method) ;
@@ -8180,31 +7730,35 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR EnsureThat_tCC49E8B65851E70C9534A68EB657B6227
 // System.Void Unity.VisualScripting.EnsureThat::IsNotNull<System.Object>(T)
 inline void EnsureThat_IsNotNull_TisRuntimeObject_m609E619BEADC6A63A12D5BFF2B15CCB0A4E28F4B (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC* __this, RuntimeObject* ___value0, const RuntimeMethod* method)
 {
-	((  void (*) (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*, RuntimeObject*, const RuntimeMethod*))EnsureThat_IsNotNull_TisRuntimeObject_m609E619BEADC6A63A12D5BFF2B15CCB0A4E28F4B_gshared)(__this, ___value0, method);
+	((  void (*) (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))EnsureThat_IsNotNull_TisIl2CppFullySharedGenericAny_m644606E147B32EF7D13A08EB4DB26B8FECE5495E_gshared)((EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*)__this, (Il2CppFullySharedGenericAny)___value0, method);
 }
 // System.Type System.Object::GetType()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Type_t* Object_GetType_mE10A8FC1E57F3DF29972CCBC026C2DC3942263B3 (RuntimeObject* __this, const RuntimeMethod* method) ;
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Type,System.Func`2<System.Object,System.Object>>::ContainsKey(TKey)
 inline bool Dictionary_2_ContainsKey_mD9AEF03950DAA82B0D10D4B0E697DB6C6AFD9BAE (Dictionary_2_t42FF66C26CE0723C9CA1042E4A1AE2CF59D1219A* __this, Type_t* ___key0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_t42FF66C26CE0723C9CA1042E4A1AE2CF59D1219A*, Type_t*, const RuntimeMethod*))Dictionary_2_ContainsKey_m703047C213F7AB55C9DC346596287773A1F670CD_gshared)(__this, ___key0, method);
+	return ((  bool (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_ContainsKey_mA268E9B914DCE838DD0CD9D879BAAEECD0C677AA_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, method);
 }
 // TValue System.Collections.Generic.Dictionary`2<System.Type,System.Func`2<System.Object,System.Object>>::get_Item(TKey)
 inline Func_2_tACBF5A1656250800CE861707354491F0611F6624* Dictionary_2_get_Item_m795CBED1637BCF82CABACC1E3318BF7881824B64 (Dictionary_2_t42FF66C26CE0723C9CA1042E4A1AE2CF59D1219A* __this, Type_t* ___key0, const RuntimeMethod* method)
 {
-	return ((  Func_2_tACBF5A1656250800CE861707354491F0611F6624* (*) (Dictionary_2_t42FF66C26CE0723C9CA1042E4A1AE2CF59D1219A*, Type_t*, const RuntimeMethod*))Dictionary_2_get_Item_m4AAAECBE902A211BF2126E6AFA280AEF73A3E0D6_gshared)(__this, ___key0, method);
+	Func_2_tACBF5A1656250800CE861707354491F0611F6624* il2cppRetVal;
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, Il2CppFullySharedGenericAny*, const RuntimeMethod*))Dictionary_2_get_Item_m2E96908E9716367701CD737FA54C884EB2A8C3EA_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // TResult System.Func`2<System.Object,System.Object>::Invoke(T)
 inline RuntimeObject* Func_2_Invoke_mDBA25DA5DA5B7E056FB9B026AF041F1385FB58A9_inline (Func_2_tACBF5A1656250800CE861707354491F0611F6624* __this, RuntimeObject* ___arg0, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (Func_2_tACBF5A1656250800CE861707354491F0611F6624*, RuntimeObject*, const RuntimeMethod*))Func_2_Invoke_mDBA25DA5DA5B7E056FB9B026AF041F1385FB58A9_gshared_inline)(__this, ___arg0, method);
+	RuntimeObject* il2cppRetVal;
+	((  void (*) (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, Il2CppFullySharedGenericAny*, const RuntimeMethod*))Func_2_Invoke_m31CAC166FDC80DC5AE52A5AEFFEE2D9B27A1CA3F_gshared_inline)((Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*)__this, (Il2CppFullySharedGenericAny)___arg0, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.String Unity.VisualScripting.OperatorHandler::get_customMethodName()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* OperatorHandler_get_customMethodName_mC810DA3C9E89DDFF6DED90A64B48BA228DF7DAC7_inline (OperatorHandler_tF3D07F68319B7937073E8361BABC759CED880F72* __this, const RuntimeMethod* method) ;
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Type,Unity.VisualScripting.IOptimizedInvoker>::ContainsKey(TKey)
 inline bool Dictionary_2_ContainsKey_m4598EF9BD4B93CF26D7A373F2002A25CDB16DA6B (Dictionary_2_tCFC8162923392871D3BE0D0CFCDE070A12C1B976* __this, Type_t* ___key0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_tCFC8162923392871D3BE0D0CFCDE070A12C1B976*, Type_t*, const RuntimeMethod*))Dictionary_2_ContainsKey_m703047C213F7AB55C9DC346596287773A1F670CD_gshared)(__this, ___key0, method);
+	return ((  bool (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_ContainsKey_mA268E9B914DCE838DD0CD9D879BAAEECD0C677AA_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, method);
 }
 // System.Reflection.MethodInfo System.Type::GetMethod(System.String,System.Reflection.BindingFlags)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MethodInfo_t* Type_GetMethod_m9E66B5053F150537A74C490C1DA5174A7875189D (Type_t* __this, String_t* ___name0, int32_t ___bindingAttr1, const RuntimeMethod* method) ;
@@ -8215,24 +7769,28 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Type_t* UnaryOperatorHandler_ResolveUserDefin
 // System.Void System.Collections.Generic.Dictionary`2<System.Type,System.Type>::Add(TKey,TValue)
 inline void Dictionary_2_Add_m977BEBE7261BFEF13B96BE8C7CD46BF0945862F4 (Dictionary_2_t8BF76F08F2E28AE3B97CD39EBC7A0FE57398B1B0* __this, Type_t* ___key0, Type_t* ___value1, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t8BF76F08F2E28AE3B97CD39EBC7A0FE57398B1B0*, Type_t*, Type_t*, const RuntimeMethod*))Dictionary_2_Add_m93FFFABE8FCE7FA9793F0915E2A8842C7CD0C0C1_gshared)(__this, ___key0, ___value1, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_Add_m54D479280472DEA042DB3933AF547E666B017333_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny)___value1, method);
 }
 // Unity.VisualScripting.IOptimizedInvoker Unity.VisualScripting.OptimizedReflection::Prewarm(System.Reflection.MethodInfo)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* OptimizedReflection_Prewarm_mE002ED1A6BAE2192B09BB38105660A0D60C3FD84 (MethodInfo_t* ___methodInfo0, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.Dictionary`2<System.Type,Unity.VisualScripting.IOptimizedInvoker>::Add(TKey,TValue)
 inline void Dictionary_2_Add_mEE77A4F234351AB181FCBBF777B908A3EB4FED3A (Dictionary_2_tCFC8162923392871D3BE0D0CFCDE070A12C1B976* __this, Type_t* ___key0, RuntimeObject* ___value1, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_tCFC8162923392871D3BE0D0CFCDE070A12C1B976*, Type_t*, RuntimeObject*, const RuntimeMethod*))Dictionary_2_Add_m93FFFABE8FCE7FA9793F0915E2A8842C7CD0C0C1_gshared)(__this, ___key0, ___value1, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_Add_m54D479280472DEA042DB3933AF547E666B017333_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny)___value1, method);
 }
 // TValue System.Collections.Generic.Dictionary`2<System.Type,Unity.VisualScripting.IOptimizedInvoker>::get_Item(TKey)
 inline RuntimeObject* Dictionary_2_get_Item_m558676F345D75BCB5D359CC2D6C45D33F711E44F (Dictionary_2_tCFC8162923392871D3BE0D0CFCDE070A12C1B976* __this, Type_t* ___key0, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (Dictionary_2_tCFC8162923392871D3BE0D0CFCDE070A12C1B976*, Type_t*, const RuntimeMethod*))Dictionary_2_get_Item_m4AAAECBE902A211BF2126E6AFA280AEF73A3E0D6_gshared)(__this, ___key0, method);
+	RuntimeObject* il2cppRetVal;
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, Il2CppFullySharedGenericAny*, const RuntimeMethod*))Dictionary_2_get_Item_m2E96908E9716367701CD737FA54C884EB2A8C3EA_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // TValue System.Collections.Generic.Dictionary`2<System.Type,System.Type>::get_Item(TKey)
 inline Type_t* Dictionary_2_get_Item_m4A6386B0FB5D262F4A355864E53C582DE4DCDAB0 (Dictionary_2_t8BF76F08F2E28AE3B97CD39EBC7A0FE57398B1B0* __this, Type_t* ___key0, const RuntimeMethod* method)
 {
-	return ((  Type_t* (*) (Dictionary_2_t8BF76F08F2E28AE3B97CD39EBC7A0FE57398B1B0*, Type_t*, const RuntimeMethod*))Dictionary_2_get_Item_m4AAAECBE902A211BF2126E6AFA280AEF73A3E0D6_gshared)(__this, ___key0, method);
+	Type_t* il2cppRetVal;
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, Il2CppFullySharedGenericAny*, const RuntimeMethod*))Dictionary_2_get_Item_m2E96908E9716367701CD737FA54C884EB2A8C3EA_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Object Unity.VisualScripting.ConversionUtility::Convert(System.Object,System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ConversionUtility_Convert_m1AFE447B1B7CB33E758A56B9EAB0551505DA2084 (RuntimeObject* ___value0, Type_t* ___type1, const RuntimeMethod* method) ;
@@ -8263,17 +7821,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TargetParameterCountException__ctor_mB09
 // System.Void System.Collections.Generic.Dictionary`2<System.Reflection.FieldInfo,Unity.VisualScripting.IOptimizedAccessor>::.ctor()
 inline void Dictionary_2__ctor_m5F3A808D71DCB2BF9A73482197CC1D6FB993F7B7 (Dictionary_2_tFC6B69B086D054B5EE49F48AD91892D54005A012* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_tFC6B69B086D054B5EE49F48AD91892D54005A012*, const RuntimeMethod*))Dictionary_2__ctor_m5B32FBC624618211EB461D59CFBB10E987FD1329_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2__ctor_m7745B6ED71E47C95E1BFCE647C4F026A404C668F_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.Reflection.PropertyInfo,Unity.VisualScripting.IOptimizedAccessor>::.ctor()
 inline void Dictionary_2__ctor_m9FF46D2ED75E12B85836EBEC2C81A0E73A587A81 (Dictionary_2_t65CAA2946105B4268932C79B7596C2B2CF5E624E* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t65CAA2946105B4268932C79B7596C2B2CF5E624E*, const RuntimeMethod*))Dictionary_2__ctor_m5B32FBC624618211EB461D59CFBB10E987FD1329_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2__ctor_m7745B6ED71E47C95E1BFCE647C4F026A404C668F_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.Reflection.MethodInfo,Unity.VisualScripting.IOptimizedInvoker>::.ctor()
 inline void Dictionary_2__ctor_mC2CEC0E52B04E39B0883BDAA55CB5A042F487819 (Dictionary_2_t6B68DAC8F709194A911B6D615BEBEFCD212772B4* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t6B68DAC8F709194A911B6D615BEBEFCD212772B4*, const RuntimeMethod*))Dictionary_2__ctor_m5B32FBC624618211EB461D59CFBB10E987FD1329_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2__ctor_m7745B6ED71E47C95E1BFCE647C4F026A404C668F_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Boolean Unity.VisualScripting.OptimizedReflection::get_useJitIfAvailable()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool OptimizedReflection_get_useJitIfAvailable_m7B5D5B745D9567F0B2078B6D9F78FEDFB06C2958_inline (const RuntimeMethod* method) ;
@@ -8288,24 +7846,24 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void OptimizedReflection_set_safe
 // System.Void System.Collections.Generic.Dictionary`2<System.Reflection.FieldInfo,Unity.VisualScripting.IOptimizedAccessor>::Clear()
 inline void Dictionary_2_Clear_mF877231583DC3A275799891158EAF3CCD42D3EE4 (Dictionary_2_tFC6B69B086D054B5EE49F48AD91892D54005A012* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_tFC6B69B086D054B5EE49F48AD91892D54005A012*, const RuntimeMethod*))Dictionary_2_Clear_mCFB5EA7351D5860D2B91592B91A84CA265A41433_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2_Clear_m935B3F117860376DC854C9E0C80CBD99BE77EEA4_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.Reflection.PropertyInfo,Unity.VisualScripting.IOptimizedAccessor>::Clear()
 inline void Dictionary_2_Clear_m367E72E7AABCD5AAC4FD1FC104AAF47533E11944 (Dictionary_2_t65CAA2946105B4268932C79B7596C2B2CF5E624E* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t65CAA2946105B4268932C79B7596C2B2CF5E624E*, const RuntimeMethod*))Dictionary_2_Clear_mCFB5EA7351D5860D2B91592B91A84CA265A41433_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2_Clear_m935B3F117860376DC854C9E0C80CBD99BE77EEA4_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.Reflection.MethodInfo,Unity.VisualScripting.IOptimizedInvoker>::Clear()
 inline void Dictionary_2_Clear_m44F39944EDF40E94207AE019CC21E17CDF131288 (Dictionary_2_t6B68DAC8F709194A911B6D615BEBEFCD212772B4* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t6B68DAC8F709194A911B6D615BEBEFCD212772B4*, const RuntimeMethod*))Dictionary_2_Clear_mCFB5EA7351D5860D2B91592B91A84CA265A41433_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2_Clear_m935B3F117860376DC854C9E0C80CBD99BE77EEA4_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Void Unity.VisualScripting.OptimizedReflection::VerifyTarget(System.Type,System.Object,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OptimizedReflection_VerifyTarget_mD2F971BDCF20B242584AEAEB6997C010A2AB7FA1 (Type_t* ___targetType0, RuntimeObject* ___target1, bool ___static2, const RuntimeMethod* method) ;
 // System.Void Unity.VisualScripting.EnsureThat::IsNotNull<System.Type>(T)
 inline void EnsureThat_IsNotNull_TisType_t_m40B42BDE6178A07EC6EB4E316FB60D2C1F90964F (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC* __this, Type_t* ___value0, const RuntimeMethod* method)
 {
-	((  void (*) (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*, Type_t*, const RuntimeMethod*))EnsureThat_IsNotNull_TisRuntimeObject_m609E619BEADC6A63A12D5BFF2B15CCB0A4E28F4B_gshared)(__this, ___value0, method);
+	((  void (*) (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))EnsureThat_IsNotNull_TisIl2CppFullySharedGenericAny_m644606E147B32EF7D13A08EB4DB26B8FECE5495E_gshared)((EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*)__this, (Il2CppFullySharedGenericAny)___value0, method);
 }
 // System.String System.String::Format(System.String,System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8 (String_t* ___format0, RuntimeObject* ___arg01, const RuntimeMethod* method) ;
@@ -8324,7 +7882,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool OptimizedReflection_SupportsOptimization
 // System.Void Unity.VisualScripting.EnsureThat::IsNotNull<System.Reflection.FieldInfo>(T)
 inline void EnsureThat_IsNotNull_TisFieldInfo_t_m19C9757FBFEB6E3C2C67F58080C1A3D7D2FA9D92 (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC* __this, FieldInfo_t* ___value0, const RuntimeMethod* method)
 {
-	((  void (*) (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*, FieldInfo_t*, const RuntimeMethod*))EnsureThat_IsNotNull_TisRuntimeObject_m609E619BEADC6A63A12D5BFF2B15CCB0A4E28F4B_gshared)(__this, ___value0, method);
+	((  void (*) (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))EnsureThat_IsNotNull_TisIl2CppFullySharedGenericAny_m644606E147B32EF7D13A08EB4DB26B8FECE5495E_gshared)((EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*)__this, (Il2CppFullySharedGenericAny)___value0, method);
 }
 // System.Void System.Threading.Monitor::Exit(System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Monitor_Exit_m05B2CF037E2214B3208198C282490A2A475653FA (RuntimeObject* ___obj0, const RuntimeMethod* method) ;
@@ -8333,7 +7891,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Monitor_Enter_m3CDB589DA1300B513D55FDCFB
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Reflection.FieldInfo,Unity.VisualScripting.IOptimizedAccessor>::TryGetValue(TKey,TValue&)
 inline bool Dictionary_2_TryGetValue_m5C9579D6404C1145586A804FDD8245537BA25D6D (Dictionary_2_tFC6B69B086D054B5EE49F48AD91892D54005A012* __this, FieldInfo_t* ___key0, RuntimeObject** ___value1, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_tFC6B69B086D054B5EE49F48AD91892D54005A012*, FieldInfo_t*, RuntimeObject**, const RuntimeMethod*))Dictionary_2_TryGetValue_mD15380A4ED7CDEE99EA45881577D26BA9CE1B849_gshared)(__this, ___key0, ___value1, method);
+	return ((  bool (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType&*/Il2CppFullySharedGenericAny*, const RuntimeMethod*))Dictionary_2_TryGetValue_m7519D765EAF1E8A7D3137C2F1B7B3A01D15A1692_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny*)___value1, method);
 }
 // System.Boolean Unity.VisualScripting.OptimizedReflection::SupportsOptimization(System.Reflection.FieldInfo)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool OptimizedReflection_SupportsOptimization_mF3283EA8FB29FF45FF362320A80FA514F5124336 (FieldInfo_t* ___fieldInfo0, const RuntimeMethod* method) ;
@@ -8348,19 +7906,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReflectionFieldAccessor__ctor_mF78A1143A
 // System.Void System.Collections.Generic.Dictionary`2<System.Reflection.FieldInfo,Unity.VisualScripting.IOptimizedAccessor>::Add(TKey,TValue)
 inline void Dictionary_2_Add_m319066E672A6CB22EB072499083D0E63C3B53DF2 (Dictionary_2_tFC6B69B086D054B5EE49F48AD91892D54005A012* __this, FieldInfo_t* ___key0, RuntimeObject* ___value1, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_tFC6B69B086D054B5EE49F48AD91892D54005A012*, FieldInfo_t*, RuntimeObject*, const RuntimeMethod*))Dictionary_2_Add_m93FFFABE8FCE7FA9793F0915E2A8842C7CD0C0C1_gshared)(__this, ___key0, ___value1, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_Add_m54D479280472DEA042DB3933AF547E666B017333_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny)___value1, method);
 }
 // Unity.VisualScripting.IOptimizedAccessor Unity.VisualScripting.OptimizedReflection::GetPropertyAccessor(System.Reflection.PropertyInfo)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* OptimizedReflection_GetPropertyAccessor_m2B9D5C4E7AA788B3A4D24AEB15C8BC3BA6481951 (PropertyInfo_t* ___propertyInfo0, const RuntimeMethod* method) ;
 // System.Void Unity.VisualScripting.EnsureThat::IsNotNull<System.Reflection.PropertyInfo>(T)
 inline void EnsureThat_IsNotNull_TisPropertyInfo_t_m718ADA4E1D5E2E976F82CD5D09F2C20CECC7BE88 (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC* __this, PropertyInfo_t* ___value0, const RuntimeMethod* method)
 {
-	((  void (*) (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*, PropertyInfo_t*, const RuntimeMethod*))EnsureThat_IsNotNull_TisRuntimeObject_m609E619BEADC6A63A12D5BFF2B15CCB0A4E28F4B_gshared)(__this, ___value0, method);
+	((  void (*) (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))EnsureThat_IsNotNull_TisIl2CppFullySharedGenericAny_m644606E147B32EF7D13A08EB4DB26B8FECE5495E_gshared)((EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*)__this, (Il2CppFullySharedGenericAny)___value0, method);
 }
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Reflection.PropertyInfo,Unity.VisualScripting.IOptimizedAccessor>::TryGetValue(TKey,TValue&)
 inline bool Dictionary_2_TryGetValue_m3D00C9B66FAE87520AAF6B51EA4DD1D1DD8D205E (Dictionary_2_t65CAA2946105B4268932C79B7596C2B2CF5E624E* __this, PropertyInfo_t* ___key0, RuntimeObject** ___value1, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_t65CAA2946105B4268932C79B7596C2B2CF5E624E*, PropertyInfo_t*, RuntimeObject**, const RuntimeMethod*))Dictionary_2_TryGetValue_mD15380A4ED7CDEE99EA45881577D26BA9CE1B849_gshared)(__this, ___key0, ___value1, method);
+	return ((  bool (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType&*/Il2CppFullySharedGenericAny*, const RuntimeMethod*))Dictionary_2_TryGetValue_m7519D765EAF1E8A7D3137C2F1B7B3A01D15A1692_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny*)___value1, method);
 }
 // System.Boolean Unity.VisualScripting.OptimizedReflection::SupportsOptimization(System.Reflection.PropertyInfo)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool OptimizedReflection_SupportsOptimization_mE77F5BA15A9E93ED8D84947A11097FDFDE0E8D32 (PropertyInfo_t* ___propertyInfo0, const RuntimeMethod* method) ;
@@ -8371,19 +7929,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReflectionPropertyAccessor__ctor_m6D9ACC
 // System.Void System.Collections.Generic.Dictionary`2<System.Reflection.PropertyInfo,Unity.VisualScripting.IOptimizedAccessor>::Add(TKey,TValue)
 inline void Dictionary_2_Add_mDC88A24AFE9E3C804D7F60ADF314867DC922FC97 (Dictionary_2_t65CAA2946105B4268932C79B7596C2B2CF5E624E* __this, PropertyInfo_t* ___key0, RuntimeObject* ___value1, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t65CAA2946105B4268932C79B7596C2B2CF5E624E*, PropertyInfo_t*, RuntimeObject*, const RuntimeMethod*))Dictionary_2_Add_m93FFFABE8FCE7FA9793F0915E2A8842C7CD0C0C1_gshared)(__this, ___key0, ___value1, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_Add_m54D479280472DEA042DB3933AF547E666B017333_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny)___value1, method);
 }
 // Unity.VisualScripting.IOptimizedInvoker Unity.VisualScripting.OptimizedReflection::GetMethodInvoker(System.Reflection.MethodInfo)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* OptimizedReflection_GetMethodInvoker_m1F5AE4FEE232BB21C091CFE0E87C2B80D68D1A2D (MethodInfo_t* ___methodInfo0, const RuntimeMethod* method) ;
 // System.Void System.Func`2<System.Reflection.ParameterInfo,System.Boolean>::.ctor(System.Object,System.IntPtr)
 inline void Func_2__ctor_m4EB50A8D85414DB2DF89BD0200D31D2A6DC97026 (Func_2_tF2CB0011FB715A4E24C8F2347178A002F1DD2B35* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_2_tF2CB0011FB715A4E24C8F2347178A002F1DD2B35*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_2__ctor_m13C0A7F33154D861E2A041B52E88461832DA1697_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_2__ctor_m7F5DD19B4170C027D5367001F7BC95A0658A2169_gshared)((Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*)__this, ___object0, ___method1, method);
 }
 // System.Boolean System.Linq.Enumerable::Any<System.Reflection.ParameterInfo>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
 inline bool Enumerable_Any_TisParameterInfo_tBC2D68304851A59EFB2EAE6B168714CD45445F2F_m0899A21C2E98E0BECAFB92CC250C5E0CDB0F347E (RuntimeObject* ___source0, Func_2_tF2CB0011FB715A4E24C8F2347178A002F1DD2B35* ___predicate1, const RuntimeMethod* method)
 {
-	return ((  bool (*) (RuntimeObject*, Func_2_tF2CB0011FB715A4E24C8F2347178A002F1DD2B35*, const RuntimeMethod*))Enumerable_Any_TisRuntimeObject_mF6C6AC8DF8971883615734832D09C9210B956F0F_gshared)(___source0, ___predicate1, method);
+	return ((  bool (*) (RuntimeObject*, Func_2_t19E50C11C3E1F20B5A8FDB85D7DD353B6DFF868B*, const RuntimeMethod*))Enumerable_Any_TisIl2CppFullySharedGenericAny_m169BDC8DDA00D7D377C865871CB094FD41BBA8BB_gshared)((RuntimeObject*)___source0, (Func_2_t19E50C11C3E1F20B5A8FDB85D7DD353B6DFF868B*)___predicate1, method);
 }
 // System.Boolean System.Reflection.MethodBase::get_IsVirtual()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MethodBase_get_IsVirtual_m2C0A566F37B666FDEE3066729AEACF336B342EC2 (MethodBase_t* __this, const RuntimeMethod* method) ;
@@ -8392,12 +7950,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MethodBase_get_IsFinal_m26EBD101D88EC5CC
 // System.Void Unity.VisualScripting.EnsureThat::IsNotNull<System.Reflection.MethodInfo>(T)
 inline void EnsureThat_IsNotNull_TisMethodInfo_t_mACBF26E799063F94F8E93C5742C9E20CC9179639 (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC* __this, MethodInfo_t* ___value0, const RuntimeMethod* method)
 {
-	((  void (*) (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*, MethodInfo_t*, const RuntimeMethod*))EnsureThat_IsNotNull_TisRuntimeObject_m609E619BEADC6A63A12D5BFF2B15CCB0A4E28F4B_gshared)(__this, ___value0, method);
+	((  void (*) (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))EnsureThat_IsNotNull_TisIl2CppFullySharedGenericAny_m644606E147B32EF7D13A08EB4DB26B8FECE5495E_gshared)((EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*)__this, (Il2CppFullySharedGenericAny)___value0, method);
 }
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Reflection.MethodInfo,Unity.VisualScripting.IOptimizedInvoker>::TryGetValue(TKey,TValue&)
 inline bool Dictionary_2_TryGetValue_m1C865A9B5C7A0618B804151ECE7219ABAED02EAE (Dictionary_2_t6B68DAC8F709194A911B6D615BEBEFCD212772B4* __this, MethodInfo_t* ___key0, RuntimeObject** ___value1, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_t6B68DAC8F709194A911B6D615BEBEFCD212772B4*, MethodInfo_t*, RuntimeObject**, const RuntimeMethod*))Dictionary_2_TryGetValue_mD15380A4ED7CDEE99EA45881577D26BA9CE1B849_gshared)(__this, ___key0, ___value1, method);
+	return ((  bool (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType&*/Il2CppFullySharedGenericAny*, const RuntimeMethod*))Dictionary_2_TryGetValue_m7519D765EAF1E8A7D3137C2F1B7B3A01D15A1692_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny*)___value1, method);
 }
 // System.Boolean Unity.VisualScripting.OptimizedReflection::SupportsOptimization(System.Reflection.MethodInfo)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool OptimizedReflection_SupportsOptimization_m6F8B75D83A6AA63D88FD9E39F8F774E9B92F3914 (MethodInfo_t* ___methodInfo0, const RuntimeMethod* method) ;
@@ -8412,7 +7970,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReflectionInvoker__ctor_mAB6A4A7633A3F7C
 // System.Void System.Collections.Generic.Dictionary`2<System.Reflection.MethodInfo,Unity.VisualScripting.IOptimizedInvoker>::Add(TKey,TValue)
 inline void Dictionary_2_Add_m151B76B50AC50FD7B20EC456515728A872A08F46 (Dictionary_2_t6B68DAC8F709194A911B6D615BEBEFCD212772B4* __this, MethodInfo_t* ___key0, RuntimeObject* ___value1, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t6B68DAC8F709194A911B6D615BEBEFCD212772B4*, MethodInfo_t*, RuntimeObject*, const RuntimeMethod*))Dictionary_2_Add_m93FFFABE8FCE7FA9793F0915E2A8842C7CD0C0C1_gshared)(__this, ___key0, ___value1, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_Add_m54D479280472DEA042DB3933AF547E666B017333_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny)___value1, method);
 }
 // System.Void Unity.VisualScripting.OptimizedReflection/<>c::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m229CF2F8E2915479FECDC11787B7C68731EDD5C8 (U3CU3Ec_t41D4242B08B10CCA149FBE68586650982253D6EE* __this, const RuntimeMethod* method) ;
@@ -8425,17 +7983,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MethodBase_Invoke_mEEF3218648F
 // System.Void System.Func`2<System.Reflection.ParameterInfo,System.Type>::.ctor(System.Object,System.IntPtr)
 inline void Func_2__ctor_mABAC2A1749B8A3F716CAD567A9ABCC9654A7E97E (Func_2_t083860B929985EC8DF79C99B5157C38632F84196* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_2_t083860B929985EC8DF79C99B5157C38632F84196*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_2__ctor_m7F8A01C0B02BC1D4063F4EB1E817F7A48562A398_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_2__ctor_m7F5DD19B4170C027D5367001F7BC95A0658A2169_gshared)((Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*)__this, ___object0, ___method1, method);
 }
 // System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Select<System.Reflection.ParameterInfo,System.Type>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,TResult>)
 inline RuntimeObject* Enumerable_Select_TisParameterInfo_tBC2D68304851A59EFB2EAE6B168714CD45445F2F_TisType_t_mF9CA31F130332928D01BB1567743F4531645DE9C (RuntimeObject* ___source0, Func_2_t083860B929985EC8DF79C99B5157C38632F84196* ___selector1, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (RuntimeObject*, Func_2_t083860B929985EC8DF79C99B5157C38632F84196*, const RuntimeMethod*))Enumerable_Select_TisRuntimeObject_TisRuntimeObject_m67C538A5EBF57C4844107A8EF25DB2CAAFBAF8FB_gshared)(___source0, ___selector1, method);
+	RuntimeObject* il2cppRetVal = ((  RuntimeObject* (*) (RuntimeObject*, Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*, const RuntimeMethod*))Enumerable_Select_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m5BBCA2BC02448D0B77D2201BB08B13BAB3BABA53_gshared)((RuntimeObject*)___source0, (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*)___selector1, method);
+	return (RuntimeObject*)il2cppRetVal;
 }
 // TSource[] System.Linq.Enumerable::ToArray<System.Type>(System.Collections.Generic.IEnumerable`1<TSource>)
 inline TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* Enumerable_ToArray_TisType_t_m8E2C7EBDC8CEB2393785B9E910ECF6D478007A89 (RuntimeObject* ___source0, const RuntimeMethod* method)
 {
-	return ((  TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_ToArray_TisRuntimeObject_mA54265C2C8A0864929ECD300B75E4952D553D17D_gshared)(___source0, method);
+	__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* il2cppRetVal = ((  __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_ToArray_TisIl2CppFullySharedGenericAny_mE1571336F171A560849F9D7CB38E3A9A4B43B1C6_gshared)((RuntimeObject*)___source0, method);
+	return (TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB*)il2cppRetVal;
 }
 // System.Void Unity.VisualScripting.ReflectionInvoker/<>c::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m1F97D0D1543AA092A05939511B8A9718A187B7CF (U3CU3Ec_t5BF97359CAB51FEF9A2CBECA6E291EE785BEF96B* __this, const RuntimeMethod* method) ;
@@ -8452,12 +8012,15 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_Invoke_m7126A54DACA72
 // System.Linq.Expressions.Expression`1<TDelegate> System.Linq.Expressions.Expression::Lambda<System.Action>(System.Linq.Expressions.Expression,System.Linq.Expressions.ParameterExpression[])
 inline Expression_1_tFA626D2A587EDA121C2ADC9C9719815551231292* Expression_Lambda_TisAction_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_m42D2ED910E63ABDBB9C29C17FE25C11755DB31CD (Expression_t70AA908ECBD33E94249BF235E4EBB0F831AD8785* ___body0, ParameterExpressionU5BU5D_tA217A6969CA4383EF6D3C43B8EB0989358ABE72C* ___parameters1, const RuntimeMethod* method)
 {
-	return ((  Expression_1_tFA626D2A587EDA121C2ADC9C9719815551231292* (*) (Expression_t70AA908ECBD33E94249BF235E4EBB0F831AD8785*, ParameterExpressionU5BU5D_tA217A6969CA4383EF6D3C43B8EB0989358ABE72C*, const RuntimeMethod*))Expression_Lambda_TisRuntimeObject_m43F07C2527F3E7D93E3099A9627771361B451038_gshared)(___body0, ___parameters1, method);
+	Expression_1_t0FC093B0DDEA1EB4F5EF3152CC33F1B785E80EA4* il2cppRetVal = ((  Expression_1_t0FC093B0DDEA1EB4F5EF3152CC33F1B785E80EA4* (*) (Expression_t70AA908ECBD33E94249BF235E4EBB0F831AD8785*, ParameterExpressionU5BU5D_tA217A6969CA4383EF6D3C43B8EB0989358ABE72C*, const RuntimeMethod*))Expression_Lambda_TisIl2CppFullySharedGenericAny_m2EA9FBB48B01DDDC86345242D13219362B5B5E83_gshared)(___body0, ___parameters1, method);
+	return (Expression_1_tFA626D2A587EDA121C2ADC9C9719815551231292*)il2cppRetVal;
 }
 // TDelegate System.Linq.Expressions.Expression`1<System.Action>::Compile()
 inline Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* Expression_1_Compile_mD58971107F541DF15ABBCB5BD7DA913D76FB10B9 (Expression_1_tFA626D2A587EDA121C2ADC9C9719815551231292* __this, const RuntimeMethod* method)
 {
-	return ((  Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* (*) (Expression_1_tFA626D2A587EDA121C2ADC9C9719815551231292*, const RuntimeMethod*))Expression_1_Compile_mAE60BB2984F0B64C621A225AA174F670BBAE11EC_gshared)(__this, method);
+	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* il2cppRetVal;
+	((  void (*) (Expression_1_t0FC093B0DDEA1EB4F5EF3152CC33F1B785E80EA4*, Il2CppFullySharedGenericAny*, const RuntimeMethod*))Expression_1_Compile_m4EDBAEC0C420A5B9EA9E7DF1A3AC967AD5A92CFD_gshared)((Expression_1_t0FC093B0DDEA1EB4F5EF3152CC33F1B785E80EA4*)__this, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Void System.Action::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
@@ -8474,27 +8037,27 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Attribute__ctor_m79ED1BF1EE36D1E417BA89A
 // System.Void System.Collections.Generic.List`1<System.Type>::.ctor()
 inline void List_1__ctor_mD9035342BE1CF0A3EEEE157D1796DA385C0C3F69 (List_1_t4B77DB8D00EC6CC4705EB5F2FCC506472734EA72* __this, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t4B77DB8D00EC6CC4705EB5F2FCC506472734EA72*, const RuntimeMethod*))List_1__ctor_m7F078BB342729BDF11327FD89D7872265328F690_gshared)(__this, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1__ctor_m0AFBAEA7EC427E32CC9CA267B1930DC5DF67A374_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 // System.Void System.Collections.Generic.List`1<System.Reflection.Assembly>::.ctor()
 inline void List_1__ctor_m7F799D24C042923B6F560AF8FEA1CB00A1233888 (List_1_t1BED237EBA2788604B1D39FC183B07E28F912A89* __this, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t1BED237EBA2788604B1D39FC183B07E28F912A89*, const RuntimeMethod*))List_1__ctor_m7F078BB342729BDF11327FD89D7872265328F690_gshared)(__this, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1__ctor_m0AFBAEA7EC427E32CC9CA267B1930DC5DF67A374_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 // System.Void System.Collections.Generic.HashSet`1<System.String>::.ctor()
 inline void HashSet_1__ctor_m780CFB8A2D23543157D1A0E1FADF781E1AF81E03 (HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* __this, const RuntimeMethod* method)
 {
-	((  void (*) (HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178*, const RuntimeMethod*))HashSet_1__ctor_m9132EE1422BAA45E44B7FFF495F378790D36D90E_gshared)(__this, method);
+	((  void (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, const RuntimeMethod*))HashSet_1__ctor_m5E12B490550D90B0686D55F8F4E7B0506BD07120_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.String,System.Type>::.ctor()
 inline void Dictionary_2__ctor_m552A02EB796CECBF0D6B1D2F5BCA4434A2AC9428 (Dictionary_2_t0E98B58821A879161B744DA2602DA878A7E5C58A* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t0E98B58821A879161B744DA2602DA878A7E5C58A*, const RuntimeMethod*))Dictionary_2__ctor_m5B32FBC624618211EB461D59CFBB10E987FD1329_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2__ctor_m7745B6ED71E47C95E1BFCE647C4F026A404C668F_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.Type,System.Collections.Generic.Dictionary`2<System.String,System.String>>::.ctor()
 inline void Dictionary_2__ctor_m14590BD0FFC066C49F38476634C94161AA056168 (Dictionary_2_t81B696D9D2CF24C21DA7A6613423DA645FBFBA56* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t81B696D9D2CF24C21DA7A6613423DA645FBFBA56*, const RuntimeMethod*))Dictionary_2__ctor_m5B32FBC624618211EB461D59CFBB10E987FD1329_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2__ctor_m7745B6ED71E47C95E1BFCE647C4F026A404C668F_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.AppDomain System.AppDomain::get_CurrentDomain()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AppDomain_tFF7010567CBABAEEA7BB19835234D6485E16AD5F* AppDomain_get_CurrentDomain_m38D86FD149C2C62AD0FAB0159D70ECB13D841667 (const RuntimeMethod* method) ;
@@ -8503,14 +8066,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssemblyU5BU5D_t97B7B4E3FD4DA4944A4BFAA4DC484
 // System.Void System.Collections.Generic.List`1<System.Reflection.Assembly>::Add(T)
 inline void List_1_Add_mC333738F45652C892517660DEE4B22270EF9D0A2_inline (List_1_t1BED237EBA2788604B1D39FC183B07E28F912A89* __this, Assembly_t* ___item0, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t1BED237EBA2788604B1D39FC183B07E28F912A89*, Assembly_t*, const RuntimeMethod*))List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline)(__this, ___item0, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))List_1_Add_mD4F3498FBD3BDD3F03CBCFB38041CBAC9C28CAFC_gshared_inline)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, (Il2CppFullySharedGenericAny)___item0, method);
 }
 // System.Collections.Generic.IEnumerable`1<System.Type> Unity.VisualScripting.TypeUtility::GetTypesSafely(System.Reflection.Assembly)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* TypeUtility_GetTypesSafely_m1127FF593F0365E1F97DE2683797FD161911459B (Assembly_t* ___assembly0, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<System.Type>::Add(T)
 inline void List_1_Add_mC8CFB4EB6D53C1BF2C8B48F97B5A741EB576B91E_inline (List_1_t4B77DB8D00EC6CC4705EB5F2FCC506472734EA72* __this, Type_t* ___item0, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t4B77DB8D00EC6CC4705EB5F2FCC506472734EA72*, Type_t*, const RuntimeMethod*))List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline)(__this, ___item0, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))List_1_Add_mD4F3498FBD3BDD3F03CBCFB38041CBAC9C28CAFC_gshared_inline)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, (Il2CppFullySharedGenericAny)___item0, method);
 }
 // System.Collections.Generic.IEnumerable`1<System.Reflection.Assembly> Unity.VisualScripting.RuntimeCodebase::get_assemblies()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* RuntimeCodebase_get_assemblies_m152648BAC9B232F7A0B7600EE603D0C10D89E35B_inline (const RuntimeMethod* method) ;
@@ -8523,12 +8086,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* RuntimeCodebase_SerializeType_m5C4C
 // System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Type>::ContainsKey(TKey)
 inline bool Dictionary_2_ContainsKey_m4EC9A321B5DBDCB0E9249FFE9074D45472E5D933 (Dictionary_2_t0E98B58821A879161B744DA2602DA878A7E5C58A* __this, String_t* ___key0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_t0E98B58821A879161B744DA2602DA878A7E5C58A*, String_t*, const RuntimeMethod*))Dictionary_2_ContainsKey_m703047C213F7AB55C9DC346596287773A1F670CD_gshared)(__this, ___key0, method);
+	return ((  bool (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_ContainsKey_mA268E9B914DCE838DD0CD9D879BAAEECD0C677AA_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.String,System.Type>::Add(TKey,TValue)
 inline void Dictionary_2_Add_m71BE3D798D6EC6F9B3BEF764C46AA0E005F49887 (Dictionary_2_t0E98B58821A879161B744DA2602DA878A7E5C58A* __this, String_t* ___key0, Type_t* ___value1, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t0E98B58821A879161B744DA2602DA878A7E5C58A*, String_t*, Type_t*, const RuntimeMethod*))Dictionary_2_Add_m93FFFABE8FCE7FA9793F0915E2A8842C7CD0C0C1_gshared)(__this, ___key0, ___value1, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_Add_m54D479280472DEA042DB3933AF547E666B017333_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny)___value1, method);
 }
 // System.Boolean System.String::IsNullOrEmpty(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_IsNullOrEmpty_mEA9E3FB005AC28FE02E69FCF95A7B8456192B478 (String_t* ___value0, const RuntimeMethod* method) ;
@@ -8547,61 +8110,69 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SerializationException__ctor_m0AAFE2ABD0
 // System.Void System.Collections.Generic.Dictionary`2<System.String,System.Type>::Clear()
 inline void Dictionary_2_Clear_mBFB8CEA79502DF0D5D3BF1B87D1B01EA2CE469BE (Dictionary_2_t0E98B58821A879161B744DA2602DA878A7E5C58A* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t0E98B58821A879161B744DA2602DA878A7E5C58A*, const RuntimeMethod*))Dictionary_2_Clear_mCFB5EA7351D5860D2B91592B91A84CA265A41433_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2_Clear_m935B3F117860376DC854C9E0C80CBD99BE77EEA4_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Type>::TryGetValue(TKey,TValue&)
 inline bool Dictionary_2_TryGetValue_mABB0055F51D71AEB872FC7C3C1726FBF9371E402 (Dictionary_2_t0E98B58821A879161B744DA2602DA878A7E5C58A* __this, String_t* ___key0, Type_t** ___value1, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_t0E98B58821A879161B744DA2602DA878A7E5C58A*, String_t*, Type_t**, const RuntimeMethod*))Dictionary_2_TryGetValue_mD15380A4ED7CDEE99EA45881577D26BA9CE1B849_gshared)(__this, ___key0, ___value1, method);
+	return ((  bool (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType&*/Il2CppFullySharedGenericAny*, const RuntimeMethod*))Dictionary_2_TryGetValue_m7519D765EAF1E8A7D3137C2F1B7B3A01D15A1692_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny*)___value1, method);
 }
 // System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<System.Reflection.Assembly>::GetEnumerator()
 inline Enumerator_t2E011DE5D9C8DB2A137AE9CD1D7516D52F2A95AA List_1_GetEnumerator_mAEAF74A8D17E88F088AB910E5A3FA8FA37488E7D (List_1_t1BED237EBA2788604B1D39FC183B07E28F912A89* __this, const RuntimeMethod* method)
 {
-	return ((  Enumerator_t2E011DE5D9C8DB2A137AE9CD1D7516D52F2A95AA (*) (List_1_t1BED237EBA2788604B1D39FC183B07E28F912A89*, const RuntimeMethod*))List_1_GetEnumerator_mD8294A7FA2BEB1929487127D476F8EC1CDC23BFC_gshared)(__this, method);
+	Enumerator_t2E011DE5D9C8DB2A137AE9CD1D7516D52F2A95AA il2cppRetVal;
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF*, const RuntimeMethod*))List_1_GetEnumerator_m8B2A92ACD4FBA5FBDC3F6F4F5C23A0DDF491DA61_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, (Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Void System.Collections.Generic.List`1/Enumerator<System.Reflection.Assembly>::Dispose()
 inline void Enumerator_Dispose_m93B736E6DBFFC747D775D68C8CA34947DAE8B1C2 (Enumerator_t2E011DE5D9C8DB2A137AE9CD1D7516D52F2A95AA* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Enumerator_t2E011DE5D9C8DB2A137AE9CD1D7516D52F2A95AA*, const RuntimeMethod*))Enumerator_Dispose_mD9DC3E3C3697830A4823047AB29A77DBBB5ED419_gshared)(__this, method);
+	((  void (*) (Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF*, const RuntimeMethod*))Enumerator_Dispose_mFE1EBE6F6425283FEAEAE7C79D02CDE4F9D367E8_gshared)((Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF*)__this, method);
 }
 // T System.Collections.Generic.List`1/Enumerator<System.Reflection.Assembly>::get_Current()
 inline Assembly_t* Enumerator_get_Current_mC25A7F22ACFD0C89749FD0D52C3A845228B2737F_inline (Enumerator_t2E011DE5D9C8DB2A137AE9CD1D7516D52F2A95AA* __this, const RuntimeMethod* method)
 {
-	return ((  Assembly_t* (*) (Enumerator_t2E011DE5D9C8DB2A137AE9CD1D7516D52F2A95AA*, const RuntimeMethod*))Enumerator_get_Current_m6330F15D18EE4F547C05DF9BF83C5EB710376027_gshared_inline)(__this, method);
+	Assembly_t* il2cppRetVal;
+	((  void (*) (Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF*, Il2CppFullySharedGenericAny*, const RuntimeMethod*))Enumerator_get_Current_m8B42D4B2DE853B9D11B997120CD0228D4780E394_gshared_inline)((Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF*)__this, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.String System.Reflection.AssemblyName::get_Name()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* AssemblyName_get_Name_m7899B9B3F289EEBAF62AEAB51D1CA91DA92C4E6A_inline (AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* __this, const RuntimeMethod* method) ;
 // System.Boolean System.Collections.Generic.HashSet`1<System.String>::Contains(T)
 inline bool HashSet_1_Contains_mAE49939A0DE08C4864E8560F3F7FCDAC2E193853 (HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* __this, String_t* ___item0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178*, String_t*, const RuntimeMethod*))HashSet_1_Contains_m9BACE52BFA0BD83C601529D3629118453E459BBB_gshared)(__this, ___item0, method);
+	return ((  bool (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))HashSet_1_Contains_m6D40586EE21316C2647D81169AFFF9B4C7719F74_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (Il2CppFullySharedGenericAny)___item0, method);
 }
 // System.Collections.Generic.HashSet`1/Enumerator<T> System.Collections.Generic.HashSet`1<System.String>::GetEnumerator()
 inline Enumerator_tF6C1B465074968C3538509E911717559FDDBD72C HashSet_1_GetEnumerator_m11AAEE8A10D781104560F78D5EEC790433FEEE2B (HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* __this, const RuntimeMethod* method)
 {
-	return ((  Enumerator_tF6C1B465074968C3538509E911717559FDDBD72C (*) (HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178*, const RuntimeMethod*))HashSet_1_GetEnumerator_m143B98FEED7E9CABA2C494AB2F04DAD60A504635_gshared)(__this, method);
+	Enumerator_tF6C1B465074968C3538509E911717559FDDBD72C il2cppRetVal;
+	((  void (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*, const RuntimeMethod*))HashSet_1_GetEnumerator_m75DD344FE9A073CA9564DC6A425EC36883FB32A7_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Void System.Collections.Generic.HashSet`1/Enumerator<System.String>::Dispose()
 inline void Enumerator_Dispose_mA8C03191318421835C1B51FEAD0F902EB506D6C0 (Enumerator_tF6C1B465074968C3538509E911717559FDDBD72C* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Enumerator_tF6C1B465074968C3538509E911717559FDDBD72C*, const RuntimeMethod*))Enumerator_Dispose_mFB582AEAA2E73F3128B5571197BEDE256A83F657_gshared)(__this, method);
+	((  void (*) (Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*, const RuntimeMethod*))Enumerator_Dispose_m915D35B9BB2A77C5396F4FE1A1C53F1C93B8E337_gshared)((Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*)__this, method);
 }
 // T System.Collections.Generic.HashSet`1/Enumerator<System.String>::get_Current()
 inline String_t* Enumerator_get_Current_m2766585450EAB9CE01A3702DD017FFE45D4AF85F_inline (Enumerator_tF6C1B465074968C3538509E911717559FDDBD72C* __this, const RuntimeMethod* method)
 {
-	return ((  String_t* (*) (Enumerator_tF6C1B465074968C3538509E911717559FDDBD72C*, const RuntimeMethod*))Enumerator_get_Current_m139A176CD271A0532D75BE08DA7831C8C45CE28F_gshared_inline)(__this, method);
+	String_t* il2cppRetVal;
+	((  void (*) (Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*, Il2CppFullySharedGenericAny*, const RuntimeMethod*))Enumerator_get_Current_m51282E47C90E55BF2D96A0D329869ABC122A85A0_gshared_inline)((Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*)__this, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Boolean System.String::Contains(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_Contains_m6D77B121FADA7CA5F397C0FABB65DA62DF03B6C3 (String_t* __this, String_t* ___value0, const RuntimeMethod* method) ;
 // System.Boolean System.Collections.Generic.HashSet`1/Enumerator<System.String>::MoveNext()
 inline bool Enumerator_MoveNext_m7DCB52497076047551577A950FB809E3270BEF9F (Enumerator_tF6C1B465074968C3538509E911717559FDDBD72C* __this, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Enumerator_tF6C1B465074968C3538509E911717559FDDBD72C*, const RuntimeMethod*))Enumerator_MoveNext_m27565F5ACCCC75C3DD34CC4CAE3E6AEFEB9144A6_gshared)(__this, method);
+	return ((  bool (*) (Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*, const RuntimeMethod*))Enumerator_MoveNext_m1756F06B6BC460B8EEB4522B562E097F37D54C59_gshared)((Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*)__this, method);
 }
 // System.Boolean System.Collections.Generic.List`1/Enumerator<System.Reflection.Assembly>::MoveNext()
 inline bool Enumerator_MoveNext_m9360A25E040507C2A33C02E92ACE8AD5ABA3E0FB (Enumerator_t2E011DE5D9C8DB2A137AE9CD1D7516D52F2A95AA* __this, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Enumerator_t2E011DE5D9C8DB2A137AE9CD1D7516D52F2A95AA*, const RuntimeMethod*))Enumerator_MoveNext_mE921CC8F29FBBDE7CC3209A0ED0D921D58D00BCB_gshared)(__this, method);
+	return ((  bool (*) (Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF*, const RuntimeMethod*))Enumerator_MoveNext_m8D8E5E878AF0A88A535AB1AB5BA4F23E151A678A_gshared)((Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF*)__this, method);
 }
 // System.Void Unity.VisualScripting.RuntimeCodebase/<>c__DisplayClass25_0::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass25_0__ctor_m0D93D81BF21CE63B7F8E961ED5EE8B6B4797122D (U3CU3Ec__DisplayClass25_0_tB7C0C48DC02360BB8DADEBF2F016C900B6EBE113* __this, const RuntimeMethod* method) ;
@@ -8612,12 +8183,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TypeName_get_IsArray_m92C2087D662FC897AD
 // System.Void System.Func`2<System.Reflection.Assembly,System.Boolean>::.ctor(System.Object,System.IntPtr)
 inline void Func_2__ctor_m0289D3B3C9D7A664C27794590540D4EA6C813CDF (Func_2_t3FF9FC9038AAF42274EC51B73C22E875D6CEE5E9* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_2_t3FF9FC9038AAF42274EC51B73C22E875D6CEE5E9*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_2__ctor_m13C0A7F33154D861E2A041B52E88461832DA1697_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_2__ctor_m7F5DD19B4170C027D5367001F7BC95A0658A2169_gshared)((Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*)__this, ___object0, ___method1, method);
 }
 // System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Where<System.Reflection.Assembly>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
 inline RuntimeObject* Enumerable_Where_TisAssembly_t_mA37C0A033F9CB6D2AB40E4F66BC1538F800365EA (RuntimeObject* ___source0, Func_2_t3FF9FC9038AAF42274EC51B73C22E875D6CEE5E9* ___predicate1, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (RuntimeObject*, Func_2_t3FF9FC9038AAF42274EC51B73C22E875D6CEE5E9*, const RuntimeMethod*))Enumerable_Where_TisRuntimeObject_m5DAF16724887B42DDBBF391C7F375749E8AA4AD7_gshared)(___source0, ___predicate1, method);
+	RuntimeObject* il2cppRetVal = ((  RuntimeObject* (*) (RuntimeObject*, Func_2_t19E50C11C3E1F20B5A8FDB85D7DD353B6DFF868B*, const RuntimeMethod*))Enumerable_Where_TisIl2CppFullySharedGenericAny_m3F416675DC7A5572025B02ED373C41AD9ED8F6C4_gshared)((RuntimeObject*)___source0, (Func_2_t19E50C11C3E1F20B5A8FDB85D7DD353B6DFF868B*)___predicate1, method);
+	return (RuntimeObject*)il2cppRetVal;
 }
 // System.String Unity.VisualScripting.TypeName::get_Name()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* TypeName_get_Name_mBC768C507F7EC26072615B2B6036307367B42D9E_inline (TypeName_t6C31C8853CF16254A3932AA55D6F3B657ED07F54* __this, const RuntimeMethod* method) ;
@@ -8630,68 +8202,84 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TypeName_t6C31C8853CF16254A3932AA55D6F3B657ED
 // System.Collections.Generic.Dictionary`2/Enumerator<TKey,TValue> System.Collections.Generic.Dictionary`2<System.String,System.Type>::GetEnumerator()
 inline Enumerator_tF11F7909312943F4E741743DF40DA07F67019306 Dictionary_2_GetEnumerator_m320B18F709A6A1AE93F611826F800C70A0B66AE1 (Dictionary_2_t0E98B58821A879161B744DA2602DA878A7E5C58A* __this, const RuntimeMethod* method)
 {
-	return ((  Enumerator_tF11F7909312943F4E741743DF40DA07F67019306 (*) (Dictionary_2_t0E98B58821A879161B744DA2602DA878A7E5C58A*, const RuntimeMethod*))Dictionary_2_GetEnumerator_m52AB12790B0B9B46B1DFB1F861C9DBEAB07C1FDA_gshared)(__this, method);
+	Enumerator_tF11F7909312943F4E741743DF40DA07F67019306 il2cppRetVal;
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*, const RuntimeMethod*))Dictionary_2_GetEnumerator_mEC4954B142C43B5CBAA045953EAD4E168FFCD492_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Void System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.Type>::Dispose()
 inline void Enumerator_Dispose_m911E1C081D319CDD81FA5BC34B4AEF7948C2CAEC (Enumerator_tF11F7909312943F4E741743DF40DA07F67019306* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Enumerator_tF11F7909312943F4E741743DF40DA07F67019306*, const RuntimeMethod*))Enumerator_Dispose_mEA5E01B81EB943B7003D87CEC1B6040524F0402C_gshared)(__this, method);
+	((  void (*) (Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*, const RuntimeMethod*))Enumerator_Dispose_m3D89F01AE65EC60062FFB578C0E771C098EF2CB7_gshared)((Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*)__this, method);
 }
 // System.Collections.Generic.KeyValuePair`2<TKey,TValue> System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.Type>::get_Current()
 inline KeyValuePair_2_tD2A1455EBCC891ED643FBDE22008B08DF24D014E Enumerator_get_Current_m9023BC8D19527B7BC993083CB2AF637BCE8FDDAE_inline (Enumerator_tF11F7909312943F4E741743DF40DA07F67019306* __this, const RuntimeMethod* method)
 {
-	return ((  KeyValuePair_2_tD2A1455EBCC891ED643FBDE22008B08DF24D014E (*) (Enumerator_tF11F7909312943F4E741743DF40DA07F67019306*, const RuntimeMethod*))Enumerator_get_Current_mE3475384B761E1C7971D3639BD09117FE8363422_gshared_inline)(__this, method);
+	KeyValuePair_2_tD2A1455EBCC891ED643FBDE22008B08DF24D014E il2cppRetVal;
+	((  void (*) (Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*, KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669*, const RuntimeMethod*))Enumerator_get_Current_m26AF82C275C82180BB7F23C7E408BC1FEB9A38EE_gshared_inline)((Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*)__this, (KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // TKey System.Collections.Generic.KeyValuePair`2<System.String,System.Type>::get_Key()
 inline String_t* KeyValuePair_2_get_Key_mABDBD9D6BA9B9BB1A77A835BB8E1BC574FB4A0F1_inline (KeyValuePair_2_tD2A1455EBCC891ED643FBDE22008B08DF24D014E* __this, const RuntimeMethod* method)
 {
-	return ((  String_t* (*) (KeyValuePair_2_tD2A1455EBCC891ED643FBDE22008B08DF24D014E*, const RuntimeMethod*))KeyValuePair_2_get_Key_mBD8EA7557C27E6956F2AF29DA3F7499B2F51A282_gshared_inline)(__this, method);
+	String_t* il2cppRetVal;
+	((  void (*) (KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669*, Il2CppFullySharedGenericAny*, const RuntimeMethod*))KeyValuePair_2_get_Key_mBE75BF8983618BC1ACEC20F94C1BFF85C8AA50F1_gshared_inline)((KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669*)__this, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Type>::get_Value()
 inline Type_t* KeyValuePair_2_get_Value_mAD30A66DB2CDAF5D25B50B2BC77DA83A21379C20_inline (KeyValuePair_2_tD2A1455EBCC891ED643FBDE22008B08DF24D014E* __this, const RuntimeMethod* method)
 {
-	return ((  Type_t* (*) (KeyValuePair_2_tD2A1455EBCC891ED643FBDE22008B08DF24D014E*, const RuntimeMethod*))KeyValuePair_2_get_Value_mC6BD8075F9C9DDEF7B4D731E5C38EC19103988E7_gshared_inline)(__this, method);
+	Type_t* il2cppRetVal;
+	((  void (*) (KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669*, Il2CppFullySharedGenericAny*, const RuntimeMethod*))KeyValuePair_2_get_Value_mFA1964BF56AA214EE0D491CC197F61BC9E5F1F7A_gshared_inline)((KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669*)__this, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Void Unity.VisualScripting.TypeName::ReplaceName(System.String,System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TypeName_ReplaceName_m33BDC9C3E587682E4D9D1A70E5689ED2CE1D7CB3 (TypeName_t6C31C8853CF16254A3932AA55D6F3B657ED07F54* __this, String_t* ___oldTypeName0, Type_t* ___newType1, const RuntimeMethod* method) ;
 // System.Boolean System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.Type>::MoveNext()
 inline bool Enumerator_MoveNext_mF46FCCDE665EA20E9A00CADFA159F632C8B8C713 (Enumerator_tF11F7909312943F4E741743DF40DA07F67019306* __this, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Enumerator_tF11F7909312943F4E741743DF40DA07F67019306*, const RuntimeMethod*))Enumerator_MoveNext_mCD4950A75FFADD54AF354D48C6C0DB0B5A22A5F4_gshared)(__this, method);
+	return ((  bool (*) (Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*, const RuntimeMethod*))Enumerator_MoveNext_m97783F73CDB1D0083A2F7D26A51847BF0843ADEA_gshared)((Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*)__this, method);
 }
 // System.Collections.Generic.Dictionary`2<System.String,System.String> Unity.VisualScripting.RuntimeCodebase::get_renamedNamespaces()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* RuntimeCodebase_get_renamedNamespaces_m6A46742DBC322161E1D84D4B99628416ACC9AF20 (const RuntimeMethod* method) ;
 // System.Collections.Generic.Dictionary`2/Enumerator<TKey,TValue> System.Collections.Generic.Dictionary`2<System.String,System.String>::GetEnumerator()
 inline Enumerator_t173E7BE1F35CA448C7E0EE77345C9E0EC0206562 Dictionary_2_GetEnumerator_m46EC45F42CA2279D83568CD3F216AAABA8E749F6 (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* __this, const RuntimeMethod* method)
 {
-	return ((  Enumerator_t173E7BE1F35CA448C7E0EE77345C9E0EC0206562 (*) (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83*, const RuntimeMethod*))Dictionary_2_GetEnumerator_m52AB12790B0B9B46B1DFB1F861C9DBEAB07C1FDA_gshared)(__this, method);
+	Enumerator_t173E7BE1F35CA448C7E0EE77345C9E0EC0206562 il2cppRetVal;
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*, const RuntimeMethod*))Dictionary_2_GetEnumerator_mEC4954B142C43B5CBAA045953EAD4E168FFCD492_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Void System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.String>::Dispose()
 inline void Enumerator_Dispose_m068DDFF5CAFBB15C8A0602DEADA7F10C5BB7ADCD (Enumerator_t173E7BE1F35CA448C7E0EE77345C9E0EC0206562* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Enumerator_t173E7BE1F35CA448C7E0EE77345C9E0EC0206562*, const RuntimeMethod*))Enumerator_Dispose_mEA5E01B81EB943B7003D87CEC1B6040524F0402C_gshared)(__this, method);
+	((  void (*) (Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*, const RuntimeMethod*))Enumerator_Dispose_m3D89F01AE65EC60062FFB578C0E771C098EF2CB7_gshared)((Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*)__this, method);
 }
 // System.Collections.Generic.KeyValuePair`2<TKey,TValue> System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.String>::get_Current()
 inline KeyValuePair_2_t47AB280304B50F542FD7E14F25DB2C374AEDD80A Enumerator_get_Current_m49070E88C2E34AB46E6292A3FB1C227576B8506E_inline (Enumerator_t173E7BE1F35CA448C7E0EE77345C9E0EC0206562* __this, const RuntimeMethod* method)
 {
-	return ((  KeyValuePair_2_t47AB280304B50F542FD7E14F25DB2C374AEDD80A (*) (Enumerator_t173E7BE1F35CA448C7E0EE77345C9E0EC0206562*, const RuntimeMethod*))Enumerator_get_Current_mE3475384B761E1C7971D3639BD09117FE8363422_gshared_inline)(__this, method);
+	KeyValuePair_2_t47AB280304B50F542FD7E14F25DB2C374AEDD80A il2cppRetVal;
+	((  void (*) (Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*, KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669*, const RuntimeMethod*))Enumerator_get_Current_m26AF82C275C82180BB7F23C7E408BC1FEB9A38EE_gshared_inline)((Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*)__this, (KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // TKey System.Collections.Generic.KeyValuePair`2<System.String,System.String>::get_Key()
 inline String_t* KeyValuePair_2_get_Key_m654BCCAE2F20CB11D8E8C2D2C886A0C8A13EB1C4_inline (KeyValuePair_2_t47AB280304B50F542FD7E14F25DB2C374AEDD80A* __this, const RuntimeMethod* method)
 {
-	return ((  String_t* (*) (KeyValuePair_2_t47AB280304B50F542FD7E14F25DB2C374AEDD80A*, const RuntimeMethod*))KeyValuePair_2_get_Key_mBD8EA7557C27E6956F2AF29DA3F7499B2F51A282_gshared_inline)(__this, method);
+	String_t* il2cppRetVal;
+	((  void (*) (KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669*, Il2CppFullySharedGenericAny*, const RuntimeMethod*))KeyValuePair_2_get_Key_mBE75BF8983618BC1ACEC20F94C1BFF85C8AA50F1_gshared_inline)((KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669*)__this, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // TValue System.Collections.Generic.KeyValuePair`2<System.String,System.String>::get_Value()
 inline String_t* KeyValuePair_2_get_Value_m7345512A32CB4DCAA0643050B18DC8DCD71B927A_inline (KeyValuePair_2_t47AB280304B50F542FD7E14F25DB2C374AEDD80A* __this, const RuntimeMethod* method)
 {
-	return ((  String_t* (*) (KeyValuePair_2_t47AB280304B50F542FD7E14F25DB2C374AEDD80A*, const RuntimeMethod*))KeyValuePair_2_get_Value_mC6BD8075F9C9DDEF7B4D731E5C38EC19103988E7_gshared_inline)(__this, method);
+	String_t* il2cppRetVal;
+	((  void (*) (KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669*, Il2CppFullySharedGenericAny*, const RuntimeMethod*))KeyValuePair_2_get_Value_mFA1964BF56AA214EE0D491CC197F61BC9E5F1F7A_gshared_inline)((KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669*)__this, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Void Unity.VisualScripting.TypeName::ReplaceNamespace(System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TypeName_ReplaceNamespace_mA1A47EA949FF2DE3F9EDBF5E6A2D746CDD5C35C5 (TypeName_t6C31C8853CF16254A3932AA55D6F3B657ED07F54* __this, String_t* ___oldNamespace0, String_t* ___newNamespace1, const RuntimeMethod* method) ;
 // System.Boolean System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.String>::MoveNext()
 inline bool Enumerator_MoveNext_mA93491D9B55547D066053F3BC0A69C635F877438 (Enumerator_t173E7BE1F35CA448C7E0EE77345C9E0EC0206562* __this, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Enumerator_t173E7BE1F35CA448C7E0EE77345C9E0EC0206562*, const RuntimeMethod*))Enumerator_MoveNext_mCD4950A75FFADD54AF354D48C6C0DB0B5A22A5F4_gshared)(__this, method);
+	return ((  bool (*) (Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*, const RuntimeMethod*))Enumerator_MoveNext_m97783F73CDB1D0083A2F7D26A51847BF0843ADEA_gshared)((Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*)__this, method);
 }
 // System.Collections.Generic.Dictionary`2<System.String,System.String> Unity.VisualScripting.RuntimeCodebase::get_renamedAssemblies()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* RuntimeCodebase_get_renamedAssemblies_mF5DE74B7E878DAA69297418DAA63FE93BEE3CEB6 (const RuntimeMethod* method) ;
@@ -8708,19 +8296,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t0E98B58821A879161B744DA2602DA87
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Type,System.Collections.Generic.Dictionary`2<System.String,System.String>>::TryGetValue(TKey,TValue&)
 inline bool Dictionary_2_TryGetValue_m5775566A1DCB51E31B50A3AD33C1140C9EFCE67C (Dictionary_2_t81B696D9D2CF24C21DA7A6613423DA645FBFBA56* __this, Type_t* ___key0, Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83** ___value1, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_t81B696D9D2CF24C21DA7A6613423DA645FBFBA56*, Type_t*, Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83**, const RuntimeMethod*))Dictionary_2_TryGetValue_mD15380A4ED7CDEE99EA45881577D26BA9CE1B849_gshared)(__this, ___key0, ___value1, method);
+	return ((  bool (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType&*/Il2CppFullySharedGenericAny*, const RuntimeMethod*))Dictionary_2_TryGetValue_m7519D765EAF1E8A7D3137C2F1B7B3A01D15A1692_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny*)___value1, method);
 }
 // System.Collections.Generic.Dictionary`2<System.String,System.String> Unity.VisualScripting.RuntimeCodebase::FetchRenamedMembers(System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* RuntimeCodebase_FetchRenamedMembers_mE4A5369860682B85ADA56FAAE60418F92B86EA15 (Type_t* ___type0, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.Dictionary`2<System.Type,System.Collections.Generic.Dictionary`2<System.String,System.String>>::Add(TKey,TValue)
 inline void Dictionary_2_Add_m162B35BC3858E31CED0AF61F0ABCE0547F18F7BD (Dictionary_2_t81B696D9D2CF24C21DA7A6613423DA645FBFBA56* __this, Type_t* ___key0, Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* ___value1, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t81B696D9D2CF24C21DA7A6613423DA645FBFBA56*, Type_t*, Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83*, const RuntimeMethod*))Dictionary_2_Add_m93FFFABE8FCE7FA9793F0915E2A8842C7CD0C0C1_gshared)(__this, ___key0, ___value1, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_Add_m54D479280472DEA042DB3933AF547E666B017333_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny)___value1, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.String,System.String>::.ctor()
 inline void Dictionary_2__ctor_m768E076F1E804CE4959F4E71D3E6A9ADE2F55052 (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83*, const RuntimeMethod*))Dictionary_2__ctor_m5B32FBC624618211EB461D59CFBB10E987FD1329_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2__ctor_m7745B6ED71E47C95E1BFCE647C4F026A404C668F_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Reflection.MemberInfo[] Unity.VisualScripting.MemberUtility::GetExtendedMembers(System.Type,System.Reflection.BindingFlags)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MemberInfoU5BU5D_t4CB6970BB166E8E1CFB06152B2A2284971873053* MemberUtility_GetExtendedMembers_m1F23372CA0F763E867FCCDA889F74FE10A8F2771 (Type_t* ___type0, int32_t ___flags1, const RuntimeMethod* method) ;
@@ -8729,7 +8317,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AttributeU5BU5D_t0F73488E6F1249C889608E8DCC0B
 // System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Cast<Unity.VisualScripting.RenamedFromAttribute>(System.Collections.IEnumerable)
 inline RuntimeObject* Enumerable_Cast_TisRenamedFromAttribute_tBEBB0F1049A917B5F1FD6A24FA8F530841DF2D8C_m1AD9AF4A5E8D88DB15D2C4E126DDF0C82580EE9C (RuntimeObject* ___source0, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_Cast_TisRuntimeObject_m21250FA47CFF08469ACE158D6FA4E1FE11837D29_gshared)(___source0, method);
+	RuntimeObject* il2cppRetVal = ((  RuntimeObject* (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_Cast_TisIl2CppFullySharedGenericAny_m1480F4A804D000C8613E5F669E3AB77411F468A5_gshared)(___source0, method);
+	return (RuntimeObject*)il2cppRetVal;
 }
 // System.Void UnityEngine.Debug::LogWarning(System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9 (RuntimeObject* ___message0, const RuntimeMethod* method) ;
@@ -8738,14 +8327,14 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* RenamedFromAttribute_ge
 // System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.String>::ContainsKey(TKey)
 inline bool Dictionary_2_ContainsKey_m17345EA05D3F26087F953F6793B2401AA6EE7B0F (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* __this, String_t* ___key0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83*, String_t*, const RuntimeMethod*))Dictionary_2_ContainsKey_m703047C213F7AB55C9DC346596287773A1F670CD_gshared)(__this, ___key0, method);
+	return ((  bool (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_ContainsKey_mA268E9B914DCE838DD0CD9D879BAAEECD0C677AA_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, method);
 }
 // System.String System.String::Format(System.String,System.Object,System.Object,System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Format_mA0534D6E2AE4D67A6BD8D45B3321323930EB930C (String_t* ___format0, RuntimeObject* ___arg01, RuntimeObject* ___arg12, RuntimeObject* ___arg23, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.Dictionary`2<System.String,System.String>::Add(TKey,TValue)
 inline void Dictionary_2_Add_mC78C20D5901C87AAC38F37C906FAB6946BDE5F13 (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* __this, String_t* ___key0, String_t* ___value1, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83*, String_t*, String_t*, const RuntimeMethod*))Dictionary_2_Add_m93FFFABE8FCE7FA9793F0915E2A8842C7CD0C0C1_gshared)(__this, ___key0, ___value1, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_Add_m54D479280472DEA042DB3933AF547E666B017333_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny)___value1, method);
 }
 // System.Collections.Generic.IEnumerable`1<TAttribute> Unity.VisualScripting.RuntimeCodebase::GetAssemblyAttributes<Unity.VisualScripting.RenamedNamespaceAttribute>()
 inline RuntimeObject* RuntimeCodebase_GetAssemblyAttributes_TisRenamedNamespaceAttribute_tFAA69A7D2B0294CE487F0913C6835670957C7FFB_mCAB311568EBB096723887EC29420DA7498F5FA7D (const RuntimeMethod* method)
@@ -8778,7 +8367,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CGetAssemblyAttributesU3Ed__15_System_
 // System.Void Unity.VisualScripting.EnsureThat::IsNotNull<System.Collections.Generic.IEnumerable`1<System.Reflection.Assembly>>(T)
 inline void EnsureThat_IsNotNull_TisIEnumerable_1_t11F08D46A18E820E6CD80DE57F40444AD29E6689_m89F3D292AAEC5FEB3BDAC5CBECD0B1F03C5A1A62 (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC* __this, RuntimeObject* ___value0, const RuntimeMethod* method)
 {
-	((  void (*) (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*, RuntimeObject*, const RuntimeMethod*))EnsureThat_IsNotNull_TisRuntimeObject_m609E619BEADC6A63A12D5BFF2B15CCB0A4E28F4B_gshared)(__this, ___value0, method);
+	((  void (*) (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))EnsureThat_IsNotNull_TisIl2CppFullySharedGenericAny_m644606E147B32EF7D13A08EB4DB26B8FECE5495E_gshared)((EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*)__this, (Il2CppFullySharedGenericAny)___value0, method);
 }
 // System.Collections.Generic.IEnumerable`1<System.Attribute> System.Reflection.CustomAttributeExtensions::GetCustomAttributes(System.Reflection.Assembly,System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* CustomAttributeExtensions_GetCustomAttributes_mEA8382AEF9ACAE9E5D6843613B53D69DF72AB084 (Assembly_t* ___element0, Type_t* ___attributeType1, const RuntimeMethod* method) ;
@@ -8789,14 +8378,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_op_Equality_m030E1B219352228970A0
 // System.Void Unity.VisualScripting.EnsureThat::IsNotNull<System.Collections.Generic.IEnumerable`1<System.Type>>(T)
 inline void EnsureThat_IsNotNull_TisIEnumerable_1_t6686595E4CB7AC210F0EF075F7B1DD4A21D3902B_mF43E1674681879D9F89D4AB3D438D8AFCF37605E (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC* __this, RuntimeObject* ___value0, const RuntimeMethod* method)
 {
-	((  void (*) (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*, RuntimeObject*, const RuntimeMethod*))EnsureThat_IsNotNull_TisRuntimeObject_m609E619BEADC6A63A12D5BFF2B15CCB0A4E28F4B_gshared)(__this, ___value0, method);
+	((  void (*) (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))EnsureThat_IsNotNull_TisIl2CppFullySharedGenericAny_m644606E147B32EF7D13A08EB4DB26B8FECE5495E_gshared)((EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*)__this, (Il2CppFullySharedGenericAny)___value0, method);
 }
 // System.Void Unity.VisualScripting.TypeFilter::set_Matching(Unity.VisualScripting.TypesMatching)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void TypeFilter_set_Matching_mD91362DAA974AB304B35C9551D5C314C42488B8E_inline (TypeFilter_tECDDDCC463E5FF81530AF9D5B154E5095F16CA80* __this, int32_t ___value0, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.HashSet`1<System.Type>::.ctor(System.Collections.Generic.IEnumerable`1<T>)
 inline void HashSet_1__ctor_m896BF2C8F926434B62758CF078E6D8648390A151 (HashSet_1_tAE2F12E55878645F5BE7C4D5603228A6FAB429C7* __this, RuntimeObject* ___collection0, const RuntimeMethod* method)
 {
-	((  void (*) (HashSet_1_tAE2F12E55878645F5BE7C4D5603228A6FAB429C7*, RuntimeObject*, const RuntimeMethod*))HashSet_1__ctor_mC13D3ADFE27A073EC3C583E9C926C801A7EE1DDD_gshared)(__this, ___collection0, method);
+	((  void (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, RuntimeObject*, const RuntimeMethod*))HashSet_1__ctor_mDEE8470968EF687DF9B40AE07DE41E0B09652532_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (RuntimeObject*)___collection0, method);
 }
 // System.Void Unity.VisualScripting.TypeFilter::set_Value(System.Boolean)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void TypeFilter_set_Value_mD8231D56BB420D0545224FD44ADF183E7059DFEF_inline (TypeFilter_tECDDDCC463E5FF81530AF9D5B154E5095F16CA80* __this, bool ___value0, const RuntimeMethod* method) ;
@@ -8843,12 +8432,14 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR HashSet_1_tAE2F12E55878645F5BE7C4
 // System.Int32 System.Collections.Generic.HashSet`1<System.Type>::get_Count()
 inline int32_t HashSet_1_get_Count_m84934F32D3D4BCD461A09A1B2E4FA7C5B39109B7_inline (HashSet_1_tAE2F12E55878645F5BE7C4D5603228A6FAB429C7* __this, const RuntimeMethod* method)
 {
-	return ((  int32_t (*) (HashSet_1_tAE2F12E55878645F5BE7C4D5603228A6FAB429C7*, const RuntimeMethod*))HashSet_1_get_Count_m41CC85EEB7855CEFA3BC7A32F115387939318ED3_gshared_inline)(__this, method);
+	return ((  int32_t (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, const RuntimeMethod*))HashSet_1_get_Count_mA764DCA3CB14CB2CBDF742A163492FF4DA515B63_gshared_inline)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, method);
 }
 // TSource System.Linq.Enumerable::Single<System.Type>(System.Collections.Generic.IEnumerable`1<TSource>)
 inline Type_t* Enumerable_Single_TisType_t_mAED971E29503087AF716CB68824B11D688165D51 (RuntimeObject* ___source0, const RuntimeMethod* method)
 {
-	return ((  Type_t* (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_Single_TisRuntimeObject_m4966D6BB67940E1EE80ADA3CC60C81D03436C62F_gshared)(___source0, method);
+	Type_t* il2cppRetVal;
+	((  void (*) (RuntimeObject*, Il2CppFullySharedGenericAny*, const RuntimeMethod*))Enumerable_Single_TisIl2CppFullySharedGenericAny_m911CD54E9750E5AFBCF243F342C38A3F556C5D2B_gshared)((RuntimeObject*)___source0, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // Unity.VisualScripting.TypeFilter Unity.VisualScripting.TypeFilter::Clone()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TypeFilter_tECDDDCC463E5FF81530AF9D5B154E5095F16CA80* TypeFilter_Clone_mDA5FC086BC2A0007F936678C952DA3C7957CE95D (TypeFilter_tECDDDCC463E5FF81530AF9D5B154E5095F16CA80* __this, const RuntimeMethod* method) ;
@@ -8893,29 +8484,33 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool TypeFilter_get_Obsolete_mC87
 // System.Boolean System.Collections.Generic.HashSet`1<System.Type>::SetEquals(System.Collections.Generic.IEnumerable`1<T>)
 inline bool HashSet_1_SetEquals_mC9912845E9626DB820A58DF08BF165F51C3A9ECC (HashSet_1_tAE2F12E55878645F5BE7C4D5603228A6FAB429C7* __this, RuntimeObject* ___other0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (HashSet_1_tAE2F12E55878645F5BE7C4D5603228A6FAB429C7*, RuntimeObject*, const RuntimeMethod*))HashSet_1_SetEquals_mF732845AD8521332BC169B8AA011217D3A63FB84_gshared)(__this, ___other0, method);
+	return ((  bool (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, RuntimeObject*, const RuntimeMethod*))HashSet_1_SetEquals_mEE1A697B324249DAF55E5030E26E7FF1606A2E26_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (RuntimeObject*)___other0, method);
 }
 // System.Int32 System.Int32::GetHashCode()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Int32_GetHashCode_m253D60FF7527A483E91004B7A2366F13E225E295 (int32_t* __this, const RuntimeMethod* method) ;
 // System.Collections.Generic.HashSet`1/Enumerator<T> System.Collections.Generic.HashSet`1<System.Type>::GetEnumerator()
 inline Enumerator_t54420C3FCCF3EC855F7D8CCB24137F990C32D510 HashSet_1_GetEnumerator_mA4BCD7E3CAA6D1DA1B3D70950D71C927BEC16705 (HashSet_1_tAE2F12E55878645F5BE7C4D5603228A6FAB429C7* __this, const RuntimeMethod* method)
 {
-	return ((  Enumerator_t54420C3FCCF3EC855F7D8CCB24137F990C32D510 (*) (HashSet_1_tAE2F12E55878645F5BE7C4D5603228A6FAB429C7*, const RuntimeMethod*))HashSet_1_GetEnumerator_m143B98FEED7E9CABA2C494AB2F04DAD60A504635_gshared)(__this, method);
+	Enumerator_t54420C3FCCF3EC855F7D8CCB24137F990C32D510 il2cppRetVal;
+	((  void (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*, const RuntimeMethod*))HashSet_1_GetEnumerator_m75DD344FE9A073CA9564DC6A425EC36883FB32A7_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Void System.Collections.Generic.HashSet`1/Enumerator<System.Type>::Dispose()
 inline void Enumerator_Dispose_mAE49A7CE757E05481B1B391B0F08FF419AB15639 (Enumerator_t54420C3FCCF3EC855F7D8CCB24137F990C32D510* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Enumerator_t54420C3FCCF3EC855F7D8CCB24137F990C32D510*, const RuntimeMethod*))Enumerator_Dispose_mFB582AEAA2E73F3128B5571197BEDE256A83F657_gshared)(__this, method);
+	((  void (*) (Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*, const RuntimeMethod*))Enumerator_Dispose_m915D35B9BB2A77C5396F4FE1A1C53F1C93B8E337_gshared)((Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*)__this, method);
 }
 // T System.Collections.Generic.HashSet`1/Enumerator<System.Type>::get_Current()
 inline Type_t* Enumerator_get_Current_mE6F34FF6022CD9DDB4D8FBD351123B8DE4E39F5E_inline (Enumerator_t54420C3FCCF3EC855F7D8CCB24137F990C32D510* __this, const RuntimeMethod* method)
 {
-	return ((  Type_t* (*) (Enumerator_t54420C3FCCF3EC855F7D8CCB24137F990C32D510*, const RuntimeMethod*))Enumerator_get_Current_m139A176CD271A0532D75BE08DA7831C8C45CE28F_gshared_inline)(__this, method);
+	Type_t* il2cppRetVal;
+	((  void (*) (Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*, Il2CppFullySharedGenericAny*, const RuntimeMethod*))Enumerator_get_Current_m51282E47C90E55BF2D96A0D329869ABC122A85A0_gshared_inline)((Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*)__this, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Boolean System.Collections.Generic.HashSet`1/Enumerator<System.Type>::MoveNext()
 inline bool Enumerator_MoveNext_mE765E5EFCB04CF77ED370D04FBE264559E4452BE (Enumerator_t54420C3FCCF3EC855F7D8CCB24137F990C32D510* __this, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Enumerator_t54420C3FCCF3EC855F7D8CCB24137F990C32D510*, const RuntimeMethod*))Enumerator_MoveNext_m27565F5ACCCC75C3DD34CC4CAE3E6AEFEB9144A6_gshared)(__this, method);
+	return ((  bool (*) (Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*, const RuntimeMethod*))Enumerator_MoveNext_m1756F06B6BC460B8EEB4522B562E097F37D54C59_gshared)((Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*)__this, method);
 }
 // System.Int32 System.Boolean::GetHashCode()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Boolean_GetHashCode_mEDB6904770C962BAF4510E5D24F08083C33900E3 (bool* __this, const RuntimeMethod* method) ;
@@ -8952,7 +8547,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConversionUtility_IsConvertibleTo_m691B2
 // System.Void Unity.VisualScripting.UnexpectedEnumValueException`1<Unity.VisualScripting.TypesMatching>::.ctor(T)
 inline void UnexpectedEnumValueException_1__ctor_mA63A1428CA08D2FFDAF61CDE68F39B7712CEF352 (UnexpectedEnumValueException_1_tC9CE22260532425FC251A16B00D152B97D1E83C6* __this, int32_t ___value0, const RuntimeMethod* method)
 {
-	((  void (*) (UnexpectedEnumValueException_1_tC9CE22260532425FC251A16B00D152B97D1E83C6*, int32_t, const RuntimeMethod*))UnexpectedEnumValueException_1__ctor_m8323477225F696295F492B2FB8E57AA261ECB3E9_gshared)(__this, ___value0, method);
+	((  void (*) (/*Unity.VisualScripting.UnexpectedEnumValueException`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>*/UnexpectedEnumValueException_1_tD66B1540AD1D72D4F9F16E6203551ECE90CBC9ED*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))UnexpectedEnumValueException_1__ctor_m6FEB118D40397A48EFF952950FC54DCCF2F97CA4_gshared)((UnexpectedEnumValueException_1_tD66B1540AD1D72D4F9F16E6203551ECE90CBC9ED*)__this, (Il2CppFullySharedGenericAny)&___value0, method);
 }
 // System.Void System.Text.StringBuilder::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StringBuilder__ctor_m1D99713357DE05DAFA296633639DB55F8C30587D (StringBuilder_t* __this, const RuntimeMethod* method) ;
@@ -8965,7 +8560,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_AppendLine_m3B
 // T[] System.Array::Empty<System.Type>()
 inline TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* Array_Empty_TisType_t_m1FD9ED0B09CEAFFC537EF0C71689FDB03AEF72AC_inline (const RuntimeMethod* method)
 {
-	return ((  TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* (*) (const RuntimeMethod*))Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_gshared_inline)(method);
+	__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* il2cppRetVal = ((  __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* (*) (const RuntimeMethod*))Array_Empty_TisIl2CppFullySharedGenericAny_m244E2A51B33F845A2093F0862FBCE502E4FDD868_gshared_inline)(method);
+	return (TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB*)il2cppRetVal;
 }
 // System.Void Unity.VisualScripting.TypeFilter::.ctor(System.Type[])
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TypeFilter__ctor_mE03CDC6CBF3E16FCDE412595FE10172DF878C167 (TypeFilter_tECDDDCC463E5FF81530AF9D5B154E5095F16CA80* __this, TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* ___types0, const RuntimeMethod* method) ;
@@ -8974,29 +8570,31 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_EndsWith_mCD3754F5401E19CE7821CD3
 // System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()
 inline int32_t List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_inline (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* __this, const RuntimeMethod* method)
 {
-	return ((  int32_t (*) (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD*, const RuntimeMethod*))List_1_get_Count_m4407E4C389F22B8CEC282C15D56516658746C383_gshared_inline)(__this, method);
+	return ((  int32_t (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1_get_Count_mD2ED26ACAF3BAF386FFEA83893BA51DB9FD8BA30_gshared_inline)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 // T System.Collections.Generic.List`1<System.String>::get_Item(System.Int32)
 inline String_t* List_1_get_Item_m21AEC50E791371101DC22ABCF96A2E46800811F8 (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* __this, int32_t ___index0, const RuntimeMethod* method)
 {
-	return ((  String_t* (*) (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD*, int32_t, const RuntimeMethod*))List_1_get_Item_m33561245D64798C2AB07584C0EC4F240E4839A38_gshared)(__this, ___index0, method);
+	String_t* il2cppRetVal;
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, int32_t, Il2CppFullySharedGenericAny*, const RuntimeMethod*))List_1_get_Item_m6E4BA37C1FB558E4A62AE4324212E45D09C5C937_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, ___index0, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Void Unity.VisualScripting.TypeName::.ctor(System.String,System.Int32&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TypeName__ctor_mA9E1A4603EA5E12401679124F6E53C0DFBF0F735 (TypeName_t6C31C8853CF16254A3932AA55D6F3B657ED07F54* __this, String_t* ___s0, int32_t* ___index1, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<Unity.VisualScripting.TypeName>::.ctor()
 inline void List_1__ctor_mF6631551A73A2CFAF9ABF9EAA7D19458E75674E9 (List_1_t109F34922AD6589B82B033B6DD689038AD7324E9* __this, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t109F34922AD6589B82B033B6DD689038AD7324E9*, const RuntimeMethod*))List_1__ctor_m7F078BB342729BDF11327FD89D7872265328F690_gshared)(__this, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1__ctor_m0AFBAEA7EC427E32CC9CA267B1930DC5DF67A374_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 // System.Void System.Collections.Generic.List`1<System.String>::.ctor()
 inline void List_1__ctor_mCA8DD57EAC70C2B5923DBB9D5A77CEAC22E7068E (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* __this, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD*, const RuntimeMethod*))List_1__ctor_m7F078BB342729BDF11327FD89D7872265328F690_gshared)(__this, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1__ctor_m0AFBAEA7EC427E32CC9CA267B1930DC5DF67A374_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 // System.Void System.Collections.Generic.List`1<System.Int32>::.ctor()
 inline void List_1__ctor_m17F501B5A5C289ECE1B4F3D6EBF05DFA421433F8 (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* __this, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73*, const RuntimeMethod*))List_1__ctor_m17F501B5A5C289ECE1B4F3D6EBF05DFA421433F8_gshared)(__this, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1__ctor_m0AFBAEA7EC427E32CC9CA267B1930DC5DF67A374_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 // System.Char System.String::get_Chars(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Il2CppChar String_get_Chars_mC49DF0CD2D3BE7BE97B3AD9C995BE3094F8E36D3 (String_t* __this, int32_t ___index0, const RuntimeMethod* method) ;
@@ -9005,44 +8603,50 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t String_get_Length_m42625D
 // System.Void System.Nullable`1<System.Char>::.ctor(T)
 inline void Nullable_1__ctor_m925B76A79F5C50FC6CCDB1C29526E908C8257ABE (Nullable_1_tD52F1D0FC7EBB336F119BE953E59F426766032C1* __this, Il2CppChar ___value0, const RuntimeMethod* method)
 {
-	((  void (*) (Nullable_1_tD52F1D0FC7EBB336F119BE953E59F426766032C1*, Il2CppChar, const RuntimeMethod*))Nullable_1__ctor_m925B76A79F5C50FC6CCDB1C29526E908C8257ABE_gshared)(__this, ___value0, method);
+	((  void (*) (Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericStructType*/Il2CppFullySharedGenericStruct, const RuntimeMethod*))Nullable_1__ctor_m4257D7FF23A495D1B204F20330FBDED58248E4CC_gshared)((Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339*)__this, (Il2CppFullySharedGenericStruct)&___value0, method);
 }
 // System.Boolean System.Nullable`1<System.Char>::get_HasValue()
 inline bool Nullable_1_get_HasValue_m9897CE72A58099ADB081E439D3A3EF0AA9CF5ED9_inline (Nullable_1_tD52F1D0FC7EBB336F119BE953E59F426766032C1* __this, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Nullable_1_tD52F1D0FC7EBB336F119BE953E59F426766032C1*, const RuntimeMethod*))Nullable_1_get_HasValue_m9897CE72A58099ADB081E439D3A3EF0AA9CF5ED9_gshared_inline)(__this, method);
+	return ((  bool (*) (Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339*, const RuntimeMethod*))Nullable_1_get_HasValue_m14F273FB376DF00D727434CDCD28AB4EDCC14C3C_gshared_inline)((Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339*)__this, method);
 }
 // T System.Nullable`1<System.Char>::GetValueOrDefault()
 inline Il2CppChar Nullable_1_GetValueOrDefault_m4DC59B3219E9E81FFB2DBE02BF850B54E460DEB6_inline (Nullable_1_tD52F1D0FC7EBB336F119BE953E59F426766032C1* __this, const RuntimeMethod* method)
 {
-	return ((  Il2CppChar (*) (Nullable_1_tD52F1D0FC7EBB336F119BE953E59F426766032C1*, const RuntimeMethod*))Nullable_1_GetValueOrDefault_m4DC59B3219E9E81FFB2DBE02BF850B54E460DEB6_gshared_inline)(__this, method);
+	Il2CppChar il2cppRetVal;
+	((  void (*) (Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339*, Il2CppFullySharedGenericStruct*, const RuntimeMethod*))Nullable_1_GetValueOrDefault_mC057FBD944AF068B90EBDD0B496231A01B2A4228_gshared_inline)((Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339*)__this, (Il2CppFullySharedGenericStruct*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Void System.Nullable`1<System.Int32>::.ctor(T)
 inline void Nullable_1__ctor_m141FA88563AC0B5179132FB929EABD02C47FF703 (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, int32_t ___value0, const RuntimeMethod* method)
 {
-	((  void (*) (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28*, int32_t, const RuntimeMethod*))Nullable_1__ctor_m141FA88563AC0B5179132FB929EABD02C47FF703_gshared)(__this, ___value0, method);
+	((  void (*) (Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericStructType*/Il2CppFullySharedGenericStruct, const RuntimeMethod*))Nullable_1__ctor_m4257D7FF23A495D1B204F20330FBDED58248E4CC_gshared)((Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339*)__this, (Il2CppFullySharedGenericStruct)&___value0, method);
 }
 // T System.Nullable`1<System.Int32>::GetValueOrDefault()
 inline int32_t Nullable_1_GetValueOrDefault_m8D130DB7F2A1E694736B449176F9C26DB456597B_inline (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, const RuntimeMethod* method)
 {
-	return ((  int32_t (*) (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28*, const RuntimeMethod*))Nullable_1_GetValueOrDefault_m8D130DB7F2A1E694736B449176F9C26DB456597B_gshared_inline)(__this, method);
+	int32_t il2cppRetVal;
+	((  void (*) (Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339*, Il2CppFullySharedGenericStruct*, const RuntimeMethod*))Nullable_1_GetValueOrDefault_mC057FBD944AF068B90EBDD0B496231A01B2A4228_gshared_inline)((Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339*)__this, (Il2CppFullySharedGenericStruct*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Boolean System.Nullable`1<System.Int32>::get_HasValue()
 inline bool Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_inline (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28*, const RuntimeMethod*))Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_gshared_inline)(__this, method);
+	return ((  bool (*) (Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339*, const RuntimeMethod*))Nullable_1_get_HasValue_m14F273FB376DF00D727434CDCD28AB4EDCC14C3C_gshared_inline)((Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339*)__this, method);
 }
 // System.Collections.Generic.List`1<Unity.VisualScripting.TypeName> Unity.VisualScripting.TypeName::get_GenericParameters()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR List_1_t109F34922AD6589B82B033B6DD689038AD7324E9* TypeName_get_GenericParameters_m519E4A51DCCD0F0701F35C09784D8128EE8263AC_inline (TypeName_t6C31C8853CF16254A3932AA55D6F3B657ED07F54* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<Unity.VisualScripting.TypeName>::Add(T)
 inline void List_1_Add_m889E6AB5A902D20F259B62AAF3BF4775A0452811_inline (List_1_t109F34922AD6589B82B033B6DD689038AD7324E9* __this, TypeName_t6C31C8853CF16254A3932AA55D6F3B657ED07F54* ___item0, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t109F34922AD6589B82B033B6DD689038AD7324E9*, TypeName_t6C31C8853CF16254A3932AA55D6F3B657ED07F54*, const RuntimeMethod*))List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline)(__this, ___item0, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))List_1_Add_mD4F3498FBD3BDD3F03CBCFB38041CBAC9C28CAFC_gshared_inline)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, (Il2CppFullySharedGenericAny)___item0, method);
 }
 // T System.Nullable`1<System.Int32>::get_Value()
 inline int32_t Nullable_1_get_Value_m0DF3B826A745419D26A168689AEB4BE6F8698ECA (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, const RuntimeMethod* method)
 {
-	return ((  int32_t (*) (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28*, const RuntimeMethod*))Nullable_1_get_Value_m0DF3B826A745419D26A168689AEB4BE6F8698ECA_gshared)(__this, method);
+	int32_t il2cppRetVal;
+	((  void (*) (Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339*, Il2CppFullySharedGenericStruct*, const RuntimeMethod*))Nullable_1_get_Value_mA083C4D9192050DC38513BDD9D364C5C68A3A675_gshared)((Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339*)__this, (Il2CppFullySharedGenericStruct*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.String System.String::Substring(System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Substring_mB1D94F47935D22E130FF2C01DBB6A4135FBB76CE (String_t* __this, int32_t ___startIndex0, int32_t ___length1, const RuntimeMethod* method) ;
@@ -9057,14 +8661,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StringUtility_PartsAround_mA21406BFF73C1
 // System.Void System.Collections.Generic.List`1<System.String>::Add(T)
 inline void List_1_Add_mF10DB1D3CBB0B14215F0E4F8AB4934A1955E5351_inline (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* __this, String_t* ___item0, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD*, String_t*, const RuntimeMethod*))List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline)(__this, ___item0, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))List_1_Add_mD4F3498FBD3BDD3F03CBCFB38041CBAC9C28CAFC_gshared_inline)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, (Il2CppFullySharedGenericAny)___item0, method);
 }
 // System.Int32 System.Int32::Parse(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Int32_Parse_m273CA1A9C7717C99641291A95C543711C0202AF0 (String_t* ___s0, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<System.Int32>::Add(T)
 inline void List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_inline (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* __this, int32_t ___item0, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73*, int32_t, const RuntimeMethod*))List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_gshared_inline)(__this, ___item0, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))List_1_Add_mD4F3498FBD3BDD3F03CBCFB38041CBAC9C28CAFC_gshared_inline)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, (Il2CppFullySharedGenericAny)&___item0, method);
 }
 // System.Void Unity.VisualScripting.TypeName::set_AssemblyDescription(System.String)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void TypeName_set_AssemblyDescription_m3EBD7FB0F0C264E8EB6362C10645035C9384F05D_inline (TypeName_t6C31C8853CF16254A3932AA55D6F3B657ED07F54* __this, String_t* ___value0, const RuntimeMethod* method) ;
@@ -9073,17 +8677,19 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* TypeName_get_AssemblyDe
 // System.Void System.Func`2<System.String,System.String>::.ctor(System.Object,System.IntPtr)
 inline void Func_2__ctor_m6A29D0BC8A4BCF6079AD2737B4119D3802B41814 (Func_2_t85D1F7C2022B349817C22FC72C474CD33FFABE93* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_2_t85D1F7C2022B349817C22FC72C474CD33FFABE93*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_2__ctor_m7F8A01C0B02BC1D4063F4EB1E817F7A48562A398_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_2__ctor_m7F5DD19B4170C027D5367001F7BC95A0658A2169_gshared)((Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*)__this, ___object0, ___method1, method);
 }
 // System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Select<System.String,System.String>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,TResult>)
 inline RuntimeObject* Enumerable_Select_TisString_t_TisString_t_mFD118DAE211D26D1F9416E64403E9182543D9AF6 (RuntimeObject* ___source0, Func_2_t85D1F7C2022B349817C22FC72C474CD33FFABE93* ___selector1, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (RuntimeObject*, Func_2_t85D1F7C2022B349817C22FC72C474CD33FFABE93*, const RuntimeMethod*))Enumerable_Select_TisRuntimeObject_TisRuntimeObject_m67C538A5EBF57C4844107A8EF25DB2CAAFBAF8FB_gshared)(___source0, ___selector1, method);
+	RuntimeObject* il2cppRetVal = ((  RuntimeObject* (*) (RuntimeObject*, Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*, const RuntimeMethod*))Enumerable_Select_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m5BBCA2BC02448D0B77D2201BB08B13BAB3BABA53_gshared)((RuntimeObject*)___source0, (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*)___selector1, method);
+	return (RuntimeObject*)il2cppRetVal;
 }
 // System.Collections.Generic.List`1<TSource> System.Linq.Enumerable::ToList<System.String>(System.Collections.Generic.IEnumerable`1<TSource>)
 inline List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* Enumerable_ToList_TisString_t_m86360148F90DE6EA1A8363F38B7C2A88FD139131 (RuntimeObject* ___source0, const RuntimeMethod* method)
 {
-	return ((  List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_ToList_TisRuntimeObject_m6456D63764F29E6B5B2422C3DE25113577CF51EE_gshared)(___source0, method);
+	List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* il2cppRetVal = ((  List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_ToList_TisIl2CppFullySharedGenericAny_m191EA129E511F9B8304FF8826A2DA645E06CCBF0_gshared)((RuntimeObject*)___source0, method);
+	return (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD*)il2cppRetVal;
 }
 // System.String Unity.VisualScripting.TypeName::LookForPairThenRemove(System.Collections.Generic.List`1<System.String>,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TypeName_LookForPairThenRemove_mCE5F569E040A70172646F30AAF4D96B2379EE24B (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* ___strings0, String_t* ___Name1, const RuntimeMethod* method) ;
@@ -9106,7 +8712,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Substring_m6BA4A3FA3800FE926
 // System.Void System.Collections.Generic.List`1<System.String>::RemoveAt(System.Int32)
 inline void List_1_RemoveAt_m031D3A21689276A872FCA7566C8F2F79F9581F0D (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* __this, int32_t ___index0, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD*, int32_t, const RuntimeMethod*))List_1_RemoveAt_m54F62297ADEE4D4FDA697F49ED807BF901201B54_gshared)(__this, ___index0, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, int32_t, const RuntimeMethod*))List_1_RemoveAt_mF6C23E9072D8CBE2872705E7E4D08BDB78770F5C_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, ___index0, method);
 }
 // System.Boolean System.String::StartsWith(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_StartsWith_mF75DBA1EB709811E711B44E26FF919C88A8E65C0 (String_t* __this, String_t* ___value0, const RuntimeMethod* method) ;
@@ -9115,27 +8721,31 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* StringUtility_TrimStart_m4191946C2A
 // System.Void System.Collections.Generic.List`1<System.String>::set_Item(System.Int32,T)
 inline void List_1_set_Item_m6A72B7648178616800F05C13DB492E4EDB866B7C (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* __this, int32_t ___index0, String_t* ___value1, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD*, int32_t, String_t*, const RuntimeMethod*))List_1_set_Item_m3C58DBC69A321AF2826595584FF3E9F43C07EA56_gshared)(__this, ___index0, ___value1, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, int32_t, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))List_1_set_Item_m9A958091885CC5363CCFE9F0BC472EAFCB56C813_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, ___index0, (Il2CppFullySharedGenericAny)___value1, method);
 }
 // System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Unity.VisualScripting.TypeName>::GetEnumerator()
 inline Enumerator_tC24946BA559616564C0B2AA651512D1A9EDAEC66 List_1_GetEnumerator_m72675358B6A3BE5754FBC23C00AE1EECFBC446D7 (List_1_t109F34922AD6589B82B033B6DD689038AD7324E9* __this, const RuntimeMethod* method)
 {
-	return ((  Enumerator_tC24946BA559616564C0B2AA651512D1A9EDAEC66 (*) (List_1_t109F34922AD6589B82B033B6DD689038AD7324E9*, const RuntimeMethod*))List_1_GetEnumerator_mD8294A7FA2BEB1929487127D476F8EC1CDC23BFC_gshared)(__this, method);
+	Enumerator_tC24946BA559616564C0B2AA651512D1A9EDAEC66 il2cppRetVal;
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF*, const RuntimeMethod*))List_1_GetEnumerator_m8B2A92ACD4FBA5FBDC3F6F4F5C23A0DDF491DA61_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, (Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Void System.Collections.Generic.List`1/Enumerator<Unity.VisualScripting.TypeName>::Dispose()
 inline void Enumerator_Dispose_m9293A3935CADEDB62A86B6A3BF2B307500E8C1D3 (Enumerator_tC24946BA559616564C0B2AA651512D1A9EDAEC66* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Enumerator_tC24946BA559616564C0B2AA651512D1A9EDAEC66*, const RuntimeMethod*))Enumerator_Dispose_mD9DC3E3C3697830A4823047AB29A77DBBB5ED419_gshared)(__this, method);
+	((  void (*) (Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF*, const RuntimeMethod*))Enumerator_Dispose_mFE1EBE6F6425283FEAEAE7C79D02CDE4F9D367E8_gshared)((Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF*)__this, method);
 }
 // T System.Collections.Generic.List`1/Enumerator<Unity.VisualScripting.TypeName>::get_Current()
 inline TypeName_t6C31C8853CF16254A3932AA55D6F3B657ED07F54* Enumerator_get_Current_mE1D02CA494E0E9D5501C52B7A9CB0B0225255559_inline (Enumerator_tC24946BA559616564C0B2AA651512D1A9EDAEC66* __this, const RuntimeMethod* method)
 {
-	return ((  TypeName_t6C31C8853CF16254A3932AA55D6F3B657ED07F54* (*) (Enumerator_tC24946BA559616564C0B2AA651512D1A9EDAEC66*, const RuntimeMethod*))Enumerator_get_Current_m6330F15D18EE4F547C05DF9BF83C5EB710376027_gshared_inline)(__this, method);
+	TypeName_t6C31C8853CF16254A3932AA55D6F3B657ED07F54* il2cppRetVal;
+	((  void (*) (Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF*, Il2CppFullySharedGenericAny*, const RuntimeMethod*))Enumerator_get_Current_m8B42D4B2DE853B9D11B997120CD0228D4780E394_gshared_inline)((Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF*)__this, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Boolean System.Collections.Generic.List`1/Enumerator<Unity.VisualScripting.TypeName>::MoveNext()
 inline bool Enumerator_MoveNext_m37E40635D1632B62DF6EFA6A178C16D07BFCCF2A (Enumerator_tC24946BA559616564C0B2AA651512D1A9EDAEC66* __this, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Enumerator_tC24946BA559616564C0B2AA651512D1A9EDAEC66*, const RuntimeMethod*))Enumerator_MoveNext_mE921CC8F29FBBDE7CC3209A0ED0D921D58D00BCB_gshared)(__this, method);
+	return ((  bool (*) (Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF*, const RuntimeMethod*))Enumerator_MoveNext_m8D8E5E878AF0A88A535AB1AB5BA4F23E151A678A_gshared)((Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF*)__this, method);
 }
 // System.Void Unity.VisualScripting.TypeName::UpdateName()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TypeName_UpdateName_mDFE4E330B5E41A27413315AED6F977B6527FDE13 (TypeName_t6C31C8853CF16254A3932AA55D6F3B657ED07F54* __this, const RuntimeMethod* method) ;
@@ -9164,14 +8774,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Append_m08904D
 // T System.Collections.Generic.List`1<System.Int32>::get_Item(System.Int32)
 inline int32_t List_1_get_Item_mD99081BEFA1AB3526715F489192B0F7F596C183D (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* __this, int32_t ___index0, const RuntimeMethod* method)
 {
-	return ((  int32_t (*) (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73*, int32_t, const RuntimeMethod*))List_1_get_Item_mD99081BEFA1AB3526715F489192B0F7F596C183D_gshared)(__this, ___index0, method);
+	int32_t il2cppRetVal;
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, int32_t, Il2CppFullySharedGenericAny*, const RuntimeMethod*))List_1_get_Item_m6E4BA37C1FB558E4A62AE4324212E45D09C5C937_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, ___index0, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Text.StringBuilder System.Text.StringBuilder::Append(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Append_m283B617AC29FB0DD6F3A7D8C01D385C25A5F0FAA (StringBuilder_t* __this, int32_t ___value0, const RuntimeMethod* method) ;
 // System.Int32 System.Collections.Generic.List`1<Unity.VisualScripting.TypeName>::get_Count()
 inline int32_t List_1_get_Count_m12581A9F3A4E05CBBE1BD1DFC54F9692E0749FA0_inline (List_1_t109F34922AD6589B82B033B6DD689038AD7324E9* __this, const RuntimeMethod* method)
 {
-	return ((  int32_t (*) (List_1_t109F34922AD6589B82B033B6DD689038AD7324E9*, const RuntimeMethod*))List_1_get_Count_m4407E4C389F22B8CEC282C15D56516658746C383_gshared_inline)(__this, method);
+	return ((  int32_t (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1_get_Count_mD2ED26ACAF3BAF386FFEA83893BA51DB9FD8BA30_gshared_inline)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 // System.String Unity.VisualScripting.TypeName::ToString(Unity.VisualScripting.TypeNameDetail,Unity.VisualScripting.TypeNameDetail)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TypeName_ToString_mA2BA8AAEF508ECFFF91FBB6F67D451A96D6AD1A8 (TypeName_t6C31C8853CF16254A3932AA55D6F3B657ED07F54* __this, int32_t ___specification0, int32_t ___genericsSpecification1, const RuntimeMethod* method) ;
@@ -9188,7 +8800,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Trim_mCD6D8C6D4CFD15225D12DB
 // System.Boolean System.Collections.Generic.HashSet`1<System.Type>::Contains(T)
 inline bool HashSet_1_Contains_mDA8DE9AE6B9EB1DD6FD9F741272BF6747AAF1B5D (HashSet_1_tAE2F12E55878645F5BE7C4D5603228A6FAB429C7* __this, Type_t* ___item0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (HashSet_1_tAE2F12E55878645F5BE7C4D5603228A6FAB429C7*, Type_t*, const RuntimeMethod*))HashSet_1_Contains_m9BACE52BFA0BD83C601529D3629118453E459BBB_gshared)(__this, ___item0, method);
+	return ((  bool (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))HashSet_1_Contains_m6D40586EE21316C2647D81169AFFF9B4C7719F74_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (Il2CppFullySharedGenericAny)___item0, method);
 }
 // Unity.VisualScripting.Namespace Unity.VisualScripting.Namespace::FromFullName(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Namespace_t36325594319E587D8BC02F11C4C8C1FD4E683ADC* Namespace_FromFullName_m1F3A9348555D5C71E8963B495BC4C41EDBE45C63 (String_t* ___fullName0, const RuntimeMethod* method) ;
@@ -9199,7 +8811,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Func_2_tDF54C067A76CC031380FDC1CAD2344D51038C
 // System.Void System.Func`1<System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_1__ctor_m663374A863E492A515BE9626B6F0E444991834E8 (Func_1_tD5C081AE11746B200C711DD48DBEB00E3A9276D4* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_1_tD5C081AE11746B200C711DD48DBEB00E3A9276D4*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_1__ctor_m663374A863E492A515BE9626B6F0E444991834E8_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_1_tBB8824FA8746333BFFF3AB3CE4A41B58450AF431*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_1__ctor_mC73A4FCEBBAB90CB7B7AB16321F3F98FBBF12596_gshared)((Func_1_tBB8824FA8746333BFFF3AB3CE4A41B58450AF431*)__this, ___object0, ___method1, method);
 }
 // System.Void Unity.VisualScripting.TypeUtility/<>c__DisplayClass8_0::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass8_0__ctor_m6AFA724FD1DE0A0DF7AEAB99A6D56BCD74D854BF (U3CU3Ec__DisplayClass8_0_tDF89214A7F90367FF3EC58EE1DBAC69949DE9490* __this, const RuntimeMethod* method) ;
@@ -9208,7 +8820,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TypeUtility_IsBasic_m82F3CE28839D7F7B0BF
 // System.Void System.Func`2<System.Object[],System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Func_2__ctor_m84415336F8D908293EB9A1EA849A76A2B2D8EA7C (Func_2_tDF54C067A76CC031380FDC1CAD2344D51038CC7A* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_2_tDF54C067A76CC031380FDC1CAD2344D51038CC7A*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_2__ctor_m7F8A01C0B02BC1D4063F4EB1E817F7A48562A398_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_2__ctor_m7F5DD19B4170C027D5367001F7BC95A0658A2169_gshared)((Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*)__this, ___object0, ___method1, method);
 }
 // System.Reflection.ConstructorInfo Unity.VisualScripting.MemberUtility::GetConstructorAccepting(System.Type,System.Type[],System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ConstructorInfo_t1B5967EE7E5554272F79F8880183C70AD240EEEB* MemberUtility_GetConstructorAccepting_m3450DFF99DA7EFB5192D993C9D7BAEA9A5E69EF7 (Type_t* ___type0, TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* ___paramTypes1, bool ___nonPublic2, const RuntimeMethod* method) ;
@@ -9217,17 +8829,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConstructorInfo_op_Inequality_mB3CB8B779
 // System.Void System.Func`2<System.Object,System.Type>::.ctor(System.Object,System.IntPtr)
 inline void Func_2__ctor_m277558A858994D8E28995A9F5C715F5B93F29B8A (Func_2_tAC18D851722B3126D76F4299AB7E778D42746D57* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_2_tAC18D851722B3126D76F4299AB7E778D42746D57*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_2__ctor_m7F8A01C0B02BC1D4063F4EB1E817F7A48562A398_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_2__ctor_m7F5DD19B4170C027D5367001F7BC95A0658A2169_gshared)((Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*)__this, ___object0, ___method1, method);
 }
 // System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Select<System.Object,System.Type>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,TResult>)
 inline RuntimeObject* Enumerable_Select_TisRuntimeObject_TisType_t_mD50A4AAA57176F7F1F6843844CAE0A551863A09F (RuntimeObject* ___source0, Func_2_tAC18D851722B3126D76F4299AB7E778D42746D57* ___selector1, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (RuntimeObject*, Func_2_tAC18D851722B3126D76F4299AB7E778D42746D57*, const RuntimeMethod*))Enumerable_Select_TisRuntimeObject_TisRuntimeObject_m67C538A5EBF57C4844107A8EF25DB2CAAFBAF8FB_gshared)(___source0, ___selector1, method);
+	RuntimeObject* il2cppRetVal = ((  RuntimeObject* (*) (RuntimeObject*, Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*, const RuntimeMethod*))Enumerable_Select_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m5BBCA2BC02448D0B77D2201BB08B13BAB3BABA53_gshared)((RuntimeObject*)___source0, (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*)___selector1, method);
+	return (RuntimeObject*)il2cppRetVal;
 }
 // TResult System.Func`2<System.Object[],System.Object>::Invoke(T)
 inline RuntimeObject* Func_2_Invoke_m1A9384DDEB5C79165C0A5F1BFB29E31A2F48A2C0_inline (Func_2_tDF54C067A76CC031380FDC1CAD2344D51038CC7A* __this, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___arg0, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (Func_2_tDF54C067A76CC031380FDC1CAD2344D51038CC7A*, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*, const RuntimeMethod*))Func_2_Invoke_mDBA25DA5DA5B7E056FB9B026AF041F1385FB58A9_gshared_inline)(__this, ___arg0, method);
+	RuntimeObject* il2cppRetVal;
+	((  void (*) (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, Il2CppFullySharedGenericAny*, const RuntimeMethod*))Func_2_Invoke_m31CAC166FDC80DC5AE52A5AEFFEE2D9B27A1CA3F_gshared_inline)((Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*)__this, (Il2CppFullySharedGenericAny)___arg0, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Void System.ArgumentException::.ctor(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArgumentException__ctor_m026938A67AF9D36BB7ED27F80425D7194B514465 (ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263* __this, String_t* ___message0, const RuntimeMethod* method) ;
@@ -9236,7 +8851,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TypeUtility_IsReferenceType_m1319781FE96
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Type,System.Object>::TryGetValue(TKey,TValue&)
 inline bool Dictionary_2_TryGetValue_m76D0309695A0582B3E29E97942ACD35DC4EFD128 (Dictionary_2_t954AEC357FE7190582B8255D4ACEF81F5E94A6A5* __this, Type_t* ___key0, RuntimeObject** ___value1, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_t954AEC357FE7190582B8255D4ACEF81F5E94A6A5*, Type_t*, RuntimeObject**, const RuntimeMethod*))Dictionary_2_TryGetValue_mD15380A4ED7CDEE99EA45881577D26BA9CE1B849_gshared)(__this, ___key0, ___value1, method);
+	return ((  bool (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType&*/Il2CppFullySharedGenericAny*, const RuntimeMethod*))Dictionary_2_TryGetValue_m7519D765EAF1E8A7D3137C2F1B7B3A01D15A1692_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny*)___value1, method);
 }
 // System.Object System.Activator::CreateInstance(System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Activator_CreateInstance_mFF030428C64FDDFACC74DFAC97388A1C628BFBCF (Type_t* ___type0, const RuntimeMethod* method) ;
@@ -9260,22 +8875,26 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Type_get_IsAbstract_m16FA83463867635ED9D
 // System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Except<System.Type>(System.Collections.Generic.IEnumerable`1<TSource>,System.Collections.Generic.IEnumerable`1<TSource>)
 inline RuntimeObject* Enumerable_Except_TisType_t_mF2822E20B153E01C5D570DA483946653CC2B7F55 (RuntimeObject* ___first0, RuntimeObject* ___second1, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (RuntimeObject*, RuntimeObject*, const RuntimeMethod*))Enumerable_Except_TisRuntimeObject_m8B8D61ADB6F12C233EEFF2A66C12135B67ECFE6B_gshared)(___first0, ___second1, method);
+	RuntimeObject* il2cppRetVal = ((  RuntimeObject* (*) (RuntimeObject*, RuntimeObject*, const RuntimeMethod*))Enumerable_Except_TisIl2CppFullySharedGenericAny_mA95AD18112C9DB0A0706844ECA7E78515E30DBE7_gshared)((RuntimeObject*)___first0, (RuntimeObject*)___second1, method);
+	return (RuntimeObject*)il2cppRetVal;
 }
 // System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Empty<System.Type>()
 inline RuntimeObject* Enumerable_Empty_TisType_t_mE579A570ACA5F405D7DBF1DDC4BCEFD12C60F325_inline (const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (const RuntimeMethod*))Enumerable_Empty_TisRuntimeObject_mA90CDE158774C34A28C07CEEA9E9EA2A61618238_gshared_inline)(method);
+	RuntimeObject* il2cppRetVal = ((  RuntimeObject* (*) (const RuntimeMethod*))Enumerable_Empty_TisIl2CppFullySharedGenericAny_m886EEFEEA5C6280BA23954EB30ABC7B65133313A_gshared_inline)(method);
+	return (RuntimeObject*)il2cppRetVal;
 }
 // System.Collections.Generic.IEnumerable`1<T> Unity.VisualScripting.LinqUtility::Yield<System.Type>(T)
 inline RuntimeObject* LinqUtility_Yield_TisType_t_mE98DC27C12C45A92ED88DC5D5B149FD0D477880E (Type_t* ___t0, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (Type_t*, const RuntimeMethod*))LinqUtility_Yield_TisRuntimeObject_m86070A6145AEDFC821BE377AB1C45C5B94B84AA9_gshared)(___t0, method);
+	RuntimeObject* il2cppRetVal = ((  RuntimeObject* (*) (/*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))LinqUtility_Yield_TisIl2CppFullySharedGenericAny_mA4EF5493CB31729226BBBF240269C8BC0C6A51E9_gshared)((Il2CppFullySharedGenericAny)___t0, method);
+	return (RuntimeObject*)il2cppRetVal;
 }
 // System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Concat<System.Type>(System.Collections.Generic.IEnumerable`1<TSource>,System.Collections.Generic.IEnumerable`1<TSource>)
 inline RuntimeObject* Enumerable_Concat_TisType_t_m35B23F074726B58C605EC26DB7F2AE1C3A55713A (RuntimeObject* ___first0, RuntimeObject* ___second1, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (RuntimeObject*, RuntimeObject*, const RuntimeMethod*))Enumerable_Concat_TisRuntimeObject_m84DD8C4D7381636C5F798202183E95C359606D33_gshared)(___first0, ___second1, method);
+	RuntimeObject* il2cppRetVal = ((  RuntimeObject* (*) (RuntimeObject*, RuntimeObject*, const RuntimeMethod*))Enumerable_Concat_TisIl2CppFullySharedGenericAny_m75ACEB35DF50D655807F514CF950875385A50A8B_gshared)((RuntimeObject*)___first0, (RuntimeObject*)___second1, method);
+	return (RuntimeObject*)il2cppRetVal;
 }
 // System.Collections.Generic.IEnumerable`1<System.Type> Unity.VisualScripting.TypeUtility::GetInterfaces(System.Type,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* TypeUtility_GetInterfaces_mC68C5483293CF8F0062CB509F455FD41CAA7E3F6 (Type_t* ___type0, bool ___includeInherited1, const RuntimeMethod* method) ;
@@ -9292,12 +8911,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* TypeUtility_AndInterfaces_mE55
 // System.Void System.Func`2<System.Type,System.Boolean>::.ctor(System.Object,System.IntPtr)
 inline void Func_2__ctor_mAFDFA2B152082BBF5E0626BF143EDACD61DE9D74 (Func_2_t7AF8146EC94DFCBB0F1B3E70111C1FB21D39F00E* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_2_t7AF8146EC94DFCBB0F1B3E70111C1FB21D39F00E*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_2__ctor_m13C0A7F33154D861E2A041B52E88461832DA1697_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_2__ctor_m7F5DD19B4170C027D5367001F7BC95A0658A2169_gshared)((Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*)__this, ___object0, ___method1, method);
 }
 // TSource System.Linq.Enumerable::FirstOrDefault<System.Type>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
 inline Type_t* Enumerable_FirstOrDefault_TisType_t_mB9171D7C79BDDA53104605F28E6DD2E02A864D61 (RuntimeObject* ___source0, Func_2_t7AF8146EC94DFCBB0F1B3E70111C1FB21D39F00E* ___predicate1, const RuntimeMethod* method)
 {
-	return ((  Type_t* (*) (RuntimeObject*, Func_2_t7AF8146EC94DFCBB0F1B3E70111C1FB21D39F00E*, const RuntimeMethod*))Enumerable_FirstOrDefault_TisRuntimeObject_mFACC750E4D7AF7B43F5B866C84F613B3ECC41994_gshared)(___source0, ___predicate1, method);
+	Type_t* il2cppRetVal;
+	((  void (*) (RuntimeObject*, Func_2_t19E50C11C3E1F20B5A8FDB85D7DD353B6DFF868B*, Il2CppFullySharedGenericAny*, const RuntimeMethod*))Enumerable_FirstOrDefault_TisIl2CppFullySharedGenericAny_m453402C488FDE63E630C415A9C1C74901B7964F9_gshared)((RuntimeObject*)___source0, (Func_2_t19E50C11C3E1F20B5A8FDB85D7DD353B6DFF868B*)___predicate1, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Type Unity.VisualScripting.TypeUtility::GetDictionaryItemType(System.Type,System.Boolean,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Type_t* TypeUtility_GetDictionaryItemType_mA2709E25CDE1129125B1213F57D5D00064482619 (Type_t* ___dictionaryType0, bool ___allowNonGeneric1, int32_t ___genericArgumentIndex2, const RuntimeMethod* method) ;
@@ -9318,14 +8939,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotImplementedException__ctor_mDAB47BC6B
 // System.Void Unity.VisualScripting.EnsureThat::IsNotNull<System.Collections.Generic.Dictionary`2<System.Type,System.Type>>(T)
 inline void EnsureThat_IsNotNull_TisDictionary_2_t8BF76F08F2E28AE3B97CD39EBC7A0FE57398B1B0_m56525E72FCF25A1837BF5E6B9C8D115D9C716EFF (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC* __this, Dictionary_2_t8BF76F08F2E28AE3B97CD39EBC7A0FE57398B1B0* ___value0, const RuntimeMethod* method)
 {
-	((  void (*) (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*, Dictionary_2_t8BF76F08F2E28AE3B97CD39EBC7A0FE57398B1B0*, const RuntimeMethod*))EnsureThat_IsNotNull_TisRuntimeObject_m609E619BEADC6A63A12D5BFF2B15CCB0A4E28F4B_gshared)(__this, ___value0, method);
+	((  void (*) (EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))EnsureThat_IsNotNull_TisIl2CppFullySharedGenericAny_m644606E147B32EF7D13A08EB4DB26B8FECE5495E_gshared)((EnsureThat_tCC49E8B65851E70C9534A68EB657B6227F0549FC*)__this, (Il2CppFullySharedGenericAny)___value0, method);
 }
 // System.Void Unity.VisualScripting.GenericClosingException::.ctor(System.Type,System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GenericClosingException__ctor_m51B6E25AD6FB1EAF71520CD5126BA64B119EB666 (GenericClosingException_tDEE793008054268C36C25219DD2DA1B7986DB473* __this, Type_t* ___open0, Type_t* ___closed1, const RuntimeMethod* method) ;
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Type,System.Type>::ContainsKey(TKey)
 inline bool Dictionary_2_ContainsKey_mC0B9D0867188881CB6B16C8D5CA39B90378FB0C9 (Dictionary_2_t8BF76F08F2E28AE3B97CD39EBC7A0FE57398B1B0* __this, Type_t* ___key0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_t8BF76F08F2E28AE3B97CD39EBC7A0FE57398B1B0*, Type_t*, const RuntimeMethod*))Dictionary_2_ContainsKey_m703047C213F7AB55C9DC346596287773A1F670CD_gshared)(__this, ___key0, method);
+	return ((  bool (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_ContainsKey_mA268E9B914DCE838DD0CD9D879BAAEECD0C677AA_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, method);
 }
 // System.Void System.InvalidOperationException::.ctor(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InvalidOperationException__ctor_mE4CB6F4712AB6D99A2358FBAE2E052B3EE976162 (InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB* __this, String_t* ___message0, const RuntimeMethod* method) ;
@@ -9348,22 +8969,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CGetTypesSafelyU3Ed__35__ctor_m9701C26
 // System.Void System.Collections.Generic.HashSet`1<System.Type>::.ctor()
 inline void HashSet_1__ctor_m2CF57902B2200A0A6EC0336F9F47E8479CB8FEEC (HashSet_1_tAE2F12E55878645F5BE7C4D5603228A6FAB429C7* __this, const RuntimeMethod* method)
 {
-	((  void (*) (HashSet_1_tAE2F12E55878645F5BE7C4D5603228A6FAB429C7*, const RuntimeMethod*))HashSet_1__ctor_m9132EE1422BAA45E44B7FFF495F378790D36D90E_gshared)(__this, method);
+	((  void (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, const RuntimeMethod*))HashSet_1__ctor_m5E12B490550D90B0686D55F8F4E7B0506BD07120_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, method);
 }
 // System.Boolean System.Collections.Generic.HashSet`1<System.Type>::Add(T)
 inline bool HashSet_1_Add_mE981A3DF3CF945751F5D80D6B2DC2E699FB9D7F1 (HashSet_1_tAE2F12E55878645F5BE7C4D5603228A6FAB429C7* __this, Type_t* ___item0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (HashSet_1_tAE2F12E55878645F5BE7C4D5603228A6FAB429C7*, Type_t*, const RuntimeMethod*))HashSet_1_Add_m2CD7657B3459B61DD4BBA47024AC71F7D319658B_gshared)(__this, ___item0, method);
+	return ((  bool (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))HashSet_1_Add_m73E14DB94D21272EEE1E28E4D74704B0095D8064_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (Il2CppFullySharedGenericAny)___item0, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.Type,System.Object>::.ctor()
 inline void Dictionary_2__ctor_m84DCABCA6F8E90C1A9C54403427A93C6CA760A1E (Dictionary_2_t954AEC357FE7190582B8255D4ACEF81F5E94A6A5* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t954AEC357FE7190582B8255D4ACEF81F5E94A6A5*, const RuntimeMethod*))Dictionary_2__ctor_m5B32FBC624618211EB461D59CFBB10E987FD1329_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2__ctor_m7745B6ED71E47C95E1BFCE647C4F026A404C668F_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.Type,System.Object>::Add(TKey,TValue)
 inline void Dictionary_2_Add_mFE0B282ABFC67D240E8C236181CD3C4FF0984045 (Dictionary_2_t954AEC357FE7190582B8255D4ACEF81F5E94A6A5* __this, Type_t* ___key0, RuntimeObject* ___value1, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t954AEC357FE7190582B8255D4ACEF81F5E94A6A5*, Type_t*, RuntimeObject*, const RuntimeMethod*))Dictionary_2_Add_m93FFFABE8FCE7FA9793F0915E2A8842C7CD0C0C1_gshared)(__this, ___key0, ___value1, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_Add_m54D479280472DEA042DB3933AF547E666B017333_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny)___value1, method);
 }
 // System.Object Unity.VisualScripting.TypeUtility::PseudoDefault(System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* TypeUtility_PseudoDefault_m98F6927FD9C6E39EFB17C31777B04E0771AF8CC8 (Type_t* ___type0, const RuntimeMethod* method) ;
@@ -9382,12 +9003,13 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TypeU5BU5D_t97234E1129B564EB38B8D
 // System.Boolean System.Linq.Enumerable::Any<System.Type>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
 inline bool Enumerable_Any_TisType_t_mD8597B059A2354F3F7C115AEC22CD569D67D9E5D (RuntimeObject* ___source0, Func_2_t7AF8146EC94DFCBB0F1B3E70111C1FB21D39F00E* ___predicate1, const RuntimeMethod* method)
 {
-	return ((  bool (*) (RuntimeObject*, Func_2_t7AF8146EC94DFCBB0F1B3E70111C1FB21D39F00E*, const RuntimeMethod*))Enumerable_Any_TisRuntimeObject_mF6C6AC8DF8971883615734832D09C9210B956F0F_gshared)(___source0, ___predicate1, method);
+	return ((  bool (*) (RuntimeObject*, Func_2_t19E50C11C3E1F20B5A8FDB85D7DD353B6DFF868B*, const RuntimeMethod*))Enumerable_Any_TisIl2CppFullySharedGenericAny_m169BDC8DDA00D7D377C865871CB094FD41BBA8BB_gshared)((RuntimeObject*)___source0, (Func_2_t19E50C11C3E1F20B5A8FDB85D7DD353B6DFF868B*)___predicate1, method);
 }
 // System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Where<System.Type>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
 inline RuntimeObject* Enumerable_Where_TisType_t_mA4A7776893ADF4E3CAB6F7AEC94DF71DDF7931F8 (RuntimeObject* ___source0, Func_2_t7AF8146EC94DFCBB0F1B3E70111C1FB21D39F00E* ___predicate1, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (RuntimeObject*, Func_2_t7AF8146EC94DFCBB0F1B3E70111C1FB21D39F00E*, const RuntimeMethod*))Enumerable_Where_TisRuntimeObject_m5DAF16724887B42DDBBF391C7F375749E8AA4AD7_gshared)(___source0, ___predicate1, method);
+	RuntimeObject* il2cppRetVal = ((  RuntimeObject* (*) (RuntimeObject*, Func_2_t19E50C11C3E1F20B5A8FDB85D7DD353B6DFF868B*, const RuntimeMethod*))Enumerable_Where_TisIl2CppFullySharedGenericAny_m3F416675DC7A5572025B02ED373C41AD9ED8F6C4_gshared)((RuntimeObject*)___source0, (Func_2_t19E50C11C3E1F20B5A8FDB85D7DD353B6DFF868B*)___predicate1, method);
+	return (RuntimeObject*)il2cppRetVal;
 }
 // System.Collections.Generic.IEnumerator`1<System.Type> Unity.VisualScripting.TypeUtility/<GetTypesSafely>d__35::System.Collections.Generic.IEnumerable<System.Type>.GetEnumerator()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CGetTypesSafelyU3Ed__35_System_Collections_Generic_IEnumerableU3CSystem_TypeU3E_GetEnumerator_m7C50E41A556CF784E82B0CFEA752B79C96779D84 (U3CGetTypesSafelyU3Ed__35_t6B6AF6494C5700F0C39005342EA0F3C17E8817E6* __this, const RuntimeMethod* method) ;
@@ -9410,7 +9032,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D
 // Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.FullSerializer.fsBaseConverter::SerializeMember<UnityEngine.Vector2>(System.Collections.Generic.Dictionary`2<System.String,Unity.VisualScripting.FullSerializer.fsData>,System.Type,System.String,T)
 inline fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 fsBaseConverter_SerializeMember_TisVector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7_mA477EC6F5D83CF9813DED311B44EB25069A67FD7 (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04* __this, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3* ___data0, Type_t* ___overrideConverterType1, String_t* ___name2, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___value3, const RuntimeMethod* method)
 {
-	return ((  fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 (*) (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04*, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3*, Type_t*, String_t*, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7, const RuntimeMethod*))fsBaseConverter_SerializeMember_TisVector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7_mA477EC6F5D83CF9813DED311B44EB25069A67FD7_gshared)(__this, ___data0, ___overrideConverterType1, ___name2, ___value3, method);
+	return ((  fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 (*) (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04*, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3*, Type_t*, String_t*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))fsBaseConverter_SerializeMember_TisIl2CppFullySharedGenericAny_m79CBD6541C56F6775C6AFE833F82B8B7DE1AD522_gshared)((fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04*)__this, ___data0, ___overrideConverterType1, ___name2, (Il2CppFullySharedGenericAny)&___value3, method);
 }
 // Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.FullSerializer.fsResult::op_Addition(Unity.VisualScripting.FullSerializer.fsResult,Unity.VisualScripting.FullSerializer.fsResult)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 fsResult_op_Addition_mA94A4AD68668E539DEFE1255DC72B9D11A6DE41C (fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 ___a0, fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 ___b1, const RuntimeMethod* method) ;
@@ -9419,7 +9041,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D
 // Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.FullSerializer.fsBaseConverter::DeserializeMember<UnityEngine.Vector2>(System.Collections.Generic.Dictionary`2<System.String,Unity.VisualScripting.FullSerializer.fsData>,System.Type,System.String,T&)
 inline fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 fsBaseConverter_DeserializeMember_TisVector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7_m99FA8D5FB2DA808B5B3DBC7945D5B5592F11C358 (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04* __this, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3* ___data0, Type_t* ___overrideConverterType1, String_t* ___name2, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___value3, const RuntimeMethod* method)
 {
-	return ((  fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 (*) (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04*, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3*, Type_t*, String_t*, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*, const RuntimeMethod*))fsBaseConverter_DeserializeMember_TisVector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7_m99FA8D5FB2DA808B5B3DBC7945D5B5592F11C358_gshared)(__this, ___data0, ___overrideConverterType1, ___name2, ___value3, method);
+	return ((  fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 (*) (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04*, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3*, Type_t*, String_t*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType&*/Il2CppFullySharedGenericAny*, const RuntimeMethod*))fsBaseConverter_DeserializeMember_TisIl2CppFullySharedGenericAny_mD950968993B7222E483356975AAB178517564D4A_gshared)((fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04*)__this, ___data0, ___overrideConverterType1, ___name2, (Il2CppFullySharedGenericAny*)___value3, method);
 }
 // System.Void UnityEngine.Ray2D::set_origin(UnityEngine.Vector2)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Ray2D_set_origin_m1844D677985BDEFD1DC73574D44397218586F2E9 (Ray2D_t48EB7C703F8A2363D8A8F4A05D58640BD5721C7A* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___value0, const RuntimeMethod* method) ;
@@ -9428,21 +9050,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Ray2D_set_direction_mEDCE095AE4E01E9CFE7
 // System.Void Unity.VisualScripting.FullSerializer.fsDirectConverter`1<UnityEngine.Ray2D>::.ctor()
 inline void fsDirectConverter_1__ctor_mBFCA0DE0165FE7459AEBC89AC73731BBCF7F64E6 (fsDirectConverter_1_t8EC81BCA98876AF5AF3271B6086EC66E2CCDC388* __this, const RuntimeMethod* method)
 {
-	((  void (*) (fsDirectConverter_1_t8EC81BCA98876AF5AF3271B6086EC66E2CCDC388*, const RuntimeMethod*))fsDirectConverter_1__ctor_mBFCA0DE0165FE7459AEBC89AC73731BBCF7F64E6_gshared)(__this, method);
+	((  void (*) (fsDirectConverter_1_tCBA7B5D48312C1775A21082D3D453731C902A8BD*, const RuntimeMethod*))fsDirectConverter_1__ctor_mA219A5FF100DBCB35147606E9E4E9C565D2F8D50_gshared)((fsDirectConverter_1_tCBA7B5D48312C1775A21082D3D453731C902A8BD*)__this, method);
 }
 // UnityEngine.Vector3 UnityEngine.Ray::get_origin()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Ray_get_origin_m97604A8F180316A410DCD77B7D74D04522FA1BA6 (Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00* __this, const RuntimeMethod* method) ;
 // Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.FullSerializer.fsBaseConverter::SerializeMember<UnityEngine.Vector3>(System.Collections.Generic.Dictionary`2<System.String,Unity.VisualScripting.FullSerializer.fsData>,System.Type,System.String,T)
 inline fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 fsBaseConverter_SerializeMember_TisVector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_mB713137A72F280700A2ECEA7B05D487A15DBBEA4 (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04* __this, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3* ___data0, Type_t* ___overrideConverterType1, String_t* ___name2, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___value3, const RuntimeMethod* method)
 {
-	return ((  fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 (*) (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04*, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3*, Type_t*, String_t*, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2, const RuntimeMethod*))fsBaseConverter_SerializeMember_TisVector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_mB713137A72F280700A2ECEA7B05D487A15DBBEA4_gshared)(__this, ___data0, ___overrideConverterType1, ___name2, ___value3, method);
+	return ((  fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 (*) (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04*, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3*, Type_t*, String_t*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))fsBaseConverter_SerializeMember_TisIl2CppFullySharedGenericAny_m79CBD6541C56F6775C6AFE833F82B8B7DE1AD522_gshared)((fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04*)__this, ___data0, ___overrideConverterType1, ___name2, (Il2CppFullySharedGenericAny)&___value3, method);
 }
 // UnityEngine.Vector3 UnityEngine.Ray::get_direction()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Ray_get_direction_m21C2D22D3BD4A683BD4DC191AB22DD05F5EC2086 (Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00* __this, const RuntimeMethod* method) ;
 // Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.FullSerializer.fsBaseConverter::DeserializeMember<UnityEngine.Vector3>(System.Collections.Generic.Dictionary`2<System.String,Unity.VisualScripting.FullSerializer.fsData>,System.Type,System.String,T&)
 inline fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 fsBaseConverter_DeserializeMember_TisVector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_mE7AC87D2BB880EB5DA39180347AED8A66F8A8EEB (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04* __this, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3* ___data0, Type_t* ___overrideConverterType1, String_t* ___name2, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___value3, const RuntimeMethod* method)
 {
-	return ((  fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 (*) (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04*, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3*, Type_t*, String_t*, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*, const RuntimeMethod*))fsBaseConverter_DeserializeMember_TisVector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_mE7AC87D2BB880EB5DA39180347AED8A66F8A8EEB_gshared)(__this, ___data0, ___overrideConverterType1, ___name2, ___value3, method);
+	return ((  fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 (*) (fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04*, Dictionary_2_t9D50BDE1AE9A04E8610682F97C4DB702D3A9B4D3*, Type_t*, String_t*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType&*/Il2CppFullySharedGenericAny*, const RuntimeMethod*))fsBaseConverter_DeserializeMember_TisIl2CppFullySharedGenericAny_mD950968993B7222E483356975AAB178517564D4A_gshared)((fsBaseConverter_tDF9366828A5B8ADB6D986EB35B320D4DDC81CB04*)__this, ___data0, ___overrideConverterType1, ___name2, (Il2CppFullySharedGenericAny*)___value3, method);
 }
 // System.Void UnityEngine.Ray::set_origin(UnityEngine.Vector3)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Ray_set_origin_m9B19A7BE86636111E3B16BCE08EAE030F37FE64D (Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___value0, const RuntimeMethod* method) ;
@@ -9451,33 +9073,37 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Ray_set_direction_m8A8FF8101045BAE51BE5D
 // System.Void Unity.VisualScripting.FullSerializer.fsDirectConverter`1<UnityEngine.Ray>::.ctor()
 inline void fsDirectConverter_1__ctor_m644F4C264CCF8F165037066D5AC2034B6D176110 (fsDirectConverter_1_tF307DFA6F21486A34320546F09381BBF84FF0539* __this, const RuntimeMethod* method)
 {
-	((  void (*) (fsDirectConverter_1_tF307DFA6F21486A34320546F09381BBF84FF0539*, const RuntimeMethod*))fsDirectConverter_1__ctor_m644F4C264CCF8F165037066D5AC2034B6D176110_gshared)(__this, method);
+	((  void (*) (fsDirectConverter_1_tCBA7B5D48312C1775A21082D3D453731C902A8BD*, const RuntimeMethod*))fsDirectConverter_1__ctor_mA219A5FF100DBCB35147606E9E4E9C565D2F8D50_gshared)((fsDirectConverter_1_tCBA7B5D48312C1775A21082D3D453731C902A8BD*)__this, method);
 }
 // T Unity.VisualScripting.FullSerializer.fsContext::Get<System.Collections.Generic.List`1<UnityEngine.Object>>()
 inline List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3* fsContext_Get_TisList_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3_mA3B93EBB8AE2CB1407D9CD515F82B00D1FE62638 (fsContext_t3B227C205D84208E2D8934429C07677542C97B5F* __this, const RuntimeMethod* method)
 {
-	return ((  List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3* (*) (fsContext_t3B227C205D84208E2D8934429C07677542C97B5F*, const RuntimeMethod*))fsContext_Get_TisRuntimeObject_m0DA21A2EC755AAE4904ABB16FCF8C8E7062125B1_gshared)(__this, method);
+	List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3* il2cppRetVal;
+	((  void (*) (fsContext_t3B227C205D84208E2D8934429C07677542C97B5F*, Il2CppFullySharedGenericAny*, const RuntimeMethod*))fsContext_Get_TisIl2CppFullySharedGenericAny_m291C6F4855EE2BB88FED4FA436058E2BDABA90A5_gshared)((fsContext_t3B227C205D84208E2D8934429C07677542C97B5F*)__this, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Collections.Generic.List`1<UnityEngine.Object> Unity.VisualScripting.UnityObjectConverter::get_objectReferences()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3* UnityObjectConverter_get_objectReferences_mE0B7C99E0991DBA79ECCB99F81C82136C22F3416 (UnityObjectConverter_t138C651EC9ACE9FA7A869C9EB5D4687D59D945EF* __this, const RuntimeMethod* method) ;
 // System.Int32 System.Collections.Generic.List`1<UnityEngine.Object>::get_Count()
 inline int32_t List_1_get_Count_m44A99205EF9DCC954DCADB768DEC5B439BA5E34C_inline (List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3* __this, const RuntimeMethod* method)
 {
-	return ((  int32_t (*) (List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3*, const RuntimeMethod*))List_1_get_Count_m4407E4C389F22B8CEC282C15D56516658746C383_gshared_inline)(__this, method);
+	return ((  int32_t (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1_get_Count_mD2ED26ACAF3BAF386FFEA83893BA51DB9FD8BA30_gshared_inline)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 // System.Void Unity.VisualScripting.FullSerializer.fsData::.ctor(System.Int64)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void fsData__ctor_mEF553618B93DB72D7816FD84740EC37A942F129C (fsData_t6E144EC58C6E449805AB7BF77BCDAB7230BBFA23* __this, int64_t ___i0, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<UnityEngine.Object>::Add(T)
 inline void List_1_Add_m60F1F5D817C83DDC11235FD5524B8667F4C314F9_inline (List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3* __this, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___item0, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3*, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*, const RuntimeMethod*))List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline)(__this, ___item0, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))List_1_Add_mD4F3498FBD3BDD3F03CBCFB38041CBAC9C28CAFC_gshared_inline)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, (Il2CppFullySharedGenericAny)___item0, method);
 }
 // System.Int64 Unity.VisualScripting.FullSerializer.fsData::get_AsInt64()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t fsData_get_AsInt64_m1C652F5AF0A3C8EB84183204CF3AE983AEC3441E (fsData_t6E144EC58C6E449805AB7BF77BCDAB7230BBFA23* __this, const RuntimeMethod* method) ;
 // T System.Collections.Generic.List`1<UnityEngine.Object>::get_Item(System.Int32)
 inline Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* List_1_get_Item_m90A31393BDAEF6B4484DEDB9704307ADEE82753B (List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3* __this, int32_t ___index0, const RuntimeMethod* method)
 {
-	return ((  Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* (*) (List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3*, int32_t, const RuntimeMethod*))List_1_get_Item_m33561245D64798C2AB07584C0EC4F240E4839A38_gshared)(__this, ___index0, method);
+	Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* il2cppRetVal;
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, int32_t, Il2CppFullySharedGenericAny*, const RuntimeMethod*))List_1_get_Item_m6E4BA37C1FB558E4A62AE4324212E45D09C5C937_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, ___index0, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Void Unity.VisualScripting.FullSerializer.fsResult::AddMessage(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void fsResult_AddMessage_mC4B690BC3884FF2D235733FD65081C163B4DDD55 (fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974* __this, String_t* ___message0, const RuntimeMethod* method) ;
@@ -9488,51 +9114,55 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Dictionary_2_tA348003A3C1CEFB3096
 // TValue System.Collections.Generic.Dictionary`2<System.String,System.Object>::get_Item(TKey)
 inline RuntimeObject* Dictionary_2_get_Item_m371FC5B3D39406E297F2626B159BA1A3E32917B5 (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710* __this, String_t* ___key0, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710*, String_t*, const RuntimeMethod*))Dictionary_2_get_Item_m4AAAECBE902A211BF2126E6AFA280AEF73A3E0D6_gshared)(__this, ___key0, method);
+	RuntimeObject* il2cppRetVal;
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, Il2CppFullySharedGenericAny*, const RuntimeMethod*))Dictionary_2_get_Item_m2E96908E9716367701CD737FA54C884EB2A8C3EA_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.String,System.Object>::set_Item(TKey,TValue)
 inline void Dictionary_2_set_Item_m7CCA97075B48AFB2B97E5A072B94BC7679374341 (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710* __this, String_t* ___key0, RuntimeObject* ___value1, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710*, String_t*, RuntimeObject*, const RuntimeMethod*))Dictionary_2_set_Item_m1A840355E8EDAECEA9D0C6F5E51B248FAA449CBD_gshared)(__this, ___key0, ___value1, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_set_Item_m4C6841170DD11AED683D2D71919F362A4CFF4A80_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny)___value1, method);
 }
 // System.Int32 System.Collections.Generic.Dictionary`2<System.String,System.Object>::get_Count()
 inline int32_t Dictionary_2_get_Count_mA194D0E2787B81ED9FC54005AF0B23147EF51CBA (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710* __this, const RuntimeMethod* method)
 {
-	return ((  int32_t (*) (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710*, const RuntimeMethod*))Dictionary_2_get_Count_m4DDA9442C238A443489115E22B026AD366851549_gshared)(__this, method);
+	return ((  int32_t (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2_get_Count_mBB454C6743410D3E06D44D494D4D6FF4CBBBDB1E_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Collections.Generic.Dictionary`2/KeyCollection<TKey,TValue> System.Collections.Generic.Dictionary`2<System.String,System.Object>::get_Keys()
 inline KeyCollection_tE66790F09E854C19C7F612BEAD203AE626E90A36* Dictionary_2_get_Keys_m695E003DE675B51E3006780E449C11CAC0967214 (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710* __this, const RuntimeMethod* method)
 {
-	return ((  KeyCollection_tE66790F09E854C19C7F612BEAD203AE626E90A36* (*) (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710*, const RuntimeMethod*))Dictionary_2_get_Keys_m72D290F90654BFD683FA7AA7C63D9F4F692218B6_gshared)(__this, method);
+	KeyCollection_tB792ACBAE0B99278B0B7B0F7440B4788E98F0D55* il2cppRetVal = ((  KeyCollection_tB792ACBAE0B99278B0B7B0F7440B4788E98F0D55* (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2_get_Keys_mD82D6690B1A801E8EED43F1B1D310893C9D334CF_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
+	return (KeyCollection_tE66790F09E854C19C7F612BEAD203AE626E90A36*)il2cppRetVal;
 }
 // System.Collections.Generic.Dictionary`2/ValueCollection<TKey,TValue> System.Collections.Generic.Dictionary`2<System.String,System.Object>::get_Values()
 inline ValueCollection_tC9D91E8A3198E40EA339059703AB10DFC9F5CC2E* Dictionary_2_get_Values_mA5EC7E179F55A2C9C6E256032344B019965C33AC (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710* __this, const RuntimeMethod* method)
 {
-	return ((  ValueCollection_tC9D91E8A3198E40EA339059703AB10DFC9F5CC2E* (*) (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710*, const RuntimeMethod*))Dictionary_2_get_Values_mA0C01DEA55329E55380E96BBD04D4D228B437EC5_gshared)(__this, method);
+	ValueCollection_tC492596681BD51AB34FC76FA76C15C9B3FFB7B40* il2cppRetVal = ((  ValueCollection_tC492596681BD51AB34FC76FA76C15C9B3FFB7B40* (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2_get_Values_mE06FB7381D8152E35F0716DC7FE13788362112A7_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
+	return (ValueCollection_tC9D91E8A3198E40EA339059703AB10DFC9F5CC2E*)il2cppRetVal;
 }
 // System.Void Unity.VisualScripting.LudiqScriptableObject::OnAfterDeserialize()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LudiqScriptableObject_OnAfterDeserialize_m622CDCDACBD0B2B628EAEBD829C5753CA9D25ACB (LudiqScriptableObject_t6F4EC66CCD2BE314F06A538F6CB55E5424F64771* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.Dictionary`2<System.String,System.Object>::.ctor()
 inline void Dictionary_2__ctor_mC4F3DF292BAD88F4BF193C49CD689FAEBC4570A9 (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710*, const RuntimeMethod*))Dictionary_2__ctor_m5B32FBC624618211EB461D59CFBB10E987FD1329_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2__ctor_m7745B6ED71E47C95E1BFCE647C4F026A404C668F_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Void Unity.VisualScripting.DictionaryAsset::set_dictionary(System.Collections.Generic.Dictionary`2<System.String,System.Object>)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void DictionaryAsset_set_dictionary_mF12CE88E8FBF96B80C3A22884190B26C5E1582F9_inline (DictionaryAsset_tB284ECB16D7E639BB80FD6623A5A9F8C0FE0A09D* __this, Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710* ___value0, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.Dictionary`2<System.String,System.Object>::Clear()
 inline void Dictionary_2_Clear_mBC8B8FD18821E87AC78242BEAB058EB832641EAB (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710*, const RuntimeMethod*))Dictionary_2_Clear_mCFB5EA7351D5860D2B91592B91A84CA265A41433_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2_Clear_m935B3F117860376DC854C9E0C80CBD99BE77EEA4_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Object>::ContainsKey(TKey)
 inline bool Dictionary_2_ContainsKey_m1A594D39FA446EBD9EA6FFBA95D3AB82D16565CC (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710* __this, String_t* ___key0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710*, String_t*, const RuntimeMethod*))Dictionary_2_ContainsKey_m703047C213F7AB55C9DC346596287773A1F670CD_gshared)(__this, ___key0, method);
+	return ((  bool (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_ContainsKey_mA268E9B914DCE838DD0CD9D879BAAEECD0C677AA_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.String,System.Object>::Add(TKey,TValue)
 inline void Dictionary_2_Add_m5875DF2ACE933D734119C088B2E7C9C63F49B443 (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710* __this, String_t* ___key0, RuntimeObject* ___value1, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710*, String_t*, RuntimeObject*, const RuntimeMethod*))Dictionary_2_Add_m93FFFABE8FCE7FA9793F0915E2A8842C7CD0C0C1_gshared)(__this, ___key0, ___value1, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_Add_m54D479280472DEA042DB3933AF547E666B017333_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny)___value1, method);
 }
 // System.Collections.Generic.ICollection`1<System.String> Unity.VisualScripting.DictionaryAsset::get_Keys()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* DictionaryAsset_get_Keys_mB7C9F7375AF52A412D1075842818BD855CC39DB7 (DictionaryAsset_tB284ECB16D7E639BB80FD6623A5A9F8C0FE0A09D* __this, const RuntimeMethod* method) ;
@@ -9541,17 +9171,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* DictionaryAsset_get_Item_mFAA2
 // System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Object>::Remove(TKey)
 inline bool Dictionary_2_Remove_m2114FDE2525CF3B91B50AB1F5D5C28464EC55E3C (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710* __this, String_t* ___key0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710*, String_t*, const RuntimeMethod*))Dictionary_2_Remove_m5C7C45E75D951A75843F3F7AADD56ECD64F6BC86_gshared)(__this, ___key0, method);
+	return ((  bool (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_Remove_m583C4F0E2926B584BE6EC6008195360FC631C14C_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, method);
 }
 // System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Object>::TryGetValue(TKey,TValue&)
 inline bool Dictionary_2_TryGetValue_mC14A0401676B34A68B06FC858BA801E7DF99B7D8 (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710* __this, String_t* ___key0, RuntimeObject** ___value1, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710*, String_t*, RuntimeObject**, const RuntimeMethod*))Dictionary_2_TryGetValue_mD15380A4ED7CDEE99EA45881577D26BA9CE1B849_gshared)(__this, ___key0, ___value1, method);
+	return ((  bool (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType&*/Il2CppFullySharedGenericAny*, const RuntimeMethod*))Dictionary_2_TryGetValue_m7519D765EAF1E8A7D3137C2F1B7B3A01D15A1692_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny*)___value1, method);
 }
 // System.Collections.Generic.Dictionary`2/Enumerator<TKey,TValue> System.Collections.Generic.Dictionary`2<System.String,System.Object>::GetEnumerator()
 inline Enumerator_t06A9DDA7FA9EA8BC40458E628EBAF7B3AA14EB62 Dictionary_2_GetEnumerator_mF5B5B00F670F3436AB3C07C0F64149501DEC2DBC (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710* __this, const RuntimeMethod* method)
 {
-	return ((  Enumerator_t06A9DDA7FA9EA8BC40458E628EBAF7B3AA14EB62 (*) (Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710*, const RuntimeMethod*))Dictionary_2_GetEnumerator_m52AB12790B0B9B46B1DFB1F861C9DBEAB07C1FDA_gshared)(__this, method);
+	Enumerator_t06A9DDA7FA9EA8BC40458E628EBAF7B3AA14EB62 il2cppRetVal;
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*, const RuntimeMethod*))Dictionary_2_GetEnumerator_mEC4954B142C43B5CBAA045953EAD4E168FFCD492_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Void Unity.VisualScripting.LudiqScriptableObject::ShowData()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LudiqScriptableObject_ShowData_m53F17A66E811705D002006DED0BED7EE7F06428D (LudiqScriptableObject_t6F4EC66CCD2BE314F06A538F6CB55E5424F64771* __this, const RuntimeMethod* method) ;
@@ -9574,22 +9206,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t SerializableType_CompareTo_m7D7D3A22B
 // System.Void System.Collections.Generic.HashSet`1<Unity.VisualScripting.ISerializationDepender>::.ctor()
 inline void HashSet_1__ctor_m42F124E9A9689BC8742F58D7013B8406B7A8CA7C (HashSet_1_tD466EF3B0856373D8B09D4E3C5CCF76362DA76AC* __this, const RuntimeMethod* method)
 {
-	((  void (*) (HashSet_1_tD466EF3B0856373D8B09D4E3C5CCF76362DA76AC*, const RuntimeMethod*))HashSet_1__ctor_m9132EE1422BAA45E44B7FFF495F378790D36D90E_gshared)(__this, method);
+	((  void (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, const RuntimeMethod*))HashSet_1__ctor_m5E12B490550D90B0686D55F8F4E7B0506BD07120_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, method);
 }
 // System.Void System.Collections.Generic.HashSet`1<System.Object>::.ctor()
 inline void HashSet_1__ctor_m9132EE1422BAA45E44B7FFF495F378790D36D90E (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* __this, const RuntimeMethod* method)
 {
-	((  void (*) (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885*, const RuntimeMethod*))HashSet_1__ctor_m9132EE1422BAA45E44B7FFF495F378790D36D90E_gshared)(__this, method);
+	((  void (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, const RuntimeMethod*))HashSet_1__ctor_m5E12B490550D90B0686D55F8F4E7B0506BD07120_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, method);
 }
 // System.Void System.Collections.Generic.HashSet`1<Unity.VisualScripting.SerializationOperation>::.ctor()
 inline void HashSet_1__ctor_m7D5E82AA7B8AA77404520C410FE720F8E62A4670 (HashSet_1_t83F52FF626C7119CC0C4E4E295AF69086EB653DE* __this, const RuntimeMethod* method)
 {
-	((  void (*) (HashSet_1_t83F52FF626C7119CC0C4E4E295AF69086EB653DE*, const RuntimeMethod*))HashSet_1__ctor_m9132EE1422BAA45E44B7FFF495F378790D36D90E_gshared)(__this, method);
+	((  void (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, const RuntimeMethod*))HashSet_1__ctor_m5E12B490550D90B0686D55F8F4E7B0506BD07120_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, method);
 }
 // System.Int32 System.Collections.Generic.HashSet`1<Unity.VisualScripting.SerializationOperation>::get_Count()
 inline int32_t HashSet_1_get_Count_m5093A1B9D3E27A30386DFFEDC9AB8A61396DDA9F_inline (HashSet_1_t83F52FF626C7119CC0C4E4E295AF69086EB653DE* __this, const RuntimeMethod* method)
 {
-	return ((  int32_t (*) (HashSet_1_t83F52FF626C7119CC0C4E4E295AF69086EB653DE*, const RuntimeMethod*))HashSet_1_get_Count_m41CC85EEB7855CEFA3BC7A32F115387939318ED3_gshared_inline)(__this, method);
+	return ((  int32_t (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, const RuntimeMethod*))HashSet_1_get_Count_mA764DCA3CB14CB2CBDF742A163492FF4DA515B63_gshared_inline)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, method);
 }
 // System.Boolean Unity.VisualScripting.Serialization::get_isUnitySerializing()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Serialization_get_isUnitySerializing_m46208D5D6E042D9797B2DFBFCE0632A1BE5A9504_inline (const RuntimeMethod* method) ;
@@ -9600,22 +9232,24 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SerializationOperation__ctor_mB4A87C9CDA
 // System.Boolean System.Collections.Generic.HashSet`1<Unity.VisualScripting.SerializationOperation>::Add(T)
 inline bool HashSet_1_Add_mEBBE55EAFAEA29CAF5242ADB8ECDB06AF77C1FF9 (HashSet_1_t83F52FF626C7119CC0C4E4E295AF69086EB653DE* __this, SerializationOperation_t894BAE6FFB4FB0579F7C3A8B1C85A63E7BD35567* ___item0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (HashSet_1_t83F52FF626C7119CC0C4E4E295AF69086EB653DE*, SerializationOperation_t894BAE6FFB4FB0579F7C3A8B1C85A63E7BD35567*, const RuntimeMethod*))HashSet_1_Add_m2CD7657B3459B61DD4BBA47024AC71F7D319658B_gshared)(__this, ___item0, method);
+	return ((  bool (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))HashSet_1_Add_m73E14DB94D21272EEE1E28E4D74704B0095D8064_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (Il2CppFullySharedGenericAny)___item0, method);
 }
 // TSource System.Linq.Enumerable::First<Unity.VisualScripting.SerializationOperation>(System.Collections.Generic.IEnumerable`1<TSource>)
 inline SerializationOperation_t894BAE6FFB4FB0579F7C3A8B1C85A63E7BD35567* Enumerable_First_TisSerializationOperation_t894BAE6FFB4FB0579F7C3A8B1C85A63E7BD35567_m3B3152AD1D46CD6B3CBB3B9E9BA9808CB39CFF9F (RuntimeObject* ___source0, const RuntimeMethod* method)
 {
-	return ((  SerializationOperation_t894BAE6FFB4FB0579F7C3A8B1C85A63E7BD35567* (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_First_TisRuntimeObject_mEFECF1B8C3201589C5AF34176DCBF8DD926642D6_gshared)(___source0, method);
+	SerializationOperation_t894BAE6FFB4FB0579F7C3A8B1C85A63E7BD35567* il2cppRetVal;
+	((  void (*) (RuntimeObject*, Il2CppFullySharedGenericAny*, const RuntimeMethod*))Enumerable_First_TisIl2CppFullySharedGenericAny_mCFC88D63540FB5C7B03DD3E47157C18FD4AFE595_gshared)((RuntimeObject*)___source0, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Boolean System.Collections.Generic.HashSet`1<Unity.VisualScripting.SerializationOperation>::Remove(T)
 inline bool HashSet_1_Remove_m2E381809C41F921C5B4EEE1650479D4BAD633909 (HashSet_1_t83F52FF626C7119CC0C4E4E295AF69086EB653DE* __this, SerializationOperation_t894BAE6FFB4FB0579F7C3A8B1C85A63E7BD35567* ___item0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (HashSet_1_t83F52FF626C7119CC0C4E4E295AF69086EB653DE*, SerializationOperation_t894BAE6FFB4FB0579F7C3A8B1C85A63E7BD35567*, const RuntimeMethod*))HashSet_1_Remove_mF1D84C0A2829DDA2A0CEE1D82A5B999B5F6627CB_gshared)(__this, ___item0, method);
+	return ((  bool (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))HashSet_1_Remove_mE12E434B402CFEB49197444DE1D52A3AE4C7F6EE_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (Il2CppFullySharedGenericAny)___item0, method);
 }
 // System.Boolean System.Collections.Generic.HashSet`1<Unity.VisualScripting.SerializationOperation>::Contains(T)
 inline bool HashSet_1_Contains_mB42FAA966A3BB9FB9E75DCA036E9522D1B3A3E37 (HashSet_1_t83F52FF626C7119CC0C4E4E295AF69086EB653DE* __this, SerializationOperation_t894BAE6FFB4FB0579F7C3A8B1C85A63E7BD35567* ___item0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (HashSet_1_t83F52FF626C7119CC0C4E4E295AF69086EB653DE*, SerializationOperation_t894BAE6FFB4FB0579F7C3A8B1C85A63E7BD35567*, const RuntimeMethod*))HashSet_1_Contains_m9BACE52BFA0BD83C601529D3629118453E459BBB_gshared)(__this, ___item0, method);
+	return ((  bool (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))HashSet_1_Contains_m6D40586EE21316C2647D81169AFFF9B4C7719F74_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (Il2CppFullySharedGenericAny)___item0, method);
 }
 // System.Void Unity.VisualScripting.SerializationOperation::Reset()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SerializationOperation_Reset_m6E8884DC5D1B7E20DB08B3B5468D52D8E93BA217 (SerializationOperation_t894BAE6FFB4FB0579F7C3A8B1C85A63E7BD35567* __this, const RuntimeMethod* method) ;
@@ -9632,7 +9266,8 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR List_1_t9A2E2984B23260AECDFA90CEB
 // T[] System.Collections.Generic.List`1<UnityEngine.Object>::ToArray()
 inline ObjectU5BU5D_tD4BF1BEC72A31DF6611C0B8FA3112AF128FC3F8A* List_1_ToArray_mD41737D2884F388E1ED01F4A9D3783837A94B03D (List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3* __this, const RuntimeMethod* method)
 {
-	return ((  ObjectU5BU5D_tD4BF1BEC72A31DF6611C0B8FA3112AF128FC3F8A* (*) (List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3*, const RuntimeMethod*))List_1_ToArray_mD7E4F8E7C11C3C67CB5739FCC0A6E86106A6291F_gshared)(__this, method);
+	__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* il2cppRetVal = ((  __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1_ToArray_m5160526E5983BD8ED24DFFE47C33B141C1B3187A_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
+	return (ObjectU5BU5D_tD4BF1BEC72A31DF6611C0B8FA3112AF128FC3F8A*)il2cppRetVal;
 }
 // System.Void Unity.VisualScripting.SerializationData::.ctor(System.String,UnityEngine.Object[])
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SerializationData__ctor_m1AECF919A4D6D2B9256D1ECD164E2A8189DE64AD (SerializationData_tAD0F0CD307CB8C9EE08550F3DC6E296FDECE399A* __this, String_t* ___json0, ObjectU5BU5D_tD4BF1BEC72A31DF6611C0B8FA3112AF128FC3F8A* ___objectReferences1, const RuntimeMethod* method) ;
@@ -9645,7 +9280,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ObjectU5BU5D_tD4BF1BEC72A31DF6611
 // System.Void System.Collections.Generic.List`1<UnityEngine.Object>::AddRange(System.Collections.Generic.IEnumerable`1<T>)
 inline void List_1_AddRange_m55E46ED9B64D750D6B2E8F1F2FDD41100D9C6C39 (List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3* __this, RuntimeObject* ___collection0, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3*, RuntimeObject*, const RuntimeMethod*))List_1_AddRange_m1F76B300133150E6046C5FED00E88B5DE0A02E17_gshared)(__this, ___collection0, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, RuntimeObject*, const RuntimeMethod*))List_1_AddRange_m44DED39FFEBC8F2ACF6162DB065B649E888B9C57_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, (RuntimeObject*)___collection0, method);
 }
 // System.Void Unity.VisualScripting.Serialization::DeserializeJson(Unity.VisualScripting.FullSerializer.fsSerializer,System.String,System.Object&,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Serialization_DeserializeJson_mA737B5ECA3C7DFE7442A2D6563BCCDD0E586BEB8 (fsSerializer_t770DD30E2427CF63ECAEF61D7A1D1D178CECB3DC* ___serializer0, String_t* ___json1, RuntimeObject** ___instance2, bool ___forceReflected3, const RuntimeMethod* method) ;
@@ -9664,7 +9299,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA
 // Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.FullSerializer.fsSerializer::TrySerialize<System.Object>(T,Unity.VisualScripting.FullSerializer.fsData&)
 inline fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 fsSerializer_TrySerialize_TisRuntimeObject_m535933D428C9B51988896FE7C0658FE75A0C0D29 (fsSerializer_t770DD30E2427CF63ECAEF61D7A1D1D178CECB3DC* __this, RuntimeObject* ___instance0, fsData_t6E144EC58C6E449805AB7BF77BCDAB7230BBFA23** ___data1, const RuntimeMethod* method)
 {
-	return ((  fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 (*) (fsSerializer_t770DD30E2427CF63ECAEF61D7A1D1D178CECB3DC*, RuntimeObject*, fsData_t6E144EC58C6E449805AB7BF77BCDAB7230BBFA23**, const RuntimeMethod*))fsSerializer_TrySerialize_TisRuntimeObject_m535933D428C9B51988896FE7C0658FE75A0C0D29_gshared)(__this, ___instance0, ___data1, method);
+	return ((  fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 (*) (fsSerializer_t770DD30E2427CF63ECAEF61D7A1D1D178CECB3DC*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, fsData_t6E144EC58C6E449805AB7BF77BCDAB7230BBFA23**, const RuntimeMethod*))fsSerializer_TrySerialize_TisIl2CppFullySharedGenericAny_mD467C2221EABCCED5F049B2996388895D66CD6A3_gshared)((fsSerializer_t770DD30E2427CF63ECAEF61D7A1D1D178CECB3DC*)__this, (Il2CppFullySharedGenericAny)___instance0, ___data1, method);
 }
 // System.Void Unity.VisualScripting.Serialization::HandleResult(System.String,Unity.VisualScripting.FullSerializer.fsResult,UnityEngine.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Serialization_HandleResult_mA8F7C587002F125F0A2B4214108BB4651359B4F7 (String_t* ___label0, fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 ___result1, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___context2, const RuntimeMethod* method) ;
@@ -9677,7 +9312,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA
 // Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.FullSerializer.fsSerializer::TryDeserialize<System.Object>(Unity.VisualScripting.FullSerializer.fsData,T&)
 inline fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 fsSerializer_TryDeserialize_TisRuntimeObject_m3FB630497C0D561959831E27DEC91D075D944267 (fsSerializer_t770DD30E2427CF63ECAEF61D7A1D1D178CECB3DC* __this, fsData_t6E144EC58C6E449805AB7BF77BCDAB7230BBFA23* ___data0, RuntimeObject** ___instance1, const RuntimeMethod* method)
 {
-	return ((  fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 (*) (fsSerializer_t770DD30E2427CF63ECAEF61D7A1D1D178CECB3DC*, fsData_t6E144EC58C6E449805AB7BF77BCDAB7230BBFA23*, RuntimeObject**, const RuntimeMethod*))fsSerializer_TryDeserialize_TisRuntimeObject_m3FB630497C0D561959831E27DEC91D075D944267_gshared)(__this, ___data0, ___instance1, method);
+	return ((  fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 (*) (fsSerializer_t770DD30E2427CF63ECAEF61D7A1D1D178CECB3DC*, fsData_t6E144EC58C6E449805AB7BF77BCDAB7230BBFA23*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType&*/Il2CppFullySharedGenericAny*, const RuntimeMethod*))fsSerializer_TryDeserialize_TisIl2CppFullySharedGenericAny_m8F46C3E4472E3EACA5D9F7A58E397A6D10546582_gshared)((fsSerializer_t770DD30E2427CF63ECAEF61D7A1D1D178CECB3DC*)__this, ___data0, (Il2CppFullySharedGenericAny*)___instance1, method);
 }
 // Unity.VisualScripting.FullSerializer.fsResult Unity.VisualScripting.Serialization::DeserializeJsonUtil(Unity.VisualScripting.FullSerializer.fsSerializer,System.String,System.Object&,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR fsResult_tEB0578624BDC55E2B1775451433E6E3CBDA8D974 Serialization_DeserializeJsonUtil_mA520214A610CDBF12EAD5743E64528494362F4B6 (fsSerializer_t770DD30E2427CF63ECAEF61D7A1D1D178CECB3DC* ___serializer0, String_t* ___json1, RuntimeObject** ___instance2, bool ___forceReflected3, const RuntimeMethod* method) ;
@@ -9692,7 +9327,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* fsJsonPrinter_PrettyJson_m610FD8019
 // System.Boolean System.Collections.Generic.HashSet`1<Unity.VisualScripting.ISerializationDepender>::Add(T)
 inline bool HashSet_1_Add_m68266BCBD23DCD5291AC49ED2CD0520B65F54119 (HashSet_1_tD466EF3B0856373D8B09D4E3C5CCF76362DA76AC* __this, RuntimeObject* ___item0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (HashSet_1_tD466EF3B0856373D8B09D4E3C5CCF76362DA76AC*, RuntimeObject*, const RuntimeMethod*))HashSet_1_Add_m2CD7657B3459B61DD4BBA47024AC71F7D319658B_gshared)(__this, ___item0, method);
+	return ((  bool (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))HashSet_1_Add_m73E14DB94D21272EEE1E28E4D74704B0095D8064_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (Il2CppFullySharedGenericAny)___item0, method);
 }
 // System.Void Unity.VisualScripting.Serialization::CheckIfDependenciesMet(Unity.VisualScripting.ISerializationDepender)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Serialization_CheckIfDependenciesMet_m9098744A0BF754EBC53368A1C6DE95FFC9700C31 (RuntimeObject* ___depender0, const RuntimeMethod* method) ;
@@ -9705,69 +9340,75 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Serialization_WeakenSerializat
 // System.Boolean System.Collections.Generic.HashSet`1<System.Object>::Remove(T)
 inline bool HashSet_1_Remove_mF1D84C0A2829DDA2A0CEE1D82A5B999B5F6627CB (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* __this, RuntimeObject* ___item0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885*, RuntimeObject*, const RuntimeMethod*))HashSet_1_Remove_mF1D84C0A2829DDA2A0CEE1D82A5B999B5F6627CB_gshared)(__this, ___item0, method);
+	return ((  bool (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))HashSet_1_Remove_mE12E434B402CFEB49197444DE1D52A3AE4C7F6EE_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (Il2CppFullySharedGenericAny)___item0, method);
 }
 // System.Boolean System.Collections.Generic.HashSet`1<System.Object>::Add(T)
 inline bool HashSet_1_Add_m2CD7657B3459B61DD4BBA47024AC71F7D319658B (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* __this, RuntimeObject* ___item0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885*, RuntimeObject*, const RuntimeMethod*))HashSet_1_Add_m2CD7657B3459B61DD4BBA47024AC71F7D319658B_gshared)(__this, ___item0, method);
+	return ((  bool (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))HashSet_1_Add_m73E14DB94D21272EEE1E28E4D74704B0095D8064_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (Il2CppFullySharedGenericAny)___item0, method);
 }
 // TSource[] System.Linq.Enumerable::ToArray<Unity.VisualScripting.ISerializationDepender>(System.Collections.Generic.IEnumerable`1<TSource>)
 inline ISerializationDependerU5BU5D_t88BBB896AF1A37A4F9BD59269F0479F904F44A92* Enumerable_ToArray_TisISerializationDepender_t89A24FB44C759B66E3E6B812415DF986B586880C_m0EED7DBCAAAC6A410B7350B987E10D87948D54CF (RuntimeObject* ___source0, const RuntimeMethod* method)
 {
-	return ((  ISerializationDependerU5BU5D_t88BBB896AF1A37A4F9BD59269F0479F904F44A92* (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_ToArray_TisRuntimeObject_mA54265C2C8A0864929ECD300B75E4952D553D17D_gshared)(___source0, method);
+	__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* il2cppRetVal = ((  __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_ToArray_TisIl2CppFullySharedGenericAny_mE1571336F171A560849F9D7CB38E3A9A4B43B1C6_gshared)((RuntimeObject*)___source0, method);
+	return (ISerializationDependerU5BU5D_t88BBB896AF1A37A4F9BD59269F0479F904F44A92*)il2cppRetVal;
 }
 // System.Boolean System.Collections.Generic.HashSet`1<Unity.VisualScripting.ISerializationDepender>::Contains(T)
 inline bool HashSet_1_Contains_m8918E690769D8518C630880EFF17E519C7E6C795 (HashSet_1_tD466EF3B0856373D8B09D4E3C5CCF76362DA76AC* __this, RuntimeObject* ___item0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (HashSet_1_tD466EF3B0856373D8B09D4E3C5CCF76362DA76AC*, RuntimeObject*, const RuntimeMethod*))HashSet_1_Contains_m9BACE52BFA0BD83C601529D3629118453E459BBB_gshared)(__this, ___item0, method);
+	return ((  bool (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))HashSet_1_Contains_m6D40586EE21316C2647D81169AFFF9B4C7719F74_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (Il2CppFullySharedGenericAny)___item0, method);
 }
 // System.Boolean System.Collections.Generic.HashSet`1<System.Object>::Contains(T)
 inline bool HashSet_1_Contains_m9BACE52BFA0BD83C601529D3629118453E459BBB (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* __this, RuntimeObject* ___item0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885*, RuntimeObject*, const RuntimeMethod*))HashSet_1_Contains_m9BACE52BFA0BD83C601529D3629118453E459BBB_gshared)(__this, ___item0, method);
+	return ((  bool (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))HashSet_1_Contains_m6D40586EE21316C2647D81169AFFF9B4C7719F74_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (Il2CppFullySharedGenericAny)___item0, method);
 }
 // System.Boolean System.Collections.Generic.HashSet`1<Unity.VisualScripting.ISerializationDepender>::Remove(T)
 inline bool HashSet_1_Remove_m8DF3D4C3D1CA5E0B7A17B8EA3D4E2C3C7A94A48F (HashSet_1_tD466EF3B0856373D8B09D4E3C5CCF76362DA76AC* __this, RuntimeObject* ___item0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (HashSet_1_tD466EF3B0856373D8B09D4E3C5CCF76362DA76AC*, RuntimeObject*, const RuntimeMethod*))HashSet_1_Remove_mF1D84C0A2829DDA2A0CEE1D82A5B999B5F6627CB_gshared)(__this, ___item0, method);
+	return ((  bool (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))HashSet_1_Remove_mE12E434B402CFEB49197444DE1D52A3AE4C7F6EE_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (Il2CppFullySharedGenericAny)___item0, method);
 }
 // System.Boolean System.Linq.Enumerable::Any<Unity.VisualScripting.ISerializationDepender>(System.Collections.Generic.IEnumerable`1<TSource>)
 inline bool Enumerable_Any_TisISerializationDepender_t89A24FB44C759B66E3E6B812415DF986B586880C_m69DD4CD057DB5F987CC6F1215CEAFEF376466B48 (RuntimeObject* ___source0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_Any_TisRuntimeObject_m67CFBD544CF1D1C0C7E7457FDBDB81649DE26847_gshared)(___source0, method);
+	return ((  bool (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_Any_TisIl2CppFullySharedGenericAny_m3499AC108A84D818DD8C221F8E60145246FC8A09_gshared)((RuntimeObject*)___source0, method);
 }
 // System.Int32 System.Collections.Generic.HashSet`1<Unity.VisualScripting.ISerializationDepender>::get_Count()
 inline int32_t HashSet_1_get_Count_mFC34B71174F35A909D7B7909748479BE6AE16BFF_inline (HashSet_1_tD466EF3B0856373D8B09D4E3C5CCF76362DA76AC* __this, const RuntimeMethod* method)
 {
-	return ((  int32_t (*) (HashSet_1_tD466EF3B0856373D8B09D4E3C5CCF76362DA76AC*, const RuntimeMethod*))HashSet_1_get_Count_m41CC85EEB7855CEFA3BC7A32F115387939318ED3_gshared_inline)(__this, method);
+	return ((  int32_t (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, const RuntimeMethod*))HashSet_1_get_Count_mA764DCA3CB14CB2CBDF742A163492FF4DA515B63_gshared_inline)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, method);
 }
 // System.Collections.Generic.HashSet`1/Enumerator<T> System.Collections.Generic.HashSet`1<Unity.VisualScripting.ISerializationDepender>::GetEnumerator()
 inline Enumerator_tE6B72E1C4658BFCAA421BAF87C454C2B43D855A4 HashSet_1_GetEnumerator_mABC5AE436C09D2EE3720BC3FA700C92E26675D4A (HashSet_1_tD466EF3B0856373D8B09D4E3C5CCF76362DA76AC* __this, const RuntimeMethod* method)
 {
-	return ((  Enumerator_tE6B72E1C4658BFCAA421BAF87C454C2B43D855A4 (*) (HashSet_1_tD466EF3B0856373D8B09D4E3C5CCF76362DA76AC*, const RuntimeMethod*))HashSet_1_GetEnumerator_m143B98FEED7E9CABA2C494AB2F04DAD60A504635_gshared)(__this, method);
+	Enumerator_tE6B72E1C4658BFCAA421BAF87C454C2B43D855A4 il2cppRetVal;
+	((  void (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*, const RuntimeMethod*))HashSet_1_GetEnumerator_m75DD344FE9A073CA9564DC6A425EC36883FB32A7_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Void System.Collections.Generic.HashSet`1/Enumerator<Unity.VisualScripting.ISerializationDepender>::Dispose()
 inline void Enumerator_Dispose_mBBB186F59F3546AB1817341A5F189AB9D8A72D62 (Enumerator_tE6B72E1C4658BFCAA421BAF87C454C2B43D855A4* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Enumerator_tE6B72E1C4658BFCAA421BAF87C454C2B43D855A4*, const RuntimeMethod*))Enumerator_Dispose_mFB582AEAA2E73F3128B5571197BEDE256A83F657_gshared)(__this, method);
+	((  void (*) (Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*, const RuntimeMethod*))Enumerator_Dispose_m915D35B9BB2A77C5396F4FE1A1C53F1C93B8E337_gshared)((Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*)__this, method);
 }
 // T System.Collections.Generic.HashSet`1/Enumerator<Unity.VisualScripting.ISerializationDepender>::get_Current()
 inline RuntimeObject* Enumerator_get_Current_mADC749E2159F6C138A21F18A5834591365DD744B_inline (Enumerator_tE6B72E1C4658BFCAA421BAF87C454C2B43D855A4* __this, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (Enumerator_tE6B72E1C4658BFCAA421BAF87C454C2B43D855A4*, const RuntimeMethod*))Enumerator_get_Current_m139A176CD271A0532D75BE08DA7831C8C45CE28F_gshared_inline)(__this, method);
+	RuntimeObject* il2cppRetVal;
+	((  void (*) (Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*, Il2CppFullySharedGenericAny*, const RuntimeMethod*))Enumerator_get_Current_m51282E47C90E55BF2D96A0D329869ABC122A85A0_gshared_inline)((Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*)__this, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Boolean System.Collections.Generic.HashSet`1/Enumerator<Unity.VisualScripting.ISerializationDepender>::MoveNext()
 inline bool Enumerator_MoveNext_m2DD74DC1821266926FA8F89CA80662621AB39BAA (Enumerator_tE6B72E1C4658BFCAA421BAF87C454C2B43D855A4* __this, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Enumerator_tE6B72E1C4658BFCAA421BAF87C454C2B43D855A4*, const RuntimeMethod*))Enumerator_MoveNext_m27565F5ACCCC75C3DD34CC4CAE3E6AEFEB9144A6_gshared)(__this, method);
+	return ((  bool (*) (Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*, const RuntimeMethod*))Enumerator_MoveNext_m1756F06B6BC460B8EEB4522B562E097F37D54C59_gshared)((Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB*)__this, method);
 }
 // System.Void UnityEngine.Debug::Log(System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB (RuntimeObject* ___message0, const RuntimeMethod* method) ;
 // TSource[] System.Linq.Enumerable::ToArray<UnityEngine.Object>(System.Collections.Generic.IEnumerable`1<TSource>)
 inline ObjectU5BU5D_tD4BF1BEC72A31DF6611C0B8FA3112AF128FC3F8A* Enumerable_ToArray_TisObject_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_m6FFA9BD09F6155B2C67C1696C416FE75E4AE7DFE (RuntimeObject* ___source0, const RuntimeMethod* method)
 {
-	return ((  ObjectU5BU5D_tD4BF1BEC72A31DF6611C0B8FA3112AF128FC3F8A* (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_ToArray_TisRuntimeObject_mA54265C2C8A0864929ECD300B75E4952D553D17D_gshared)(___source0, method);
+	__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* il2cppRetVal = ((  __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_ToArray_TisIl2CppFullySharedGenericAny_mE1571336F171A560849F9D7CB38E3A9A4B43B1C6_gshared)((RuntimeObject*)___source0, method);
+	return (ObjectU5BU5D_tD4BF1BEC72A31DF6611C0B8FA3112AF128FC3F8A*)il2cppRetVal;
 }
 // System.Void Unity.VisualScripting.SerializationData::.ctor(System.String,System.Collections.Generic.IEnumerable`1<UnityEngine.Object>)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SerializationData__ctor_m590F6C005C219D41968701544B5D4D2A9E2C2607 (SerializationData_tAD0F0CD307CB8C9EE08550F3DC6E296FDECE399A* __this, String_t* ___json0, RuntimeObject* ___objectReferences1, const RuntimeMethod* method) ;
@@ -9796,7 +9437,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SerializationData_ShowString_m53B7B7664B
 // System.Void System.Collections.Generic.List`1<UnityEngine.Object>::.ctor()
 inline void List_1__ctor_m1B0135DE2C4A4BCA4820D2FC9E060ED224FC24C0 (List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3* __this, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3*, const RuntimeMethod*))List_1__ctor_m7F078BB342729BDF11327FD89D7872265328F690_gshared)(__this, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1__ctor_m0AFBAEA7EC427E32CC9CA267B1930DC5DF67A374_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 // System.Void Unity.VisualScripting.SerializationOperation::set_objectReferences(System.Collections.Generic.List`1<UnityEngine.Object>)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void SerializationOperation_set_objectReferences_m73EC5199265D1C61291DBD948CE1687460EF1155_inline (SerializationOperation_t894BAE6FFB4FB0579F7C3A8B1C85A63E7BD35567* __this, List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3* ___value0, const RuntimeMethod* method) ;
@@ -9819,12 +9460,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LooseAssemblyNameConverter__ctor_mE139E6
 // System.Void Unity.VisualScripting.FullSerializer.fsContext::Set<System.Collections.Generic.List`1<UnityEngine.Object>>(T)
 inline void fsContext_Set_TisList_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3_mF9BDF23A6D4AAE20E3A87EE5AC5F9F3B30E12F55 (fsContext_t3B227C205D84208E2D8934429C07677542C97B5F* __this, List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3* ___obj0, const RuntimeMethod* method)
 {
-	((  void (*) (fsContext_t3B227C205D84208E2D8934429C07677542C97B5F*, List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3*, const RuntimeMethod*))fsContext_Set_TisRuntimeObject_mB0406DE627FEFA7F615A896B1551F6FCC628D21B_gshared)(__this, ___obj0, method);
+	((  void (*) (fsContext_t3B227C205D84208E2D8934429C07677542C97B5F*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))fsContext_Set_TisIl2CppFullySharedGenericAny_mAB9E5A73CD1BC1599F11B9B5FF1CDAE55086E05C_gshared)((fsContext_t3B227C205D84208E2D8934429C07677542C97B5F*)__this, (Il2CppFullySharedGenericAny)___obj0, method);
 }
 // System.Void System.Collections.Generic.List`1<UnityEngine.Object>::Clear()
 inline void List_1_Clear_m51249A9DD3B29478801AC004DEA026A63D4A6D9B_inline (List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3* __this, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t9A2E2984B23260AECDFA90CEB1F2887075FA4DF3*, const RuntimeMethod*))List_1_Clear_m16C1F2C61FED5955F10EB36BC1CB2DF34B128994_gshared_inline)(__this, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1_Clear_mD615D1BCB2C9DD91DAD86A2F9E5CF1DFFCBF7925_gshared_inline)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 // System.Void Unity.VisualScripting.FullSerializer.fsObjectAttribute::.ctor(System.String,System.Type[])
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void fsObjectAttribute__ctor_mABB40D348C9AFA8BB3E34A31F2F6DE7620519060 (fsObjectAttribute_t01E43E525187363F108B146EC18F42D731E84E38* __this, String_t* ___versionString0, TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* ___previousModels1, const RuntimeMethod* method) ;
@@ -9861,7 +9502,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Thread_t0A773B9DE873D2DCAA7D229EAB36757B500E2
 // System.Void System.Action`1<System.Action>::Invoke(T)
 inline void Action_1_Invoke_mF440996DC69351FDEDC9C3E51946BB4F7F01BE31_inline (Action_1_t3137749576010DD307B29662A2E47C43C7F7D04C* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___obj0, const RuntimeMethod* method)
 {
-	((  void (*) (Action_1_t3137749576010DD307B29662A2E47C43C7F7D04C*, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*, const RuntimeMethod*))Action_1_Invoke_mF2422B2DD29F74CE66F791C3F68E288EC7C3DB9E_gshared_inline)(__this, ___obj0, method);
+	((  void (*) (Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Action_1_Invoke_m5A038831CEB84A7E374FE59D43444412629F833F_gshared_inline)((Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99*)__this, (Il2CppFullySharedGenericAny)___obj0, method);
 }
 // UnityEngine.Component UnityEngine.GameObject::GetComponent(System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* GameObject_GetComponent_m99E12753EA84947521DC711CA33F452B5E65B474 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, Type_t* ___type0, const RuntimeMethod* method) ;
@@ -9909,7 +9550,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MemberUtility_IsOperator_m16A484011FE7C4
 // TValue System.Collections.Generic.Dictionary`2<System.String,System.String>::get_Item(TKey)
 inline String_t* Dictionary_2_get_Item_mB13DFB3E7499031847CF544977D4EFB1AC0157AB (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* __this, String_t* ___key0, const RuntimeMethod* method)
 {
-	return ((  String_t* (*) (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83*, String_t*, const RuntimeMethod*))Dictionary_2_get_Item_m4AAAECBE902A211BF2126E6AFA280AEF73A3E0D6_gshared)(__this, ___key0, method);
+	String_t* il2cppRetVal;
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, Il2CppFullySharedGenericAny*, const RuntimeMethod*))Dictionary_2_get_Item_m2E96908E9716367701CD737FA54C884EB2A8C3EA_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.String Unity.VisualScripting.CSharpNameUtility::CSharpName(System.Type,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* CSharpNameUtility_CSharpName_m06499D7C1549088D24576F3D2A2FB0DB70C9AA64 (Type_t* ___type0, bool ___includeGenericParameters1, const RuntimeMethod* method) ;
@@ -9932,59 +9575,64 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass8_0__ctor_m111642B8
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Type,System.String>::ContainsKey(TKey)
 inline bool Dictionary_2_ContainsKey_m5AF1FF54C84FB97FFB85E559036AB80013342C4F (Dictionary_2_tCAAF57FF731CF7E9CEC738A6E8400D208C1066EE* __this, Type_t* ___key0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_tCAAF57FF731CF7E9CEC738A6E8400D208C1066EE*, Type_t*, const RuntimeMethod*))Dictionary_2_ContainsKey_m703047C213F7AB55C9DC346596287773A1F670CD_gshared)(__this, ___key0, method);
+	return ((  bool (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_ContainsKey_mA268E9B914DCE838DD0CD9D879BAAEECD0C677AA_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, method);
 }
 // TValue System.Collections.Generic.Dictionary`2<System.Type,System.String>::get_Item(TKey)
 inline String_t* Dictionary_2_get_Item_m3359894DA1EF277B87D6220E9C380C4C01AE6008 (Dictionary_2_tCAAF57FF731CF7E9CEC738A6E8400D208C1066EE* __this, Type_t* ___key0, const RuntimeMethod* method)
 {
-	return ((  String_t* (*) (Dictionary_2_tCAAF57FF731CF7E9CEC738A6E8400D208C1066EE*, Type_t*, const RuntimeMethod*))Dictionary_2_get_Item_m4AAAECBE902A211BF2126E6AFA280AEF73A3E0D6_gshared)(__this, ___key0, method);
+	String_t* il2cppRetVal;
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, Il2CppFullySharedGenericAny*, const RuntimeMethod*))Dictionary_2_get_Item_m2E96908E9716367701CD737FA54C884EB2A8C3EA_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Skip<System.Type>(System.Collections.Generic.IEnumerable`1<TSource>,System.Int32)
 inline RuntimeObject* Enumerable_Skip_TisType_t_m7D71748DB6853797A890979775BC2B668679D174 (RuntimeObject* ___source0, int32_t ___count1, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (RuntimeObject*, int32_t, const RuntimeMethod*))Enumerable_Skip_TisRuntimeObject_mC63F7758979C7B3D3C94A57B8BCD63C5237EA697_gshared)(___source0, ___count1, method);
+	RuntimeObject* il2cppRetVal = ((  RuntimeObject* (*) (RuntimeObject*, int32_t, const RuntimeMethod*))Enumerable_Skip_TisIl2CppFullySharedGenericAny_m7F91D614A7FB740C95BA1C69F309A9AF2D4EB014_gshared)((RuntimeObject*)___source0, ___count1, method);
+	return (RuntimeObject*)il2cppRetVal;
 }
 // System.Boolean System.Linq.Enumerable::Any<System.Type>(System.Collections.Generic.IEnumerable`1<TSource>)
 inline bool Enumerable_Any_TisType_t_m73AC0FF907FFC6B1E9B1C9E8804176B00EB92517 (RuntimeObject* ___source0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_Any_TisRuntimeObject_m67CFBD544CF1D1C0C7E7457FDBDB81649DE26847_gshared)(___source0, method);
+	return ((  bool (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_Any_TisIl2CppFullySharedGenericAny_m3499AC108A84D818DD8C221F8E60145246FC8A09_gshared)((RuntimeObject*)___source0, method);
 }
 // System.Void System.Func`2<System.Type,System.String>::.ctor(System.Object,System.IntPtr)
 inline void Func_2__ctor_m059A8C7FD3318EFF79FD145F9FDA4C44E4192897 (Func_2_t9D09D397B043BC5218B2565C13BA5AA81CABC121* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Func_2_t9D09D397B043BC5218B2565C13BA5AA81CABC121*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_2__ctor_m7F8A01C0B02BC1D4063F4EB1E817F7A48562A398_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_2__ctor_m7F5DD19B4170C027D5367001F7BC95A0658A2169_gshared)((Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*)__this, ___object0, ___method1, method);
 }
 // System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Select<System.Type,System.String>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,TResult>)
 inline RuntimeObject* Enumerable_Select_TisType_t_TisString_t_m502CBD7F0EB7537D4C51DA8071B417FC79622BBD (RuntimeObject* ___source0, Func_2_t9D09D397B043BC5218B2565C13BA5AA81CABC121* ___selector1, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (RuntimeObject*, Func_2_t9D09D397B043BC5218B2565C13BA5AA81CABC121*, const RuntimeMethod*))Enumerable_Select_TisRuntimeObject_TisRuntimeObject_m67C538A5EBF57C4844107A8EF25DB2CAAFBAF8FB_gshared)(___source0, ___selector1, method);
+	RuntimeObject* il2cppRetVal = ((  RuntimeObject* (*) (RuntimeObject*, Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*, const RuntimeMethod*))Enumerable_Select_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m5BBCA2BC02448D0B77D2201BB08B13BAB3BABA53_gshared)((RuntimeObject*)___source0, (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0*)___selector1, method);
+	return (RuntimeObject*)il2cppRetVal;
 }
 // TSource[] System.Linq.Enumerable::ToArray<System.String>(System.Collections.Generic.IEnumerable`1<TSource>)
 inline StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* Enumerable_ToArray_TisString_t_m3B23EE2DD15B2996E7D2ECA6E74696DA892AA194 (RuntimeObject* ___source0, const RuntimeMethod* method)
 {
-	return ((  StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_ToArray_TisRuntimeObject_mA54265C2C8A0864929ECD300B75E4952D553D17D_gshared)(___source0, method);
+	__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* il2cppRetVal = ((  __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_ToArray_TisIl2CppFullySharedGenericAny_mE1571336F171A560849F9D7CB38E3A9A4B43B1C6_gshared)((RuntimeObject*)___source0, method);
+	return (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)il2cppRetVal;
 }
 // System.String System.String::Join(System.String,System.String[])
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Join_m557B6B554B87C1742FA0B128500073B421ED0BFD (String_t* ___separator0, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___value1, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.Dictionary`2<System.Type,System.String>::.ctor()
 inline void Dictionary_2__ctor_mFAF23CD29002CAB23492293F8C8B56962DE7A0B6 (Dictionary_2_tCAAF57FF731CF7E9CEC738A6E8400D208C1066EE* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_tCAAF57FF731CF7E9CEC738A6E8400D208C1066EE*, const RuntimeMethod*))Dictionary_2__ctor_m5B32FBC624618211EB461D59CFBB10E987FD1329_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2__ctor_m7745B6ED71E47C95E1BFCE647C4F026A404C668F_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.Type,System.String>::Add(TKey,TValue)
 inline void Dictionary_2_Add_m7371147962E855B8E8BE002A226B0EE34E37B0CC (Dictionary_2_tCAAF57FF731CF7E9CEC738A6E8400D208C1066EE* __this, Type_t* ___key0, String_t* ___value1, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_tCAAF57FF731CF7E9CEC738A6E8400D208C1066EE*, Type_t*, String_t*, const RuntimeMethod*))Dictionary_2_Add_m93FFFABE8FCE7FA9793F0915E2A8842C7CD0C0C1_gshared)(__this, ___key0, ___value1, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_Add_m54D479280472DEA042DB3933AF547E666B017333_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny)___value1, method);
 }
 // System.Void System.Collections.Generic.HashSet`1<System.Char>::.ctor()
 inline void HashSet_1__ctor_m0468553BC44FAC4BA6BA8F517CBD7C8D42F42853 (HashSet_1_t699860DBA06D8F002CD3C64E462BF860ACAD5E9A* __this, const RuntimeMethod* method)
 {
-	((  void (*) (HashSet_1_t699860DBA06D8F002CD3C64E462BF860ACAD5E9A*, const RuntimeMethod*))HashSet_1__ctor_m0468553BC44FAC4BA6BA8F517CBD7C8D42F42853_gshared)(__this, method);
+	((  void (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, const RuntimeMethod*))HashSet_1__ctor_m5E12B490550D90B0686D55F8F4E7B0506BD07120_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, method);
 }
 // System.Boolean System.Collections.Generic.HashSet`1<System.Char>::Add(T)
 inline bool HashSet_1_Add_mC54C49D2322343A65275FF0C6DCCA0948B6AD12A (HashSet_1_t699860DBA06D8F002CD3C64E462BF860ACAD5E9A* __this, Il2CppChar ___item0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (HashSet_1_t699860DBA06D8F002CD3C64E462BF860ACAD5E9A*, Il2CppChar, const RuntimeMethod*))HashSet_1_Add_mC54C49D2322343A65275FF0C6DCCA0948B6AD12A_gshared)(__this, ___item0, method);
+	return ((  bool (*) (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))HashSet_1_Add_m73E14DB94D21272EEE1E28E4D74704B0095D8064_gshared)((HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87*)__this, (Il2CppFullySharedGenericAny)&___item0, method);
 }
 // System.Void UnityEngine.Color::.ctor(System.Single,System.Single,System.Single,System.Single)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* __this, float ___r0, float ___g1, float ___b2, float ___a3, const RuntimeMethod* method) ;
@@ -40802,24 +40450,29 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void SingletonAttribute_set_HideF
 		return;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Func_2_Invoke_mDBA25DA5DA5B7E056FB9B026AF041F1385FB58A9_gshared_inline (Func_2_tACBF5A1656250800CE861707354491F0611F6624* __this, RuntimeObject* ___arg0, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Func_2_Invoke_m31CAC166FDC80DC5AE52A5AEFFEE2D9B27A1CA3F_gshared_inline (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___arg0, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) 
 {
-	typedef RuntimeObject* (*FunctionPointerType) (RuntimeObject*, RuntimeObject*, const RuntimeMethod*);
-	return ((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___arg0, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
+	typedef void (*FunctionPointerType) (RuntimeObject*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, Il2CppFullySharedGenericAny*, const RuntimeMethod*);
+	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___arg0, il2cppRetVal, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mD4F3498FBD3BDD3F03CBCFB38041CBAC9C28CAFC_gshared_inline (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___item0, const RuntimeMethod* method) 
 {
-	ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* V_0 = NULL;
+	// sizeof(T)
+	const uint32_t SizeOf_T_t664E2061A913AF1FEE499655BC64F0FDE10D2A5E = il2cpp_codegen_sizeof(il2cpp_rgctx_data(method->klass->rgctx_data, 9));
+	// T
+	const Il2CppFullySharedGenericAny L_8 = alloca(SizeOf_T_t664E2061A913AF1FEE499655BC64F0FDE10D2A5E);
+	const Il2CppFullySharedGenericAny L_9 = L_8;
+	__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* V_0 = NULL;
 	int32_t V_1 = 0;
 	{
 		int32_t L_0 = (int32_t)__this->____version_3;
 		__this->____version_3 = ((int32_t)il2cpp_codegen_add(L_0, 1));
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)__this->____items_1;
+		__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* L_1 = (__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC*)__this->____items_1;
 		V_0 = L_1;
 		int32_t L_2 = (int32_t)__this->____size_2;
 		V_1 = L_2;
 		int32_t L_3 = V_1;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_4 = V_0;
+		__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* L_4 = V_0;
 		NullCheck(L_4);
 		if ((!(((uint32_t)L_3) < ((uint32_t)((int32_t)(((RuntimeArray*)L_4)->max_length))))))
 		{
@@ -40829,176 +40482,160 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631
 	{
 		int32_t L_5 = V_1;
 		__this->____size_2 = ((int32_t)il2cpp_codegen_add(L_5, 1));
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_6 = V_0;
+		__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* L_6 = V_0;
 		int32_t L_7 = V_1;
-		RuntimeObject* L_8 = ___item0;
+		il2cpp_codegen_memcpy(L_8, (il2cpp_codegen_class_is_value_type(il2cpp_rgctx_data(method->klass->rgctx_data, 9)) ? ___item0 : &___item0), SizeOf_T_t664E2061A913AF1FEE499655BC64F0FDE10D2A5E);
 		NullCheck(L_6);
-		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(L_7), (RuntimeObject*)L_8);
+		il2cpp_codegen_memcpy((L_6)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_7)), L_8, SizeOf_T_t664E2061A913AF1FEE499655BC64F0FDE10D2A5E);
+		Il2CppCodeGenWriteBarrierForClass(il2cpp_rgctx_data(method->klass->rgctx_data, 9), (void**)(L_6)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_7)), (void*)L_8);
 		return;
 	}
 
 IL_0034:
 	{
-		RuntimeObject* L_9 = ___item0;
-		((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		il2cpp_codegen_memcpy(L_9, (il2cpp_codegen_class_is_value_type(il2cpp_rgctx_data(method->klass->rgctx_data, 9)) ? ___item0 : &___item0), SizeOf_T_t664E2061A913AF1FEE499655BC64F0FDE10D2A5E);
+		InvokerActionInvoker1< Il2CppFullySharedGenericAny >::Invoke(il2cpp_codegen_get_direct_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 14)), il2cpp_rgctx_method(method->klass->rgctx_data, 14), __this, (il2cpp_codegen_class_is_value_type(il2cpp_rgctx_data(method->klass->rgctx_data, 9)) ? L_9: *(void**)L_9));
 		return;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Enumerator_get_Current_m6330F15D18EE4F547C05DF9BF83C5EB710376027_gshared_inline (Enumerator_t9473BAB568A27E2339D48C1F91319E0F6D244D7A* __this, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Enumerator_get_Current_m8B42D4B2DE853B9D11B997120CD0228D4780E394_gshared_inline (Enumerator_tF5AC6CD19D283FBD724440520CEE68FE2602F7AF* __this, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) 
 {
+	// sizeof(T)
+	const uint32_t SizeOf_T_t010616E3077234188F9BB4FAF369F8571BC5F2E1 = il2cpp_codegen_sizeof(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 2));
+	// T
+	const Il2CppFullySharedGenericAny L_0 = alloca(SizeOf_T_t010616E3077234188F9BB4FAF369F8571BC5F2E1);
 	{
-		RuntimeObject* L_0 = (RuntimeObject*)__this->____current_3;
-		return L_0;
+		il2cpp_codegen_memcpy(L_0, il2cpp_codegen_get_instance_field_data_pointer(__this, il2cpp_rgctx_field(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 1),3)), SizeOf_T_t010616E3077234188F9BB4FAF369F8571BC5F2E1);
+		il2cpp_codegen_memcpy(il2cppRetVal, L_0, SizeOf_T_t010616E3077234188F9BB4FAF369F8571BC5F2E1);
+		return;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Enumerator_get_Current_m139A176CD271A0532D75BE08DA7831C8C45CE28F_gshared_inline (Enumerator_t72556E98D7DDBE118A973D782D523D15A96461C8* __this, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Enumerator_get_Current_m51282E47C90E55BF2D96A0D329869ABC122A85A0_gshared_inline (Enumerator_t0D36BD6D63D775CDEAF8501F5A252535FFFF52CB* __this, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) 
 {
+	// sizeof(T)
+	const uint32_t SizeOf_T_t6D22409F37413B725563BF484486F55FB7202BB8 = il2cpp_codegen_sizeof(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 2));
+	// T
+	const Il2CppFullySharedGenericAny L_0 = alloca(SizeOf_T_t6D22409F37413B725563BF484486F55FB7202BB8);
 	{
-		RuntimeObject* L_0 = (RuntimeObject*)__this->____current_3;
-		return L_0;
+		il2cpp_codegen_memcpy(L_0, il2cpp_codegen_get_instance_field_data_pointer(__this, il2cpp_rgctx_field(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 1),3)), SizeOf_T_t6D22409F37413B725563BF484486F55FB7202BB8);
+		il2cpp_codegen_memcpy(il2cppRetVal, L_0, SizeOf_T_t6D22409F37413B725563BF484486F55FB7202BB8);
+		return;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR KeyValuePair_2_tFC32D2507216293851350D29B64D79F950B55230 Enumerator_get_Current_mE3475384B761E1C7971D3639BD09117FE8363422_gshared_inline (Enumerator_tEA93FE2B778D098F590CA168BEFC4CD85D73A6B9* __this, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Enumerator_get_Current_m26AF82C275C82180BB7F23C7E408BC1FEB9A38EE_gshared_inline (Enumerator_tB3750C37D2E2D54A46142439AF83A76EC665D9B1* __this, KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669* il2cppRetVal, const RuntimeMethod* method) 
 {
+	// sizeof(System.Collections.Generic.KeyValuePair`2<TKey,TValue>)
+	const uint32_t SizeOf_KeyValuePair_2_t23F299E80A87656CF35AA5186B375FDE51A801EF = il2cpp_codegen_sizeof(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 2));
+	// System.Collections.Generic.KeyValuePair`2<TKey,TValue>
+	const KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669 L_0 = alloca(SizeOf_KeyValuePair_2_t23F299E80A87656CF35AA5186B375FDE51A801EF);
 	{
-		KeyValuePair_2_tFC32D2507216293851350D29B64D79F950B55230 L_0 = (KeyValuePair_2_tFC32D2507216293851350D29B64D79F950B55230)__this->____current_3;
-		return L_0;
+		il2cpp_codegen_memcpy(L_0, il2cpp_codegen_get_instance_field_data_pointer(__this, il2cpp_rgctx_field(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 1),3)), SizeOf_KeyValuePair_2_t23F299E80A87656CF35AA5186B375FDE51A801EF);
+		il2cpp_codegen_memcpy(il2cppRetVal, L_0, SizeOf_KeyValuePair_2_t23F299E80A87656CF35AA5186B375FDE51A801EF);
+		return;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* KeyValuePair_2_get_Key_mBD8EA7557C27E6956F2AF29DA3F7499B2F51A282_gshared_inline (KeyValuePair_2_tFC32D2507216293851350D29B64D79F950B55230* __this, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void KeyValuePair_2_get_Key_mBE75BF8983618BC1ACEC20F94C1BFF85C8AA50F1_gshared_inline (KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669* __this, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) 
 {
+	// sizeof(TKey)
+	const uint32_t SizeOf_TKey_tAE1541CEBE7E523E393A46E588568F4BD8337859 = il2cpp_codegen_sizeof(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 0));
+	// TKey
+	const Il2CppFullySharedGenericAny L_0 = alloca(SizeOf_TKey_tAE1541CEBE7E523E393A46E588568F4BD8337859);
 	{
-		RuntimeObject* L_0 = (RuntimeObject*)__this->___key_0;
-		return L_0;
+		il2cpp_codegen_memcpy(L_0, il2cpp_codegen_get_instance_field_data_pointer(__this, il2cpp_rgctx_field(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 1),0)), SizeOf_TKey_tAE1541CEBE7E523E393A46E588568F4BD8337859);
+		il2cpp_codegen_memcpy(il2cppRetVal, L_0, SizeOf_TKey_tAE1541CEBE7E523E393A46E588568F4BD8337859);
+		return;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* KeyValuePair_2_get_Value_mC6BD8075F9C9DDEF7B4D731E5C38EC19103988E7_gshared_inline (KeyValuePair_2_tFC32D2507216293851350D29B64D79F950B55230* __this, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void KeyValuePair_2_get_Value_mFA1964BF56AA214EE0D491CC197F61BC9E5F1F7A_gshared_inline (KeyValuePair_2_t28EF90BF7804CE5D7F99A364266351E7DC652669* __this, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) 
 {
+	// sizeof(TValue)
+	const uint32_t SizeOf_TValue_tAEA6D09BCD56B8A100F4F042BC143BC0266C28B7 = il2cpp_codegen_sizeof(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 2));
+	// TValue
+	const Il2CppFullySharedGenericAny L_0 = alloca(SizeOf_TValue_tAEA6D09BCD56B8A100F4F042BC143BC0266C28B7);
 	{
-		RuntimeObject* L_0 = (RuntimeObject*)__this->___value_1;
-		return L_0;
+		il2cpp_codegen_memcpy(L_0, il2cpp_codegen_get_instance_field_data_pointer(__this, il2cpp_rgctx_field(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 1),1)), SizeOf_TValue_tAEA6D09BCD56B8A100F4F042BC143BC0266C28B7);
+		il2cpp_codegen_memcpy(il2cppRetVal, L_0, SizeOf_TValue_tAEA6D09BCD56B8A100F4F042BC143BC0266C28B7);
+		return;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t HashSet_1_get_Count_m41CC85EEB7855CEFA3BC7A32F115387939318ED3_gshared_inline (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* __this, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t HashSet_1_get_Count_mA764DCA3CB14CB2CBDF742A163492FF4DA515B63_gshared_inline (HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87* __this, const RuntimeMethod* method) 
 {
 	{
 		int32_t L_0 = (int32_t)__this->____count_9;
 		return L_0;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_gshared_inline (const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* Array_Empty_TisIl2CppFullySharedGenericAny_m244E2A51B33F845A2093F0862FBCE502E4FDD868_gshared_inline (const RuntimeMethod* method) 
 {
+	il2cpp_rgctx_method_init(method);
 	{
-		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 0));
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_0 = ((EmptyArray_1_tDF0DD7256B115243AA6BD5558417387A734240EE_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 0)))->___Value_0;
+		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 2));
+		__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* L_0 = ((EmptyArray_1_tF69A5F6BAD1150A16C4C98B346D6122FE3751C80_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 2)))->___Value_0;
 		return L_0;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_m4407E4C389F22B8CEC282C15D56516658746C383_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_mD2ED26ACAF3BAF386FFEA83893BA51DB9FD8BA30_gshared_inline (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, const RuntimeMethod* method) 
 {
 	{
 		int32_t L_0 = (int32_t)__this->____size_2;
 		return L_0;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_get_HasValue_m9897CE72A58099ADB081E439D3A3EF0AA9CF5ED9_gshared_inline (Nullable_1_tD52F1D0FC7EBB336F119BE953E59F426766032C1* __this, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_get_HasValue_m14F273FB376DF00D727434CDCD28AB4EDCC14C3C_gshared_inline (Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339* __this, const RuntimeMethod* method) 
 {
 	{
-		bool L_0 = (bool)__this->___hasValue_0;
+		bool L_0 = *(bool*)il2cpp_codegen_get_instance_field_data_pointer(__this, il2cpp_rgctx_field(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 1),0));
 		return L_0;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Il2CppChar Nullable_1_GetValueOrDefault_m4DC59B3219E9E81FFB2DBE02BF850B54E460DEB6_gshared_inline (Nullable_1_tD52F1D0FC7EBB336F119BE953E59F426766032C1* __this, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Nullable_1_GetValueOrDefault_mC057FBD944AF068B90EBDD0B496231A01B2A4228_gshared_inline (Nullable_1_t71C4EA4E848DBD7A4A97704069FB951159A3A339* __this, Il2CppFullySharedGenericStruct* il2cppRetVal, const RuntimeMethod* method) 
 {
+	// sizeof(T)
+	const uint32_t SizeOf_T_tF1352992D99D495C6F2BE3DC43F8A00BAD6B2EAA = il2cpp_codegen_sizeof(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 0));
+	// T
+	const Il2CppFullySharedGenericStruct L_0 = alloca(SizeOf_T_tF1352992D99D495C6F2BE3DC43F8A00BAD6B2EAA);
 	{
-		Il2CppChar L_0 = (Il2CppChar)__this->___value_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Nullable_1_GetValueOrDefault_m8D130DB7F2A1E694736B449176F9C26DB456597B_gshared_inline (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = (int32_t)__this->___value_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_gshared_inline (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = (bool)__this->___hasValue_0;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_gshared_inline (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* __this, int32_t ___item0, const RuntimeMethod* method) 
-{
-	Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* V_0 = NULL;
-	int32_t V_1 = 0;
-	{
-		int32_t L_0 = (int32_t)__this->____version_3;
-		__this->____version_3 = ((int32_t)il2cpp_codegen_add(L_0, 1));
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_1 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)__this->____items_1;
-		V_0 = L_1;
-		int32_t L_2 = (int32_t)__this->____size_2;
-		V_1 = L_2;
-		int32_t L_3 = V_1;
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_4 = V_0;
-		NullCheck(L_4);
-		if ((!(((uint32_t)L_3) < ((uint32_t)((int32_t)(((RuntimeArray*)L_4)->max_length))))))
-		{
-			goto IL_0034;
-		}
-	}
-	{
-		int32_t L_5 = V_1;
-		__this->____size_2 = ((int32_t)il2cpp_codegen_add(L_5, 1));
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_6 = V_0;
-		int32_t L_7 = V_1;
-		int32_t L_8 = ___item0;
-		NullCheck(L_6);
-		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(L_7), (int32_t)L_8);
-		return;
-	}
-
-IL_0034:
-	{
-		int32_t L_9 = ___item0;
-		((  void (*) (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73*, int32_t, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		il2cpp_codegen_memcpy(L_0, il2cpp_codegen_get_instance_field_data_pointer(__this, il2cpp_rgctx_field(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 1),1)), SizeOf_T_tF1352992D99D495C6F2BE3DC43F8A00BAD6B2EAA);
+		il2cpp_codegen_memcpy(il2cppRetVal, L_0, SizeOf_T_tF1352992D99D495C6F2BE3DC43F8A00BAD6B2EAA);
 		return;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Empty_TisRuntimeObject_mA90CDE158774C34A28C07CEEA9E9EA2A61618238_gshared_inline (const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_Empty_TisIl2CppFullySharedGenericAny_m886EEFEEA5C6280BA23954EB30ABC7B65133313A_gshared_inline (const RuntimeMethod* method) 
 {
+	il2cpp_rgctx_method_init(method);
 	{
-		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 0));
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_0 = ((EmptyEnumerable_1_t8C8873EF4F89FB0F86D91BA5B4D640E3A23AD28E_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 0)))->___Instance_0;
+		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 2));
+		__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* L_0 = ((EmptyEnumerable_1_t36102943B460DED9F019D124B41D2A00656CC354_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 2)))->___Instance_0;
 		return (RuntimeObject*)L_0;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Clear_m16C1F2C61FED5955F10EB36BC1CB2DF34B128994_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Clear_mD615D1BCB2C9DD91DAD86A2F9E5CF1DFFCBF7925_gshared_inline (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
 	{
 		int32_t L_0 = (int32_t)__this->____version_3;
 		__this->____version_3 = ((int32_t)il2cpp_codegen_add(L_0, 1));
-		if (!true)
+		bool L_1;
+		L_1 = il2cpp_codegen_is_reference_or_contains_references(il2cpp_rgctx_method(method->klass->rgctx_data, 25));
+		if (!L_1)
 		{
 			goto IL_0035;
 		}
 	}
 	{
-		int32_t L_1 = (int32_t)__this->____size_2;
-		V_0 = L_1;
+		int32_t L_2 = (int32_t)__this->____size_2;
+		V_0 = L_2;
 		__this->____size_2 = 0;
-		int32_t L_2 = V_0;
-		if ((((int32_t)L_2) <= ((int32_t)0)))
+		int32_t L_3 = V_0;
+		if ((((int32_t)L_3) <= ((int32_t)0)))
 		{
 			goto IL_003c;
 		}
 	}
 	{
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_3 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)__this->____items_1;
-		int32_t L_4 = V_0;
-		Array_Clear_m50BAA3751899858B097D3FF2ED31F284703FE5CB((RuntimeArray*)L_3, 0, L_4, NULL);
+		__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* L_4 = (__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC*)__this->____items_1;
+		int32_t L_5 = V_0;
+		Array_Clear_m50BAA3751899858B097D3FF2ED31F284703FE5CB((RuntimeArray*)L_4, 0, L_5, NULL);
 		return;
 	}
 
@@ -41012,9 +40649,9 @@ IL_003c:
 		return;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_mF2422B2DD29F74CE66F791C3F68E288EC7C3DB9E_gshared_inline (Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87* __this, RuntimeObject* ___obj0, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_m5A038831CEB84A7E374FE59D43444412629F833F_gshared_inline (Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___obj0, const RuntimeMethod* method) 
 {
-	typedef void (*FunctionPointerType) (RuntimeObject*, RuntimeObject*, const RuntimeMethod*);
+	typedef void (*FunctionPointerType) (RuntimeObject*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___obj0, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* __this, float ___r0, float ___g1, float ___b2, float ___a3, const RuntimeMethod* method) 

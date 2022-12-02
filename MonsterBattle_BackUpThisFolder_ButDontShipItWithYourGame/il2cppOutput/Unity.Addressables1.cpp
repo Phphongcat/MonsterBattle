@@ -46,12 +46,12 @@ struct Func_2_t65EC28300D7949DC379319C3EA3426C72F877CE4;
 struct HashSet_1_t7FD3E09F5E6CC9B45ADC269EC25CEBBA5BCDE4E1;
 // System.Collections.Generic.IList`1<UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation>
 struct IList_1_tFEC432B87E444FFF0D7B8EFD6CBB918523AD6827;
-// System.Collections.Generic.List`1<System.Object>
-struct List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D;
 // System.Collections.Generic.List`1<UnityEngine.ResourceManagement.Util.ObjectInitializationData>
 struct List_1_t674B89A0B228CC9549D5F52D35743D082C3B5FC4;
 // System.Collections.Generic.List`1<UnityEngine.AddressableAssets.ResourceLocators.ResourceLocationData>
 struct List_1_t7D40AA1D93492F1E4E83CB8970C6083D2F2D8D9A;
+// System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A;
 // System.Collections.Generic.List`1<UnityEngine.AddressableAssets.AddressablesImpl/ResourceLocatorInfo>
 struct List_1_tC19AA5C8341E1999481FDE80329EAD9C1BB44FFA;
 // System.Threading.Tasks.TaskCompletionSource`1<UnityEngine.AddressableAssets.ResourceLocators.IResourceLocator>
@@ -555,10 +555,8 @@ struct Type_t_StaticFields
 #endif
 
 
-// System.Void System.Collections.Generic.List`1<System.Object>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_m7F078BB342729BDF11327FD89D7872265328F690_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<UnityEngine.ResourceManagement.Util.ObjectInitializationData>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_m2B3B3831C04033E325534A3A148815D75B3CA6F4_gshared (List_1_t674B89A0B228CC9549D5F52D35743D082C3B5FC4* __this, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_m0AFBAEA7EC427E32CC9CA267B1930DC5DF67A374_gshared (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, const RuntimeMethod* method) ;
 
 // System.Void UnityEngine.AddressableAssets.Initialization.InitializationOperation/<>c::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m400FA93F30A0788073EEF09EFDA850B0DD08B1D1 (U3CU3Ec_t46D69A719E3B4BCAA079778064C23683839D4570* __this, const RuntimeMethod* method) ;
@@ -583,12 +581,12 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Mathf_Clamp_m4DC36EEFDBE5
 // System.Void System.Collections.Generic.List`1<UnityEngine.AddressableAssets.ResourceLocators.ResourceLocationData>::.ctor()
 inline void List_1__ctor_mF0091D9762D4F640D9EEB3F007D4778367DED47C (List_1_t7D40AA1D93492F1E4E83CB8970C6083D2F2D8D9A* __this, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t7D40AA1D93492F1E4E83CB8970C6083D2F2D8D9A*, const RuntimeMethod*))List_1__ctor_m7F078BB342729BDF11327FD89D7872265328F690_gshared)(__this, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1__ctor_m0AFBAEA7EC427E32CC9CA267B1930DC5DF67A374_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 // System.Void System.Collections.Generic.List`1<UnityEngine.ResourceManagement.Util.ObjectInitializationData>::.ctor()
 inline void List_1__ctor_m2B3B3831C04033E325534A3A148815D75B3CA6F4 (List_1_t674B89A0B228CC9549D5F52D35743D082C3B5FC4* __this, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t674B89A0B228CC9549D5F52D35743D082C3B5FC4*, const RuntimeMethod*))List_1__ctor_m2B3B3831C04033E325534A3A148815D75B3CA6F4_gshared)(__this, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1__ctor_m0AFBAEA7EC427E32CC9CA267B1930DC5DF67A374_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 #ifdef __clang__
 #pragma clang diagnostic push

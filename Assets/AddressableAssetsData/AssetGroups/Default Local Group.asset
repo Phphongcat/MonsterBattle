@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9eda07caade32f1449b4cc8d9541c1c1
+  m_SerializeEntries:
+  - m_GUID: ffd852ee5e8b8d844a7193e25bf5fca4
+    m_Address: BattleScreen
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 34a3833850ccfea4d8e03f8f79f95a8e
+    m_Address: Character (1)
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0e280cd4ce521994eb618b6731c6a2f4
+    m_Address: Character (2)
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2193cfa0c41207e4399c5aa3be1aa7e1
+    m_Address: Character (3)
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8380884e642db8443af87c7857bf7829
+    m_Address: Character (4)
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 77be1b8f1402d744cb067e39258fcedc
+    m_Address: Character (5)
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 108430a325e08c14a980d8c5955d7732
+    m_Address: Character (6)
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d82fd01fa24d53347bf20d98e31600fa
+    m_Address: TeamSelectScreen
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5506f8071d75b844b85ad77336810e22
+    m_Address: DamageText
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e9352e0c176e62d46a56f8c50b9441fc
+    m_Address: EndGameModal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d1d33bfc0c6918b4a8f670d18e713d8f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 548f787ffbfc02e43b4c41c8e0649941, type: 2}
+    - {fileID: 11400000, guid: 8d72f25841721514d8cc41e1b4d1e031, type: 2}

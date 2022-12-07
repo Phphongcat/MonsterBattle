@@ -20,7 +20,7 @@ namespace Game.Scripts.Screens
         public override void DidPushEnter()
         {
             _timer = default;
-            InvokeRepeating(nameof(Loading), default, Time.deltaTime);
+            InvokeRepeating(nameof(Loading), default, 0.02f);
         }
 
         public override void DidPopExit()

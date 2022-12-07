@@ -54,7 +54,17 @@ namespace Game.Scripts
 
             if (teamConfig.BattleSort(config)[turnNumber].isDie)
             {
-                for (int i = 0; i < teamConfig.BattleSort(config).Count; i++)
+                for (int i = turnNumber; i < teamConfig.BattleSort(config).Count; i++)
+                {
+                    if (teamConfig.BattleSort(config)[i].isDie is false)
+                    {
+                        turnNumber = i;
+                        EventManager.EmitEventData(EventNameKeeper.StartTurn, turnNumber);
+                        return;
+                    }
+                }
+
+                for (int i = 0; i < turnNumber; i++)
                 {
                     if (teamConfig.BattleSort(config)[i].isDie is false)
                     {

@@ -524,6 +524,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d954552c363e7d4189fe415052c2626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstScreen: TeamSelectScreen
   containerLayerSettings: {fileID: 11400000, guid: c3e339ab54f9fa34d8c3c2b0511873c2, type: 2}
-  pooled: {fileID: 1733186143}
+  modalOrderSorting: 10

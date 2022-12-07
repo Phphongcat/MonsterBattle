@@ -13,7 +13,7 @@ namespace Game.Scripts
     public class ContainerLauncher : MonoBehaviour
     {
         [SerializeField] private ContainerLayerSettings containerLayerSettings;
-        [SerializeField] private GameObject pooled;
+        [SerializeField] private int modalOrderSorting;
 
         private GlobalContainerLayerManager _globalContainerLayerManager;
 
@@ -36,12 +36,16 @@ namespace Game.Scripts
                 switch (layer.layerType)
                 {
                     case ContainerLayerType.Modal:
-                        await ModalContainer.CreateAsync(layer, manager);
+                        await ModalContainer.CreateAsync(layer, manager).ContinueWith(modal =>
+                        {
+                            var canvas = modal.GetComponent<Canvas>();
+                            canvas.overrideSorting = true;
+                            canvas.sortingOrder = modalOrderSorting;
+                        });
                         break;
 
                     case ContainerLayerType.Screen:
                         await ScreenContainer.CreateAsync(layer, manager);
-                        pooled.transform.SetParent(transform);
                         break;
 
                     case ContainerLayerType.Activity:
